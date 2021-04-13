@@ -1,2 +1,2 @@
 # CompressedCloud
-Консольная утилита для работы с облачным хранилищем
+Console application for working with cloud storage

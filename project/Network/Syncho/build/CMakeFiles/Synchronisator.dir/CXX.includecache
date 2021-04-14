@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/Synchronisator.h
+
+/home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/Syncho/src/Synchronisator.cpp
+Synchronisator.h
+/home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/Syncho/src/Synchronisator.h
+

@@ -4,12 +4,12 @@
 class IMetaDataBase {
 public:
 	virtual void GetRequest() = 0;
-	virtual void AddUser();
-	virtual void CheckUser();
-	virtual void DeleteUser();
-	virtual void AddUserToDir();
-	virtual void UpdateDirInfo();
-	virtual void RemoveUserFromDir();
+	virtual void AddUser() = 0;
+	virtual void CheckUser() = 0;
+	virtual void DeleteUser() = 0;
+	virtual void AddUserToDir() = 0;
+	virtual void UpdateDirInfo() = 0;
+	virtual void RemoveUserFromDir() = 0;
 	virtual void GetStatus() = 0;
 
 };

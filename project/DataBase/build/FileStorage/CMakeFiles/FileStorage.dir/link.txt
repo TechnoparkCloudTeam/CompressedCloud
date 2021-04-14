@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/FileStorage.dir/src/FileStorage.cpp.o CMakeFiles/FileStorage.dir/main.cpp.o  -o FileStorage 

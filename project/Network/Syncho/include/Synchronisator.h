@@ -1,10 +1,10 @@
 #pragma once
 class ISynchronisator {
 public:
-	virtual void GetRequest();
-	virtual void SendRequest();
-	virtual void SendAnswer();
-	virtual void CheckForConflicts();
+	virtual void GetRequest() = 0;
+	virtual void SendRequest() = 0;
+	virtual void SendAnswer() = 0;
+	virtual void CheckForConflicts() = 0;
 	virtual void GetStatus() = 0;
 };
 

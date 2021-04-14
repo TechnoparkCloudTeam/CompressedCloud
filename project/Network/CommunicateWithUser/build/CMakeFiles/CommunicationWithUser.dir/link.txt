@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/CommunicationWithUser.dir/src/RequestsProcessor.cpp.o CMakeFiles/CommunicationWithUser.dir/src/UserAccess.cpp.o CMakeFiles/CommunicationWithUser.dir/main.cpp.o  -o CommunicationWithUser 

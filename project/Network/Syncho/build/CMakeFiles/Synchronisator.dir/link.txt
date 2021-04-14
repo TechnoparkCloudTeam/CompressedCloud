@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/Synchronisator.dir/src/Synchronisator.cpp.o CMakeFiles/Synchronisator.dir/main.cpp.o  -o Synchronisator 

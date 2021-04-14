@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../MetaDataBase/include/MetaDataBase.h
+
+/home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/MetaDataBase/main.cpp
+
+/home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp
+MetaDataBase.h
+/home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/MetaDataBase/src/MetaDataBase.h
+

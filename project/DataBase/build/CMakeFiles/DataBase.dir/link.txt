@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/DataBase.dir/main.cpp.o  -o DataBase 

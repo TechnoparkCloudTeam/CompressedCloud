@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/FileStorage.h
+string
+-
+
+/home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/FIleStorage/main.cpp
+
+/home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/FIleStorage/src/FileStorage.cpp
+FileStorage.h
+/home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/FIleStorage/src/FileStorage.h
+

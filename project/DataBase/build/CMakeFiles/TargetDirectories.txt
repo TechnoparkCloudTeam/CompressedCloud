@@ -1,0 +1,9 @@
+/home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/build/CMakeFiles/rebuild_cache.dir
+/home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/build/CMakeFiles/edit_cache.dir
+/home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/build/CMakeFiles/DataBase.dir
+/home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/build/FileStorage/CMakeFiles/rebuild_cache.dir
+/home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/build/FileStorage/CMakeFiles/edit_cache.dir
+/home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/build/FileStorage/CMakeFiles/FileStorage.dir
+/home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/build/MetaDataBase/CMakeFiles/rebuild_cache.dir
+/home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/build/MetaDataBase/CMakeFiles/edit_cache.dir
+/home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/build/MetaDataBase/CMakeFiles/MetaDataBase.dir

@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/RequestsProcessor.h
+map
+-
+
+../include/UserAccess.h
+string
+-
+vector
+-
+queue
+-
+
+/home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/CommunicateWithUser/main.cpp
+
+/home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/CommunicateWithUser/src/RequestsProcessor.cpp
+RequestsProcessor.h
+/home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/CommunicateWithUser/src/RequestsProcessor.h
+
+/home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/CommunicateWithUser/src/UserAccess.cpp
+UserAccess.h
+/home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/CommunicateWithUser/src/UserAccess.h
+

@@ -1,0 +1,3 @@
+/home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/CommunicateWithUser/build/CMakeFiles/rebuild_cache.dir
+/home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/CommunicateWithUser/build/CMakeFiles/edit_cache.dir
+/home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/CommunicateWithUser/build/CMakeFiles/CommunicationWithUser.dir

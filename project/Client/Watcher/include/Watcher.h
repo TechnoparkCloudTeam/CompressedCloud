@@ -13,7 +13,6 @@ struct InotifyEvent {
 
 class IWatcher {
 public:
-	
 	virtual void AddDirToWatch(std::filesystem::path Path) = 0;
 	virtual void SendDirStatus(std::filesystem::path Path) = 0;
 	virtual void GetStatus() = 0;

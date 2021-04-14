@@ -15,6 +15,10 @@ vector
 -
 
 /home/ilyanyrkov/CompressedCloud/project/Client/Watcher/main.cpp
+include/Watcher.h
+/home/ilyanyrkov/CompressedCloud/project/Client/Watcher/include/Watcher.h
+iostream
+-
 
 /home/ilyanyrkov/CompressedCloud/project/Client/Watcher/src/Watcher.cpp
 ../include/Watcher.h

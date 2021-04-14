@@ -3,7 +3,7 @@
 #include "Chunker.h"
 #include <filesystem>
 #include <fstream>
-
+#include "gmock/gmock.h"
 
 TEST(Watcher, AddDirToWatch) {
     std::filesystem::path Path;
@@ -66,8 +66,9 @@ TEST(Watcher, GetStatus_is_running) {
 
 class WatcherMock : public IWatcher {
 public:
+    
     MOCK_METHOD1(AddDirToWatch, void(std::filesystem::path Path));
-    MOCK_METHOD1(SendDirStatus, void());
+    MOCK_METHOD1(SendDirStatus, void(std::filesystem::path Path));
     MOCK_METHOD0(GetStatus, void());
 };
 
@@ -119,12 +120,19 @@ TEST(Chunker, ParseFile_EqualFiles) {
 }
 
 TEST(Chunker, GetNewChunk) {
-
+    WatcherMock watcherMock;
+    std::filesystem::path Path;
+    Chunker chunker;        // SendDirStatus возвращает изменения в неком формате, GetNewChunk принимает эти измения в качестве параметра
+    chunker.GetNewChunk(); 
+    EXPECT_CALL(watcherMock, SendDirStatus(Path)); // смотритель отправляет изменения в чанкер, метод GetNewChunk которого получает эти изменения
+    
+    ASSERT_EQ(1, 1);
 }
 
 
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
+  
   return RUN_ALL_TESTS();
 }
 

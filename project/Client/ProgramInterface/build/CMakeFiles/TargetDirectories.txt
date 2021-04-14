@@ -1,0 +1,3 @@
+/home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/ProgramInterface/build/CMakeFiles/rebuild_cache.dir
+/home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/ProgramInterface/build/CMakeFiles/edit_cache.dir
+/home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/ProgramInterface/build/CMakeFiles/ProgramInterface.dir

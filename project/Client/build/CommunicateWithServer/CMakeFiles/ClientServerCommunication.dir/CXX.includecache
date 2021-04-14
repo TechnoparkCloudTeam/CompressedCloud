@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/CommunicateWithServer/include/ClientServerCommunication.h
+string
+-
+
+/home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/CommunicateWithServer/main.cpp
+
+/home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/CommunicateWithServer/src/ClientServerCommunication.cpp
+../include/ClientServerCommunication.h
+/home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/CommunicateWithServer/include/ClientServerCommunication.h
+

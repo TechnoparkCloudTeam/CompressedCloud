@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../ProgramInterface/include/ProgramInterface.h
+string
+-
+
+/home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/ProgramInterface/main.cpp
+
+/home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/ProgramInterface/src/ProgramInterface.cpp
+ProgramInterface.h
+/home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/ProgramInterface/src/ProgramInterface.h
+

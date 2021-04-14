@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../Chunker/include/Chunker.h
+array
+-
+string
+-
+iostream
+-
+vector
+-
+filesystem
+-
+
+/home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/Chunker/main.cpp
+
+/home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/Chunker/src/Chunker.cpp
+Chunker.h
+/home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/Chunker/src/Chunker.h
+

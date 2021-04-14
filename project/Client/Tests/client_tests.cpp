@@ -1,7 +1,9 @@
 #include <gtest/gtest.h>
 #include "Watcher.h"
+#include "Chunker.h"
 #include <filesystem>
 #include <fstream>
+
 
 TEST(Watcher, AddDirToWatch) {
     std::filesystem::path Path;
@@ -60,6 +62,64 @@ TEST(Watcher, GetStatus_is_running) {
     watcher.AddDirToWatch(Path);
     watcher.GetStatus(); // Outputs current state of watcher daemon
     ASSERT_EQ(1, 1);
+}
+
+class WatcherMock : public IWatcher {
+public:
+    MOCK_METHOD1(AddDirToWatch, void(std::filesystem::path Path));
+    MOCK_METHOD1(SendDirStatus, void());
+    MOCK_METHOD0(GetStatus, void());
+};
+
+TEST(Chunker, CompareChunks_equal) {
+    FileChunk firstChunk;
+    FileChunk secondChunk;
+    Chunker chunker;
+    chunker.CompareChunks(firstChunk, secondChunk);
+    ASSERT_EQ(1, 1);
+}
+
+TEST(Chunker, CompareChunks_not_equal) {
+    FileChunk firstChunk;
+    FileChunk secondChunk;
+    Chunker chunker;
+    chunker.CompareChunks(firstChunk, secondChunk);
+    ASSERT_EQ(1, 1);
+}
+
+TEST(Chunker, CorrectFile) {
+    std::fstream stream;
+    stream.open("Test.txt");
+    Chunker chunker;
+    try {
+        chunker.GetFile(stream);
+    } catch (...) {
+
+    };
+    ASSERT_EQ(1, 1);
+}
+
+TEST(Chunker, WrongFile) {
+    std::fstream stream;
+    stream.open("Test.txt");
+    Chunker chunker;
+    try {
+        chunker.GetFile(stream);
+    } catch (...) {
+
+    };
+    ASSERT_EQ(1, 1);
+}
+
+TEST(Chunker, ParseFile_EqualFiles) {
+    Chunker chunker;
+    chunker.ParseFile();
+    Chunker chunker2; //chunker with ready FileChunks
+    ASSERT_EQ(1, 1);
+}
+
+TEST(Chunker, GetNewChunk) {
+
 }
 
 

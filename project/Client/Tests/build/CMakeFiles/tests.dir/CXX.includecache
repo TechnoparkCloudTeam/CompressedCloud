@@ -6,6 +6,18 @@
 
 #IncludeRegexTransform: 
 
+../../Chunker/include/Chunker.h
+array
+-
+string
+-
+iostream
+-
+vector
+-
+filesystem
+-
+
 ../../Watcher/include/Watcher.h
 cstdint
 -
@@ -19,6 +31,8 @@ gtest/gtest.h
 -
 Watcher.h
 /home/ilyanyrkov/CompressedCloud/project/Client/Tests/Watcher.h
+Chunker.h
+/home/ilyanyrkov/CompressedCloud/project/Client/Tests/Chunker.h
 filesystem
 -
 fstream

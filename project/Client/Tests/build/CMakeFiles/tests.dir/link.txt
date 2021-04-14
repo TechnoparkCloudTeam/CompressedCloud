@@ -1,1 +1,1 @@
-/usr/bin/c++     CMakeFiles/tests.dir/client_tests.cpp.o  -o tests  /usr/lib/x86_64-linux-gnu/libgtest.a -lpthread libclient.a 
+/usr/bin/c++     CMakeFiles/tests.dir/client_tests.cpp.o  -o tests  /usr/lib/x86_64-linux-gnu/libgtest.a -lgmock libclient.a 

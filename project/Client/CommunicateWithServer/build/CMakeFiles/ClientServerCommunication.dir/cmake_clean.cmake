@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/ClientServerCommunication.dir/main.cpp.o"
   "CMakeFiles/ClientServerCommunication.dir/src/ClientServerCommunication.cpp.o"
   "ClientServerCommunication"
   "ClientServerCommunication.pdb"

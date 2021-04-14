@@ -1,1 +1,1 @@
-/usr/bin/c++     CMakeFiles/ClientServerCommunication.dir/src/ClientServerCommunication.cpp.o  -o ClientServerCommunication 
+/usr/bin/c++     CMakeFiles/ClientServerCommunication.dir/src/ClientServerCommunication.cpp.o CMakeFiles/ClientServerCommunication.dir/main.cpp.o  -o ClientServerCommunication 

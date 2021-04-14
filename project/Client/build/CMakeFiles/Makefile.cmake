@@ -54,6 +54,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/Client.dir/DependInfo.cmake"
+  "CMakeFiles/network.dir/DependInfo.cmake"
   "Watcher/CMakeFiles/Watcher.dir/DependInfo.cmake"
   "ProgramInterface/CMakeFiles/ProgramInterface.dir/DependInfo.cmake"
   "Chunker/CMakeFiles/Chunker.dir/DependInfo.cmake"

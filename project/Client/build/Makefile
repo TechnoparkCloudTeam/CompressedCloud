@@ -124,6 +124,19 @@ Client/fast:
 .PHONY : Client/fast
 
 #=============================================================================
+# Target rules for targets named network
+
+# Build rule for target.
+network: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 network
+.PHONY : network
+
+# fast build rule for target.
+network/fast:
+	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/build
+.PHONY : network/fast
+
+#=============================================================================
 # Target rules for targets named Watcher
 
 # Build rule for target.
@@ -175,6 +188,114 @@ ClientServerCommunication/fast:
 	$(MAKE) -f CommunicateWithServer/CMakeFiles/ClientServerCommunication.dir/build.make CommunicateWithServer/CMakeFiles/ClientServerCommunication.dir/build
 .PHONY : ClientServerCommunication/fast
 
+Chunker/src/Chunker.o: Chunker/src/Chunker.cpp.o
+
+.PHONY : Chunker/src/Chunker.o
+
+# target to build an object file
+Chunker/src/Chunker.cpp.o:
+	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/Chunker/src/Chunker.cpp.o
+.PHONY : Chunker/src/Chunker.cpp.o
+
+Chunker/src/Chunker.i: Chunker/src/Chunker.cpp.i
+
+.PHONY : Chunker/src/Chunker.i
+
+# target to preprocess a source file
+Chunker/src/Chunker.cpp.i:
+	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/Chunker/src/Chunker.cpp.i
+.PHONY : Chunker/src/Chunker.cpp.i
+
+Chunker/src/Chunker.s: Chunker/src/Chunker.cpp.s
+
+.PHONY : Chunker/src/Chunker.s
+
+# target to generate assembly for a file
+Chunker/src/Chunker.cpp.s:
+	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/Chunker/src/Chunker.cpp.s
+.PHONY : Chunker/src/Chunker.cpp.s
+
+CommunicateWithServer/src/ClientServerCommunication.o: CommunicateWithServer/src/ClientServerCommunication.cpp.o
+
+.PHONY : CommunicateWithServer/src/ClientServerCommunication.o
+
+# target to build an object file
+CommunicateWithServer/src/ClientServerCommunication.cpp.o:
+	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/CommunicateWithServer/src/ClientServerCommunication.cpp.o
+.PHONY : CommunicateWithServer/src/ClientServerCommunication.cpp.o
+
+CommunicateWithServer/src/ClientServerCommunication.i: CommunicateWithServer/src/ClientServerCommunication.cpp.i
+
+.PHONY : CommunicateWithServer/src/ClientServerCommunication.i
+
+# target to preprocess a source file
+CommunicateWithServer/src/ClientServerCommunication.cpp.i:
+	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/CommunicateWithServer/src/ClientServerCommunication.cpp.i
+.PHONY : CommunicateWithServer/src/ClientServerCommunication.cpp.i
+
+CommunicateWithServer/src/ClientServerCommunication.s: CommunicateWithServer/src/ClientServerCommunication.cpp.s
+
+.PHONY : CommunicateWithServer/src/ClientServerCommunication.s
+
+# target to generate assembly for a file
+CommunicateWithServer/src/ClientServerCommunication.cpp.s:
+	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/CommunicateWithServer/src/ClientServerCommunication.cpp.s
+.PHONY : CommunicateWithServer/src/ClientServerCommunication.cpp.s
+
+ProgramInterface/src/ProgramInterface.o: ProgramInterface/src/ProgramInterface.cpp.o
+
+.PHONY : ProgramInterface/src/ProgramInterface.o
+
+# target to build an object file
+ProgramInterface/src/ProgramInterface.cpp.o:
+	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/ProgramInterface/src/ProgramInterface.cpp.o
+.PHONY : ProgramInterface/src/ProgramInterface.cpp.o
+
+ProgramInterface/src/ProgramInterface.i: ProgramInterface/src/ProgramInterface.cpp.i
+
+.PHONY : ProgramInterface/src/ProgramInterface.i
+
+# target to preprocess a source file
+ProgramInterface/src/ProgramInterface.cpp.i:
+	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/ProgramInterface/src/ProgramInterface.cpp.i
+.PHONY : ProgramInterface/src/ProgramInterface.cpp.i
+
+ProgramInterface/src/ProgramInterface.s: ProgramInterface/src/ProgramInterface.cpp.s
+
+.PHONY : ProgramInterface/src/ProgramInterface.s
+
+# target to generate assembly for a file
+ProgramInterface/src/ProgramInterface.cpp.s:
+	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/ProgramInterface/src/ProgramInterface.cpp.s
+.PHONY : ProgramInterface/src/ProgramInterface.cpp.s
+
+Watcher/src/Watcher.o: Watcher/src/Watcher.cpp.o
+
+.PHONY : Watcher/src/Watcher.o
+
+# target to build an object file
+Watcher/src/Watcher.cpp.o:
+	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/Watcher/src/Watcher.cpp.o
+.PHONY : Watcher/src/Watcher.cpp.o
+
+Watcher/src/Watcher.i: Watcher/src/Watcher.cpp.i
+
+.PHONY : Watcher/src/Watcher.i
+
+# target to preprocess a source file
+Watcher/src/Watcher.cpp.i:
+	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/Watcher/src/Watcher.cpp.i
+.PHONY : Watcher/src/Watcher.cpp.i
+
+Watcher/src/Watcher.s: Watcher/src/Watcher.cpp.s
+
+.PHONY : Watcher/src/Watcher.s
+
+# target to generate assembly for a file
+Watcher/src/Watcher.cpp.s:
+	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/Watcher/src/Watcher.cpp.s
+.PHONY : Watcher/src/Watcher.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -209,12 +330,25 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... edit_cache"
 	@echo "... Client"
+	@echo "... edit_cache"
+	@echo "... network"
 	@echo "... Watcher"
 	@echo "... ProgramInterface"
 	@echo "... Chunker"
 	@echo "... ClientServerCommunication"
+	@echo "... Chunker/src/Chunker.o"
+	@echo "... Chunker/src/Chunker.i"
+	@echo "... Chunker/src/Chunker.s"
+	@echo "... CommunicateWithServer/src/ClientServerCommunication.o"
+	@echo "... CommunicateWithServer/src/ClientServerCommunication.i"
+	@echo "... CommunicateWithServer/src/ClientServerCommunication.s"
+	@echo "... ProgramInterface/src/ProgramInterface.o"
+	@echo "... ProgramInterface/src/ProgramInterface.i"
+	@echo "... ProgramInterface/src/ProgramInterface.s"
+	@echo "... Watcher/src/Watcher.o"
+	@echo "... Watcher/src/Watcher.i"
+	@echo "... Watcher/src/Watcher.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

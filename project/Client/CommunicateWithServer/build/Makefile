@@ -123,6 +123,33 @@ ClientServerCommunication/fast:
 	$(MAKE) -f CMakeFiles/ClientServerCommunication.dir/build.make CMakeFiles/ClientServerCommunication.dir/build
 .PHONY : ClientServerCommunication/fast
 
+main.o: main.cpp.o
+
+.PHONY : main.o
+
+# target to build an object file
+main.cpp.o:
+	$(MAKE) -f CMakeFiles/ClientServerCommunication.dir/build.make CMakeFiles/ClientServerCommunication.dir/main.cpp.o
+.PHONY : main.cpp.o
+
+main.i: main.cpp.i
+
+.PHONY : main.i
+
+# target to preprocess a source file
+main.cpp.i:
+	$(MAKE) -f CMakeFiles/ClientServerCommunication.dir/build.make CMakeFiles/ClientServerCommunication.dir/main.cpp.i
+.PHONY : main.cpp.i
+
+main.s: main.cpp.s
+
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.cpp.s:
+	$(MAKE) -f CMakeFiles/ClientServerCommunication.dir/build.make CMakeFiles/ClientServerCommunication.dir/main.cpp.s
+.PHONY : main.cpp.s
+
 src/ClientServerCommunication.o: src/ClientServerCommunication.cpp.o
 
 .PHONY : src/ClientServerCommunication.o
@@ -159,6 +186,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... ClientServerCommunication"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 	@echo "... src/ClientServerCommunication.o"
 	@echo "... src/ClientServerCommunication.i"
 	@echo "... src/ClientServerCommunication.s"

@@ -74,12 +74,12 @@ clean: CMakeFiles/ClientServerCommunication.dir/clean
 CMakeFiles/ClientServerCommunication.dir/all:
 	$(MAKE) -f CMakeFiles/ClientServerCommunication.dir/build.make CMakeFiles/ClientServerCommunication.dir/depend
 	$(MAKE) -f CMakeFiles/ClientServerCommunication.dir/build.make CMakeFiles/ClientServerCommunication.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/CommunicateWithServer/build/CMakeFiles --progress-num=1,2 "Built target ClientServerCommunication"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/CommunicateWithServer/build/CMakeFiles --progress-num=1,2,3 "Built target ClientServerCommunication"
 .PHONY : CMakeFiles/ClientServerCommunication.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/ClientServerCommunication.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/CommunicateWithServer/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/CommunicateWithServer/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ClientServerCommunication.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/CommunicateWithServer/build/CMakeFiles 0
 .PHONY : CMakeFiles/ClientServerCommunication.dir/rule

@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/CommunicateWithServer/main.cpp" "/home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/CommunicateWithServer/build/CMakeFiles/ClientServerCommunication.dir/main.cpp.o"
   "/home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/CommunicateWithServer/src/ClientServerCommunication.cpp" "/home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/CommunicateWithServer/build/CMakeFiles/ClientServerCommunication.dir/src/ClientServerCommunication.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

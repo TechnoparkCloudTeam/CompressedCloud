@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/FIleStorage
+CMAKE_SOURCE_DIR = /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/FIleStorage/build
+CMAKE_BINARY_DIR = /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/FileStorage.dir/depend.make
@@ -59,29 +59,29 @@ include CMakeFiles/FileStorage.dir/flags.make
 
 CMakeFiles/FileStorage.dir/src/FileStorage.cpp.o: CMakeFiles/FileStorage.dir/flags.make
 CMakeFiles/FileStorage.dir/src/FileStorage.cpp.o: ../src/FileStorage.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/FIleStorage/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/FileStorage.dir/src/FileStorage.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FileStorage.dir/src/FileStorage.cpp.o -c /home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/FIleStorage/src/FileStorage.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/FileStorage.dir/src/FileStorage.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FileStorage.dir/src/FileStorage.cpp.o -c /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp
 
 CMakeFiles/FileStorage.dir/src/FileStorage.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FileStorage.dir/src/FileStorage.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/FIleStorage/src/FileStorage.cpp > CMakeFiles/FileStorage.dir/src/FileStorage.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp > CMakeFiles/FileStorage.dir/src/FileStorage.cpp.i
 
 CMakeFiles/FileStorage.dir/src/FileStorage.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FileStorage.dir/src/FileStorage.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/FIleStorage/src/FileStorage.cpp -o CMakeFiles/FileStorage.dir/src/FileStorage.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp -o CMakeFiles/FileStorage.dir/src/FileStorage.cpp.s
 
 CMakeFiles/FileStorage.dir/main.cpp.o: CMakeFiles/FileStorage.dir/flags.make
 CMakeFiles/FileStorage.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/FIleStorage/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/FileStorage.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FileStorage.dir/main.cpp.o -c /home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/FIleStorage/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/FileStorage.dir/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FileStorage.dir/main.cpp.o -c /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/main.cpp
 
 CMakeFiles/FileStorage.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FileStorage.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/FIleStorage/main.cpp > CMakeFiles/FileStorage.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/main.cpp > CMakeFiles/FileStorage.dir/main.cpp.i
 
 CMakeFiles/FileStorage.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FileStorage.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/FIleStorage/main.cpp -o CMakeFiles/FileStorage.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/main.cpp -o CMakeFiles/FileStorage.dir/main.cpp.s
 
 # Object files for target FileStorage
 FileStorage_OBJECTS = \
@@ -95,7 +95,7 @@ FileStorage: CMakeFiles/FileStorage.dir/src/FileStorage.cpp.o
 FileStorage: CMakeFiles/FileStorage.dir/main.cpp.o
 FileStorage: CMakeFiles/FileStorage.dir/build.make
 FileStorage: CMakeFiles/FileStorage.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/FIleStorage/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable FileStorage"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable FileStorage"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/FileStorage.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -108,6 +108,6 @@ CMakeFiles/FileStorage.dir/clean:
 .PHONY : CMakeFiles/FileStorage.dir/clean
 
 CMakeFiles/FileStorage.dir/depend:
-	cd /home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/FIleStorage/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/FIleStorage /home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/FIleStorage /home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/FIleStorage/build /home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/FIleStorage/build /home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/FIleStorage/build/CMakeFiles/FileStorage.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/build /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/build /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/build/CMakeFiles/FileStorage.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/FileStorage.dir/depend
 

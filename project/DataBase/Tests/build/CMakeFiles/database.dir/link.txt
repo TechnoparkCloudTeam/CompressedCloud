@@ -1,0 +1,2 @@
+/usr/bin/ar qc libdatabase.a  CMakeFiles/database.dir/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp.o CMakeFiles/database.dir/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp.o
+/usr/bin/ranlib libdatabase.a

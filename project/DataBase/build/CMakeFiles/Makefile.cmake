@@ -50,6 +50,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/DataBase.dir/DependInfo.cmake"
+  "CMakeFiles/network.dir/DependInfo.cmake"
   "FileStorage/CMakeFiles/FileStorage.dir/DependInfo.cmake"
   "MetaDataBase/CMakeFiles/MetaDataBase.dir/DependInfo.cmake"
   )

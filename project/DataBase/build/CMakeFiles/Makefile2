@@ -44,16 +44,17 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase
+CMAKE_SOURCE_DIR = /home/lida/Compressed_cloud/CompressedCloud/project/DataBase
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/build
+CMAKE_BINARY_DIR = /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/build
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
 all: CMakeFiles/DataBase.dir/all
+all: CMakeFiles/network.dir/all
 all: FileStorage/all
 all: MetaDataBase/all
 
@@ -67,6 +68,7 @@ preinstall: MetaDataBase/preinstall
 
 # The main recursive "clean" target.
 clean: CMakeFiles/DataBase.dir/clean
+clean: CMakeFiles/network.dir/clean
 clean: FileStorage/clean
 clean: MetaDataBase/clean
 
@@ -115,14 +117,14 @@ MetaDataBase/clean: MetaDataBase/CMakeFiles/MetaDataBase.dir/clean
 CMakeFiles/DataBase.dir/all:
 	$(MAKE) -f CMakeFiles/DataBase.dir/build.make CMakeFiles/DataBase.dir/depend
 	$(MAKE) -f CMakeFiles/DataBase.dir/build.make CMakeFiles/DataBase.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/build/CMakeFiles --progress-num=1,2 "Built target DataBase"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/build/CMakeFiles --progress-num=1,2 "Built target DataBase"
 .PHONY : CMakeFiles/DataBase.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/DataBase.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/DataBase.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/build/CMakeFiles 0
 .PHONY : CMakeFiles/DataBase.dir/rule
 
 # Convenience name for target.
@@ -136,20 +138,47 @@ CMakeFiles/DataBase.dir/clean:
 .PHONY : CMakeFiles/DataBase.dir/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/network.dir
+
+# All Build rule for target.
+CMakeFiles/network.dir/all:
+	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/depend
+	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/build/CMakeFiles --progress-num=9,10,11 "Built target network"
+.PHONY : CMakeFiles/network.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/network.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/build/CMakeFiles 3
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/network.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/build/CMakeFiles 0
+.PHONY : CMakeFiles/network.dir/rule
+
+# Convenience name for target.
+network: CMakeFiles/network.dir/rule
+
+.PHONY : network
+
+# clean rule for target.
+CMakeFiles/network.dir/clean:
+	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/clean
+.PHONY : CMakeFiles/network.dir/clean
+
+#=============================================================================
 # Target rules for target FileStorage/CMakeFiles/FileStorage.dir
 
 # All Build rule for target.
 FileStorage/CMakeFiles/FileStorage.dir/all:
 	$(MAKE) -f FileStorage/CMakeFiles/FileStorage.dir/build.make FileStorage/CMakeFiles/FileStorage.dir/depend
 	$(MAKE) -f FileStorage/CMakeFiles/FileStorage.dir/build.make FileStorage/CMakeFiles/FileStorage.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/build/CMakeFiles --progress-num=3,4,5 "Built target FileStorage"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/build/CMakeFiles --progress-num=3,4,5 "Built target FileStorage"
 .PHONY : FileStorage/CMakeFiles/FileStorage.dir/all
 
 # Build rule for subdir invocation for target.
 FileStorage/CMakeFiles/FileStorage.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 FileStorage/CMakeFiles/FileStorage.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/build/CMakeFiles 0
 .PHONY : FileStorage/CMakeFiles/FileStorage.dir/rule
 
 # Convenience name for target.
@@ -169,14 +198,14 @@ FileStorage/CMakeFiles/FileStorage.dir/clean:
 MetaDataBase/CMakeFiles/MetaDataBase.dir/all:
 	$(MAKE) -f MetaDataBase/CMakeFiles/MetaDataBase.dir/build.make MetaDataBase/CMakeFiles/MetaDataBase.dir/depend
 	$(MAKE) -f MetaDataBase/CMakeFiles/MetaDataBase.dir/build.make MetaDataBase/CMakeFiles/MetaDataBase.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/build/CMakeFiles --progress-num=6,7,8 "Built target MetaDataBase"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/build/CMakeFiles --progress-num=6,7,8 "Built target MetaDataBase"
 .PHONY : MetaDataBase/CMakeFiles/MetaDataBase.dir/all
 
 # Build rule for subdir invocation for target.
 MetaDataBase/CMakeFiles/MetaDataBase.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 MetaDataBase/CMakeFiles/MetaDataBase.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/build/CMakeFiles 0
 .PHONY : MetaDataBase/CMakeFiles/MetaDataBase.dir/rule
 
 # Convenience name for target.

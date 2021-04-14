@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/MetaDataBase
+CMAKE_SOURCE_DIR = /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/MetaDataBase/build
+CMAKE_BINARY_DIR = /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/MetaDataBase.dir/depend.make
@@ -59,29 +59,29 @@ include CMakeFiles/MetaDataBase.dir/flags.make
 
 CMakeFiles/MetaDataBase.dir/src/MetaDataBase.cpp.o: CMakeFiles/MetaDataBase.dir/flags.make
 CMakeFiles/MetaDataBase.dir/src/MetaDataBase.cpp.o: ../src/MetaDataBase.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/MetaDataBase/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/MetaDataBase.dir/src/MetaDataBase.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MetaDataBase.dir/src/MetaDataBase.cpp.o -c /home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/MetaDataBase.dir/src/MetaDataBase.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MetaDataBase.dir/src/MetaDataBase.cpp.o -c /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp
 
 CMakeFiles/MetaDataBase.dir/src/MetaDataBase.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MetaDataBase.dir/src/MetaDataBase.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp > CMakeFiles/MetaDataBase.dir/src/MetaDataBase.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp > CMakeFiles/MetaDataBase.dir/src/MetaDataBase.cpp.i
 
 CMakeFiles/MetaDataBase.dir/src/MetaDataBase.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MetaDataBase.dir/src/MetaDataBase.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp -o CMakeFiles/MetaDataBase.dir/src/MetaDataBase.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp -o CMakeFiles/MetaDataBase.dir/src/MetaDataBase.cpp.s
 
 CMakeFiles/MetaDataBase.dir/main.cpp.o: CMakeFiles/MetaDataBase.dir/flags.make
 CMakeFiles/MetaDataBase.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/MetaDataBase/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/MetaDataBase.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MetaDataBase.dir/main.cpp.o -c /home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/MetaDataBase/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/MetaDataBase.dir/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MetaDataBase.dir/main.cpp.o -c /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/main.cpp
 
 CMakeFiles/MetaDataBase.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MetaDataBase.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/MetaDataBase/main.cpp > CMakeFiles/MetaDataBase.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/main.cpp > CMakeFiles/MetaDataBase.dir/main.cpp.i
 
 CMakeFiles/MetaDataBase.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MetaDataBase.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/MetaDataBase/main.cpp -o CMakeFiles/MetaDataBase.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/main.cpp -o CMakeFiles/MetaDataBase.dir/main.cpp.s
 
 # Object files for target MetaDataBase
 MetaDataBase_OBJECTS = \
@@ -95,7 +95,7 @@ MetaDataBase: CMakeFiles/MetaDataBase.dir/src/MetaDataBase.cpp.o
 MetaDataBase: CMakeFiles/MetaDataBase.dir/main.cpp.o
 MetaDataBase: CMakeFiles/MetaDataBase.dir/build.make
 MetaDataBase: CMakeFiles/MetaDataBase.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/MetaDataBase/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable MetaDataBase"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable MetaDataBase"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/MetaDataBase.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -108,6 +108,6 @@ CMakeFiles/MetaDataBase.dir/clean:
 .PHONY : CMakeFiles/MetaDataBase.dir/clean
 
 CMakeFiles/MetaDataBase.dir/depend:
-	cd /home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/MetaDataBase/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/MetaDataBase /home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/MetaDataBase /home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/MetaDataBase/build /home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/MetaDataBase/build /home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/MetaDataBase/build/CMakeFiles/MetaDataBase.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/build /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/build /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/build/CMakeFiles/MetaDataBase.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/MetaDataBase.dir/depend
 

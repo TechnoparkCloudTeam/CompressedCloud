@@ -6,5 +6,5 @@ CXX_FLAGS =   -std=gnu++2a
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/FileStorage/include 
+CXX_INCLUDES = -I/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/include 
 

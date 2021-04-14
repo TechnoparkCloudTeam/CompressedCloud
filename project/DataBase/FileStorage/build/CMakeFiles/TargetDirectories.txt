@@ -1,3 +1,3 @@
-/home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/FIleStorage/build/CMakeFiles/rebuild_cache.dir
-/home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/FIleStorage/build/CMakeFiles/edit_cache.dir
-/home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/FIleStorage/build/CMakeFiles/FileStorage.dir
+/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/build/CMakeFiles/rebuild_cache.dir
+/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/build/CMakeFiles/edit_cache.dir
+/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/build/CMakeFiles/FileStorage.dir

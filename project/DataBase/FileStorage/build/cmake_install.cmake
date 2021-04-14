@@ -1,4 +1,4 @@
-# Install script for directory: /home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/FIleStorage
+# Install script for directory: /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/FIleStorage/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

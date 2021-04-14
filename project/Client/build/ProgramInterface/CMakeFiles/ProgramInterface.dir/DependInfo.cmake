@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/ProgramInterface/main.cpp" "/home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/build/ProgramInterface/CMakeFiles/ProgramInterface.dir/main.cpp.o"
-  "/home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/ProgramInterface/src/ProgramInterface.cpp" "/home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/build/ProgramInterface/CMakeFiles/ProgramInterface.dir/src/ProgramInterface.cpp.o"
+  "/home/ilyanyrkov/CompressedCloud/project/Client/ProgramInterface/main.cpp" "/home/ilyanyrkov/CompressedCloud/project/Client/build/ProgramInterface/CMakeFiles/ProgramInterface.dir/main.cpp.o"
+  "/home/ilyanyrkov/CompressedCloud/project/Client/ProgramInterface/src/ProgramInterface.cpp" "/home/ilyanyrkov/CompressedCloud/project/Client/build/ProgramInterface/CMakeFiles/ProgramInterface.dir/src/ProgramInterface.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

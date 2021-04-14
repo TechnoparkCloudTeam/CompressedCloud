@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/Watcher
+CMAKE_SOURCE_DIR = /home/ilyanyrkov/CompressedCloud/project/Client/Watcher
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/Watcher/build
+CMAKE_BINARY_DIR = /home/ilyanyrkov/CompressedCloud/project/Client/Watcher/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Watcher.dir/depend.make
@@ -59,29 +59,29 @@ include CMakeFiles/Watcher.dir/flags.make
 
 CMakeFiles/Watcher.dir/src/Watcher.cpp.o: CMakeFiles/Watcher.dir/flags.make
 CMakeFiles/Watcher.dir/src/Watcher.cpp.o: ../src/Watcher.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/Watcher/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Watcher.dir/src/Watcher.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Watcher.dir/src/Watcher.cpp.o -c /home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/Watcher/src/Watcher.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ilyanyrkov/CompressedCloud/project/Client/Watcher/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Watcher.dir/src/Watcher.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Watcher.dir/src/Watcher.cpp.o -c /home/ilyanyrkov/CompressedCloud/project/Client/Watcher/src/Watcher.cpp
 
 CMakeFiles/Watcher.dir/src/Watcher.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Watcher.dir/src/Watcher.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/Watcher/src/Watcher.cpp > CMakeFiles/Watcher.dir/src/Watcher.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ilyanyrkov/CompressedCloud/project/Client/Watcher/src/Watcher.cpp > CMakeFiles/Watcher.dir/src/Watcher.cpp.i
 
 CMakeFiles/Watcher.dir/src/Watcher.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Watcher.dir/src/Watcher.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/Watcher/src/Watcher.cpp -o CMakeFiles/Watcher.dir/src/Watcher.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ilyanyrkov/CompressedCloud/project/Client/Watcher/src/Watcher.cpp -o CMakeFiles/Watcher.dir/src/Watcher.cpp.s
 
 CMakeFiles/Watcher.dir/main.cpp.o: CMakeFiles/Watcher.dir/flags.make
 CMakeFiles/Watcher.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/Watcher/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Watcher.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Watcher.dir/main.cpp.o -c /home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/Watcher/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ilyanyrkov/CompressedCloud/project/Client/Watcher/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Watcher.dir/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Watcher.dir/main.cpp.o -c /home/ilyanyrkov/CompressedCloud/project/Client/Watcher/main.cpp
 
 CMakeFiles/Watcher.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Watcher.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/Watcher/main.cpp > CMakeFiles/Watcher.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ilyanyrkov/CompressedCloud/project/Client/Watcher/main.cpp > CMakeFiles/Watcher.dir/main.cpp.i
 
 CMakeFiles/Watcher.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Watcher.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/Watcher/main.cpp -o CMakeFiles/Watcher.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ilyanyrkov/CompressedCloud/project/Client/Watcher/main.cpp -o CMakeFiles/Watcher.dir/main.cpp.s
 
 # Object files for target Watcher
 Watcher_OBJECTS = \
@@ -95,7 +95,7 @@ Watcher: CMakeFiles/Watcher.dir/src/Watcher.cpp.o
 Watcher: CMakeFiles/Watcher.dir/main.cpp.o
 Watcher: CMakeFiles/Watcher.dir/build.make
 Watcher: CMakeFiles/Watcher.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/Watcher/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable Watcher"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ilyanyrkov/CompressedCloud/project/Client/Watcher/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable Watcher"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Watcher.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -108,6 +108,6 @@ CMakeFiles/Watcher.dir/clean:
 .PHONY : CMakeFiles/Watcher.dir/clean
 
 CMakeFiles/Watcher.dir/depend:
-	cd /home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/Watcher/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/Watcher /home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/Watcher /home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/Watcher/build /home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/Watcher/build /home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/Watcher/build/CMakeFiles/Watcher.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ilyanyrkov/CompressedCloud/project/Client/Watcher/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ilyanyrkov/CompressedCloud/project/Client/Watcher /home/ilyanyrkov/CompressedCloud/project/Client/Watcher /home/ilyanyrkov/CompressedCloud/project/Client/Watcher/build /home/ilyanyrkov/CompressedCloud/project/Client/Watcher/build /home/ilyanyrkov/CompressedCloud/project/Client/Watcher/build/CMakeFiles/Watcher.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Watcher.dir/depend
 

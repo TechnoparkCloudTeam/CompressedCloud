@@ -6,5 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/Watcher/main.cpp
+/home/ilyanyrkov/CompressedCloud/project/Client/Watcher/include/Watcher.h
+cstdint
+-
+filesystem
+-
+vector
+-
+
+/home/ilyanyrkov/CompressedCloud/project/Client/Watcher/main.cpp
+
+/home/ilyanyrkov/CompressedCloud/project/Client/Watcher/src/Watcher.cpp
+../include/Watcher.h
+/home/ilyanyrkov/CompressedCloud/project/Client/Watcher/include/Watcher.h
 

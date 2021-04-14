@@ -1,4 +1,4 @@
-# Install script for directory: /home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/CommunicateWithServer
+# Install script for directory: /home/ilyanyrkov/CompressedCloud/project/Client/CommunicateWithServer
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

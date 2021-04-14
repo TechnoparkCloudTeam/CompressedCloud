@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/CommunicateWithServer/include/ClientServerCommunication.h
+/home/ilyanyrkov/CompressedCloud/project/Client/CommunicateWithServer/include/ClientServerCommunication.h
 string
 -
 
-/home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/CommunicateWithServer/main.cpp
+/home/ilyanyrkov/CompressedCloud/project/Client/CommunicateWithServer/main.cpp
 
-/home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/CommunicateWithServer/src/ClientServerCommunication.cpp
+/home/ilyanyrkov/CompressedCloud/project/Client/CommunicateWithServer/src/ClientServerCommunication.cpp
 ../include/ClientServerCommunication.h
-/home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/CommunicateWithServer/include/ClientServerCommunication.h
+/home/ilyanyrkov/CompressedCloud/project/Client/CommunicateWithServer/include/ClientServerCommunication.h
 

@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/Chunker/main.cpp" "/home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/build/Chunker/CMakeFiles/Chunker.dir/main.cpp.o"
-  "/home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/Chunker/src/Chunker.cpp" "/home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/build/Chunker/CMakeFiles/Chunker.dir/src/Chunker.cpp.o"
+  "/home/ilyanyrkov/CompressedCloud/project/Client/Chunker/main.cpp" "/home/ilyanyrkov/CompressedCloud/project/Client/build/Chunker/CMakeFiles/Chunker.dir/main.cpp.o"
+  "/home/ilyanyrkov/CompressedCloud/project/Client/Chunker/src/Chunker.cpp" "/home/ilyanyrkov/CompressedCloud/project/Client/build/Chunker/CMakeFiles/Chunker.dir/src/Chunker.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

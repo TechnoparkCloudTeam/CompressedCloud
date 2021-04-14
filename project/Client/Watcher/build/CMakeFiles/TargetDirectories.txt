@@ -1,3 +1,3 @@
-/home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/Watcher/build/CMakeFiles/rebuild_cache.dir
-/home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/Watcher/build/CMakeFiles/edit_cache.dir
-/home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/Watcher/build/CMakeFiles/Watcher.dir
+/home/ilyanyrkov/CompressedCloud/project/Client/Watcher/build/CMakeFiles/rebuild_cache.dir
+/home/ilyanyrkov/CompressedCloud/project/Client/Watcher/build/CMakeFiles/edit_cache.dir
+/home/ilyanyrkov/CompressedCloud/project/Client/Watcher/build/CMakeFiles/Watcher.dir

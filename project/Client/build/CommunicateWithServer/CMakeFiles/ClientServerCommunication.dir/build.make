@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/lyalyashechka/TP/c_c++/project/Cloud/project/Client
+CMAKE_SOURCE_DIR = /home/ilyanyrkov/CompressedCloud/project/Client
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/build
+CMAKE_BINARY_DIR = /home/ilyanyrkov/CompressedCloud/project/Client/build
 
 # Include any dependencies generated for this target.
 include CommunicateWithServer/CMakeFiles/ClientServerCommunication.dir/depend.make
@@ -59,29 +59,29 @@ include CommunicateWithServer/CMakeFiles/ClientServerCommunication.dir/flags.mak
 
 CommunicateWithServer/CMakeFiles/ClientServerCommunication.dir/src/ClientServerCommunication.cpp.o: CommunicateWithServer/CMakeFiles/ClientServerCommunication.dir/flags.make
 CommunicateWithServer/CMakeFiles/ClientServerCommunication.dir/src/ClientServerCommunication.cpp.o: ../CommunicateWithServer/src/ClientServerCommunication.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CommunicateWithServer/CMakeFiles/ClientServerCommunication.dir/src/ClientServerCommunication.cpp.o"
-	cd /home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/build/CommunicateWithServer && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ClientServerCommunication.dir/src/ClientServerCommunication.cpp.o -c /home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/CommunicateWithServer/src/ClientServerCommunication.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ilyanyrkov/CompressedCloud/project/Client/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CommunicateWithServer/CMakeFiles/ClientServerCommunication.dir/src/ClientServerCommunication.cpp.o"
+	cd /home/ilyanyrkov/CompressedCloud/project/Client/build/CommunicateWithServer && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ClientServerCommunication.dir/src/ClientServerCommunication.cpp.o -c /home/ilyanyrkov/CompressedCloud/project/Client/CommunicateWithServer/src/ClientServerCommunication.cpp
 
 CommunicateWithServer/CMakeFiles/ClientServerCommunication.dir/src/ClientServerCommunication.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ClientServerCommunication.dir/src/ClientServerCommunication.cpp.i"
-	cd /home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/build/CommunicateWithServer && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/CommunicateWithServer/src/ClientServerCommunication.cpp > CMakeFiles/ClientServerCommunication.dir/src/ClientServerCommunication.cpp.i
+	cd /home/ilyanyrkov/CompressedCloud/project/Client/build/CommunicateWithServer && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ilyanyrkov/CompressedCloud/project/Client/CommunicateWithServer/src/ClientServerCommunication.cpp > CMakeFiles/ClientServerCommunication.dir/src/ClientServerCommunication.cpp.i
 
 CommunicateWithServer/CMakeFiles/ClientServerCommunication.dir/src/ClientServerCommunication.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ClientServerCommunication.dir/src/ClientServerCommunication.cpp.s"
-	cd /home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/build/CommunicateWithServer && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/CommunicateWithServer/src/ClientServerCommunication.cpp -o CMakeFiles/ClientServerCommunication.dir/src/ClientServerCommunication.cpp.s
+	cd /home/ilyanyrkov/CompressedCloud/project/Client/build/CommunicateWithServer && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ilyanyrkov/CompressedCloud/project/Client/CommunicateWithServer/src/ClientServerCommunication.cpp -o CMakeFiles/ClientServerCommunication.dir/src/ClientServerCommunication.cpp.s
 
 CommunicateWithServer/CMakeFiles/ClientServerCommunication.dir/main.cpp.o: CommunicateWithServer/CMakeFiles/ClientServerCommunication.dir/flags.make
 CommunicateWithServer/CMakeFiles/ClientServerCommunication.dir/main.cpp.o: ../CommunicateWithServer/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CommunicateWithServer/CMakeFiles/ClientServerCommunication.dir/main.cpp.o"
-	cd /home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/build/CommunicateWithServer && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ClientServerCommunication.dir/main.cpp.o -c /home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/CommunicateWithServer/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ilyanyrkov/CompressedCloud/project/Client/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CommunicateWithServer/CMakeFiles/ClientServerCommunication.dir/main.cpp.o"
+	cd /home/ilyanyrkov/CompressedCloud/project/Client/build/CommunicateWithServer && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ClientServerCommunication.dir/main.cpp.o -c /home/ilyanyrkov/CompressedCloud/project/Client/CommunicateWithServer/main.cpp
 
 CommunicateWithServer/CMakeFiles/ClientServerCommunication.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ClientServerCommunication.dir/main.cpp.i"
-	cd /home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/build/CommunicateWithServer && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/CommunicateWithServer/main.cpp > CMakeFiles/ClientServerCommunication.dir/main.cpp.i
+	cd /home/ilyanyrkov/CompressedCloud/project/Client/build/CommunicateWithServer && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ilyanyrkov/CompressedCloud/project/Client/CommunicateWithServer/main.cpp > CMakeFiles/ClientServerCommunication.dir/main.cpp.i
 
 CommunicateWithServer/CMakeFiles/ClientServerCommunication.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ClientServerCommunication.dir/main.cpp.s"
-	cd /home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/build/CommunicateWithServer && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/CommunicateWithServer/main.cpp -o CMakeFiles/ClientServerCommunication.dir/main.cpp.s
+	cd /home/ilyanyrkov/CompressedCloud/project/Client/build/CommunicateWithServer && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ilyanyrkov/CompressedCloud/project/Client/CommunicateWithServer/main.cpp -o CMakeFiles/ClientServerCommunication.dir/main.cpp.s
 
 # Object files for target ClientServerCommunication
 ClientServerCommunication_OBJECTS = \
@@ -95,8 +95,8 @@ CommunicateWithServer/ClientServerCommunication: CommunicateWithServer/CMakeFile
 CommunicateWithServer/ClientServerCommunication: CommunicateWithServer/CMakeFiles/ClientServerCommunication.dir/main.cpp.o
 CommunicateWithServer/ClientServerCommunication: CommunicateWithServer/CMakeFiles/ClientServerCommunication.dir/build.make
 CommunicateWithServer/ClientServerCommunication: CommunicateWithServer/CMakeFiles/ClientServerCommunication.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable ClientServerCommunication"
-	cd /home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/build/CommunicateWithServer && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ClientServerCommunication.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ilyanyrkov/CompressedCloud/project/Client/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable ClientServerCommunication"
+	cd /home/ilyanyrkov/CompressedCloud/project/Client/build/CommunicateWithServer && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ClientServerCommunication.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 CommunicateWithServer/CMakeFiles/ClientServerCommunication.dir/build: CommunicateWithServer/ClientServerCommunication
@@ -104,10 +104,10 @@ CommunicateWithServer/CMakeFiles/ClientServerCommunication.dir/build: Communicat
 .PHONY : CommunicateWithServer/CMakeFiles/ClientServerCommunication.dir/build
 
 CommunicateWithServer/CMakeFiles/ClientServerCommunication.dir/clean:
-	cd /home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/build/CommunicateWithServer && $(CMAKE_COMMAND) -P CMakeFiles/ClientServerCommunication.dir/cmake_clean.cmake
+	cd /home/ilyanyrkov/CompressedCloud/project/Client/build/CommunicateWithServer && $(CMAKE_COMMAND) -P CMakeFiles/ClientServerCommunication.dir/cmake_clean.cmake
 .PHONY : CommunicateWithServer/CMakeFiles/ClientServerCommunication.dir/clean
 
 CommunicateWithServer/CMakeFiles/ClientServerCommunication.dir/depend:
-	cd /home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lyalyashechka/TP/c_c++/project/Cloud/project/Client /home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/CommunicateWithServer /home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/build /home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/build/CommunicateWithServer /home/lyalyashechka/TP/c_c++/project/Cloud/project/Client/build/CommunicateWithServer/CMakeFiles/ClientServerCommunication.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ilyanyrkov/CompressedCloud/project/Client/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ilyanyrkov/CompressedCloud/project/Client /home/ilyanyrkov/CompressedCloud/project/Client/CommunicateWithServer /home/ilyanyrkov/CompressedCloud/project/Client/build /home/ilyanyrkov/CompressedCloud/project/Client/build/CommunicateWithServer /home/ilyanyrkov/CompressedCloud/project/Client/build/CommunicateWithServer/CMakeFiles/ClientServerCommunication.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CommunicateWithServer/CMakeFiles/ClientServerCommunication.dir/depend
 

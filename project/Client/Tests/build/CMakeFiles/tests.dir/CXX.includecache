@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../../Watcher/include/Watcher.h
+cstdint
+-
+filesystem
+-
+vector
+-
+
+/home/ilyanyrkov/CompressedCloud/project/Client/Tests/client_tests.cpp
+gtest/gtest.h
+-
+Watcher.h
+/home/ilyanyrkov/CompressedCloud/project/Client/Tests/Watcher.h
+filesystem
+-
+fstream
+-
+

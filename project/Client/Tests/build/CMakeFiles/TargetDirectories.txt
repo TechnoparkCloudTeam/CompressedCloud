@@ -1,0 +1,5 @@
+/home/ilyanyrkov/CompressedCloud/project/Client/Tests/build/CMakeFiles/rebuild_cache.dir
+/home/ilyanyrkov/CompressedCloud/project/Client/Tests/build/CMakeFiles/edit_cache.dir
+/home/ilyanyrkov/CompressedCloud/project/Client/Tests/build/CMakeFiles/test.dir
+/home/ilyanyrkov/CompressedCloud/project/Client/Tests/build/CMakeFiles/tests.dir
+/home/ilyanyrkov/CompressedCloud/project/Client/Tests/build/CMakeFiles/client.dir

@@ -44,10 +44,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/FIleStorage
+CMAKE_SOURCE_DIR = /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/FIleStorage/build
+CMAKE_BINARY_DIR = /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/build
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -74,14 +74,14 @@ clean: CMakeFiles/FileStorage.dir/clean
 CMakeFiles/FileStorage.dir/all:
 	$(MAKE) -f CMakeFiles/FileStorage.dir/build.make CMakeFiles/FileStorage.dir/depend
 	$(MAKE) -f CMakeFiles/FileStorage.dir/build.make CMakeFiles/FileStorage.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/FIleStorage/build/CMakeFiles --progress-num=1,2,3 "Built target FileStorage"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/build/CMakeFiles --progress-num=1,2,3 "Built target FileStorage"
 .PHONY : CMakeFiles/FileStorage.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/FileStorage.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/FIleStorage/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/FileStorage.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/FIleStorage/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/build/CMakeFiles 0
 .PHONY : CMakeFiles/FileStorage.dir/rule
 
 # Convenience name for target.

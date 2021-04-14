@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/MetaDataBase
+CMAKE_SOURCE_DIR = /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/MetaDataBase/build
+CMAKE_BINARY_DIR = /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/MetaDataBase/build/CMakeFiles /home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/MetaDataBase/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/build/CMakeFiles /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lyalyashechka/TP/c_c++/project/Cloud/project/DataBase/MetaDataBase/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

@@ -14,6 +14,7 @@ public:
 	void SendRequest() override;
 	void SendAnswer() override;
 	void CheckForConflicts() override;
+	void GetStatus() override;
 private:
 	
 	void CompareFileHashes();

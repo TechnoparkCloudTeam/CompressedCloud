@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../../Network/CommunicateWithUser/include/RequestsProcessor.h
+map
+-
+
+../../Network/CommunicateWithUser/include/UserAccess.h
+string
+-
+vector
+-
+queue
+-
+
+../../Network/Syncho/include/Synchronisator.h
+
+/home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/RequestsProcessor.cpp
+RequestsProcessor.h
+/home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/RequestsProcessor.h
+
+/home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/UserAccess.cpp
+UserAccess.h
+/home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/UserAccess.h
+
+/home/ilyanyrkov/CompressedCloud/project/Network/Syncho/src/Synchronisator.cpp
+Synchronisator.h
+/home/ilyanyrkov/CompressedCloud/project/Network/Syncho/src/Synchronisator.h
+

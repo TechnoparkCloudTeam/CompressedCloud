@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/Tests
+CMAKE_SOURCE_DIR = /home/ilyanyrkov/CompressedCloud/project/DataBase/Tests
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/Tests/build
+CMAKE_BINARY_DIR = /home/ilyanyrkov/CompressedCloud/project/DataBase/Tests/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -91,9 +91,9 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/Tests/build/CMakeFiles /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/Tests/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ilyanyrkov/CompressedCloud/project/DataBase/Tests/build/CMakeFiles /home/ilyanyrkov/CompressedCloud/project/DataBase/Tests/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/Tests/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ilyanyrkov/CompressedCloud/project/DataBase/Tests/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -135,6 +135,19 @@ tests/fast:
 .PHONY : tests/fast
 
 #=============================================================================
+# Target rules for targets named network
+
+# Build rule for target.
+network: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 network
+.PHONY : network
+
+# fast build rule for target.
+network/fast:
+	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/build
+.PHONY : network/fast
+
+#=============================================================================
 # Target rules for targets named database
 
 # Build rule for target.
@@ -174,59 +187,140 @@ database_tests.cpp.s:
 	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/database_tests.cpp.s
 .PHONY : database_tests.cpp.s
 
-home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.o: home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp.o
+home/ilyanyrkov/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.o: home/ilyanyrkov/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp.o
 
-.PHONY : home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.o
-
-# target to build an object file
-home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp.o:
-	$(MAKE) -f CMakeFiles/database.dir/build.make CMakeFiles/database.dir/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp.o
-.PHONY : home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp.o
-
-home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.i: home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp.i
-
-.PHONY : home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.i
-
-# target to preprocess a source file
-home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp.i:
-	$(MAKE) -f CMakeFiles/database.dir/build.make CMakeFiles/database.dir/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp.i
-.PHONY : home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp.i
-
-home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.s: home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp.s
-
-.PHONY : home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.s
-
-# target to generate assembly for a file
-home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp.s:
-	$(MAKE) -f CMakeFiles/database.dir/build.make CMakeFiles/database.dir/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp.s
-.PHONY : home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp.s
-
-home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.o: home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp.o
-
-.PHONY : home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.o
+.PHONY : home/ilyanyrkov/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.o
 
 # target to build an object file
-home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp.o:
-	$(MAKE) -f CMakeFiles/database.dir/build.make CMakeFiles/database.dir/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp.o
-.PHONY : home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp.o
+home/ilyanyrkov/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp.o:
+	$(MAKE) -f CMakeFiles/database.dir/build.make CMakeFiles/database.dir/home/ilyanyrkov/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp.o
+.PHONY : home/ilyanyrkov/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp.o
 
-home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.i: home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp.i
+home/ilyanyrkov/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.i: home/ilyanyrkov/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp.i
 
-.PHONY : home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.i
+.PHONY : home/ilyanyrkov/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.i
 
 # target to preprocess a source file
-home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp.i:
-	$(MAKE) -f CMakeFiles/database.dir/build.make CMakeFiles/database.dir/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp.i
-.PHONY : home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp.i
+home/ilyanyrkov/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp.i:
+	$(MAKE) -f CMakeFiles/database.dir/build.make CMakeFiles/database.dir/home/ilyanyrkov/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp.i
+.PHONY : home/ilyanyrkov/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp.i
 
-home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.s: home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp.s
+home/ilyanyrkov/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.s: home/ilyanyrkov/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp.s
 
-.PHONY : home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.s
+.PHONY : home/ilyanyrkov/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.s
 
 # target to generate assembly for a file
-home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp.s:
-	$(MAKE) -f CMakeFiles/database.dir/build.make CMakeFiles/database.dir/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp.s
-.PHONY : home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp.s
+home/ilyanyrkov/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp.s:
+	$(MAKE) -f CMakeFiles/database.dir/build.make CMakeFiles/database.dir/home/ilyanyrkov/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp.s
+.PHONY : home/ilyanyrkov/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp.s
+
+home/ilyanyrkov/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.o: home/ilyanyrkov/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp.o
+
+.PHONY : home/ilyanyrkov/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.o
+
+# target to build an object file
+home/ilyanyrkov/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp.o:
+	$(MAKE) -f CMakeFiles/database.dir/build.make CMakeFiles/database.dir/home/ilyanyrkov/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp.o
+.PHONY : home/ilyanyrkov/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp.o
+
+home/ilyanyrkov/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.i: home/ilyanyrkov/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp.i
+
+.PHONY : home/ilyanyrkov/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.i
+
+# target to preprocess a source file
+home/ilyanyrkov/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp.i:
+	$(MAKE) -f CMakeFiles/database.dir/build.make CMakeFiles/database.dir/home/ilyanyrkov/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp.i
+.PHONY : home/ilyanyrkov/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp.i
+
+home/ilyanyrkov/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.s: home/ilyanyrkov/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp.s
+
+.PHONY : home/ilyanyrkov/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.s
+
+# target to generate assembly for a file
+home/ilyanyrkov/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp.s:
+	$(MAKE) -f CMakeFiles/database.dir/build.make CMakeFiles/database.dir/home/ilyanyrkov/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp.s
+.PHONY : home/ilyanyrkov/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp.s
+
+home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/RequestsProcessor.o: home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/RequestsProcessor.cpp.o
+
+.PHONY : home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/RequestsProcessor.o
+
+# target to build an object file
+home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/RequestsProcessor.cpp.o:
+	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/RequestsProcessor.cpp.o
+.PHONY : home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/RequestsProcessor.cpp.o
+
+home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/RequestsProcessor.i: home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/RequestsProcessor.cpp.i
+
+.PHONY : home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/RequestsProcessor.i
+
+# target to preprocess a source file
+home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/RequestsProcessor.cpp.i:
+	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/RequestsProcessor.cpp.i
+.PHONY : home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/RequestsProcessor.cpp.i
+
+home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/RequestsProcessor.s: home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/RequestsProcessor.cpp.s
+
+.PHONY : home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/RequestsProcessor.s
+
+# target to generate assembly for a file
+home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/RequestsProcessor.cpp.s:
+	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/RequestsProcessor.cpp.s
+.PHONY : home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/RequestsProcessor.cpp.s
+
+home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/UserAccess.o: home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/UserAccess.cpp.o
+
+.PHONY : home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/UserAccess.o
+
+# target to build an object file
+home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/UserAccess.cpp.o:
+	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/UserAccess.cpp.o
+.PHONY : home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/UserAccess.cpp.o
+
+home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/UserAccess.i: home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/UserAccess.cpp.i
+
+.PHONY : home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/UserAccess.i
+
+# target to preprocess a source file
+home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/UserAccess.cpp.i:
+	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/UserAccess.cpp.i
+.PHONY : home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/UserAccess.cpp.i
+
+home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/UserAccess.s: home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/UserAccess.cpp.s
+
+.PHONY : home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/UserAccess.s
+
+# target to generate assembly for a file
+home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/UserAccess.cpp.s:
+	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/UserAccess.cpp.s
+.PHONY : home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/UserAccess.cpp.s
+
+home/ilyanyrkov/CompressedCloud/project/Network/Syncho/src/Synchronisator.o: home/ilyanyrkov/CompressedCloud/project/Network/Syncho/src/Synchronisator.cpp.o
+
+.PHONY : home/ilyanyrkov/CompressedCloud/project/Network/Syncho/src/Synchronisator.o
+
+# target to build an object file
+home/ilyanyrkov/CompressedCloud/project/Network/Syncho/src/Synchronisator.cpp.o:
+	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/home/ilyanyrkov/CompressedCloud/project/Network/Syncho/src/Synchronisator.cpp.o
+.PHONY : home/ilyanyrkov/CompressedCloud/project/Network/Syncho/src/Synchronisator.cpp.o
+
+home/ilyanyrkov/CompressedCloud/project/Network/Syncho/src/Synchronisator.i: home/ilyanyrkov/CompressedCloud/project/Network/Syncho/src/Synchronisator.cpp.i
+
+.PHONY : home/ilyanyrkov/CompressedCloud/project/Network/Syncho/src/Synchronisator.i
+
+# target to preprocess a source file
+home/ilyanyrkov/CompressedCloud/project/Network/Syncho/src/Synchronisator.cpp.i:
+	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/home/ilyanyrkov/CompressedCloud/project/Network/Syncho/src/Synchronisator.cpp.i
+.PHONY : home/ilyanyrkov/CompressedCloud/project/Network/Syncho/src/Synchronisator.cpp.i
+
+home/ilyanyrkov/CompressedCloud/project/Network/Syncho/src/Synchronisator.s: home/ilyanyrkov/CompressedCloud/project/Network/Syncho/src/Synchronisator.cpp.s
+
+.PHONY : home/ilyanyrkov/CompressedCloud/project/Network/Syncho/src/Synchronisator.s
+
+# target to generate assembly for a file
+home/ilyanyrkov/CompressedCloud/project/Network/Syncho/src/Synchronisator.cpp.s:
+	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/home/ilyanyrkov/CompressedCloud/project/Network/Syncho/src/Synchronisator.cpp.s
+.PHONY : home/ilyanyrkov/CompressedCloud/project/Network/Syncho/src/Synchronisator.cpp.s
 
 # Help Target
 help:
@@ -235,19 +329,29 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
+	@echo "... tests"
 	@echo "... edit_cache"
 	@echo "... test"
-	@echo "... tests"
+	@echo "... network"
 	@echo "... database"
 	@echo "... database_tests.o"
 	@echo "... database_tests.i"
 	@echo "... database_tests.s"
-	@echo "... home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.o"
-	@echo "... home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.i"
-	@echo "... home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.s"
-	@echo "... home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.o"
-	@echo "... home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.i"
-	@echo "... home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.s"
+	@echo "... home/ilyanyrkov/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.o"
+	@echo "... home/ilyanyrkov/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.i"
+	@echo "... home/ilyanyrkov/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.s"
+	@echo "... home/ilyanyrkov/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.o"
+	@echo "... home/ilyanyrkov/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.i"
+	@echo "... home/ilyanyrkov/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.s"
+	@echo "... home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/RequestsProcessor.o"
+	@echo "... home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/RequestsProcessor.i"
+	@echo "... home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/RequestsProcessor.s"
+	@echo "... home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/UserAccess.o"
+	@echo "... home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/UserAccess.i"
+	@echo "... home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/UserAccess.s"
+	@echo "... home/ilyanyrkov/CompressedCloud/project/Network/Syncho/src/Synchronisator.o"
+	@echo "... home/ilyanyrkov/CompressedCloud/project/Network/Syncho/src/Synchronisator.i"
+	@echo "... home/ilyanyrkov/CompressedCloud/project/Network/Syncho/src/Synchronisator.s"
 .PHONY : help
 
 

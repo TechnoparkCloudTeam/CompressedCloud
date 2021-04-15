@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/Tests/database_tests.cpp" "/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/Tests/build/CMakeFiles/tests.dir/database_tests.cpp.o"
+  "/home/ilyanyrkov/CompressedCloud/project/DataBase/Tests/database_tests.cpp" "/home/ilyanyrkov/CompressedCloud/project/DataBase/Tests/build/CMakeFiles/tests.dir/database_tests.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -12,11 +12,14 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../../FileStorage/include"
   "../../MetaDataBase/include"
+  "../../../Network/CommunicateWithUser/include"
+  "../../../Network/Syncho/include"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/Tests/build/CMakeFiles/database.dir/DependInfo.cmake"
+  "/home/ilyanyrkov/CompressedCloud/project/DataBase/Tests/build/CMakeFiles/database.dir/DependInfo.cmake"
+  "/home/ilyanyrkov/CompressedCloud/project/DataBase/Tests/build/CMakeFiles/network.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

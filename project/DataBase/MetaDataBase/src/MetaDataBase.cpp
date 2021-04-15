@@ -31,3 +31,7 @@ void MetaDataBase::RemoveUserFromDir() {
 void MetaDataBase::GetStatus() {
     return;
 }
+
+void MetaDataBase::SendAnswer() {
+    return;
+}

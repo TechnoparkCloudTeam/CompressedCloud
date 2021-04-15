@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network
+CMAKE_SOURCE_DIR = /home/ilyanyrkov/CompressedCloud/project/Network
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build
+CMAKE_BINARY_DIR = /home/ilyanyrkov/CompressedCloud/project/Network/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build/CMakeFiles /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ilyanyrkov/CompressedCloud/project/Network/build/CMakeFiles /home/ilyanyrkov/CompressedCloud/project/Network/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ilyanyrkov/CompressedCloud/project/Network/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -124,6 +124,19 @@ Network/fast:
 .PHONY : Network/fast
 
 #=============================================================================
+# Target rules for targets named networklib
+
+# Build rule for target.
+networklib: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 networklib
+.PHONY : networklib
+
+# fast build rule for target.
+networklib/fast:
+	$(MAKE) -f CMakeFiles/networklib.dir/build.make CMakeFiles/networklib.dir/build
+.PHONY : networklib/fast
+
+#=============================================================================
 # Target rules for targets named CommunicationWithUser
 
 # Build rule for target.
@@ -148,6 +161,126 @@ Synchronisator: cmake_check_build_system
 Synchronisator/fast:
 	$(MAKE) -f Syncho/CMakeFiles/Synchronisator.dir/build.make Syncho/CMakeFiles/Synchronisator.dir/build
 .PHONY : Synchronisator/fast
+
+#=============================================================================
+# Target rules for targets named tests
+
+# Build rule for target.
+tests: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tests
+.PHONY : tests
+
+# fast build rule for target.
+tests/fast:
+	$(MAKE) -f Tests/CMakeFiles/tests.dir/build.make Tests/CMakeFiles/tests.dir/build
+.PHONY : tests/fast
+
+#=============================================================================
+# Target rules for targets named network
+
+# Build rule for target.
+network: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 network
+.PHONY : network
+
+# fast build rule for target.
+network/fast:
+	$(MAKE) -f Tests/CMakeFiles/network.dir/build.make Tests/CMakeFiles/network.dir/build
+.PHONY : network/fast
+
+#=============================================================================
+# Target rules for targets named database
+
+# Build rule for target.
+database: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 database
+.PHONY : database
+
+# fast build rule for target.
+database/fast:
+	$(MAKE) -f Tests/CMakeFiles/database.dir/build.make Tests/CMakeFiles/database.dir/build
+.PHONY : database/fast
+
+CommunicateWithUser/src/RequestsProcessor.o: CommunicateWithUser/src/RequestsProcessor.cpp.o
+
+.PHONY : CommunicateWithUser/src/RequestsProcessor.o
+
+# target to build an object file
+CommunicateWithUser/src/RequestsProcessor.cpp.o:
+	$(MAKE) -f CMakeFiles/networklib.dir/build.make CMakeFiles/networklib.dir/CommunicateWithUser/src/RequestsProcessor.cpp.o
+.PHONY : CommunicateWithUser/src/RequestsProcessor.cpp.o
+
+CommunicateWithUser/src/RequestsProcessor.i: CommunicateWithUser/src/RequestsProcessor.cpp.i
+
+.PHONY : CommunicateWithUser/src/RequestsProcessor.i
+
+# target to preprocess a source file
+CommunicateWithUser/src/RequestsProcessor.cpp.i:
+	$(MAKE) -f CMakeFiles/networklib.dir/build.make CMakeFiles/networklib.dir/CommunicateWithUser/src/RequestsProcessor.cpp.i
+.PHONY : CommunicateWithUser/src/RequestsProcessor.cpp.i
+
+CommunicateWithUser/src/RequestsProcessor.s: CommunicateWithUser/src/RequestsProcessor.cpp.s
+
+.PHONY : CommunicateWithUser/src/RequestsProcessor.s
+
+# target to generate assembly for a file
+CommunicateWithUser/src/RequestsProcessor.cpp.s:
+	$(MAKE) -f CMakeFiles/networklib.dir/build.make CMakeFiles/networklib.dir/CommunicateWithUser/src/RequestsProcessor.cpp.s
+.PHONY : CommunicateWithUser/src/RequestsProcessor.cpp.s
+
+CommunicateWithUser/src/UserAccess.o: CommunicateWithUser/src/UserAccess.cpp.o
+
+.PHONY : CommunicateWithUser/src/UserAccess.o
+
+# target to build an object file
+CommunicateWithUser/src/UserAccess.cpp.o:
+	$(MAKE) -f CMakeFiles/networklib.dir/build.make CMakeFiles/networklib.dir/CommunicateWithUser/src/UserAccess.cpp.o
+.PHONY : CommunicateWithUser/src/UserAccess.cpp.o
+
+CommunicateWithUser/src/UserAccess.i: CommunicateWithUser/src/UserAccess.cpp.i
+
+.PHONY : CommunicateWithUser/src/UserAccess.i
+
+# target to preprocess a source file
+CommunicateWithUser/src/UserAccess.cpp.i:
+	$(MAKE) -f CMakeFiles/networklib.dir/build.make CMakeFiles/networklib.dir/CommunicateWithUser/src/UserAccess.cpp.i
+.PHONY : CommunicateWithUser/src/UserAccess.cpp.i
+
+CommunicateWithUser/src/UserAccess.s: CommunicateWithUser/src/UserAccess.cpp.s
+
+.PHONY : CommunicateWithUser/src/UserAccess.s
+
+# target to generate assembly for a file
+CommunicateWithUser/src/UserAccess.cpp.s:
+	$(MAKE) -f CMakeFiles/networklib.dir/build.make CMakeFiles/networklib.dir/CommunicateWithUser/src/UserAccess.cpp.s
+.PHONY : CommunicateWithUser/src/UserAccess.cpp.s
+
+Syncho/src/Synchronisator.o: Syncho/src/Synchronisator.cpp.o
+
+.PHONY : Syncho/src/Synchronisator.o
+
+# target to build an object file
+Syncho/src/Synchronisator.cpp.o:
+	$(MAKE) -f CMakeFiles/networklib.dir/build.make CMakeFiles/networklib.dir/Syncho/src/Synchronisator.cpp.o
+.PHONY : Syncho/src/Synchronisator.cpp.o
+
+Syncho/src/Synchronisator.i: Syncho/src/Synchronisator.cpp.i
+
+.PHONY : Syncho/src/Synchronisator.i
+
+# target to preprocess a source file
+Syncho/src/Synchronisator.cpp.i:
+	$(MAKE) -f CMakeFiles/networklib.dir/build.make CMakeFiles/networklib.dir/Syncho/src/Synchronisator.cpp.i
+.PHONY : Syncho/src/Synchronisator.cpp.i
+
+Syncho/src/Synchronisator.s: Syncho/src/Synchronisator.cpp.s
+
+.PHONY : Syncho/src/Synchronisator.s
+
+# target to generate assembly for a file
+Syncho/src/Synchronisator.cpp.s:
+	$(MAKE) -f CMakeFiles/networklib.dir/build.make CMakeFiles/networklib.dir/Syncho/src/Synchronisator.cpp.s
+.PHONY : Syncho/src/Synchronisator.cpp.s
 
 main.o: main.cpp.o
 
@@ -185,8 +318,21 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Network"
+	@echo "... networklib"
 	@echo "... CommunicationWithUser"
 	@echo "... Synchronisator"
+	@echo "... tests"
+	@echo "... network"
+	@echo "... database"
+	@echo "... CommunicateWithUser/src/RequestsProcessor.o"
+	@echo "... CommunicateWithUser/src/RequestsProcessor.i"
+	@echo "... CommunicateWithUser/src/RequestsProcessor.s"
+	@echo "... CommunicateWithUser/src/UserAccess.o"
+	@echo "... CommunicateWithUser/src/UserAccess.i"
+	@echo "... CommunicateWithUser/src/UserAccess.s"
+	@echo "... Syncho/src/Synchronisator.o"
+	@echo "... Syncho/src/Synchronisator.i"
+	@echo "... Syncho/src/Synchronisator.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

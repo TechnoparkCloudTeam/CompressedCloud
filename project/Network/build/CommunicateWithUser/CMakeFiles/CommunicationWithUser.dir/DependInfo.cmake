@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/CommunicateWithUser/main.cpp" "/home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build/CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/main.cpp.o"
-  "/home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/CommunicateWithUser/src/RequestsProcessor.cpp" "/home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build/CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/src/RequestsProcessor.cpp.o"
-  "/home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/CommunicateWithUser/src/UserAccess.cpp" "/home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build/CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/src/UserAccess.cpp.o"
+  "/home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/main.cpp" "/home/ilyanyrkov/CompressedCloud/project/Network/build/CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/main.cpp.o"
+  "/home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/RequestsProcessor.cpp" "/home/ilyanyrkov/CompressedCloud/project/Network/build/CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/src/RequestsProcessor.cpp.o"
+  "/home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/UserAccess.cpp" "/home/ilyanyrkov/CompressedCloud/project/Network/build/CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/src/UserAccess.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

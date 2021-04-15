@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../FileStorage/include/FileStorage.h
+string
+-
+
+../MetaDataBase/include/MetaDataBase.h
+
+/home/ilyanyrkov/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp
+FileStorage.h
+/home/ilyanyrkov/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.h
+
+/home/ilyanyrkov/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp
+MetaDataBase.h
+/home/ilyanyrkov/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.h
+

@@ -48,24 +48,13 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/lida/Compressed_cloud/CompressedCloud/project/DataBase
+CMAKE_SOURCE_DIR = /home/ilyanyrkov/CompressedCloud/project/DataBase
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/build
+CMAKE_BINARY_DIR = /home/ilyanyrkov/CompressedCloud/project/DataBase/build
 
 #=============================================================================
 # Targets provided globally by CMake.
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -78,11 +67,22 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/build/CMakeFiles /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ilyanyrkov/CompressedCloud/project/DataBase/build/CMakeFiles /home/ilyanyrkov/CompressedCloud/project/DataBase/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ilyanyrkov/CompressedCloud/project/DataBase/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -124,17 +124,17 @@ DataBase/fast:
 .PHONY : DataBase/fast
 
 #=============================================================================
-# Target rules for targets named network
+# Target rules for targets named databaselib
 
 # Build rule for target.
-network: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 network
-.PHONY : network
+databaselib: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 databaselib
+.PHONY : databaselib
 
 # fast build rule for target.
-network/fast:
-	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/build
-.PHONY : network/fast
+databaselib/fast:
+	$(MAKE) -f CMakeFiles/databaselib.dir/build.make CMakeFiles/databaselib.dir/build
+.PHONY : databaselib/fast
 
 #=============================================================================
 # Target rules for targets named FileStorage
@@ -162,13 +162,52 @@ MetaDataBase/fast:
 	$(MAKE) -f MetaDataBase/CMakeFiles/MetaDataBase.dir/build.make MetaDataBase/CMakeFiles/MetaDataBase.dir/build
 .PHONY : MetaDataBase/fast
 
+#=============================================================================
+# Target rules for targets named tests
+
+# Build rule for target.
+tests: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tests
+.PHONY : tests
+
+# fast build rule for target.
+tests/fast:
+	$(MAKE) -f Tests/CMakeFiles/tests.dir/build.make Tests/CMakeFiles/tests.dir/build
+.PHONY : tests/fast
+
+#=============================================================================
+# Target rules for targets named network
+
+# Build rule for target.
+network: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 network
+.PHONY : network
+
+# fast build rule for target.
+network/fast:
+	$(MAKE) -f Tests/CMakeFiles/network.dir/build.make Tests/CMakeFiles/network.dir/build
+.PHONY : network/fast
+
+#=============================================================================
+# Target rules for targets named database
+
+# Build rule for target.
+database: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 database
+.PHONY : database
+
+# fast build rule for target.
+database/fast:
+	$(MAKE) -f Tests/CMakeFiles/database.dir/build.make Tests/CMakeFiles/database.dir/build
+.PHONY : database/fast
+
 FileStorage/src/FileStorage.o: FileStorage/src/FileStorage.cpp.o
 
 .PHONY : FileStorage/src/FileStorage.o
 
 # target to build an object file
 FileStorage/src/FileStorage.cpp.o:
-	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/FileStorage/src/FileStorage.cpp.o
+	$(MAKE) -f CMakeFiles/databaselib.dir/build.make CMakeFiles/databaselib.dir/FileStorage/src/FileStorage.cpp.o
 .PHONY : FileStorage/src/FileStorage.cpp.o
 
 FileStorage/src/FileStorage.i: FileStorage/src/FileStorage.cpp.i
@@ -177,7 +216,7 @@ FileStorage/src/FileStorage.i: FileStorage/src/FileStorage.cpp.i
 
 # target to preprocess a source file
 FileStorage/src/FileStorage.cpp.i:
-	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/FileStorage/src/FileStorage.cpp.i
+	$(MAKE) -f CMakeFiles/databaselib.dir/build.make CMakeFiles/databaselib.dir/FileStorage/src/FileStorage.cpp.i
 .PHONY : FileStorage/src/FileStorage.cpp.i
 
 FileStorage/src/FileStorage.s: FileStorage/src/FileStorage.cpp.s
@@ -186,7 +225,7 @@ FileStorage/src/FileStorage.s: FileStorage/src/FileStorage.cpp.s
 
 # target to generate assembly for a file
 FileStorage/src/FileStorage.cpp.s:
-	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/FileStorage/src/FileStorage.cpp.s
+	$(MAKE) -f CMakeFiles/databaselib.dir/build.make CMakeFiles/databaselib.dir/FileStorage/src/FileStorage.cpp.s
 .PHONY : FileStorage/src/FileStorage.cpp.s
 
 MetaDataBase/src/MetaDataBase.o: MetaDataBase/src/MetaDataBase.cpp.o
@@ -195,7 +234,7 @@ MetaDataBase/src/MetaDataBase.o: MetaDataBase/src/MetaDataBase.cpp.o
 
 # target to build an object file
 MetaDataBase/src/MetaDataBase.cpp.o:
-	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/MetaDataBase/src/MetaDataBase.cpp.o
+	$(MAKE) -f CMakeFiles/databaselib.dir/build.make CMakeFiles/databaselib.dir/MetaDataBase/src/MetaDataBase.cpp.o
 .PHONY : MetaDataBase/src/MetaDataBase.cpp.o
 
 MetaDataBase/src/MetaDataBase.i: MetaDataBase/src/MetaDataBase.cpp.i
@@ -204,7 +243,7 @@ MetaDataBase/src/MetaDataBase.i: MetaDataBase/src/MetaDataBase.cpp.i
 
 # target to preprocess a source file
 MetaDataBase/src/MetaDataBase.cpp.i:
-	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/MetaDataBase/src/MetaDataBase.cpp.i
+	$(MAKE) -f CMakeFiles/databaselib.dir/build.make CMakeFiles/databaselib.dir/MetaDataBase/src/MetaDataBase.cpp.i
 .PHONY : MetaDataBase/src/MetaDataBase.cpp.i
 
 MetaDataBase/src/MetaDataBase.s: MetaDataBase/src/MetaDataBase.cpp.s
@@ -213,7 +252,7 @@ MetaDataBase/src/MetaDataBase.s: MetaDataBase/src/MetaDataBase.cpp.s
 
 # target to generate assembly for a file
 MetaDataBase/src/MetaDataBase.cpp.s:
-	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/MetaDataBase/src/MetaDataBase.cpp.s
+	$(MAKE) -f CMakeFiles/databaselib.dir/build.make CMakeFiles/databaselib.dir/MetaDataBase/src/MetaDataBase.cpp.s
 .PHONY : MetaDataBase/src/MetaDataBase.cpp.s
 
 main.o: main.cpp.o
@@ -249,12 +288,15 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
-	@echo "... DataBase"
 	@echo "... edit_cache"
-	@echo "... network"
+	@echo "... DataBase"
+	@echo "... rebuild_cache"
+	@echo "... databaselib"
 	@echo "... FileStorage"
 	@echo "... MetaDataBase"
+	@echo "... tests"
+	@echo "... network"
+	@echo "... database"
 	@echo "... FileStorage/src/FileStorage.o"
 	@echo "... FileStorage/src/FileStorage.i"
 	@echo "... FileStorage/src/FileStorage.s"

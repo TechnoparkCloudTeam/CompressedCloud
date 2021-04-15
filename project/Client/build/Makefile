@@ -124,17 +124,17 @@ Client/fast:
 .PHONY : Client/fast
 
 #=============================================================================
-# Target rules for targets named network
+# Target rules for targets named clientlib
 
 # Build rule for target.
-network: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 network
-.PHONY : network
+clientlib: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 clientlib
+.PHONY : clientlib
 
 # fast build rule for target.
-network/fast:
-	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/build
-.PHONY : network/fast
+clientlib/fast:
+	$(MAKE) -f CMakeFiles/clientlib.dir/build.make CMakeFiles/clientlib.dir/build
+.PHONY : clientlib/fast
 
 #=============================================================================
 # Target rules for targets named Watcher
@@ -188,13 +188,39 @@ ClientServerCommunication/fast:
 	$(MAKE) -f CommunicateWithServer/CMakeFiles/ClientServerCommunication.dir/build.make CommunicateWithServer/CMakeFiles/ClientServerCommunication.dir/build
 .PHONY : ClientServerCommunication/fast
 
+#=============================================================================
+# Target rules for targets named tests
+
+# Build rule for target.
+tests: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tests
+.PHONY : tests
+
+# fast build rule for target.
+tests/fast:
+	$(MAKE) -f Tests/CMakeFiles/tests.dir/build.make Tests/CMakeFiles/tests.dir/build
+.PHONY : tests/fast
+
+#=============================================================================
+# Target rules for targets named client
+
+# Build rule for target.
+client: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 client
+.PHONY : client
+
+# fast build rule for target.
+client/fast:
+	$(MAKE) -f Tests/CMakeFiles/client.dir/build.make Tests/CMakeFiles/client.dir/build
+.PHONY : client/fast
+
 Chunker/src/Chunker.o: Chunker/src/Chunker.cpp.o
 
 .PHONY : Chunker/src/Chunker.o
 
 # target to build an object file
 Chunker/src/Chunker.cpp.o:
-	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/Chunker/src/Chunker.cpp.o
+	$(MAKE) -f CMakeFiles/clientlib.dir/build.make CMakeFiles/clientlib.dir/Chunker/src/Chunker.cpp.o
 .PHONY : Chunker/src/Chunker.cpp.o
 
 Chunker/src/Chunker.i: Chunker/src/Chunker.cpp.i
@@ -203,7 +229,7 @@ Chunker/src/Chunker.i: Chunker/src/Chunker.cpp.i
 
 # target to preprocess a source file
 Chunker/src/Chunker.cpp.i:
-	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/Chunker/src/Chunker.cpp.i
+	$(MAKE) -f CMakeFiles/clientlib.dir/build.make CMakeFiles/clientlib.dir/Chunker/src/Chunker.cpp.i
 .PHONY : Chunker/src/Chunker.cpp.i
 
 Chunker/src/Chunker.s: Chunker/src/Chunker.cpp.s
@@ -212,7 +238,7 @@ Chunker/src/Chunker.s: Chunker/src/Chunker.cpp.s
 
 # target to generate assembly for a file
 Chunker/src/Chunker.cpp.s:
-	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/Chunker/src/Chunker.cpp.s
+	$(MAKE) -f CMakeFiles/clientlib.dir/build.make CMakeFiles/clientlib.dir/Chunker/src/Chunker.cpp.s
 .PHONY : Chunker/src/Chunker.cpp.s
 
 CommunicateWithServer/src/ClientServerCommunication.o: CommunicateWithServer/src/ClientServerCommunication.cpp.o
@@ -221,7 +247,7 @@ CommunicateWithServer/src/ClientServerCommunication.o: CommunicateWithServer/src
 
 # target to build an object file
 CommunicateWithServer/src/ClientServerCommunication.cpp.o:
-	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/CommunicateWithServer/src/ClientServerCommunication.cpp.o
+	$(MAKE) -f CMakeFiles/clientlib.dir/build.make CMakeFiles/clientlib.dir/CommunicateWithServer/src/ClientServerCommunication.cpp.o
 .PHONY : CommunicateWithServer/src/ClientServerCommunication.cpp.o
 
 CommunicateWithServer/src/ClientServerCommunication.i: CommunicateWithServer/src/ClientServerCommunication.cpp.i
@@ -230,7 +256,7 @@ CommunicateWithServer/src/ClientServerCommunication.i: CommunicateWithServer/src
 
 # target to preprocess a source file
 CommunicateWithServer/src/ClientServerCommunication.cpp.i:
-	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/CommunicateWithServer/src/ClientServerCommunication.cpp.i
+	$(MAKE) -f CMakeFiles/clientlib.dir/build.make CMakeFiles/clientlib.dir/CommunicateWithServer/src/ClientServerCommunication.cpp.i
 .PHONY : CommunicateWithServer/src/ClientServerCommunication.cpp.i
 
 CommunicateWithServer/src/ClientServerCommunication.s: CommunicateWithServer/src/ClientServerCommunication.cpp.s
@@ -239,7 +265,7 @@ CommunicateWithServer/src/ClientServerCommunication.s: CommunicateWithServer/src
 
 # target to generate assembly for a file
 CommunicateWithServer/src/ClientServerCommunication.cpp.s:
-	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/CommunicateWithServer/src/ClientServerCommunication.cpp.s
+	$(MAKE) -f CMakeFiles/clientlib.dir/build.make CMakeFiles/clientlib.dir/CommunicateWithServer/src/ClientServerCommunication.cpp.s
 .PHONY : CommunicateWithServer/src/ClientServerCommunication.cpp.s
 
 ProgramInterface/src/ProgramInterface.o: ProgramInterface/src/ProgramInterface.cpp.o
@@ -248,7 +274,7 @@ ProgramInterface/src/ProgramInterface.o: ProgramInterface/src/ProgramInterface.c
 
 # target to build an object file
 ProgramInterface/src/ProgramInterface.cpp.o:
-	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/ProgramInterface/src/ProgramInterface.cpp.o
+	$(MAKE) -f CMakeFiles/clientlib.dir/build.make CMakeFiles/clientlib.dir/ProgramInterface/src/ProgramInterface.cpp.o
 .PHONY : ProgramInterface/src/ProgramInterface.cpp.o
 
 ProgramInterface/src/ProgramInterface.i: ProgramInterface/src/ProgramInterface.cpp.i
@@ -257,7 +283,7 @@ ProgramInterface/src/ProgramInterface.i: ProgramInterface/src/ProgramInterface.c
 
 # target to preprocess a source file
 ProgramInterface/src/ProgramInterface.cpp.i:
-	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/ProgramInterface/src/ProgramInterface.cpp.i
+	$(MAKE) -f CMakeFiles/clientlib.dir/build.make CMakeFiles/clientlib.dir/ProgramInterface/src/ProgramInterface.cpp.i
 .PHONY : ProgramInterface/src/ProgramInterface.cpp.i
 
 ProgramInterface/src/ProgramInterface.s: ProgramInterface/src/ProgramInterface.cpp.s
@@ -266,7 +292,7 @@ ProgramInterface/src/ProgramInterface.s: ProgramInterface/src/ProgramInterface.c
 
 # target to generate assembly for a file
 ProgramInterface/src/ProgramInterface.cpp.s:
-	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/ProgramInterface/src/ProgramInterface.cpp.s
+	$(MAKE) -f CMakeFiles/clientlib.dir/build.make CMakeFiles/clientlib.dir/ProgramInterface/src/ProgramInterface.cpp.s
 .PHONY : ProgramInterface/src/ProgramInterface.cpp.s
 
 Watcher/src/Watcher.o: Watcher/src/Watcher.cpp.o
@@ -275,7 +301,7 @@ Watcher/src/Watcher.o: Watcher/src/Watcher.cpp.o
 
 # target to build an object file
 Watcher/src/Watcher.cpp.o:
-	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/Watcher/src/Watcher.cpp.o
+	$(MAKE) -f CMakeFiles/clientlib.dir/build.make CMakeFiles/clientlib.dir/Watcher/src/Watcher.cpp.o
 .PHONY : Watcher/src/Watcher.cpp.o
 
 Watcher/src/Watcher.i: Watcher/src/Watcher.cpp.i
@@ -284,7 +310,7 @@ Watcher/src/Watcher.i: Watcher/src/Watcher.cpp.i
 
 # target to preprocess a source file
 Watcher/src/Watcher.cpp.i:
-	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/Watcher/src/Watcher.cpp.i
+	$(MAKE) -f CMakeFiles/clientlib.dir/build.make CMakeFiles/clientlib.dir/Watcher/src/Watcher.cpp.i
 .PHONY : Watcher/src/Watcher.cpp.i
 
 Watcher/src/Watcher.s: Watcher/src/Watcher.cpp.s
@@ -293,7 +319,7 @@ Watcher/src/Watcher.s: Watcher/src/Watcher.cpp.s
 
 # target to generate assembly for a file
 Watcher/src/Watcher.cpp.s:
-	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/Watcher/src/Watcher.cpp.s
+	$(MAKE) -f CMakeFiles/clientlib.dir/build.make CMakeFiles/clientlib.dir/Watcher/src/Watcher.cpp.s
 .PHONY : Watcher/src/Watcher.cpp.s
 
 main.o: main.cpp.o
@@ -332,11 +358,13 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... Client"
 	@echo "... edit_cache"
-	@echo "... network"
+	@echo "... clientlib"
 	@echo "... Watcher"
 	@echo "... ProgramInterface"
 	@echo "... Chunker"
 	@echo "... ClientServerCommunication"
+	@echo "... tests"
+	@echo "... client"
 	@echo "... Chunker/src/Chunker.o"
 	@echo "... Chunker/src/Chunker.i"
 	@echo "... Chunker/src/Chunker.s"

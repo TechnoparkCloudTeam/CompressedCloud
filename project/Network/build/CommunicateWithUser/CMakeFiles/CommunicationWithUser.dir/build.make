@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network
+CMAKE_SOURCE_DIR = /home/ilyanyrkov/CompressedCloud/project/Network
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build
+CMAKE_BINARY_DIR = /home/ilyanyrkov/CompressedCloud/project/Network/build
 
 # Include any dependencies generated for this target.
 include CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/depend.make
@@ -59,42 +59,42 @@ include CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/flags.make
 
 CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/src/RequestsProcessor.cpp.o: CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/flags.make
 CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/src/RequestsProcessor.cpp.o: ../CommunicateWithUser/src/RequestsProcessor.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/src/RequestsProcessor.cpp.o"
-	cd /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build/CommunicateWithUser && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CommunicationWithUser.dir/src/RequestsProcessor.cpp.o -c /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/CommunicateWithUser/src/RequestsProcessor.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ilyanyrkov/CompressedCloud/project/Network/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/src/RequestsProcessor.cpp.o"
+	cd /home/ilyanyrkov/CompressedCloud/project/Network/build/CommunicateWithUser && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CommunicationWithUser.dir/src/RequestsProcessor.cpp.o -c /home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/RequestsProcessor.cpp
 
 CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/src/RequestsProcessor.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CommunicationWithUser.dir/src/RequestsProcessor.cpp.i"
-	cd /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build/CommunicateWithUser && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/CommunicateWithUser/src/RequestsProcessor.cpp > CMakeFiles/CommunicationWithUser.dir/src/RequestsProcessor.cpp.i
+	cd /home/ilyanyrkov/CompressedCloud/project/Network/build/CommunicateWithUser && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/RequestsProcessor.cpp > CMakeFiles/CommunicationWithUser.dir/src/RequestsProcessor.cpp.i
 
 CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/src/RequestsProcessor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CommunicationWithUser.dir/src/RequestsProcessor.cpp.s"
-	cd /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build/CommunicateWithUser && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/CommunicateWithUser/src/RequestsProcessor.cpp -o CMakeFiles/CommunicationWithUser.dir/src/RequestsProcessor.cpp.s
+	cd /home/ilyanyrkov/CompressedCloud/project/Network/build/CommunicateWithUser && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/RequestsProcessor.cpp -o CMakeFiles/CommunicationWithUser.dir/src/RequestsProcessor.cpp.s
 
 CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/src/UserAccess.cpp.o: CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/flags.make
 CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/src/UserAccess.cpp.o: ../CommunicateWithUser/src/UserAccess.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/src/UserAccess.cpp.o"
-	cd /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build/CommunicateWithUser && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CommunicationWithUser.dir/src/UserAccess.cpp.o -c /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/CommunicateWithUser/src/UserAccess.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ilyanyrkov/CompressedCloud/project/Network/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/src/UserAccess.cpp.o"
+	cd /home/ilyanyrkov/CompressedCloud/project/Network/build/CommunicateWithUser && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CommunicationWithUser.dir/src/UserAccess.cpp.o -c /home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/UserAccess.cpp
 
 CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/src/UserAccess.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CommunicationWithUser.dir/src/UserAccess.cpp.i"
-	cd /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build/CommunicateWithUser && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/CommunicateWithUser/src/UserAccess.cpp > CMakeFiles/CommunicationWithUser.dir/src/UserAccess.cpp.i
+	cd /home/ilyanyrkov/CompressedCloud/project/Network/build/CommunicateWithUser && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/UserAccess.cpp > CMakeFiles/CommunicationWithUser.dir/src/UserAccess.cpp.i
 
 CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/src/UserAccess.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CommunicationWithUser.dir/src/UserAccess.cpp.s"
-	cd /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build/CommunicateWithUser && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/CommunicateWithUser/src/UserAccess.cpp -o CMakeFiles/CommunicationWithUser.dir/src/UserAccess.cpp.s
+	cd /home/ilyanyrkov/CompressedCloud/project/Network/build/CommunicateWithUser && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/UserAccess.cpp -o CMakeFiles/CommunicationWithUser.dir/src/UserAccess.cpp.s
 
 CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/main.cpp.o: CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/flags.make
 CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/main.cpp.o: ../CommunicateWithUser/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/main.cpp.o"
-	cd /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build/CommunicateWithUser && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CommunicationWithUser.dir/main.cpp.o -c /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/CommunicateWithUser/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ilyanyrkov/CompressedCloud/project/Network/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/main.cpp.o"
+	cd /home/ilyanyrkov/CompressedCloud/project/Network/build/CommunicateWithUser && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CommunicationWithUser.dir/main.cpp.o -c /home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/main.cpp
 
 CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CommunicationWithUser.dir/main.cpp.i"
-	cd /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build/CommunicateWithUser && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/CommunicateWithUser/main.cpp > CMakeFiles/CommunicationWithUser.dir/main.cpp.i
+	cd /home/ilyanyrkov/CompressedCloud/project/Network/build/CommunicateWithUser && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/main.cpp > CMakeFiles/CommunicationWithUser.dir/main.cpp.i
 
 CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CommunicationWithUser.dir/main.cpp.s"
-	cd /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build/CommunicateWithUser && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/CommunicateWithUser/main.cpp -o CMakeFiles/CommunicationWithUser.dir/main.cpp.s
+	cd /home/ilyanyrkov/CompressedCloud/project/Network/build/CommunicateWithUser && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/main.cpp -o CMakeFiles/CommunicationWithUser.dir/main.cpp.s
 
 # Object files for target CommunicationWithUser
 CommunicationWithUser_OBJECTS = \
@@ -110,8 +110,8 @@ CommunicateWithUser/CommunicationWithUser: CommunicateWithUser/CMakeFiles/Commun
 CommunicateWithUser/CommunicationWithUser: CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/main.cpp.o
 CommunicateWithUser/CommunicationWithUser: CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/build.make
 CommunicateWithUser/CommunicationWithUser: CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable CommunicationWithUser"
-	cd /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build/CommunicateWithUser && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/CommunicationWithUser.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ilyanyrkov/CompressedCloud/project/Network/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable CommunicationWithUser"
+	cd /home/ilyanyrkov/CompressedCloud/project/Network/build/CommunicateWithUser && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/CommunicationWithUser.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/build: CommunicateWithUser/CommunicationWithUser
@@ -119,10 +119,10 @@ CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/build: CommunicateWithU
 .PHONY : CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/build
 
 CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/clean:
-	cd /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build/CommunicateWithUser && $(CMAKE_COMMAND) -P CMakeFiles/CommunicationWithUser.dir/cmake_clean.cmake
+	cd /home/ilyanyrkov/CompressedCloud/project/Network/build/CommunicateWithUser && $(CMAKE_COMMAND) -P CMakeFiles/CommunicationWithUser.dir/cmake_clean.cmake
 .PHONY : CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/clean
 
 CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/depend:
-	cd /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/CommunicateWithUser /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build/CommunicateWithUser /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build/CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ilyanyrkov/CompressedCloud/project/Network/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ilyanyrkov/CompressedCloud/project/Network /home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser /home/ilyanyrkov/CompressedCloud/project/Network/build /home/ilyanyrkov/CompressedCloud/project/Network/build/CommunicateWithUser /home/ilyanyrkov/CompressedCloud/project/Network/build/CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/depend
 

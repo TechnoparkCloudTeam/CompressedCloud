@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/Syncho/main.cpp" "/home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build/Syncho/CMakeFiles/Synchronisator.dir/main.cpp.o"
-  "/home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/Syncho/src/Synchronisator.cpp" "/home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build/Syncho/CMakeFiles/Synchronisator.dir/src/Synchronisator.cpp.o"
+  "/home/ilyanyrkov/CompressedCloud/project/Network/Syncho/main.cpp" "/home/ilyanyrkov/CompressedCloud/project/Network/build/Syncho/CMakeFiles/Synchronisator.dir/main.cpp.o"
+  "/home/ilyanyrkov/CompressedCloud/project/Network/Syncho/src/Synchronisator.cpp" "/home/ilyanyrkov/CompressedCloud/project/Network/build/Syncho/CMakeFiles/Synchronisator.dir/src/Synchronisator.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

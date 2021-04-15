@@ -1,7 +1,7 @@
 /home/ilyanyrkov/CompressedCloud/project/Client/build/CMakeFiles/rebuild_cache.dir
 /home/ilyanyrkov/CompressedCloud/project/Client/build/CMakeFiles/Client.dir
 /home/ilyanyrkov/CompressedCloud/project/Client/build/CMakeFiles/edit_cache.dir
-/home/ilyanyrkov/CompressedCloud/project/Client/build/CMakeFiles/network.dir
+/home/ilyanyrkov/CompressedCloud/project/Client/build/CMakeFiles/clientlib.dir
 /home/ilyanyrkov/CompressedCloud/project/Client/build/Watcher/CMakeFiles/rebuild_cache.dir
 /home/ilyanyrkov/CompressedCloud/project/Client/build/Watcher/CMakeFiles/edit_cache.dir
 /home/ilyanyrkov/CompressedCloud/project/Client/build/Watcher/CMakeFiles/Watcher.dir
@@ -14,3 +14,7 @@
 /home/ilyanyrkov/CompressedCloud/project/Client/build/CommunicateWithServer/CMakeFiles/edit_cache.dir
 /home/ilyanyrkov/CompressedCloud/project/Client/build/CommunicateWithServer/CMakeFiles/rebuild_cache.dir
 /home/ilyanyrkov/CompressedCloud/project/Client/build/CommunicateWithServer/CMakeFiles/ClientServerCommunication.dir
+/home/ilyanyrkov/CompressedCloud/project/Client/build/Tests/CMakeFiles/rebuild_cache.dir
+/home/ilyanyrkov/CompressedCloud/project/Client/build/Tests/CMakeFiles/edit_cache.dir
+/home/ilyanyrkov/CompressedCloud/project/Client/build/Tests/CMakeFiles/tests.dir
+/home/ilyanyrkov/CompressedCloud/project/Client/build/Tests/CMakeFiles/client.dir

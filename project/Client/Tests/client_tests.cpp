@@ -1,10 +1,11 @@
 #include <gtest/gtest.h>
+#include "gmock/gmock.h"
+
 #include "Watcher.h"
 #include "Chunker.h"
 #include "ClientServerCommunication.h"
 #include <filesystem>
 #include <fstream>
-#include "gmock/gmock.h"
 
 TEST(Watcher, AddDirToWatch) {
     std::filesystem::path Path;

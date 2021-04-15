@@ -6,5 +6,5 @@ CXX_FLAGS =   -std=gnu++2a
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/Syncho/include 
+CXX_INCLUDES = -I/home/ilyanyrkov/CompressedCloud/project/Network/Syncho/include 
 

@@ -7,11 +7,12 @@ ADD_SUBDIRECTORY(Watcher)
 ADD_SUBDIRECTORY(ProgramInterface)
 ADD_SUBDIRECTORY(Chunker)
 ADD_SUBDIRECTORY(CommunicateWithServer)
+ADD_SUBDIRECTORY(Tests)
 INCLUDE_DIRECTORIES(ProgramInterface/include)
 INCLUDE_DIRECTORIES(Chunker/include)
 INCLUDE_DIRECTORIES(Watcher/include)
 INCLUDE_DIRECTORIES(CommunicateWithServer/include)
-ADD_LIBRARY(network STATIC
+ADD_LIBRARY(clientlib STATIC
         Watcher/src/Watcher.cpp
         ProgramInterface/src/ProgramInterface.cpp
         Chunker/src/Chunker.cpp

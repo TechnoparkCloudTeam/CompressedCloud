@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network
+CMAKE_SOURCE_DIR = /home/ilyanyrkov/CompressedCloud/project/Network
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build
+CMAKE_BINARY_DIR = /home/ilyanyrkov/CompressedCloud/project/Network/build
 
 # Include any dependencies generated for this target.
 include Syncho/CMakeFiles/Synchronisator.dir/depend.make
@@ -59,29 +59,29 @@ include Syncho/CMakeFiles/Synchronisator.dir/flags.make
 
 Syncho/CMakeFiles/Synchronisator.dir/src/Synchronisator.cpp.o: Syncho/CMakeFiles/Synchronisator.dir/flags.make
 Syncho/CMakeFiles/Synchronisator.dir/src/Synchronisator.cpp.o: ../Syncho/src/Synchronisator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object Syncho/CMakeFiles/Synchronisator.dir/src/Synchronisator.cpp.o"
-	cd /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build/Syncho && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Synchronisator.dir/src/Synchronisator.cpp.o -c /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/Syncho/src/Synchronisator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ilyanyrkov/CompressedCloud/project/Network/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object Syncho/CMakeFiles/Synchronisator.dir/src/Synchronisator.cpp.o"
+	cd /home/ilyanyrkov/CompressedCloud/project/Network/build/Syncho && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Synchronisator.dir/src/Synchronisator.cpp.o -c /home/ilyanyrkov/CompressedCloud/project/Network/Syncho/src/Synchronisator.cpp
 
 Syncho/CMakeFiles/Synchronisator.dir/src/Synchronisator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Synchronisator.dir/src/Synchronisator.cpp.i"
-	cd /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build/Syncho && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/Syncho/src/Synchronisator.cpp > CMakeFiles/Synchronisator.dir/src/Synchronisator.cpp.i
+	cd /home/ilyanyrkov/CompressedCloud/project/Network/build/Syncho && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ilyanyrkov/CompressedCloud/project/Network/Syncho/src/Synchronisator.cpp > CMakeFiles/Synchronisator.dir/src/Synchronisator.cpp.i
 
 Syncho/CMakeFiles/Synchronisator.dir/src/Synchronisator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Synchronisator.dir/src/Synchronisator.cpp.s"
-	cd /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build/Syncho && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/Syncho/src/Synchronisator.cpp -o CMakeFiles/Synchronisator.dir/src/Synchronisator.cpp.s
+	cd /home/ilyanyrkov/CompressedCloud/project/Network/build/Syncho && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ilyanyrkov/CompressedCloud/project/Network/Syncho/src/Synchronisator.cpp -o CMakeFiles/Synchronisator.dir/src/Synchronisator.cpp.s
 
 Syncho/CMakeFiles/Synchronisator.dir/main.cpp.o: Syncho/CMakeFiles/Synchronisator.dir/flags.make
 Syncho/CMakeFiles/Synchronisator.dir/main.cpp.o: ../Syncho/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object Syncho/CMakeFiles/Synchronisator.dir/main.cpp.o"
-	cd /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build/Syncho && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Synchronisator.dir/main.cpp.o -c /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/Syncho/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ilyanyrkov/CompressedCloud/project/Network/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object Syncho/CMakeFiles/Synchronisator.dir/main.cpp.o"
+	cd /home/ilyanyrkov/CompressedCloud/project/Network/build/Syncho && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Synchronisator.dir/main.cpp.o -c /home/ilyanyrkov/CompressedCloud/project/Network/Syncho/main.cpp
 
 Syncho/CMakeFiles/Synchronisator.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Synchronisator.dir/main.cpp.i"
-	cd /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build/Syncho && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/Syncho/main.cpp > CMakeFiles/Synchronisator.dir/main.cpp.i
+	cd /home/ilyanyrkov/CompressedCloud/project/Network/build/Syncho && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ilyanyrkov/CompressedCloud/project/Network/Syncho/main.cpp > CMakeFiles/Synchronisator.dir/main.cpp.i
 
 Syncho/CMakeFiles/Synchronisator.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Synchronisator.dir/main.cpp.s"
-	cd /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build/Syncho && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/Syncho/main.cpp -o CMakeFiles/Synchronisator.dir/main.cpp.s
+	cd /home/ilyanyrkov/CompressedCloud/project/Network/build/Syncho && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ilyanyrkov/CompressedCloud/project/Network/Syncho/main.cpp -o CMakeFiles/Synchronisator.dir/main.cpp.s
 
 # Object files for target Synchronisator
 Synchronisator_OBJECTS = \
@@ -95,8 +95,8 @@ Syncho/Synchronisator: Syncho/CMakeFiles/Synchronisator.dir/src/Synchronisator.c
 Syncho/Synchronisator: Syncho/CMakeFiles/Synchronisator.dir/main.cpp.o
 Syncho/Synchronisator: Syncho/CMakeFiles/Synchronisator.dir/build.make
 Syncho/Synchronisator: Syncho/CMakeFiles/Synchronisator.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable Synchronisator"
-	cd /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build/Syncho && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Synchronisator.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ilyanyrkov/CompressedCloud/project/Network/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable Synchronisator"
+	cd /home/ilyanyrkov/CompressedCloud/project/Network/build/Syncho && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Synchronisator.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 Syncho/CMakeFiles/Synchronisator.dir/build: Syncho/Synchronisator
@@ -104,10 +104,10 @@ Syncho/CMakeFiles/Synchronisator.dir/build: Syncho/Synchronisator
 .PHONY : Syncho/CMakeFiles/Synchronisator.dir/build
 
 Syncho/CMakeFiles/Synchronisator.dir/clean:
-	cd /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build/Syncho && $(CMAKE_COMMAND) -P CMakeFiles/Synchronisator.dir/cmake_clean.cmake
+	cd /home/ilyanyrkov/CompressedCloud/project/Network/build/Syncho && $(CMAKE_COMMAND) -P CMakeFiles/Synchronisator.dir/cmake_clean.cmake
 .PHONY : Syncho/CMakeFiles/Synchronisator.dir/clean
 
 Syncho/CMakeFiles/Synchronisator.dir/depend:
-	cd /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/Syncho /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build/Syncho /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build/Syncho/CMakeFiles/Synchronisator.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ilyanyrkov/CompressedCloud/project/Network/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ilyanyrkov/CompressedCloud/project/Network /home/ilyanyrkov/CompressedCloud/project/Network/Syncho /home/ilyanyrkov/CompressedCloud/project/Network/build /home/ilyanyrkov/CompressedCloud/project/Network/build/Syncho /home/ilyanyrkov/CompressedCloud/project/Network/build/Syncho/CMakeFiles/Synchronisator.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : Syncho/CMakeFiles/Synchronisator.dir/depend
 

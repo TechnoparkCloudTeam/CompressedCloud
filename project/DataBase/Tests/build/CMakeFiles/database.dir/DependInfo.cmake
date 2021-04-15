@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp" "/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/Tests/build/CMakeFiles/database.dir/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp.o"
-  "/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp" "/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/Tests/build/CMakeFiles/database.dir/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp.o"
+  "/home/ilyanyrkov/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp" "/home/ilyanyrkov/CompressedCloud/project/DataBase/Tests/build/CMakeFiles/database.dir/home/ilyanyrkov/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp.o"
+  "/home/ilyanyrkov/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp" "/home/ilyanyrkov/CompressedCloud/project/DataBase/Tests/build/CMakeFiles/database.dir/home/ilyanyrkov/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -13,6 +13,8 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../../FileStorage/include"
   "../../MetaDataBase/include"
+  "../../../Network/CommunicateWithUser/include"
+  "../../../Network/Syncho/include"
   )
 
 # Targets to which this target links.

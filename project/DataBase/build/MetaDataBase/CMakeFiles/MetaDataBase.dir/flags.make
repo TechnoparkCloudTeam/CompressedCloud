@@ -6,5 +6,5 @@ CXX_FLAGS =   -std=gnu++2a
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/include 
+CXX_INCLUDES = -I/home/ilyanyrkov/CompressedCloud/project/DataBase/MetaDataBase/include 
 

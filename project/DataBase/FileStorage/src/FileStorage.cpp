@@ -35,3 +35,7 @@ void FileStorage::Run() {
 void FileStorage::ShutDown() {
     return;
 }
+
+void FileStorage::GetStatus() {
+    return;
+}

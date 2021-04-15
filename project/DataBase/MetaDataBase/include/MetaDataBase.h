@@ -11,6 +11,7 @@ public:
 	virtual void UpdateDirInfo() = 0;
 	virtual void RemoveUserFromDir() = 0;
 	virtual void GetStatus() = 0;
+	virtual void SendAnswer() = 0;
 
 };
 
@@ -24,4 +25,5 @@ public:
 	void UpdateDirInfo() override;
 	void RemoveUserFromDir() override;
 	void GetStatus() override;	
+	void SendAnswer() override;
 };

@@ -31,3 +31,7 @@ void Synchronisator::Run() {
 void Synchronisator::ShutDown() {
     return;
 }
+
+void Synchronisator::GetStatus() {
+    return;
+}

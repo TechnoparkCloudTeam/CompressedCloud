@@ -1,4 +1,4 @@
-# Install script for directory: /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage
+# Install script for directory: /home/ilyanyrkov/CompressedCloud/project/DataBase/FileStorage
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

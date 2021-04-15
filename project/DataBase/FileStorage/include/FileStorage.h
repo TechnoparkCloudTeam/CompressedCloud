@@ -31,7 +31,8 @@ public:
 
 	void DeleteDir() override;
 
-
+	void GetStatus() override;
+	
 private:
 	void UpdateFiles();
 	void UpdateDir();

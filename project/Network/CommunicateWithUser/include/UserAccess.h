@@ -34,6 +34,7 @@ public:
 	void SendRequest() override;
 
 	void GetStatus() override;
+	
 private:
 	void Run();
 	void ShutDown();

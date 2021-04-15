@@ -1,4 +1,4 @@
-# Install script for directory: /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/Tests
+# Install script for directory: /home/ilyanyrkov/CompressedCloud/project/DataBase/Tests
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/Tests/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/ilyanyrkov/CompressedCloud/project/DataBase/Tests/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

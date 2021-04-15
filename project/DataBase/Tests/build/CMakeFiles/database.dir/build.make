@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/Tests
+CMAKE_SOURCE_DIR = /home/ilyanyrkov/CompressedCloud/project/DataBase/Tests
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/Tests/build
+CMAKE_BINARY_DIR = /home/ilyanyrkov/CompressedCloud/project/DataBase/Tests/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/database.dir/depend.make
@@ -57,45 +57,45 @@ include CMakeFiles/database.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/database.dir/flags.make
 
-CMakeFiles/database.dir/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp.o: CMakeFiles/database.dir/flags.make
-CMakeFiles/database.dir/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp.o: /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/Tests/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/database.dir/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/database.dir/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp.o -c /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp
+CMakeFiles/database.dir/home/ilyanyrkov/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp.o: CMakeFiles/database.dir/flags.make
+CMakeFiles/database.dir/home/ilyanyrkov/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp.o: /home/ilyanyrkov/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ilyanyrkov/CompressedCloud/project/DataBase/Tests/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/database.dir/home/ilyanyrkov/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/database.dir/home/ilyanyrkov/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp.o -c /home/ilyanyrkov/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp
 
-CMakeFiles/database.dir/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/database.dir/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp > CMakeFiles/database.dir/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp.i
+CMakeFiles/database.dir/home/ilyanyrkov/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/database.dir/home/ilyanyrkov/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ilyanyrkov/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp > CMakeFiles/database.dir/home/ilyanyrkov/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp.i
 
-CMakeFiles/database.dir/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/database.dir/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp -o CMakeFiles/database.dir/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp.s
+CMakeFiles/database.dir/home/ilyanyrkov/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/database.dir/home/ilyanyrkov/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ilyanyrkov/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp -o CMakeFiles/database.dir/home/ilyanyrkov/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp.s
 
-CMakeFiles/database.dir/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp.o: CMakeFiles/database.dir/flags.make
-CMakeFiles/database.dir/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp.o: /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/Tests/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/database.dir/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/database.dir/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp.o -c /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp
+CMakeFiles/database.dir/home/ilyanyrkov/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp.o: CMakeFiles/database.dir/flags.make
+CMakeFiles/database.dir/home/ilyanyrkov/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp.o: /home/ilyanyrkov/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ilyanyrkov/CompressedCloud/project/DataBase/Tests/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/database.dir/home/ilyanyrkov/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/database.dir/home/ilyanyrkov/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp.o -c /home/ilyanyrkov/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp
 
-CMakeFiles/database.dir/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/database.dir/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp > CMakeFiles/database.dir/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp.i
+CMakeFiles/database.dir/home/ilyanyrkov/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/database.dir/home/ilyanyrkov/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ilyanyrkov/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp > CMakeFiles/database.dir/home/ilyanyrkov/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp.i
 
-CMakeFiles/database.dir/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/database.dir/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp -o CMakeFiles/database.dir/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp.s
+CMakeFiles/database.dir/home/ilyanyrkov/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/database.dir/home/ilyanyrkov/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ilyanyrkov/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp -o CMakeFiles/database.dir/home/ilyanyrkov/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp.s
 
 # Object files for target database
 database_OBJECTS = \
-"CMakeFiles/database.dir/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp.o" \
-"CMakeFiles/database.dir/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp.o"
+"CMakeFiles/database.dir/home/ilyanyrkov/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp.o" \
+"CMakeFiles/database.dir/home/ilyanyrkov/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp.o"
 
 # External object files for target database
 database_EXTERNAL_OBJECTS =
 
-libdatabase.a: CMakeFiles/database.dir/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp.o
-libdatabase.a: CMakeFiles/database.dir/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp.o
+libdatabase.a: CMakeFiles/database.dir/home/ilyanyrkov/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp.o
+libdatabase.a: CMakeFiles/database.dir/home/ilyanyrkov/CompressedCloud/project/DataBase/MetaDataBase/src/MetaDataBase.cpp.o
 libdatabase.a: CMakeFiles/database.dir/build.make
 libdatabase.a: CMakeFiles/database.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/Tests/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libdatabase.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ilyanyrkov/CompressedCloud/project/DataBase/Tests/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libdatabase.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/database.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/database.dir/link.txt --verbose=$(VERBOSE)
 
@@ -109,6 +109,6 @@ CMakeFiles/database.dir/clean:
 .PHONY : CMakeFiles/database.dir/clean
 
 CMakeFiles/database.dir/depend:
-	cd /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/Tests/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/Tests /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/Tests /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/Tests/build /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/Tests/build /home/lida/Compressed_cloud/CompressedCloud/project/DataBase/Tests/build/CMakeFiles/database.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ilyanyrkov/CompressedCloud/project/DataBase/Tests/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ilyanyrkov/CompressedCloud/project/DataBase/Tests /home/ilyanyrkov/CompressedCloud/project/DataBase/Tests /home/ilyanyrkov/CompressedCloud/project/DataBase/Tests/build /home/ilyanyrkov/CompressedCloud/project/DataBase/Tests/build /home/ilyanyrkov/CompressedCloud/project/DataBase/Tests/build/CMakeFiles/database.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/database.dir/depend
 

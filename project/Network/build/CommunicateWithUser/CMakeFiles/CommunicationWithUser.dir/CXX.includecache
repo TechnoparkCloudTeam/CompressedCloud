@@ -18,13 +18,13 @@ vector
 queue
 -
 
-/home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/CommunicateWithUser/main.cpp
+/home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/main.cpp
 
-/home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/CommunicateWithUser/src/RequestsProcessor.cpp
+/home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/RequestsProcessor.cpp
 RequestsProcessor.h
-/home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/CommunicateWithUser/src/RequestsProcessor.h
+/home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/RequestsProcessor.h
 
-/home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/CommunicateWithUser/src/UserAccess.cpp
+/home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/UserAccess.cpp
 UserAccess.h
-/home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/CommunicateWithUser/src/UserAccess.h
+/home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/UserAccess.h
 

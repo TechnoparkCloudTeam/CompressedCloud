@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/main.cpp" "/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/build/CMakeFiles/DataBase.dir/main.cpp.o"
+  "/home/ilyanyrkov/CompressedCloud/project/DataBase/main.cpp" "/home/ilyanyrkov/CompressedCloud/project/DataBase/build/CMakeFiles/DataBase.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

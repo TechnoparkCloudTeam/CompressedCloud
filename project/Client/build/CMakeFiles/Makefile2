@@ -54,11 +54,12 @@ CMAKE_BINARY_DIR = /home/ilyanyrkov/CompressedCloud/project/Client/build
 
 # The main recursive "all" target.
 all: CMakeFiles/Client.dir/all
-all: CMakeFiles/network.dir/all
+all: CMakeFiles/clientlib.dir/all
 all: Watcher/all
 all: ProgramInterface/all
 all: Chunker/all
 all: CommunicateWithServer/all
+all: Tests/all
 
 .PHONY : all
 
@@ -67,16 +68,18 @@ preinstall: Watcher/preinstall
 preinstall: ProgramInterface/preinstall
 preinstall: Chunker/preinstall
 preinstall: CommunicateWithServer/preinstall
+preinstall: Tests/preinstall
 
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: CMakeFiles/Client.dir/clean
-clean: CMakeFiles/network.dir/clean
+clean: CMakeFiles/clientlib.dir/clean
 clean: Watcher/clean
 clean: ProgramInterface/clean
 clean: Chunker/clean
 clean: CommunicateWithServer/clean
+clean: Tests/clean
 
 .PHONY : clean
 
@@ -135,6 +138,26 @@ ProgramInterface/clean: ProgramInterface/CMakeFiles/ProgramInterface.dir/clean
 .PHONY : ProgramInterface/clean
 
 #=============================================================================
+# Directory level rules for directory Tests
+
+# Recursive "all" directory target.
+Tests/all: Tests/CMakeFiles/tests.dir/all
+Tests/all: Tests/CMakeFiles/client.dir/all
+
+.PHONY : Tests/all
+
+# Recursive "preinstall" directory target.
+Tests/preinstall:
+
+.PHONY : Tests/preinstall
+
+# Recursive "clean" directory target.
+Tests/clean: Tests/CMakeFiles/tests.dir/clean
+Tests/clean: Tests/CMakeFiles/client.dir/clean
+
+.PHONY : Tests/clean
+
+#=============================================================================
 # Directory level rules for directory Watcher
 
 # Recursive "all" directory target.
@@ -180,31 +203,31 @@ CMakeFiles/Client.dir/clean:
 .PHONY : CMakeFiles/Client.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/network.dir
+# Target rules for target CMakeFiles/clientlib.dir
 
 # All Build rule for target.
-CMakeFiles/network.dir/all:
-	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/depend
-	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ilyanyrkov/CompressedCloud/project/Client/build/CMakeFiles --progress-num=15,16,17,18,19 "Built target network"
-.PHONY : CMakeFiles/network.dir/all
+CMakeFiles/clientlib.dir/all:
+	$(MAKE) -f CMakeFiles/clientlib.dir/build.make CMakeFiles/clientlib.dir/depend
+	$(MAKE) -f CMakeFiles/clientlib.dir/build.make CMakeFiles/clientlib.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ilyanyrkov/CompressedCloud/project/Client/build/CMakeFiles --progress-num=20,21,22,23,24 "Built target clientlib"
+.PHONY : CMakeFiles/clientlib.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/network.dir/rule: cmake_check_build_system
+CMakeFiles/clientlib.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ilyanyrkov/CompressedCloud/project/Client/build/CMakeFiles 5
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/network.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/clientlib.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ilyanyrkov/CompressedCloud/project/Client/build/CMakeFiles 0
-.PHONY : CMakeFiles/network.dir/rule
+.PHONY : CMakeFiles/clientlib.dir/rule
 
 # Convenience name for target.
-network: CMakeFiles/network.dir/rule
+clientlib: CMakeFiles/clientlib.dir/rule
 
-.PHONY : network
+.PHONY : clientlib
 
 # clean rule for target.
-CMakeFiles/network.dir/clean:
-	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/clean
-.PHONY : CMakeFiles/network.dir/clean
+CMakeFiles/clientlib.dir/clean:
+	$(MAKE) -f CMakeFiles/clientlib.dir/build.make CMakeFiles/clientlib.dir/clean
+.PHONY : CMakeFiles/clientlib.dir/clean
 
 #=============================================================================
 # Target rules for target Watcher/CMakeFiles/Watcher.dir
@@ -313,6 +336,60 @@ ClientServerCommunication: CommunicateWithServer/CMakeFiles/ClientServerCommunic
 CommunicateWithServer/CMakeFiles/ClientServerCommunication.dir/clean:
 	$(MAKE) -f CommunicateWithServer/CMakeFiles/ClientServerCommunication.dir/build.make CommunicateWithServer/CMakeFiles/ClientServerCommunication.dir/clean
 .PHONY : CommunicateWithServer/CMakeFiles/ClientServerCommunication.dir/clean
+
+#=============================================================================
+# Target rules for target Tests/CMakeFiles/tests.dir
+
+# All Build rule for target.
+Tests/CMakeFiles/tests.dir/all: Tests/CMakeFiles/client.dir/all
+	$(MAKE) -f Tests/CMakeFiles/tests.dir/build.make Tests/CMakeFiles/tests.dir/depend
+	$(MAKE) -f Tests/CMakeFiles/tests.dir/build.make Tests/CMakeFiles/tests.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ilyanyrkov/CompressedCloud/project/Client/build/CMakeFiles --progress-num=25,26 "Built target tests"
+.PHONY : Tests/CMakeFiles/tests.dir/all
+
+# Build rule for subdir invocation for target.
+Tests/CMakeFiles/tests.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ilyanyrkov/CompressedCloud/project/Client/build/CMakeFiles 7
+	$(MAKE) -f CMakeFiles/Makefile2 Tests/CMakeFiles/tests.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ilyanyrkov/CompressedCloud/project/Client/build/CMakeFiles 0
+.PHONY : Tests/CMakeFiles/tests.dir/rule
+
+# Convenience name for target.
+tests: Tests/CMakeFiles/tests.dir/rule
+
+.PHONY : tests
+
+# clean rule for target.
+Tests/CMakeFiles/tests.dir/clean:
+	$(MAKE) -f Tests/CMakeFiles/tests.dir/build.make Tests/CMakeFiles/tests.dir/clean
+.PHONY : Tests/CMakeFiles/tests.dir/clean
+
+#=============================================================================
+# Target rules for target Tests/CMakeFiles/client.dir
+
+# All Build rule for target.
+Tests/CMakeFiles/client.dir/all:
+	$(MAKE) -f Tests/CMakeFiles/client.dir/build.make Tests/CMakeFiles/client.dir/depend
+	$(MAKE) -f Tests/CMakeFiles/client.dir/build.make Tests/CMakeFiles/client.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ilyanyrkov/CompressedCloud/project/Client/build/CMakeFiles --progress-num=15,16,17,18,19 "Built target client"
+.PHONY : Tests/CMakeFiles/client.dir/all
+
+# Build rule for subdir invocation for target.
+Tests/CMakeFiles/client.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ilyanyrkov/CompressedCloud/project/Client/build/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 Tests/CMakeFiles/client.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ilyanyrkov/CompressedCloud/project/Client/build/CMakeFiles 0
+.PHONY : Tests/CMakeFiles/client.dir/rule
+
+# Convenience name for target.
+client: Tests/CMakeFiles/client.dir/rule
+
+.PHONY : client
+
+# clean rule for target.
+Tests/CMakeFiles/client.dir/clean:
+	$(MAKE) -f Tests/CMakeFiles/client.dir/build.make Tests/CMakeFiles/client.dir/clean
+.PHONY : Tests/CMakeFiles/client.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network
+CMAKE_SOURCE_DIR = /home/ilyanyrkov/CompressedCloud/project/Network
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build
+CMAKE_BINARY_DIR = /home/ilyanyrkov/CompressedCloud/project/Network/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build/CMakeFiles /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build/CommunicateWithUser/CMakeFiles/progress.marks
-	cd /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build && $(MAKE) -f CMakeFiles/Makefile2 CommunicateWithUser/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build/CMakeFiles 0
+	cd /home/ilyanyrkov/CompressedCloud/project/Network/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ilyanyrkov/CompressedCloud/project/Network/build/CMakeFiles /home/ilyanyrkov/CompressedCloud/project/Network/build/CommunicateWithUser/CMakeFiles/progress.marks
+	cd /home/ilyanyrkov/CompressedCloud/project/Network/build && $(MAKE) -f CMakeFiles/Makefile2 CommunicateWithUser/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ilyanyrkov/CompressedCloud/project/Network/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build && $(MAKE) -f CMakeFiles/Makefile2 CommunicateWithUser/clean
+	cd /home/ilyanyrkov/CompressedCloud/project/Network/build && $(MAKE) -f CMakeFiles/Makefile2 CommunicateWithUser/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,22 +97,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build && $(MAKE) -f CMakeFiles/Makefile2 CommunicateWithUser/preinstall
+	cd /home/ilyanyrkov/CompressedCloud/project/Network/build && $(MAKE) -f CMakeFiles/Makefile2 CommunicateWithUser/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build && $(MAKE) -f CMakeFiles/Makefile2 CommunicateWithUser/preinstall
+	cd /home/ilyanyrkov/CompressedCloud/project/Network/build && $(MAKE) -f CMakeFiles/Makefile2 CommunicateWithUser/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ilyanyrkov/CompressedCloud/project/Network/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/rule:
-	cd /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build && $(MAKE) -f CMakeFiles/Makefile2 CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/rule
+	cd /home/ilyanyrkov/CompressedCloud/project/Network/build && $(MAKE) -f CMakeFiles/Makefile2 CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/rule
 .PHONY : CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/rule
 
 # Convenience name for target.
@@ -122,7 +122,7 @@ CommunicationWithUser: CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/
 
 # fast build rule for target.
 CommunicationWithUser/fast:
-	cd /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build && $(MAKE) -f CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/build.make CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/build
+	cd /home/ilyanyrkov/CompressedCloud/project/Network/build && $(MAKE) -f CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/build.make CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/build
 .PHONY : CommunicationWithUser/fast
 
 main.o: main.cpp.o
@@ -131,7 +131,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	cd /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build && $(MAKE) -f CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/build.make CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/main.cpp.o
+	cd /home/ilyanyrkov/CompressedCloud/project/Network/build && $(MAKE) -f CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/build.make CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -140,7 +140,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	cd /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build && $(MAKE) -f CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/build.make CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/main.cpp.i
+	cd /home/ilyanyrkov/CompressedCloud/project/Network/build && $(MAKE) -f CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/build.make CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -149,7 +149,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	cd /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build && $(MAKE) -f CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/build.make CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/main.cpp.s
+	cd /home/ilyanyrkov/CompressedCloud/project/Network/build && $(MAKE) -f CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/build.make CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 src/RequestsProcessor.o: src/RequestsProcessor.cpp.o
@@ -158,7 +158,7 @@ src/RequestsProcessor.o: src/RequestsProcessor.cpp.o
 
 # target to build an object file
 src/RequestsProcessor.cpp.o:
-	cd /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build && $(MAKE) -f CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/build.make CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/src/RequestsProcessor.cpp.o
+	cd /home/ilyanyrkov/CompressedCloud/project/Network/build && $(MAKE) -f CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/build.make CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/src/RequestsProcessor.cpp.o
 .PHONY : src/RequestsProcessor.cpp.o
 
 src/RequestsProcessor.i: src/RequestsProcessor.cpp.i
@@ -167,7 +167,7 @@ src/RequestsProcessor.i: src/RequestsProcessor.cpp.i
 
 # target to preprocess a source file
 src/RequestsProcessor.cpp.i:
-	cd /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build && $(MAKE) -f CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/build.make CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/src/RequestsProcessor.cpp.i
+	cd /home/ilyanyrkov/CompressedCloud/project/Network/build && $(MAKE) -f CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/build.make CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/src/RequestsProcessor.cpp.i
 .PHONY : src/RequestsProcessor.cpp.i
 
 src/RequestsProcessor.s: src/RequestsProcessor.cpp.s
@@ -176,7 +176,7 @@ src/RequestsProcessor.s: src/RequestsProcessor.cpp.s
 
 # target to generate assembly for a file
 src/RequestsProcessor.cpp.s:
-	cd /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build && $(MAKE) -f CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/build.make CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/src/RequestsProcessor.cpp.s
+	cd /home/ilyanyrkov/CompressedCloud/project/Network/build && $(MAKE) -f CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/build.make CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/src/RequestsProcessor.cpp.s
 .PHONY : src/RequestsProcessor.cpp.s
 
 src/UserAccess.o: src/UserAccess.cpp.o
@@ -185,7 +185,7 @@ src/UserAccess.o: src/UserAccess.cpp.o
 
 # target to build an object file
 src/UserAccess.cpp.o:
-	cd /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build && $(MAKE) -f CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/build.make CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/src/UserAccess.cpp.o
+	cd /home/ilyanyrkov/CompressedCloud/project/Network/build && $(MAKE) -f CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/build.make CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/src/UserAccess.cpp.o
 .PHONY : src/UserAccess.cpp.o
 
 src/UserAccess.i: src/UserAccess.cpp.i
@@ -194,7 +194,7 @@ src/UserAccess.i: src/UserAccess.cpp.i
 
 # target to preprocess a source file
 src/UserAccess.cpp.i:
-	cd /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build && $(MAKE) -f CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/build.make CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/src/UserAccess.cpp.i
+	cd /home/ilyanyrkov/CompressedCloud/project/Network/build && $(MAKE) -f CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/build.make CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/src/UserAccess.cpp.i
 .PHONY : src/UserAccess.cpp.i
 
 src/UserAccess.s: src/UserAccess.cpp.s
@@ -203,7 +203,7 @@ src/UserAccess.s: src/UserAccess.cpp.s
 
 # target to generate assembly for a file
 src/UserAccess.cpp.s:
-	cd /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build && $(MAKE) -f CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/build.make CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/src/UserAccess.cpp.s
+	cd /home/ilyanyrkov/CompressedCloud/project/Network/build && $(MAKE) -f CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/build.make CommunicateWithUser/CMakeFiles/CommunicationWithUser.dir/src/UserAccess.cpp.s
 .PHONY : src/UserAccess.cpp.s
 
 # Help Target
@@ -235,6 +235,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ilyanyrkov/CompressedCloud/project/Network/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

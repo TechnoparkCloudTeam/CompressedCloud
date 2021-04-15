@@ -1,4 +1,4 @@
-# Install script for directory: /home/lyalyashechka/TP/c_c++/project/Cloud/project/Network
+# Install script for directory: /home/ilyanyrkov/CompressedCloud/project/Network
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,12 +39,17 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build/CommunicateWithUser/cmake_install.cmake")
+  include("/home/ilyanyrkov/CompressedCloud/project/Network/build/CommunicateWithUser/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build/Syncho/cmake_install.cmake")
+  include("/home/ilyanyrkov/CompressedCloud/project/Network/build/Syncho/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/home/ilyanyrkov/CompressedCloud/project/Network/build/Tests/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -55,5 +60,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/lyalyashechka/TP/c_c++/project/Cloud/project/Network/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/ilyanyrkov/CompressedCloud/project/Network/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

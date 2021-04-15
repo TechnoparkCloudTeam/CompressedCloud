@@ -1,0 +1,2 @@
+/usr/bin/ar qc libdatabaselib.a  CMakeFiles/databaselib.dir/FileStorage/src/FileStorage.cpp.o CMakeFiles/databaselib.dir/MetaDataBase/src/MetaDataBase.cpp.o
+/usr/bin/ranlib libdatabaselib.a

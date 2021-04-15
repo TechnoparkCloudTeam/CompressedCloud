@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../../DataBase/FileStorage/include/FileStorage.h
+string
+-
+
+../../DataBase/MetaDataBase/include/MetaDataBase.h
+
+../CommunicateWithUser/include/RequestsProcessor.h
+map
+-
+
+../CommunicateWithUser/include/UserAccess.h
+string
+-
+vector
+-
+queue
+-
+
+../Syncho/include/Synchronisator.h
+
+/home/ilyanyrkov/CompressedCloud/project/Network/Tests/network_tests.cpp
+gtest/gtest.h
+-
+gmock/gmock.h
+/home/ilyanyrkov/CompressedCloud/project/Network/Tests/gmock/gmock.h
+FileStorage.h
+/home/ilyanyrkov/CompressedCloud/project/Network/Tests/FileStorage.h
+MetaDataBase.h
+/home/ilyanyrkov/CompressedCloud/project/Network/Tests/MetaDataBase.h
+Synchronisator.h
+/home/ilyanyrkov/CompressedCloud/project/Network/Tests/Synchronisator.h
+RequestsProcessor.h
+/home/ilyanyrkov/CompressedCloud/project/Network/Tests/RequestsProcessor.h
+UserAccess.h
+/home/ilyanyrkov/CompressedCloud/project/Network/Tests/UserAccess.h
+

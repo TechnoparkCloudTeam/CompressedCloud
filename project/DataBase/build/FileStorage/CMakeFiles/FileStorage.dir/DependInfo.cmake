@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/main.cpp" "/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/build/FileStorage/CMakeFiles/FileStorage.dir/main.cpp.o"
-  "/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp" "/home/lida/Compressed_cloud/CompressedCloud/project/DataBase/build/FileStorage/CMakeFiles/FileStorage.dir/src/FileStorage.cpp.o"
+  "/home/ilyanyrkov/CompressedCloud/project/DataBase/FileStorage/main.cpp" "/home/ilyanyrkov/CompressedCloud/project/DataBase/build/FileStorage/CMakeFiles/FileStorage.dir/main.cpp.o"
+  "/home/ilyanyrkov/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp" "/home/ilyanyrkov/CompressedCloud/project/DataBase/build/FileStorage/CMakeFiles/FileStorage.dir/src/FileStorage.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

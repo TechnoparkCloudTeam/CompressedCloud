@@ -3,4 +3,5 @@
 /home/ilyanyrkov/CompressedCloud/project/Network/Tests/build/CMakeFiles/edit_cache.dir
 /home/ilyanyrkov/CompressedCloud/project/Network/Tests/build/CMakeFiles/test.dir
 /home/ilyanyrkov/CompressedCloud/project/Network/Tests/build/CMakeFiles/network.dir
+/home/ilyanyrkov/CompressedCloud/project/Network/Tests/build/CMakeFiles/client.dir
 /home/ilyanyrkov/CompressedCloud/project/Network/Tests/build/CMakeFiles/database.dir

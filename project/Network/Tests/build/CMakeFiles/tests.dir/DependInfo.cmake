@@ -14,12 +14,14 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../../../DataBase/MetaDataBase/include"
   "../../CommunicateWithUser/include"
   "../../Syncho/include"
+  "../../../Client/CommunicateWithServer/include"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/ilyanyrkov/CompressedCloud/project/Network/Tests/build/CMakeFiles/database.dir/DependInfo.cmake"
   "/home/ilyanyrkov/CompressedCloud/project/Network/Tests/build/CMakeFiles/network.dir/DependInfo.cmake"
+  "/home/ilyanyrkov/CompressedCloud/project/Network/Tests/build/CMakeFiles/client.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

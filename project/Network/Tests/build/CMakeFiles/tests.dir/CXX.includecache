@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+../../../Client/CommunicateWithServer/include/ClientServerCommunication.h
+string
+-
+
 ../../../DataBase/FileStorage/include/FileStorage.h
 string
 -
@@ -41,4 +45,6 @@ RequestsProcessor.h
 /home/ilyanyrkov/CompressedCloud/project/Network/Tests/RequestsProcessor.h
 UserAccess.h
 /home/ilyanyrkov/CompressedCloud/project/Network/Tests/UserAccess.h
+ClientServerCommunication.h
+/home/ilyanyrkov/CompressedCloud/project/Network/Tests/ClientServerCommunication.h
 

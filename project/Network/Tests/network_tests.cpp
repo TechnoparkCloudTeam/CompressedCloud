@@ -5,7 +5,7 @@
 #include "Synchronisator.h"
 #include "RequestsProcessor.h"
 #include "UserAccess.h"
-
+#include "ClientServerCommunication.h"
 
 
 class MockFileStorage : IFileStorage{
@@ -148,12 +148,52 @@ TEST(RequestProcessor, SendRequest) {
     EXPECT_CALL(mockSynchro, GetRequest);
     
 }
-TEST(RequestProcessor, GetRequest) {
+TEST(RequestProcessor, GetRequestFromUserAccess) {
     MockUserAccess userAccess;
     RequestsProcessor requestProcessor;
     requestProcessor.GetRequest();
     EXPECT_CALL(userAccess, SendAnswer);
     
+}
+
+class MockClientServerCommunication : public IClientServerCommunication{
+public:
+    MOCK_METHOD0(CreateRequest, void());
+    MOCK_METHOD0(SendRequest, void());
+    MOCK_METHOD0(GetAnswer, void());
+    MOCK_METHOD0(GetAnswerType, void());
+    MOCK_METHOD0(GetRequestComponents, void());
+    MOCK_METHOD0(GetStatus, void());
+};
+
+TEST(RequestProcessor, ConnectWithUser) {
+    MockClientServerCommunication ClientServerCommunication;
+    RequestsProcessor requestProcessor;
+    requestProcessor.Connect();
+    EXPECT_CALL(ClientServerCommunication, SendRequest);
+}
+
+TEST(RequestProcessor, DisconnectFromUser) {
+    MockClientServerCommunication ClientServerCommunication;
+    RequestsProcessor requestProcessor;
+    requestProcessor.Disconnect();
+    EXPECT_CALL(ClientServerCommunication, SendRequest);
+}
+
+TEST(RequestProcessor, SendAnswerToUser) {
+    MockClientServerCommunication ClientServerCommunication;
+    RequestsProcessor requestProcessor;
+    EXPECT_CALL(ClientServerCommunication, SendRequest);
+    requestProcessor.SendAnswer();
+    EXPECT_CALL(ClientServerCommunication, GetAnswer);
+    EXPECT_CALL(ClientServerCommunication, GetAnswerType);
+}
+
+TEST(RequestProcessor, GetRequestFromUser) {
+    MockClientServerCommunication ClientServerCommunication;
+    RequestsProcessor requestProcessor;
+    EXPECT_CALL(ClientServerCommunication, SendRequest);
+    requestProcessor.GetRequest();
 }
 
 

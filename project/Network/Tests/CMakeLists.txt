@@ -20,7 +20,9 @@ ADD_LIBRARY(network STATIC
 	../CommunicateWithUser/src/UserAccess.cpp
 	../CommunicateWithUser/src/RequestsProcessor.cpp
 	../Syncho/src/Synchronisator.cpp)
-	
+INCLUDE_DIRECTORIES(../../Client/CommunicateWithServer/include)
+ADD_LIBRARY(client STATIC
+	../../Client/CommunicateWithServer/src/ClientServerCommunication.cpp)
 enable_testing()
 find_package(GTest REQUIRED)
 
@@ -28,4 +30,4 @@ include_directories(${GTEST_INCLUDE_DIR})
 message(${GTEST_LIBRARIES})
 add_executable(tests network_tests.cpp)
 target_link_libraries(tests ${GTEST_LIBRARIES} ${GMOCK_LIBRARIES} -pthread -lgmock)
-target_link_libraries(tests database network)
+target_link_libraries(tests database network client)

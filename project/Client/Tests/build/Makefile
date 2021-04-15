@@ -135,6 +135,19 @@ tests/fast:
 .PHONY : tests/fast
 
 #=============================================================================
+# Target rules for targets named network
+
+# Build rule for target.
+network: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 network
+.PHONY : network
+
+# fast build rule for target.
+network/fast:
+	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/build
+.PHONY : network/fast
+
+#=============================================================================
 # Target rules for targets named client
 
 # Build rule for target.
@@ -282,6 +295,87 @@ home/ilyanyrkov/CompressedCloud/project/Client/Watcher/src/Watcher.cpp.s:
 	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/home/ilyanyrkov/CompressedCloud/project/Client/Watcher/src/Watcher.cpp.s
 .PHONY : home/ilyanyrkov/CompressedCloud/project/Client/Watcher/src/Watcher.cpp.s
 
+home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/RequestsProcessor.o: home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/RequestsProcessor.cpp.o
+
+.PHONY : home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/RequestsProcessor.o
+
+# target to build an object file
+home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/RequestsProcessor.cpp.o:
+	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/RequestsProcessor.cpp.o
+.PHONY : home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/RequestsProcessor.cpp.o
+
+home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/RequestsProcessor.i: home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/RequestsProcessor.cpp.i
+
+.PHONY : home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/RequestsProcessor.i
+
+# target to preprocess a source file
+home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/RequestsProcessor.cpp.i:
+	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/RequestsProcessor.cpp.i
+.PHONY : home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/RequestsProcessor.cpp.i
+
+home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/RequestsProcessor.s: home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/RequestsProcessor.cpp.s
+
+.PHONY : home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/RequestsProcessor.s
+
+# target to generate assembly for a file
+home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/RequestsProcessor.cpp.s:
+	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/RequestsProcessor.cpp.s
+.PHONY : home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/RequestsProcessor.cpp.s
+
+home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/UserAccess.o: home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/UserAccess.cpp.o
+
+.PHONY : home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/UserAccess.o
+
+# target to build an object file
+home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/UserAccess.cpp.o:
+	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/UserAccess.cpp.o
+.PHONY : home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/UserAccess.cpp.o
+
+home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/UserAccess.i: home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/UserAccess.cpp.i
+
+.PHONY : home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/UserAccess.i
+
+# target to preprocess a source file
+home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/UserAccess.cpp.i:
+	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/UserAccess.cpp.i
+.PHONY : home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/UserAccess.cpp.i
+
+home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/UserAccess.s: home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/UserAccess.cpp.s
+
+.PHONY : home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/UserAccess.s
+
+# target to generate assembly for a file
+home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/UserAccess.cpp.s:
+	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/UserAccess.cpp.s
+.PHONY : home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/UserAccess.cpp.s
+
+home/ilyanyrkov/CompressedCloud/project/Network/Syncho/src/Synchronisator.o: home/ilyanyrkov/CompressedCloud/project/Network/Syncho/src/Synchronisator.cpp.o
+
+.PHONY : home/ilyanyrkov/CompressedCloud/project/Network/Syncho/src/Synchronisator.o
+
+# target to build an object file
+home/ilyanyrkov/CompressedCloud/project/Network/Syncho/src/Synchronisator.cpp.o:
+	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/home/ilyanyrkov/CompressedCloud/project/Network/Syncho/src/Synchronisator.cpp.o
+.PHONY : home/ilyanyrkov/CompressedCloud/project/Network/Syncho/src/Synchronisator.cpp.o
+
+home/ilyanyrkov/CompressedCloud/project/Network/Syncho/src/Synchronisator.i: home/ilyanyrkov/CompressedCloud/project/Network/Syncho/src/Synchronisator.cpp.i
+
+.PHONY : home/ilyanyrkov/CompressedCloud/project/Network/Syncho/src/Synchronisator.i
+
+# target to preprocess a source file
+home/ilyanyrkov/CompressedCloud/project/Network/Syncho/src/Synchronisator.cpp.i:
+	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/home/ilyanyrkov/CompressedCloud/project/Network/Syncho/src/Synchronisator.cpp.i
+.PHONY : home/ilyanyrkov/CompressedCloud/project/Network/Syncho/src/Synchronisator.cpp.i
+
+home/ilyanyrkov/CompressedCloud/project/Network/Syncho/src/Synchronisator.s: home/ilyanyrkov/CompressedCloud/project/Network/Syncho/src/Synchronisator.cpp.s
+
+.PHONY : home/ilyanyrkov/CompressedCloud/project/Network/Syncho/src/Synchronisator.s
+
+# target to generate assembly for a file
+home/ilyanyrkov/CompressedCloud/project/Network/Syncho/src/Synchronisator.cpp.s:
+	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/home/ilyanyrkov/CompressedCloud/project/Network/Syncho/src/Synchronisator.cpp.s
+.PHONY : home/ilyanyrkov/CompressedCloud/project/Network/Syncho/src/Synchronisator.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -289,9 +383,10 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
+	@echo "... tests"
 	@echo "... edit_cache"
 	@echo "... test"
-	@echo "... tests"
+	@echo "... network"
 	@echo "... client"
 	@echo "... client_tests.o"
 	@echo "... client_tests.i"
@@ -308,6 +403,15 @@ help:
 	@echo "... home/ilyanyrkov/CompressedCloud/project/Client/Watcher/src/Watcher.o"
 	@echo "... home/ilyanyrkov/CompressedCloud/project/Client/Watcher/src/Watcher.i"
 	@echo "... home/ilyanyrkov/CompressedCloud/project/Client/Watcher/src/Watcher.s"
+	@echo "... home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/RequestsProcessor.o"
+	@echo "... home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/RequestsProcessor.i"
+	@echo "... home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/RequestsProcessor.s"
+	@echo "... home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/UserAccess.o"
+	@echo "... home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/UserAccess.i"
+	@echo "... home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/UserAccess.s"
+	@echo "... home/ilyanyrkov/CompressedCloud/project/Network/Syncho/src/Synchronisator.o"
+	@echo "... home/ilyanyrkov/CompressedCloud/project/Network/Syncho/src/Synchronisator.i"
+	@echo "... home/ilyanyrkov/CompressedCloud/project/Network/Syncho/src/Synchronisator.s"
 .PHONY : help
 
 

@@ -55,5 +55,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/tests.dir/DependInfo.cmake"
   "CMakeFiles/network.dir/DependInfo.cmake"
+  "CMakeFiles/client.dir/DependInfo.cmake"
   "CMakeFiles/database.dir/DependInfo.cmake"
   )

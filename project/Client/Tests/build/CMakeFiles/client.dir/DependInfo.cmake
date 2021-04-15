@@ -22,6 +22,8 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../../Chunker/include"
   "../../Watcher/include"
   "../../CommunicateWithServer/include"
+  "../../../Network/CommunicateWithUser/include"
+  "../../../Network/Syncho/include"
   )
 
 # Targets to which this target links.

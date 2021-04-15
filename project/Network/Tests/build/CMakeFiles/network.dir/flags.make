@@ -6,5 +6,5 @@ CXX_FLAGS = -pthread -fpic -fpic   -std=gnu++2a
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/ilyanyrkov/CompressedCloud/project/Network/Tests/../../DataBase/FileStorage/include -I/home/ilyanyrkov/CompressedCloud/project/Network/Tests/../../DataBase/MetaDataBase/include -I/home/ilyanyrkov/CompressedCloud/project/Network/Tests/../CommunicateWithUser/include -I/home/ilyanyrkov/CompressedCloud/project/Network/Tests/../Syncho/include 
+CXX_INCLUDES = -I/home/ilyanyrkov/CompressedCloud/project/Network/Tests/../../DataBase/FileStorage/include -I/home/ilyanyrkov/CompressedCloud/project/Network/Tests/../../DataBase/MetaDataBase/include -I/home/ilyanyrkov/CompressedCloud/project/Network/Tests/../CommunicateWithUser/include -I/home/ilyanyrkov/CompressedCloud/project/Network/Tests/../Syncho/include -I/home/ilyanyrkov/CompressedCloud/project/Network/Tests/../../Client/CommunicateWithServer/include 
 

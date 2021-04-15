@@ -4,6 +4,7 @@
 #include "Watcher.h"
 #include "Chunker.h"
 #include "ClientServerCommunication.h"
+#include "RequestsProcessor.h"
 #include <filesystem>
 #include <fstream>
 
@@ -170,7 +171,38 @@ TEST(ProgramInterface, ReadRequest) {
     ASSERT_EQ(1, 1);
 }
 
+class MockRequestProcessor : public IRequestsProcessor {
+public:
+    MOCK_METHOD0(Connect, void());
+    MOCK_METHOD0(Disconnect, void());
+    MOCK_METHOD0(SendAnswer, void());
+    MOCK_METHOD0(SendRequest, void());
+    MOCK_METHOD0(GetRequest, void());
+    MOCK_METHOD0(GetRequestType, void());
+    MOCK_METHOD0(GetStatus, void());
+};
 
+TEST(ClientServerCommunication, SendRequest) {
+    MockRequestProcessor mockRequestProcessor;
+    ClientServerCommunication clientServComm;
+    clientServComm.SendRequest();
+    EXPECT_CALL(mockRequestProcessor, GetRequest);
+}
+
+TEST(ClientServerCommunication, GetAnswer) {
+    MockRequestProcessor mockRequestProcessor;
+    ClientServerCommunication clientServComm;
+    clientServComm.GetAnswer();
+    EXPECT_CALL(mockRequestProcessor, SendAnswer);
+}
+
+TEST(ClientServerCommunication, GetAnswerType) {
+    MockRequestProcessor mockRequestProcessor;
+    ClientServerCommunication clientServComm;
+    clientServComm.GetAnswer();
+    clientServComm.GetAnswerType();
+    EXPECT_CALL(mockRequestProcessor, SendAnswer);
+}
 
 
 

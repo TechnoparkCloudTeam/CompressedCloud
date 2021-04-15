@@ -55,6 +55,7 @@ CMAKE_BINARY_DIR = /home/ilyanyrkov/CompressedCloud/project/Network/Tests/build
 # The main recursive "all" target.
 all: CMakeFiles/tests.dir/all
 all: CMakeFiles/network.dir/all
+all: CMakeFiles/client.dir/all
 all: CMakeFiles/database.dir/all
 
 .PHONY : all
@@ -67,6 +68,7 @@ preinstall:
 # The main recursive "clean" target.
 clean: CMakeFiles/tests.dir/clean
 clean: CMakeFiles/network.dir/clean
+clean: CMakeFiles/client.dir/clean
 clean: CMakeFiles/database.dir/clean
 
 .PHONY : clean
@@ -75,16 +77,17 @@ clean: CMakeFiles/database.dir/clean
 # Target rules for target CMakeFiles/tests.dir
 
 # All Build rule for target.
+CMakeFiles/tests.dir/all: CMakeFiles/client.dir/all
 CMakeFiles/tests.dir/all: CMakeFiles/database.dir/all
 CMakeFiles/tests.dir/all: CMakeFiles/network.dir/all
 	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/depend
 	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ilyanyrkov/CompressedCloud/project/Network/Tests/build/CMakeFiles --progress-num=8,9 "Built target tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ilyanyrkov/CompressedCloud/project/Network/Tests/build/CMakeFiles --progress-num=10,11 "Built target tests"
 .PHONY : CMakeFiles/tests.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/tests.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ilyanyrkov/CompressedCloud/project/Network/Tests/build/CMakeFiles 9
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ilyanyrkov/CompressedCloud/project/Network/Tests/build/CMakeFiles 11
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/tests.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ilyanyrkov/CompressedCloud/project/Network/Tests/build/CMakeFiles 0
 .PHONY : CMakeFiles/tests.dir/rule
@@ -106,7 +109,7 @@ CMakeFiles/tests.dir/clean:
 CMakeFiles/network.dir/all:
 	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/depend
 	$(MAKE) -f CMakeFiles/network.dir/build.make CMakeFiles/network.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ilyanyrkov/CompressedCloud/project/Network/Tests/build/CMakeFiles --progress-num=4,5,6,7 "Built target network"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ilyanyrkov/CompressedCloud/project/Network/Tests/build/CMakeFiles --progress-num=6,7,8,9 "Built target network"
 .PHONY : CMakeFiles/network.dir/all
 
 # Build rule for subdir invocation for target.
@@ -127,13 +130,40 @@ CMakeFiles/network.dir/clean:
 .PHONY : CMakeFiles/network.dir/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/client.dir
+
+# All Build rule for target.
+CMakeFiles/client.dir/all:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/depend
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ilyanyrkov/CompressedCloud/project/Network/Tests/build/CMakeFiles --progress-num=1,2 "Built target client"
+.PHONY : CMakeFiles/client.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/client.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ilyanyrkov/CompressedCloud/project/Network/Tests/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/client.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ilyanyrkov/CompressedCloud/project/Network/Tests/build/CMakeFiles 0
+.PHONY : CMakeFiles/client.dir/rule
+
+# Convenience name for target.
+client: CMakeFiles/client.dir/rule
+
+.PHONY : client
+
+# clean rule for target.
+CMakeFiles/client.dir/clean:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/clean
+.PHONY : CMakeFiles/client.dir/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/database.dir
 
 # All Build rule for target.
 CMakeFiles/database.dir/all:
 	$(MAKE) -f CMakeFiles/database.dir/build.make CMakeFiles/database.dir/depend
 	$(MAKE) -f CMakeFiles/database.dir/build.make CMakeFiles/database.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ilyanyrkov/CompressedCloud/project/Network/Tests/build/CMakeFiles --progress-num=1,2,3 "Built target database"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ilyanyrkov/CompressedCloud/project/Network/Tests/build/CMakeFiles --progress-num=3,4,5 "Built target database"
 .PHONY : CMakeFiles/database.dir/all
 
 # Build rule for subdir invocation for target.

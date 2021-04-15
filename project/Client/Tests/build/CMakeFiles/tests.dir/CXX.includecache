@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+../../../Network/CommunicateWithUser/include/RequestsProcessor.h
+map
+-
+
 ../../Chunker/include/Chunker.h
 array
 -
@@ -33,16 +37,18 @@ vector
 /home/ilyanyrkov/CompressedCloud/project/Client/Tests/client_tests.cpp
 gtest/gtest.h
 -
+gmock/gmock.h
+/home/ilyanyrkov/CompressedCloud/project/Client/Tests/gmock/gmock.h
 Watcher.h
 /home/ilyanyrkov/CompressedCloud/project/Client/Tests/Watcher.h
 Chunker.h
 /home/ilyanyrkov/CompressedCloud/project/Client/Tests/Chunker.h
 ClientServerCommunication.h
 /home/ilyanyrkov/CompressedCloud/project/Client/Tests/ClientServerCommunication.h
+RequestsProcessor.h
+/home/ilyanyrkov/CompressedCloud/project/Client/Tests/RequestsProcessor.h
 filesystem
 -
 fstream
 -
-gmock/gmock.h
-/home/ilyanyrkov/CompressedCloud/project/Client/Tests/gmock/gmock.h
 

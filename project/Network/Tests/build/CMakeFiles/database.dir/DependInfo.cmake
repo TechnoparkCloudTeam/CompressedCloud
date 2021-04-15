@@ -15,6 +15,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../../../DataBase/MetaDataBase/include"
   "../../CommunicateWithUser/include"
   "../../Syncho/include"
+  "../../../Client/CommunicateWithServer/include"
   )
 
 # Targets to which this target links.

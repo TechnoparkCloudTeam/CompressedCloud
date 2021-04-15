@@ -148,6 +148,19 @@ network/fast:
 .PHONY : network/fast
 
 #=============================================================================
+# Target rules for targets named client
+
+# Build rule for target.
+client: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 client
+.PHONY : client
+
+# fast build rule for target.
+client/fast:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/build
+.PHONY : client/fast
+
+#=============================================================================
 # Target rules for targets named database
 
 # Build rule for target.
@@ -159,6 +172,33 @@ database: cmake_check_build_system
 database/fast:
 	$(MAKE) -f CMakeFiles/database.dir/build.make CMakeFiles/database.dir/build
 .PHONY : database/fast
+
+home/ilyanyrkov/CompressedCloud/project/Client/CommunicateWithServer/src/ClientServerCommunication.o: home/ilyanyrkov/CompressedCloud/project/Client/CommunicateWithServer/src/ClientServerCommunication.cpp.o
+
+.PHONY : home/ilyanyrkov/CompressedCloud/project/Client/CommunicateWithServer/src/ClientServerCommunication.o
+
+# target to build an object file
+home/ilyanyrkov/CompressedCloud/project/Client/CommunicateWithServer/src/ClientServerCommunication.cpp.o:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/home/ilyanyrkov/CompressedCloud/project/Client/CommunicateWithServer/src/ClientServerCommunication.cpp.o
+.PHONY : home/ilyanyrkov/CompressedCloud/project/Client/CommunicateWithServer/src/ClientServerCommunication.cpp.o
+
+home/ilyanyrkov/CompressedCloud/project/Client/CommunicateWithServer/src/ClientServerCommunication.i: home/ilyanyrkov/CompressedCloud/project/Client/CommunicateWithServer/src/ClientServerCommunication.cpp.i
+
+.PHONY : home/ilyanyrkov/CompressedCloud/project/Client/CommunicateWithServer/src/ClientServerCommunication.i
+
+# target to preprocess a source file
+home/ilyanyrkov/CompressedCloud/project/Client/CommunicateWithServer/src/ClientServerCommunication.cpp.i:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/home/ilyanyrkov/CompressedCloud/project/Client/CommunicateWithServer/src/ClientServerCommunication.cpp.i
+.PHONY : home/ilyanyrkov/CompressedCloud/project/Client/CommunicateWithServer/src/ClientServerCommunication.cpp.i
+
+home/ilyanyrkov/CompressedCloud/project/Client/CommunicateWithServer/src/ClientServerCommunication.s: home/ilyanyrkov/CompressedCloud/project/Client/CommunicateWithServer/src/ClientServerCommunication.cpp.s
+
+.PHONY : home/ilyanyrkov/CompressedCloud/project/Client/CommunicateWithServer/src/ClientServerCommunication.s
+
+# target to generate assembly for a file
+home/ilyanyrkov/CompressedCloud/project/Client/CommunicateWithServer/src/ClientServerCommunication.cpp.s:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/home/ilyanyrkov/CompressedCloud/project/Client/CommunicateWithServer/src/ClientServerCommunication.cpp.s
+.PHONY : home/ilyanyrkov/CompressedCloud/project/Client/CommunicateWithServer/src/ClientServerCommunication.cpp.s
 
 home/ilyanyrkov/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.o: home/ilyanyrkov/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.cpp.o
 
@@ -333,7 +373,11 @@ help:
 	@echo "... edit_cache"
 	@echo "... test"
 	@echo "... network"
+	@echo "... client"
 	@echo "... database"
+	@echo "... home/ilyanyrkov/CompressedCloud/project/Client/CommunicateWithServer/src/ClientServerCommunication.o"
+	@echo "... home/ilyanyrkov/CompressedCloud/project/Client/CommunicateWithServer/src/ClientServerCommunication.i"
+	@echo "... home/ilyanyrkov/CompressedCloud/project/Client/CommunicateWithServer/src/ClientServerCommunication.s"
 	@echo "... home/ilyanyrkov/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.o"
 	@echo "... home/ilyanyrkov/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.i"
 	@echo "... home/ilyanyrkov/CompressedCloud/project/DataBase/FileStorage/src/FileStorage.s"

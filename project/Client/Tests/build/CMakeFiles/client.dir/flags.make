@@ -6,5 +6,5 @@ CXX_FLAGS = -pthread -fpic -fpic -fPIC   -fPIC -std=gnu++2a
 
 CXX_DEFINES = -Dclient_EXPORTS
 
-CXX_INCLUDES = -I/home/ilyanyrkov/CompressedCloud/project/Client/Tests/../ProgramInterface/include -I/home/ilyanyrkov/CompressedCloud/project/Client/Tests/../Chunker/include -I/home/ilyanyrkov/CompressedCloud/project/Client/Tests/../Watcher/include -I/home/ilyanyrkov/CompressedCloud/project/Client/Tests/../CommunicateWithServer/include 
+CXX_INCLUDES = -I/home/ilyanyrkov/CompressedCloud/project/Client/Tests/../ProgramInterface/include -I/home/ilyanyrkov/CompressedCloud/project/Client/Tests/../Chunker/include -I/home/ilyanyrkov/CompressedCloud/project/Client/Tests/../Watcher/include -I/home/ilyanyrkov/CompressedCloud/project/Client/Tests/../CommunicateWithServer/include -I/home/ilyanyrkov/CompressedCloud/project/Client/Tests/../../Network/CommunicateWithUser/include -I/home/ilyanyrkov/CompressedCloud/project/Client/Tests/../../Network/Syncho/include 
 

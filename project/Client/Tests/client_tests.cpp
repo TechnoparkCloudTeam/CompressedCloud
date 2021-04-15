@@ -1,6 +1,7 @@
 #include <gtest/gtest.h>
 #include "Watcher.h"
 #include "Chunker.h"
+#include "ClientServerCommunication.h"
 #include <filesystem>
 #include <fstream>
 #include "gmock/gmock.h"
@@ -124,10 +125,52 @@ TEST(Chunker, GetNewChunk) {
     std::filesystem::path Path;
     Chunker chunker;        // SendDirStatus возвращает изменения в неком формате, GetNewChunk принимает эти измения в качестве параметра
     chunker.GetNewChunk(); 
-    EXPECT_CALL(watcherMock, SendDirStatus(Path)); // смотритель отправляет изменения в чанкер, метод GetNewChunk которого получает эти изменения
-    
+    EXPECT_CALL(watcherMock, SendDirStatus(Path)).Times(1); // смотритель отправляет изменения в чанкер, метод GetNewChunk которого получает эти изменения
+}
+
+TEST(Chunker, ParseFile) {
+    WatcherMock watcherMock;
+    std::filesystem::path Path;
+    Chunker chunker;      
+    chunker.ParseFile(); // SendDirStatus передаёт информацию о новом файле, который  Parse делит на части
+    EXPECT_CALL(watcherMock, SendDirStatus(Path)).Times(1);
+}
+
+class MockChunker : public IChunker {
+public:
+    MOCK_METHOD2(CompareChunks, bool(const FileChunk& lhs, const FileChunk& rhs));
+
+    MOCK_METHOD1(GetFile, void(std::fstream& file));
+
+    MOCK_METHOD0(ParseFile, void());
+
+	MOCK_METHOD0(GetNewChunk, void());
+
+    MOCK_METHOD0(SendChunks, void());
+};
+
+TEST(ClientServerCommunication, GetRequestComponents) {
+    MockChunker mockChunker;
+    ClientServerCommunication ClSComm;
+    ClSComm.GetRequestComponents();
+    EXPECT_CALL(mockChunker, SendChunks()).Times(1);
+}
+
+TEST(ClientServerCommunication, CreateRequest) {
+    MockChunker mockChunker;
+    ClientServerCommunication ClSComm;
+    ClSComm.GetRequestComponents();
+    ClSComm.CreateRequest();
+    EXPECT_CALL(mockChunker, SendChunks()).Times(1);
+}
+
+TEST(ProgramInterface, ReadRequest) {
+    //bash input script
     ASSERT_EQ(1, 1);
 }
+
+
+
 
 
 int main(int argc, char **argv) {

@@ -18,6 +18,10 @@ vector
 filesystem
 -
 
+../../CommunicateWithServer/include/ClientServerCommunication.h
+string
+-
+
 ../../Watcher/include/Watcher.h
 cstdint
 -
@@ -33,6 +37,8 @@ Watcher.h
 /home/ilyanyrkov/CompressedCloud/project/Client/Tests/Watcher.h
 Chunker.h
 /home/ilyanyrkov/CompressedCloud/project/Client/Tests/Chunker.h
+ClientServerCommunication.h
+/home/ilyanyrkov/CompressedCloud/project/Client/Tests/ClientServerCommunication.h
 filesystem
 -
 fstream

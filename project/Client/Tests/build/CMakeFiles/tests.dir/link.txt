@@ -1,1 +1,1 @@
-/usr/bin/c++  -pthread -fpic -fpic   CMakeFiles/tests.dir/client_tests.cpp.o  -o tests  -Wl,-rpath,/home/ilyanyrkov/CompressedCloud/project/Client/Tests/build /usr/lib/x86_64-linux-gnu/libgtest.a -pthread libclient.so 
+/usr/bin/c++  -pthread -fpic -fpic   CMakeFiles/tests.dir/client_tests.cpp.o  -o tests  -Wl,-rpath,/home/ilyanyrkov/CompressedCloud/project/Client/Tests/build /usr/lib/x86_64-linux-gnu/libgtest.a -pthread -lgmock libclient.so 

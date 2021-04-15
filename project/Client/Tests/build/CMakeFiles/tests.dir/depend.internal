@@ -3,5 +3,6 @@
 
 CMakeFiles/tests.dir/client_tests.cpp.o
  ../../Chunker/include/Chunker.h
+ ../../CommunicateWithServer/include/ClientServerCommunication.h
  ../../Watcher/include/Watcher.h
  /home/ilyanyrkov/CompressedCloud/project/Client/Tests/client_tests.cpp

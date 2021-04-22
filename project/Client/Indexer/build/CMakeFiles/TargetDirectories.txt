@@ -1,3 +1,0 @@
-/home/ilyanyrkov/CompressedCloud/project/Client/Indexer/build/CMakeFiles/rebuild_cache.dir
-/home/ilyanyrkov/CompressedCloud/project/Client/Indexer/build/CMakeFiles/edit_cache.dir
-/home/ilyanyrkov/CompressedCloud/project/Client/Indexer/build/CMakeFiles/Indexer.dir

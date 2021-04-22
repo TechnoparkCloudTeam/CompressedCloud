@@ -1,5 +1,0 @@
-/home/lida/CloudProject/CompressedCloud/newproject/DataBases/Tests/build/CMakeFiles/rebuild_cache.dir
-/home/lida/CloudProject/CompressedCloud/newproject/DataBases/Tests/build/CMakeFiles/edit_cache.dir
-/home/lida/CloudProject/CompressedCloud/newproject/DataBases/Tests/build/CMakeFiles/test.dir
-/home/lida/CloudProject/CompressedCloud/newproject/DataBases/Tests/build/CMakeFiles/tests.dir
-/home/lida/CloudProject/CompressedCloud/newproject/DataBases/Tests/build/CMakeFiles/databases.dir

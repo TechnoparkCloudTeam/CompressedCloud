@@ -1,2 +1,0 @@
-/usr/bin/ar qc libdatabaselib.a  CMakeFiles/databaselib.dir/src/UserInfoDB.cpp.o CMakeFiles/databaselib.dir/src/PostgresDB.cpp.o CMakeFiles/databaselib.dir/src/MetaDB.cpp.o CMakeFiles/databaselib.dir/src/Commands.cpp.o
-/usr/bin/ranlib libdatabaselib.a

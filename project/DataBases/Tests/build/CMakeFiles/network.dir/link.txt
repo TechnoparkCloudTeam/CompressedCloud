@@ -1,2 +1,0 @@
-/usr/bin/ar qc libnetwork.a  CMakeFiles/network.dir/home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/UserAccess.cpp.o CMakeFiles/network.dir/home/ilyanyrkov/CompressedCloud/project/Network/CommunicateWithUser/src/RequestsProcessor.cpp.o CMakeFiles/network.dir/home/ilyanyrkov/CompressedCloud/project/Network/Syncho/src/Synchronisator.cpp.o
-/usr/bin/ranlib libnetwork.a

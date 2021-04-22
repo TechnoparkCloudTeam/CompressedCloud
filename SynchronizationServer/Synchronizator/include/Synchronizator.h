@@ -1,6 +1,6 @@
 #include <memory>
 #include "ISynchronizator.h"
-#include "IMessageQueues.h"
+#include "MessageQueues.h"
 class Syncronizator : public ISyncronizator {
 public:
     void sendRequestToDB(std::string) override;

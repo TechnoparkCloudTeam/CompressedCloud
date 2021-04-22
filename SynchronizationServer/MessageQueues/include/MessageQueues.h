@@ -2,7 +2,7 @@
 #include <vector>
 #include <memory>
 #include "IMessageQueues.h"
-#include "IClientSession.h"
+#include "ClientSession.h"
 
 
 class MessageQueues : public IMessageQueues{

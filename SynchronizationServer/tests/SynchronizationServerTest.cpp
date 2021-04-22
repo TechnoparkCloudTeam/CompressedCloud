@@ -1,6 +1,5 @@
 #include <gtest/gtest.h>
 #include "gmock/gmock.h"
-#include "ClientSession.h"
 #include "ClientNetwork.h"
 #include "Server.h"
 
@@ -90,9 +89,41 @@ TEST(ClientCommunicate, SendJson) {
   std::string json;
   ClientNetwork.sendJson(json);
   EXPECT_CALL(mockClientSession, getRequestFromClient());
-
 }
 
+//тест запроса в бд 
+TEST(Syncronizator, RequestToBD) {
+  ClientSession csInsideMQ;
+  
+  MessageQueues mqInsideSynchro;
+  
+  std::string json = csInsideMQ.getRequestFromClient();
+  
+  mqInsideSynchro.getRequestsFromClients();
+  mqInsideSynchro.putInQUeue(0, json);
+  
+  Syncronizator s;
+
+  json = mqInsideSynchro.transferRequestToSyncro();
+  s.sendRequestToDB(json);
+    //вызываются методы поля command
+  ASSERT_EQ(1,1);
+}
+
+//тест запроса из БД
+TEST(Syncronizator, RequestToClient) {
+  
+  Syncronizator s;
+
+  std::string json = s.getAnswerFromDB();
+  
+  MessageQueues mqInsideSynchro;
+  mqInsideSynchro.putInQUeue(1, json);
+  ClientSession csInsideMQ;
+  csInsideMQ.sendAnswerToClient(json);
+
+  ASSERT_EQ(1,1);
+}
 
 
 int main(int argc, char **argv) {

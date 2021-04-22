@@ -123,7 +123,6 @@ TEST(Application, Requests) {
     app.listeningWatcher();
     WatcherMock watcher;
     EXPECT_CALL(watcher, isWorking).Times(1);
-
     EXPECT_CALL(interface, SendRequest).Times(1);
     app.registerUser();
     EXPECT_CALL(indexer, createFile(Path, chunkCnt)).Times(1);

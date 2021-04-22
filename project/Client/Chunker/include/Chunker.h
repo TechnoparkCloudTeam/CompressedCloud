@@ -12,6 +12,10 @@ struct FileChunk {
 	std::string FileHash;
 };
 
+bool operator== (const FileChunk& lhs, const FileChunk& rhs) {
+	return lhs.data == rhs.data;
+}
+
 class IChunker {
 public:
 	virtual std::vector<FileChunk> chunkFile(std::filesystem::path Path) = 0;

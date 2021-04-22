@@ -6,3 +6,4 @@ SynchronizationServer/Sessions/SessionOnServer/cmakebuild
 SynchronizationServer/MessageQueues/cmakebuild
 SynchronizationServer/Server/cmakebuild
 SynchronizationServer/Synchronizator/cmakebuild
+SynchronizationServer/tests/cmakebuild

@@ -1,0 +1,1 @@
+/usr/bin/c++  -pthread -fpic -fpic   CMakeFiles/tests.dir/database_tests.cpp.o  -o tests  /usr/lib/x86_64-linux-gnu/libgtest.a -pthread -lgmock 

@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/DeviceDB.h
+memory
+-
+LocalDB.h
+../include/LocalDB.h
+
+../include/LocalDB.h
+string
+-
+vector
+-
+
+/home/lida/CloudProject/CompressedCloud/newproject/DataBases/LocalDB/src/DeviceDB.cpp
+DeviceDB.h
+/home/lida/CloudProject/CompressedCloud/newproject/DataBases/LocalDB/src/DeviceDB.h
+

@@ -1,0 +1,2 @@
+/usr/bin/ar qc liblocaldblib.a  CMakeFiles/localdblib.dir/src/FileStorage.cpp.o
+/usr/bin/ranlib liblocaldblib.a

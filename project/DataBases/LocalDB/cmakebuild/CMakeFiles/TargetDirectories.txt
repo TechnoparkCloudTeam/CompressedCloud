@@ -1,0 +1,4 @@
+/home/lida/CloudProject/CompressedCloud/newproject/DataBases/LocalDB/cmakebuild/CMakeFiles/edit_cache.dir
+/home/lida/CloudProject/CompressedCloud/newproject/DataBases/LocalDB/cmakebuild/CMakeFiles/rebuild_cache.dir
+/home/lida/CloudProject/CompressedCloud/newproject/DataBases/LocalDB/cmakebuild/CMakeFiles/local.dir
+/home/lida/CloudProject/CompressedCloud/newproject/DataBases/LocalDB/cmakebuild/CMakeFiles/localdblib.dir

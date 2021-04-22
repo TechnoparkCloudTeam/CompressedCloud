@@ -51,9 +51,9 @@ TEST(Indexer, createFile) {
     int Chunks_cnt = 0;
     std::filesystem::path Path;
     FileMeta smth;
-    
+    ChunkerMock chunkerMock;
     ASSERT_TRUE(indexer.createFile(Path, Chunks_cnt) ==  smth);
-    //EXPECT_CALL(ChunkerMock, chunkFile(Path)).Times(1);
+    EXPECT_CALL(chunkerMock, chunkFile(Path)).Times(1);
 }
 
 TEST(Indexer, deleteFile) {
@@ -62,9 +62,9 @@ TEST(Indexer, deleteFile) {
     int Chunks_cnt = 0;
     std::filesystem::path Path;
     FileMeta smth;
-    
+    ChunkerMock chunkerMock;
     ASSERT_TRUE(indexer.createFile(Path, Chunks_cnt) ==  smth);
-    //EXPECT_CALL(ChunkerMock, chunkFile(Path)).Times(1);
+    EXPECT_CALL(chunkerMock, chunkFile(Path)).Times(1);
 }
 
 TEST(Indexer, modifyFile) {
@@ -73,9 +73,9 @@ TEST(Indexer, modifyFile) {
     int Chunks_cnt = 0;
     std::filesystem::path Path;
     FileMeta smth;
-    
+    ChunkerMock chunkerMock;
     ASSERT_TRUE(indexer.modifyFile(Path, Chunks_cnt) ==  smth);
-    //EXPECT_CALL(ChunkerMock, chunkFile(Path)).Times(1);
+    EXPECT_CALL(chunkerMock, chunkFile(Path)).Times(1);
 }
 
 TEST(Indexer, renameFile) {
@@ -84,9 +84,9 @@ TEST(Indexer, renameFile) {
     std::filesystem::path Path;
     std::filesystem::path newPath;
     FileMeta smth;
-    
+    ChunkerMock chunkerMock;
     ASSERT_TRUE(indexer.renameFile(Path, newPath) ==  smth);
-    //EXPECT_CALL(ChunkerMock, chunkFile(Path)).Times(1);
+    EXPECT_CALL(chunkerMock, chunkFile(Path)).Times(1);
 }
 
 TEST(Indexer, getFileInfo) {
@@ -95,10 +95,40 @@ TEST(Indexer, getFileInfo) {
     std::filesystem::path Path;
     std::filesystem::path newPath;
     FileMeta smth;
-    
+    ChunkerMock chunkerMock;
     ASSERT_TRUE(indexer.getFileInfo(Path) ==  smth);
-    //EXPECT_CALL(ChunkerMock, chunkFile(Path)).Times(1);
+    EXPECT_CALL(chunkerMock, chunkFile(Path)).Times(1);
 }
+
+TEST(Application, Requests) {
+    Application app;
+    
+    IndexerMock indexer;
+    ProgramInterfaceMock interface;
+    std::filesystem::path Path;
+    std::filesystem::path newPath;
+    EXPECT_CALL(interface, SendRequest).Times(1);
+    app.renameFile();
+    EXPECT_CALL(indexer, renameFile(Path, newPath)).Times(1);
+   
+    EXPECT_CALL(interface, SendRequest).Times(1);
+    app.deleteFile();
+    EXPECT_CALL(indexer, deleteFile(Path)).Times(1);
+    EXPECT_CALL(interface, SendRequest).Times(1);
+    app.createFile();
+    int chunkCnt = 0;
+    EXPECT_CALL(indexer, createFile(Path, chunkCnt)).Times(1);
+
+    EXPECT_CALL(interface, SendRequest).Times(1);
+    app.listeningWatcher();
+    WatcherMock watcher;
+    EXPECT_CALL(watcher, isWorking).Times(1);
+
+    EXPECT_CALL(interface, SendRequest).Times(1);
+    app.registerUser();
+    EXPECT_CALL(indexer, createFile(Path, chunkCnt)).Times(1);
+}
+
 
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);

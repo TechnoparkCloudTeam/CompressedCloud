@@ -1,23 +1,15 @@
 #include "../include/Watcher.h"
 
-void Watcher::AddDirToWatch(std::filesystem::path Path) {
+void Watcher::run(std::filesystem::path Path) {
     return;
 }
 
-void Watcher::SendDirStatus(std::filesystem::path Path) {
+void Watcher::shutdown() {
     return;
 }
 
-void Watcher::GetStatus() {
-    return;
-}
-
-void Watcher::BeginWatch() {
-    return;
-}
-
-void Watcher::EndWatch() {
-    return;
+bool Watcher::isWorking() {
+    return 0;
 }
 
 void Watcher::SetEventMask(uint32_t EventMask) {
@@ -25,5 +17,21 @@ void Watcher::SetEventMask(uint32_t EventMask) {
 }
 
 void Watcher::AddFileToWatch(std::filesystem::path Path) {
+    return;
+}
+
+void Watcher::AddDirToWatch() {
+    return;
+}
+
+void Watcher::RemoveDirFromWatch() {
+    return;
+}
+
+void Watcher::RemoveFileFromWatch() {
+    return;
+}
+
+void Watcher::WriteEventsToBuffer() {
     return;
 }

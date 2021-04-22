@@ -14,4 +14,5 @@ public:
 	void SendRequest() override;
 private:
 	std::string Request;
+	std::string Answer;
 };

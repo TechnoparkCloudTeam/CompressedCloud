@@ -1,0 +1,3 @@
+/home/ilyanyrkov/CompressedCloud/project/Client/Application/build/CMakeFiles/rebuild_cache.dir
+/home/ilyanyrkov/CompressedCloud/project/Client/Application/build/CMakeFiles/edit_cache.dir
+/home/ilyanyrkov/CompressedCloud/project/Client/Application/build/CMakeFiles/Application.dir

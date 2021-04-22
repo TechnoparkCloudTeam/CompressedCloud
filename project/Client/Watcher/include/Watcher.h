@@ -13,25 +13,26 @@ struct InotifyEvent {
 
 class IWatcher {
 public:
-	virtual void AddDirToWatch(std::filesystem::path Path) = 0;
-	virtual void SendDirStatus(std::filesystem::path Path) = 0;
-	virtual void GetStatus() = 0;
+	virtual void run(std::filesystem::path Path) = 0;
+	virtual void shutdown() = 0;
+	virtual bool isWorking() = 0;
 };
 
 class Watcher : public IWatcher {
 public:
-	void AddDirToWatch(std::filesystem::path Path) override;
-	void SendDirStatus(std::filesystem::path Path) override;
-	void GetStatus() override;
+	void run(std::filesystem::path Path) override;
+	void shutdown() override;
+	bool isWorking() override;
+	void readEventsFromBuffer();
 private:
-	void BeginWatch();
-	void EndWatch();
 	void SetEventMask(uint32_t EventMask);
-
 	void AddFileToWatch(std::filesystem::path Path);
-	std::vector<InotifyEvent>& CheckDir(std::filesystem::path Dir);
-	InotifyEvent& CheckFile(std::filesystem::path File);
-	
+	void AddDirToWatch();
+	void RemoveDirFromWatch();
+	void RemoveFileFromWatch();
+	void WriteEventsToBuffer();
+	std::vector<int8_t> buffer;
 	std::filesystem::path WorkDir;
 	uint32_t EventMask;
+	bool working;
 };

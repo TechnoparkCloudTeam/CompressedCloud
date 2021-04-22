@@ -1,14 +1,6 @@
 project/Client/build
 project/Client/Tests/build
 project/Client/Chunker/build
-project/Client/CommunicateWithServer/build
-project/Client/ProgramInterface/build
+project/Client/Indexer/build
+project/Client/Application/build
 project/Client/Watcher/build
-project/DataBase/build
-project/DataBase/FileStorage/build
-project/DataBase/MetaDataBase/build
-project/DataBase/Tests/build
-project/Network/build
-project/Network/Tests/build
-project/Network/CommunicateWithUser/build
-project/Network/Syncho/build

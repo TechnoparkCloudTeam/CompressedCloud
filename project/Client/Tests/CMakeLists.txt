@@ -14,7 +14,7 @@ INCLUDE_DIRECTORIES(../Chunker/include)
 INCLUDE_DIRECTORIES(../Watcher/include)
 INCLUDE_DIRECTORIES(../Indexer/include)
 INCLUDE_DIRECTORIES(../Application/include)
-ADD_LIBRARY(client STATIC)
+ADD_LIBRARY(client SHARED
         ../Watcher/src/Watcher.cpp
         ../ProgramInterface/src/ProgramInterface.cpp
         ../Chunker/src/Chunker.cpp

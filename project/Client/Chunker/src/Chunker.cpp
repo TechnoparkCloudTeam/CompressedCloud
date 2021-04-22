@@ -1,4 +1,4 @@
-#include "Chunker.h"
+#include "../include/Chunker.h"
 
 
 std::vector<FileChunk> Chunker::chunkFile(std::filesystem::path Path) {

@@ -9,6 +9,7 @@ ADD_SUBDIRECTORY(Sessions/ClientNetwork)
 ADD_SUBDIRECTORY(MessageQueues)
 ADD_SUBDIRECTORY(Server)
 ADD_SUBDIRECTORY(Synchronizator)
+ADD_SUBDIRECTORY(tests)
 
 INCLUDE_DIRECTORIES(Sessions/SessionOnServer/include)
 INCLUDE_DIRECTORIES(Sessions/ClientNetwork/include)

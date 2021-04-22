@@ -4,6 +4,7 @@ project(CloudServer)
 
 set(CMAKE_CXX_STANDARD 20)
 
+ADD_SUBDIRECTORY(tests)
 INCLUDE_DIRECTORIES(../SynchronizationServer/Sessions/ClientNetwork/include)
 INCLUDE_DIRECTORIES(../SynchronizationServer/Sessions/SessionOnServer/include)
 

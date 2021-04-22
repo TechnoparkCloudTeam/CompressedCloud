@@ -14,28 +14,21 @@ struct FileChunk {
 
 class IChunker {
 public:
-	
-	virtual void GetFile(std::fstream& file) = 0;
-
-	virtual void SendChunks() = 0;
+	virtual std::vector<FileChunk> chunkFile(std::filesystem::path Path) = 0;
+	virtual void updateFileChunks(std::filesystem::path Path) = 0;
+	virtual void buildFile(std::vector<FileChunk> fileChunks) = 0;
 
 };
 
 class Chunker : public IChunker{
 public:
-	bool CompareChunks(const FileChunk& lhs, const FileChunk& rhs);
-
-	void GetFile(std::fstream& file) override;
-
-	void ParseFile();
-
-	void GetNewChunk();
-
-	void SendChunks();
+	std::vector<FileChunk> chunkFile(std::filesystem::path path) override;
+	void updateFileChunks(std::filesystem::path path) override;
+	void buildFile(std::vector<FileChunk> fileChunks) override;
 private:
-	std::string GetChecksum();
-	std::string GetOldChecksum();
-	void ChangeNewChunk();
+	std::string GetFileHash();
+	std::string getChunkHash();
+	FileChunk createChunk();
+	std::filesystem::path path;
 	std::vector< FileChunk > FileChunks;
-	//std::filesystem::path Path;
 };

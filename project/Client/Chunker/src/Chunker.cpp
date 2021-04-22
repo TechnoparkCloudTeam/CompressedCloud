@@ -1,25 +1,22 @@
 #include "Chunker.h"
 
-bool Chunker::CompareChunks(const FileChunk& lhs, const FileChunk& rhs) {
-    return true;
-}
 
-void Chunker::GetFile(std::fstream& file) {
+std::vector<FileChunk> Chunker::chunkFile(std::filesystem::path Path) {
+    return std::vector<FileChunk>();
+}
+void Chunker::updateFileChunks(std::filesystem::path Path) {
+    return;
+}
+void Chunker::buildFile(std::vector<FileChunk> fileChunks) {
     return;
 }
 
-void Chunker::ParseFile() {
-    return;
+std::string Chunker::GetFileHash() {
+    return "";
 }
-
-void Chunker::GetNewChunk() {
-    return;
+std::string Chunker::getChunkHash() {
+    return "";
 }
-
-void Chunker::SendChunks() {
-    return;
-}
-
-void Chunker::ChangeNewChunk() {
-    return;
+FileChunk Chunker::createChunk() {
+    return FileChunk();
 }

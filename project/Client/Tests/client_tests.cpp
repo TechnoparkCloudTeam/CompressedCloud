@@ -3,8 +3,9 @@
 
 #include "Watcher.h"
 #include "Chunker.h"
-#include "ClientServerCommunication.h"
-#include "RequestsProcessor.h"
+#include "Application.h"
+#include "Indexer.h"
+#include "ProgramInterface"
 #include <filesystem>
 #include <fstream>
 
@@ -70,9 +71,9 @@ TEST(Watcher, GetStatus_is_running) {
 class WatcherMock : public IWatcher {
 public:
     
-    MOCK_METHOD1(AddDirToWatch, void(std::filesystem::path Path));
-    MOCK_METHOD1(SendDirStatus, void(std::filesystem::path Path));
-    MOCK_METHOD0(GetStatus, void());
+    MOCK_METHOD1(run, void(std::filesystem::path Path));
+    MOCK_METHOD1(isWorking, bool());
+    MOCK_METHOD0(shutdown, void());
 };
 
 TEST(Chunker, CompareChunks_equal) {

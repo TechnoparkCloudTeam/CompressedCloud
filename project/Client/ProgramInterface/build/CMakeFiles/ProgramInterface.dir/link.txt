@@ -1,1 +1,0 @@
-/usr/bin/c++     CMakeFiles/ProgramInterface.dir/src/ProgramInterface.cpp.o CMakeFiles/ProgramInterface.dir/main.cpp.o  -o ProgramInterface 

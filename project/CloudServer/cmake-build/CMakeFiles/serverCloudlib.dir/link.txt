@@ -1,0 +1,2 @@
+/usr/bin/ar qc libserverCloudlib.a  CMakeFiles/serverCloudlib.dir/src/FileStorageServer.cpp.o CMakeFiles/serverCloudlib.dir/home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/SynchronizationServer/Sessions/SessionOnServer/src/ClientSession.cpp.o CMakeFiles/serverCloudlib.dir/home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/SynchronizationServer/Sessions/ClientNetwork/src/ClientNetwork.cpp.o
+/usr/bin/ranlib libserverCloudlib.a

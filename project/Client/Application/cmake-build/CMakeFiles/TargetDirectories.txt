@@ -1,0 +1,3 @@
+/home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/Client/Application/cmake-build/CMakeFiles/rebuild_cache.dir
+/home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/Client/Application/cmake-build/CMakeFiles/edit_cache.dir
+/home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/Client/Application/cmake-build/CMakeFiles/Application.dir

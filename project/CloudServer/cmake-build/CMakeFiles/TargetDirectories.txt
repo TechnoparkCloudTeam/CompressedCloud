@@ -1,0 +1,8 @@
+/home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/CloudServer/cmake-build/CMakeFiles/rebuild_cache.dir
+/home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/CloudServer/cmake-build/CMakeFiles/servercloud.dir
+/home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/CloudServer/cmake-build/CMakeFiles/edit_cache.dir
+/home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/CloudServer/cmake-build/CMakeFiles/serverCloudlib.dir
+/home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/CloudServer/cmake-build/tests/CMakeFiles/rebuild_cache.dir
+/home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/CloudServer/cmake-build/tests/CMakeFiles/edit_cache.dir
+/home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/CloudServer/cmake-build/tests/CMakeFiles/tests.dir
+/home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/CloudServer/cmake-build/tests/CMakeFiles/cloud.dir

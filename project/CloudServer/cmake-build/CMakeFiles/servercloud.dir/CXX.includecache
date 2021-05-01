@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../../DataBases/FileStorageServer/include/FileStorage.h
+IFileStorage.h
+../../DataBases/FileStorageServer/include/IFileStorage.h
+
+../../DataBases/FileStorageServer/include/IFileStorage.h
+vector
+-
+
+../include/FileStorageServer.h
+string
+-
+IServer.h
+../include/IServer.h
+../../DataBases/FileStorageServer/include/FileStorage.h
+../../DataBases/FileStorageServer/include/FileStorage.h
+
+../include/IServer.h
+memory
+-
+
+/home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/CloudServer/main.cpp
+FileStorageServer.h
+/home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/CloudServer/FileStorageServer.h
+

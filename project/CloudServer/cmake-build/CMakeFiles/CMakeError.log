@@ -1,0 +1,58 @@
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/CloudServer/cmake-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_f362d/fast && /usr/bin/gmake -f CMakeFiles/cmTC_f362d.dir/build.make CMakeFiles/cmTC_f362d.dir/build
+gmake[1]: вход в каталог «/home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/CloudServer/cmake-build/CMakeFiles/CMakeTmp»
+Building C object CMakeFiles/cmTC_f362d.dir/src.c.o
+/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_f362d.dir/src.c.o   -c /home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/CloudServer/cmake-build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_f362d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f362d.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    CMakeFiles/cmTC_f362d.dir/src.c.o  -o cmTC_f362d 
+/usr/bin/ld: CMakeFiles/cmTC_f362d.dir/src.c.o: в функции «main»:
+src.c:(.text+0x46): неопределённая ссылка на «pthread_create»
+/usr/bin/ld: src.c:(.text+0x52): неопределённая ссылка на «pthread_detach»
+/usr/bin/ld: src.c:(.text+0x63): неопределённая ссылка на «pthread_join»
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_f362d.dir/build.make:87: cmTC_f362d] Ошибка 1
+gmake[1]: выход из каталога «/home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/CloudServer/cmake-build/CMakeFiles/CMakeTmp»
+gmake: *** [Makefile:121: cmTC_f362d/fast] Ошибка 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/CloudServer/cmake-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_35a9d/fast && /usr/bin/gmake -f CMakeFiles/cmTC_35a9d.dir/build.make CMakeFiles/cmTC_35a9d.dir/build
+gmake[1]: вход в каталог «/home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/CloudServer/cmake-build/CMakeFiles/CMakeTmp»
+Building C object CMakeFiles/cmTC_35a9d.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_35a9d.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_35a9d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_35a9d.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_35a9d.dir/CheckFunctionExists.c.o  -o cmTC_35a9d  -lpthreads 
+/usr/bin/ld: невозможно найти -lpthreads
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_35a9d.dir/build.make:87: cmTC_35a9d] Ошибка 1
+gmake[1]: выход из каталога «/home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/CloudServer/cmake-build/CMakeFiles/CMakeTmp»
+gmake: *** [Makefile:121: cmTC_35a9d/fast] Ошибка 2
+
+
+

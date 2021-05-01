@@ -1,1 +1,0 @@
-/usr/bin/c++  -pthread -fpic   CMakeFiles/tests.dir/CloudServer.cpp.o  -o tests  /usr/local/lib/libgtest.a -pthread -lgmock libcloud.a /usr/lib/x86_64-linux-gnu/libboost_system.a /usr/lib/x86_64-linux-gnu/libboost_thread.a /usr/lib/x86_64-linux-gnu/libboost_atomic.a -lpthread 

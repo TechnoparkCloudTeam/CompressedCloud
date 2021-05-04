@@ -1,14 +1,21 @@
 #pragma once
 #include <stdio.h>
+#include <memory>
 #include <iostream>
 #include <vector>
 #include <cstring>
+
 struct user
 {
     std::string login;
     std::string password = "0"; //по идее не нужен если отправка на сервер с хранилищем
 };
 
+namespace connection
+{
+    template <typename T>
+    class Session;
+}
 namespace msg
 {
     template <typename T>
@@ -59,4 +66,16 @@ namespace msg
         //достаем из сообщения
     };
 
+    template <typename T>
+    struct MessageFromServer
+    {
+        std::shared_ptr<connection::Session<T>> remote = nullptr;
+        Message<T> m;
+
+        friend std::ostream &operator<<(std::ostream &os, const MessageFromServer<T> &msg)
+        {
+            os << msg.m;
+            return os;
+        }
+    };
 }

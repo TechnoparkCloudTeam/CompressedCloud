@@ -1,3 +1,5 @@
+#pragma once
+
 #include <boost/asio.hpp>
 #include "ISession.h"
 #include "Message.h"

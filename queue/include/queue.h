@@ -1,3 +1,5 @@
+#pragma once
+
 #include <queue>
 #include <mutex>
 #include "IQueue.h"
@@ -6,7 +8,7 @@ namespace q
 {
 
     template <typename T>
-    class Queue : public IQueue
+    class Queue 
     {
     public:
         ~Queue()
@@ -14,13 +16,13 @@ namespace q
             clear();
         }
 
-        void push(const T &item) override
+        void push(const T &item) 
         {
             std::scoped_lock lock(lockQ);
             q.push(item);
         }
 
-        const T &pop() override
+        const T &pop() 
         {
             std::scoped_lock lock(lockQ);
             const T &item = q.front();
@@ -28,7 +30,7 @@ namespace q
             return item;
         }
 
-        bool isEmpty() const override
+        bool isEmpty() const 
         {
             return q.empty();
         }
@@ -38,7 +40,7 @@ namespace q
         void clear()
         {
             std::scoped_lock lock(lockQ);
-            q.clear();
+            q = {};
         }
 
         std::mutex lockQ;

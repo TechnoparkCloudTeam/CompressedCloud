@@ -39,8 +39,15 @@ int UserDB::getUserId() {
         return userId;
 }
 
+void LocalDB::add(const std string &query) {
+}
+
+voidLOcalDB::selectId(const std::string &query) {
+}
+
 void UserDB::addUser(const User& user) {
         std::string query = "INSERT INTO User (userId, login, password, deviceId, deviceName, synchFolder, lastUpdate) VALUES ("+ std::to_string(user.userId) + ", " + user.login, + ", " +user.password + ", " + std::to_string(user.deviceId) + ", " + user.deviceName + ", " + user.synchFolder + ", " + user.lastUpdate + ");";
+        add(query);
 }
 
 void UserDB::deleteUser(int id) {
@@ -59,3 +66,15 @@ int UserDB::selectUserId() {
         int id = selectId(query);
         return id;
 }
+
+void ChunkDB::addChunks(const Chunks& chunks) {
+  std::string query = "INSERT INTO Chunks (idFile) VALUES (" + std::to_string(chunks.idFile) + ");";
+  add(query);
+}
+
+void FileDB::addFile(FileMeta &file) {
+  BOOST_LOG_TRIVIAL(debug) << "FileDB: Insert File";
+	std::string query = "INSERT INTO Files (id, fileName, fileSize, version, quantityChunks) VALUES ('" + file.id +"', '" + file.fileName + "', " + std::to_string(file.fileSize) + ", " + std::to_string(file.version) + ", " + std::to_string(file.quantityChunks) + "');";
+	add(query);
+}
+

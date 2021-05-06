@@ -7,11 +7,10 @@ struct Chunks {
         int idFile;
 };
 
-
 class ChunkDB {
 public:
-        std::vector<Chunks> getChunks(const int &fileId);
-        void addChunks(const std::vector<Chunks> &chunks, const int &fileId);
+        void getChunks(const Chunks &chunks);
+        void addChunks(const Chunks &chunks);
 private:
         Chunks chunk;
         int fileId;

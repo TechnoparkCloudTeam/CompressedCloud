@@ -3,10 +3,10 @@
 #include "LocalDB.h"
 
 struct Chunks {
-        int userId;
-        int chunkId;
-        std::vector<char> data;
+        int id;
+        int idFile;
 };
+
 
 class ChunkDB {
 public:

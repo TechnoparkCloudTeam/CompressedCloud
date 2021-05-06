@@ -4,12 +4,12 @@
 #include "LocalDB.h"
 
 struct FileMeta {
-        int fileId;
-        int version;
+        int id;
         std::string fileName;
-        std::string filePath;
+        int fileSize;
+        int version;
+        int quantityChunks;
 };
-
 
 class FileDB {
 public:

@@ -1,24 +1,17 @@
-cmake_minimum_required(VERSION 3.16)
-project(DataBases)
+include_directories(LocalDB/include)
+ADD_LIBRARY(liblocalDB STATIC LocalDB/src/LocalDB.cpp)
 
-set(CMAKE_CXX_STANDARD 20)
+INCLUDE_DIRECTORIES(${Boost_INCLUDE_DIR})
+find_package (SQLite3)
+include_directories(${SQLite3_INCLUDE_DIRS})
 
-ADD_SUBDIRECTORY(LocalDB)
-ADD_SUBDIRECTORY(FileStorageServer)
-ADD_SUBDIRECTORY(DataBase)
+find_package(Boost)
+FIND_PACKAGE(Boost COMPONENTS log REQUIRED)
+include_directories(${Boost_INCLUDE_DIRS})
+
+add_executable(LocalDB LocalDB/src/main.cpp
+        LOcalDB/src/LocalDB.cpp)
+
+target_link_libraries (LocalDB ${SQLite3_LIBRARIES})
+target_link_libraries (LocalDB  ${Boost_LIBRARIES})
 ADD_SUBDIRECTORY(Tests)
-INCLUDE_DIRECTORIES(LocalDB/include)
-INCLUDE_DIRECTORIES(FileStorageServer/include)
-INCLUDE_DIRECTORIES(DataBase/include)
-ADD_LIBRARY(alldblib STATIC
-        LocalDB/src/LocalDB.cpp
-        LocalDB/src/ChunkDB.cpp
-        LocalDB/src/UserDB.cpp
-        LocalDB/src/FileDB.cpp
-        LocalDB/src/DeviceDB.cpp
-        FileStorageServer/src/FileStorage.cpp
-        DataBase/src/UserInfoDB.cpp
-        DataBase/src/PostgresDB.cpp
-        DataBase/src/MetaDB.cpp
-        DataBase/src/Commands.cpp)
-add_executable(DataBases main.cpp)

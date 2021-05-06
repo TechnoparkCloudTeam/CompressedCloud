@@ -16,7 +16,7 @@ class UserDB {
 public:
         int selectUserId();
         void deleteUser();
-        int getUserId() const;
+        int getUserId();
         void addUser(const User &user);
 private:
         std::shared_ptr<LocalDB> localDB;

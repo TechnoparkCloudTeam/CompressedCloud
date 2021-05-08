@@ -8,13 +8,13 @@
 int main()
 {
     messageFS::Request req;
-    req.set_id(4);
-    req.set_name("Lyalyashechka");
 
+    req.set_name("M.U.Lermontov");
+    req.set_id(2);
     boost::asio::io_service io_service_;
     boost::asio::ip::tcp::resolver resolver(io_service_);
     boost::asio::ip::tcp::resolver::results_type endpoints =
-        resolver.resolve({"127.0.0.1", "6666"});
+        resolver.resolve({"127.0.0.1", "8888"});
 
     boost::asio::ip::tcp::socket socket_(io_service_);
     boost::asio::connect(socket_, endpoints);
@@ -31,12 +31,16 @@ int main()
     delete coded_output;
     delete raw_output;
 
-    std::cout << "zatup ne tut";
+
     boost::system::error_code error;
 
     boost::array<char, 128> bufIn;
+    while(1){
+    sleep(5);
     socket_.write_some(streamBuffer_.data(), error);
+    }
     socket_.read_some(boost::asio::buffer(bufIn), error);
+    
     for (int i = 0; i < 100; i++)
         std::cout << bufIn[i];
 }

@@ -23,18 +23,11 @@ void fsServer::Server::run()
 {
     std::cout << "Run" << std::endl;
     io_service_.run();
-
-    //t_contex = std::thread([this]() { io_service_.run(); });
-
-    
 }
 
 void fsServer::Server::stop()
 {
     io_service_.stop();
-    /*   if (t_contex.joinable())
-        t_contex.join(); */
-
     std::cout << "Stop" << std::endl;
 }
 

@@ -20,8 +20,8 @@ include_directories(connection/include)
 include_directories(server/include)
 
 
-add_executable(mai main.cpp server/src/server.cpp connection/src/connection.cpp ${PROTO_SRCS} ${PROTO_HDRS})
-target_link_libraries(mai ${Boost_LIBRARIES} ${Protobuf_LIBRARIES}) 
+add_executable(server main.cpp server/src/server.cpp connection/src/connection.cpp ${PROTO_SRCS} ${PROTO_HDRS})
+target_link_libraries(server ${Boost_LIBRARIES} ${Protobuf_LIBRARIES}) 
 
 add_executable(client client.cpp ${PROTO_SRCS} ${PROTO_HDRS})
 target_link_libraries(client ${Boost_LIBRARIES} ${Protobuf_LIBRARIES})

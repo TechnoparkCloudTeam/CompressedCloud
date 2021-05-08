@@ -4,6 +4,7 @@
 #include <vector>
 #include <thread>
 #include <string>
+#include "FileStorageWorker.h"
 #include "connection.h"
 
 namespace fsServer
@@ -11,7 +12,7 @@ namespace fsServer
     class Server
     {
     public:
-        explicit Server(const std::string& port);
+        explicit Server(const std::string& port/* , const std::string& filed */);
         
         ~Server();
         
@@ -30,7 +31,8 @@ namespace fsServer
         
         boost::asio::ip::tcp::socket socket_;
         
-        std::thread t_contex;
+
+       /*  FileStorageWorker fsworker; */
     };
 
 }

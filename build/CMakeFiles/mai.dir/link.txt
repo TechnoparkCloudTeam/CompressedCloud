@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/mai.dir/main.cpp.o CMakeFiles/mai.dir/server/src/server.cpp.o CMakeFiles/mai.dir/connection/src/connection.cpp.o CMakeFiles/mai.dir/message.pb.cc.o  -o mai  /usr/lib/x86_64-linux-gnu/libboost_system.a /usr/lib/x86_64-linux-gnu/libboost_thread.a /usr/lib/x86_64-linux-gnu/libprotobuf.so -lpthread /usr/lib/x86_64-linux-gnu/libboost_atomic.a -lpthread 

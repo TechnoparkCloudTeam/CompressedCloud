@@ -4,6 +4,7 @@
 #include <google/protobuf/io/zero_copy_stream_impl.h>
 #include <array>
 #include <string>
+#include "FileStorageWorker.h"
 #include "message.pb.h"
 
 class Connection : public std::enable_shared_from_this<Connection>
@@ -27,4 +28,5 @@ private:
     //std::array<char, 8192> buffer_In;
     char data_[8192];
 
+    FileStorageWorker fsworker = FileStorageWorker("/home/lyalyashechka/TP/c_c++/main server/build/content/");
 };

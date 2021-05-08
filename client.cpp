@@ -10,7 +10,7 @@ int main()
     messageFS::Request req;
 
     req.set_name("M.U.Lermontov");
-    req.set_id(2);
+    req.set_id(10);
     boost::asio::io_service io_service_;
     boost::asio::ip::tcp::resolver resolver(io_service_);
     boost::asio::ip::tcp::resolver::results_type endpoints =
@@ -31,16 +31,16 @@ int main()
     delete coded_output;
     delete raw_output;
 
-
     boost::system::error_code error;
 
     boost::array<char, 128> bufIn;
-    while(1){
-    sleep(5);
+
     socket_.write_some(streamBuffer_.data(), error);
-    }
     socket_.read_some(boost::asio::buffer(bufIn), error);
     
-    for (int i = 0; i < 100; i++)
-        std::cout << bufIn[i];
+    /* socket_.write_some(streamBuffer_.data(), error); 
+     */
+
+      for (int i = 0; i < 100; i++)
+        std::cout << bufIn[i];  
 }

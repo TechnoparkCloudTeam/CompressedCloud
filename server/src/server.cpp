@@ -1,16 +1,11 @@
 #include <iostream>
 #include "server.h"
-fsServer::Server::Server(const std::string& port)
+fsServer::Server::Server(const std::string& port/* , const std::string& filed */)
     : io_service_(),
-      acceptor_(io_service_),
+      acceptor_(io_service_, boost::asio::ip::tcp::endpoint(boost::asio::ip::tcp::v4(), 8888)),
       socket_(io_service_)
+      //fsworker("/home/lyalyashechka/TP/c_c++/main server/build")
 {
-    boost::asio::ip::tcp::resolver resolver(io_service_);
-    boost::asio::ip::tcp::endpoint endpoint = *resolver.resolve({"127.0.0.1", port});
-    acceptor_.open(endpoint.protocol());
-    acceptor_.set_option(boost::asio::ip::tcp::acceptor::reuse_address(true));
-    acceptor_.bind(endpoint);
-    acceptor_.listen();
     waitForClientConnection();
 }
 
@@ -33,16 +28,11 @@ void fsServer::Server::stop()
 
 void fsServer::Server::waitForClientConnection()
 {
-    acceptor_.async_accept([this](std::error_code er,
-                                  boost::asio::ip::tcp::socket socket_) {
+    acceptor_.async_accept(socket_, [this](boost::system::error_code er) {
         if (!er)
         {
             std::cout << "Connect " << socket_.remote_endpoint() << std::endl;
-            std::shared_ptr<Connection> newConnect =
-                std::make_shared<Connection>(std::move(socket_));
-            
-            allConnection.push_back(std::move(newConnect));
-            allConnection[allConnection.size() - 1]->start();
+            std::make_shared<Connection>(std::move(socket_))->start();
         }
         waitForClientConnection();
     });

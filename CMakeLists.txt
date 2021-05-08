@@ -18,9 +18,9 @@ protobuf_generate_cpp(PROTO_SRCS PROTO_HDRS message.proto)
 
 include_directories(connection/include)
 include_directories(server/include)
+include_directories(fileStorageWorker/include)
 
-
-add_executable(server main.cpp server/src/server.cpp connection/src/connection.cpp ${PROTO_SRCS} ${PROTO_HDRS})
+add_executable(server main.cpp server/src/server.cpp connection/src/connection.cpp fileStorageWorker/src/FileStorageWorker.cpp ${PROTO_SRCS} ${PROTO_HDRS})
 target_link_libraries(server ${Boost_LIBRARIES} ${Protobuf_LIBRARIES}) 
 
 add_executable(client client.cpp ${PROTO_SRCS} ${PROTO_HDRS})

@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../Client/include/ClientNetwork.h
+boost/asio.hpp
+-
+boost/enable_shared_from_this.hpp
+-
+boost/shared_ptr.hpp
+-
+boost/bind.hpp
+-
+string
+-
+iostream
+-
+
+/home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/Client/clientNetwork.cpp
+ClientNetwork.h
+/home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/Client/ClientNetwork.h
+

@@ -1,8 +1,8 @@
 #include <iostream>
 #include "server.h"
-fsServer::Server::Server(const std::string& port/* , const std::string& filed */)
+fsServer::Server::Server(int port/* , const std::string& filed */)
     : io_service_(),
-      acceptor_(io_service_, boost::asio::ip::tcp::endpoint(boost::asio::ip::tcp::v4(), 8888)),
+      acceptor_(io_service_, boost::asio::ip::tcp::endpoint(boost::asio::ip::tcp::v4(), port)),
       socket_(io_service_)
       //fsworker("/home/lyalyashechka/TP/c_c++/main server/build")
 {

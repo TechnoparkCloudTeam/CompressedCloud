@@ -53,6 +53,7 @@ CMAKE_BINARY_DIR = /home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/bui
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/clientnetwork.dir/all
 all: CMakeFiles/client.dir/all
 all: CMakeFiles/server.dir/all
 
@@ -64,10 +65,38 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/clientnetwork.dir/clean
 clean: CMakeFiles/client.dir/clean
 clean: CMakeFiles/server.dir/clean
 
 .PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/clientnetwork.dir
+
+# All Build rule for target.
+CMakeFiles/clientnetwork.dir/all:
+	$(MAKE) -f CMakeFiles/clientnetwork.dir/build.make CMakeFiles/clientnetwork.dir/depend
+	$(MAKE) -f CMakeFiles/clientnetwork.dir/build.make CMakeFiles/clientnetwork.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/build/CMakeFiles --progress-num=5,6,7 "Built target clientnetwork"
+.PHONY : CMakeFiles/clientnetwork.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/clientnetwork.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/build/CMakeFiles 3
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/clientnetwork.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/build/CMakeFiles 0
+.PHONY : CMakeFiles/clientnetwork.dir/rule
+
+# Convenience name for target.
+clientnetwork: CMakeFiles/clientnetwork.dir/rule
+
+.PHONY : clientnetwork
+
+# clean rule for target.
+CMakeFiles/clientnetwork.dir/clean:
+	$(MAKE) -f CMakeFiles/clientnetwork.dir/build.make CMakeFiles/clientnetwork.dir/clean
+.PHONY : CMakeFiles/clientnetwork.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/client.dir
@@ -103,7 +132,7 @@ CMakeFiles/client.dir/clean:
 CMakeFiles/server.dir/all:
 	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/depend
 	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/build/CMakeFiles --progress-num=5,6,7,8,9,10,11 "Built target server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/build/CMakeFiles --progress-num=8,9,10,11,12,13,14 "Built target server"
 .PHONY : CMakeFiles/server.dir/all
 
 # Build rule for subdir invocation for target.

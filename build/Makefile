@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named clientnetwork
+
+# Build rule for target.
+clientnetwork: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 clientnetwork
+.PHONY : clientnetwork
+
+# fast build rule for target.
+clientnetwork/fast:
+	$(MAKE) -f CMakeFiles/clientnetwork.dir/build.make CMakeFiles/clientnetwork.dir/build
+.PHONY : clientnetwork/fast
+
+#=============================================================================
 # Target rules for targets named client
 
 # Build rule for target.
@@ -135,6 +148,60 @@ server: cmake_check_build_system
 server/fast:
 	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/build
 .PHONY : server/fast
+
+Client/clientNetwork.o: Client/clientNetwork.cpp.o
+
+.PHONY : Client/clientNetwork.o
+
+# target to build an object file
+Client/clientNetwork.cpp.o:
+	$(MAKE) -f CMakeFiles/clientnetwork.dir/build.make CMakeFiles/clientnetwork.dir/Client/clientNetwork.cpp.o
+.PHONY : Client/clientNetwork.cpp.o
+
+Client/clientNetwork.i: Client/clientNetwork.cpp.i
+
+.PHONY : Client/clientNetwork.i
+
+# target to preprocess a source file
+Client/clientNetwork.cpp.i:
+	$(MAKE) -f CMakeFiles/clientnetwork.dir/build.make CMakeFiles/clientnetwork.dir/Client/clientNetwork.cpp.i
+.PHONY : Client/clientNetwork.cpp.i
+
+Client/clientNetwork.s: Client/clientNetwork.cpp.s
+
+.PHONY : Client/clientNetwork.s
+
+# target to generate assembly for a file
+Client/clientNetwork.cpp.s:
+	$(MAKE) -f CMakeFiles/clientnetwork.dir/build.make CMakeFiles/clientnetwork.dir/Client/clientNetwork.cpp.s
+.PHONY : Client/clientNetwork.cpp.s
+
+Client/src/ClientNetwork.o: Client/src/ClientNetwork.cpp.o
+
+.PHONY : Client/src/ClientNetwork.o
+
+# target to build an object file
+Client/src/ClientNetwork.cpp.o:
+	$(MAKE) -f CMakeFiles/clientnetwork.dir/build.make CMakeFiles/clientnetwork.dir/Client/src/ClientNetwork.cpp.o
+.PHONY : Client/src/ClientNetwork.cpp.o
+
+Client/src/ClientNetwork.i: Client/src/ClientNetwork.cpp.i
+
+.PHONY : Client/src/ClientNetwork.i
+
+# target to preprocess a source file
+Client/src/ClientNetwork.cpp.i:
+	$(MAKE) -f CMakeFiles/clientnetwork.dir/build.make CMakeFiles/clientnetwork.dir/Client/src/ClientNetwork.cpp.i
+.PHONY : Client/src/ClientNetwork.cpp.i
+
+Client/src/ClientNetwork.s: Client/src/ClientNetwork.cpp.s
+
+.PHONY : Client/src/ClientNetwork.s
+
+# target to generate assembly for a file
+Client/src/ClientNetwork.cpp.s:
+	$(MAKE) -f CMakeFiles/clientnetwork.dir/build.make CMakeFiles/clientnetwork.dir/Client/src/ClientNetwork.cpp.s
+.PHONY : Client/src/ClientNetwork.cpp.s
 
 client.o: client.cpp.o
 
@@ -309,8 +376,15 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... clientnetwork"
 	@echo "... client"
 	@echo "... server"
+	@echo "... Client/clientNetwork.o"
+	@echo "... Client/clientNetwork.i"
+	@echo "... Client/clientNetwork.s"
+	@echo "... Client/src/ClientNetwork.o"
+	@echo "... Client/src/ClientNetwork.i"
+	@echo "... Client/src/ClientNetwork.s"
 	@echo "... client.o"
 	@echo "... client.i"
 	@echo "... client.s"

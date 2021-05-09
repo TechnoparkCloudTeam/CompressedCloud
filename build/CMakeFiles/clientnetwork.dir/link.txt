@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/clientnetwork.dir/Client/clientNetwork.cpp.o CMakeFiles/clientnetwork.dir/Client/src/ClientNetwork.cpp.o  -o clientnetwork  /usr/lib/x86_64-linux-gnu/libboost_system.a /usr/lib/x86_64-linux-gnu/libboost_thread.a /usr/lib/x86_64-linux-gnu/libboost_atomic.a -lpthread 

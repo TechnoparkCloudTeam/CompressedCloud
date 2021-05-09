@@ -24,17 +24,11 @@ void Connection::read()
             [this, self](boost::system::error_code ec, std::size_t length) {
             if (!ec)
             {
-                google::protobuf::io::ArrayInputStream arrayInputStream(data_, 5000);
-                google::protobuf::io::CodedInputStream codedInputStream(&arrayInputStream);
-                uint32_t messageSize;
-                codedInputStream.ReadVarint32(&messageSize);
-
+                //это в отдельный класс
                 messageFS::Request req;
-
-                req.ParseFromCodedStream(&codedInputStream);
-
-                std::cout << req.id() << " " << req.name() << std::endl;
-
+                req.ParseFromString(data_);
+                std::cout<<req.id()<<" "<<req.name()<<std::endl; 
+                //на это ивенты
                 if (req.id() == 1)
                 {
                     std::cout << "Creating folder for user: " << req.name() << std::endl;
@@ -45,8 +39,9 @@ void Connection::read()
                 {
                     std::cout<<"Deleted file from user: "<<req.name()<<std::endl;
                     fsworker.removeFileFromDir(req.name(), "file.txt");
-                    write();
+                   
                 }
+                write();
             }
         });
 }

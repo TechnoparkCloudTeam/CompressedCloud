@@ -12,7 +12,7 @@ namespace fsServer
     class Server
     {
     public:
-        explicit Server(const std::string& port/* , const std::string& filed */);
+        explicit Server(int port/* , const std::string& filed */);
         
         ~Server();
         

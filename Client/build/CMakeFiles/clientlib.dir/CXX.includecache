@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ilya/TechnoparkProjects/Client/Chunker/include/Chunker.h
+array
+-
+string
+-
+iostream
+-
+vector
+-
+filesystem
+-
+
+/home/ilya/TechnoparkProjects/Client/Chunker/src/Chunker.cpp
+../include/Chunker.h
+/home/ilya/TechnoparkProjects/Client/Chunker/include/Chunker.h
+
+/home/ilya/TechnoparkProjects/Client/ProgramInterface/include/ProgramInterface.h
+string
+-
+
+/home/ilya/TechnoparkProjects/Client/ProgramInterface/src/ProgramInterface.cpp
+../include/ProgramInterface.h
+/home/ilya/TechnoparkProjects/Client/ProgramInterface/include/ProgramInterface.h
+
+/home/ilya/TechnoparkProjects/Client/Watcher/include/Watcher.h
+cstdint
+-
+filesystem
+-
+vector
+-
+
+/home/ilya/TechnoparkProjects/Client/Watcher/src/Watcher.cpp
+../include/Watcher.h
+/home/ilya/TechnoparkProjects/Client/Watcher/include/Watcher.h
+

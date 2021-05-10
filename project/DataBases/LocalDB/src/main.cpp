@@ -4,7 +4,7 @@
 #include "boost/log/trivial.hpp"
 #include <sqlite3.h>
 
-int main() {
+int main(int argc, char **argv) {
        // test();
   //UserDB userDB("UserDB.db3");
  /* std::string dbname="UserDB.db3";
@@ -52,8 +52,32 @@ CREATE TABLE IF NOT EXISTS "User" (
   userDB.addUser(u);
 #endif*/
 
-  UserDB userDB("UserDB.db3");
-  User u;
+ /* UserDB DB("UserDB.dblite");
+    DB.exec(R"(
+CREATE TABLE IF NOT EXISTS "User" (
+	"userId"	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+	"login"	TEXT NOT NULL,
+	"password"	TEXT NOT NULL,
+	"deviceId"	INTEGER NOT NULL,
+	"deviceName"	INTEGER NOT NULL,
+	"synchFolder"	TEXT NOT NULL,
+	"lastUpdate"	TEXT NOT NULL);                  
+)");*/
+  /*  {
+   User user;
+  // user.userId = 46;
+   user.login = "dsagfkshsgrth";
+   user.password = "ffgerkheaghf";
+   user.deviceId = 27;
+   user.deviceName = "kdgrtuurufj";
+   user.synchFolder = "lrshtgh";
+   user.lastUpdate = "vshvgrurjukej";
+
+    DB.addUser(user);
+  }
+*/
+
+  /*User u;
   u.userId = 46;
   u.login = "dsagfkshsgrth";
   u.password = "ffgerkheaghf";
@@ -61,7 +85,35 @@ CREATE TABLE IF NOT EXISTS "User" (
   u.deviceName = "kdgrtuurufj";
   u.synchFolder = "lrshtgh";
   u.lastUpdate = "vshvgrurjukej";
-  userDB.addUser(u);
+  DB.addUser(u);
+*/
+
+UserDB DB("base.dblite");
+        DB.exec(R"(
+CREATE TABLE IF NOT EXISTS "User" (
+	"userId"	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+	"login"	TEXT NOT NULL,
+	"password"	TEXT NOT NULL,
+	"deviceId"	INTEGER NOT NULL,
+	"deviceName"	INTEGER NOT NULL,
+	"synchFolder"	TEXT NOT NULL,
+	"lastUpdate"	TEXT NOT NULL);                  
+)");
+
+  {
+   User user;
+  // user.userId = 46;
+   user.login = "dsagfkshsgrth";
+   user.password = "ffgerkheaghf";
+   user.deviceId = 27;
+   user.deviceName = "kdgrtuurufj";
+   user.synchFolder = "lrshtgh";
+   user.lastUpdate = "vshvgrurjukej";
+
+    DB.addUser(user);
+  }
+
+
 
   return 0;
 }

@@ -40,16 +40,6 @@ memory
 string
 -
 
-/home/lida/CloudProject/CompressedCloud/project/DataBases/LocalDB/src/LocalDB.cpp
-LocalDB.h
-/home/lida/CloudProject/CompressedCloud/project/DataBases/LocalDB/src/LocalDB.h
-boost/log/trivial.hpp
-/home/lida/CloudProject/CompressedCloud/project/DataBases/LocalDB/src/boost/log/trivial.hpp
-utility
--
-iostream
--
-
 /home/lida/CloudProject/CompressedCloud/project/DataBases/LocalDB/src/main.cpp
 iostream
 -

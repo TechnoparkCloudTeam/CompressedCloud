@@ -49,22 +49,23 @@ private:
 class UserDB {
 public:
 	UserDB(const std::string_view  userNameDB);
-	bool connect();
+	bool connect(const std::string_view userNameDB);
         void disconnect();
-        void createTable();
+        bool exec(const std::string_view sql);
+        //void createTable();
         int selectUserId();
         void deleteUser(int id);
-        void add(const std::string &query);
-        int selectId(const std::string& query); 
+        //void add(const std::string &query);
+        //int selectId(const std::string& query); 
         int getUserId(const User& user);
-        void addUser(const User &user);
+        bool addUser(const User &user);
 private:
         //LocalDB localDB;
         //int _userId;
-        std::string _userNameDB;
+        //std::string _userNameDB;
         //User user;
         std::unique_ptr<sqlite3, sqlite3_deleter> _database;
-  	std::unique_ptr<sqlite3_stmt, sqlite3_stmt_deleter> _stmt;
+  	//std::unique_ptr<sqlite3_stmt, sqlite3_stmt_deleter> _stmt;
   	const std::string createQueryUser = "CREATE TABLE IF NOT EXISTS \"User\" (\n"
 							  "\t\"userId\"\tINTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,\n"
 							  "\t\"login\"\tTEXT NOT NULL,\n"

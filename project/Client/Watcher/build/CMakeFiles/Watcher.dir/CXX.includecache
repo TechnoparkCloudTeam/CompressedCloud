@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ilya/TechnoparkProjects/Client/Watcher/include/Watcher.h
+cstdint
+-
+filesystem
+-
+vector
+-
+sys/inotify.h
+-
+unistd.h
+-
+WatcherConfig.h
+/home/ilya/TechnoparkProjects/Client/Watcher/include/WatcherConfig.h
+iostream
+-
+string
+-
+
+/home/ilya/TechnoparkProjects/Client/Watcher/include/WatcherConfig.h
+sys/inotify.h
+-
+
+/home/ilya/TechnoparkProjects/Client/Watcher/src/Watcher.cpp
+../include/Watcher.h
+/home/ilya/TechnoparkProjects/Client/Watcher/include/Watcher.h
+

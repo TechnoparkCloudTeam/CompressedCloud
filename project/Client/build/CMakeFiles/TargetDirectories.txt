@@ -1,0 +1,13 @@
+/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/CMakeFiles/rebuild_cache.dir
+/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/CMakeFiles/Client.dir
+/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/CMakeFiles/edit_cache.dir
+/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/CMakeFiles/clientlib.dir
+/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/Watcher/CMakeFiles/rebuild_cache.dir
+/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/Watcher/CMakeFiles/edit_cache.dir
+/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/Watcher/CMakeFiles/Watcher.dir
+/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/ProgramInterface/CMakeFiles/rebuild_cache.dir
+/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/ProgramInterface/CMakeFiles/edit_cache.dir
+/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/ProgramInterface/CMakeFiles/ProgramInterface.dir
+/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/Chunker/CMakeFiles/rebuild_cache.dir
+/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/Chunker/CMakeFiles/edit_cache.dir
+/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/Chunker/CMakeFiles/Chunker.dir

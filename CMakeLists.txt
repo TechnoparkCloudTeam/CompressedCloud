@@ -27,5 +27,5 @@ target_link_libraries(server ${Boost_LIBRARIES} ${Protobuf_LIBRARIES})
 add_executable(client client.cpp ${PROTO_SRCS} ${PROTO_HDRS})
 target_link_libraries(client ${Boost_LIBRARIES} ${Protobuf_LIBRARIES})
 
-add_executable(clientnetwork Client/clientNetwork.cpp Client/src/ClientNetwork.cpp)
-target_link_libraries(clientnetwork ${Boost_LIBRARIES})
+add_executable(clientnetwork Client/clientNetwork.cpp Client/src/ClientNetwork.cpp ${PROTO_SRCS} ${PROTO_HDRS})
+target_link_libraries(clientnetwork ${Boost_LIBRARIES} ${Protobuf_LIBRARIES})

@@ -180,6 +180,7 @@ class Request PROTOBUF_FINAL :
 
   enum : int {
     kNameFieldNumber = 2,
+    kFileFieldNumber = 3,
     kIdFieldNumber = 1,
   };
   // string name = 2;
@@ -196,6 +197,22 @@ class Request PROTOBUF_FINAL :
   const std::string& _internal_name() const;
   void _internal_set_name(const std::string& value);
   std::string* _internal_mutable_name();
+  public:
+
+  // string file = 3;
+  void clear_file();
+  const std::string& file() const;
+  void set_file(const std::string& value);
+  void set_file(std::string&& value);
+  void set_file(const char* value);
+  void set_file(const char* value, size_t size);
+  std::string* mutable_file();
+  std::string* release_file();
+  void set_allocated_file(std::string* file);
+  private:
+  const std::string& _internal_file() const;
+  void _internal_set_file(const std::string& value);
+  std::string* _internal_mutable_file();
   public:
 
   // int32 id = 1;
@@ -215,6 +232,7 @@ class Request PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr file_;
   ::PROTOBUF_NAMESPACE_ID::int32 id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_message_2eproto;
@@ -310,6 +328,68 @@ inline void Request::set_allocated_name(std::string* name) {
   name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
       GetArena());
   // @@protoc_insertion_point(field_set_allocated:messageFS.Request.name)
+}
+
+// string file = 3;
+inline void Request::clear_file() {
+  file_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline const std::string& Request::file() const {
+  // @@protoc_insertion_point(field_get:messageFS.Request.file)
+  return _internal_file();
+}
+inline void Request::set_file(const std::string& value) {
+  _internal_set_file(value);
+  // @@protoc_insertion_point(field_set:messageFS.Request.file)
+}
+inline std::string* Request::mutable_file() {
+  // @@protoc_insertion_point(field_mutable:messageFS.Request.file)
+  return _internal_mutable_file();
+}
+inline const std::string& Request::_internal_file() const {
+  return file_.Get();
+}
+inline void Request::_internal_set_file(const std::string& value) {
+  
+  file_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
+}
+inline void Request::set_file(std::string&& value) {
+  
+  file_.Set(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:messageFS.Request.file)
+}
+inline void Request::set_file(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  file_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
+              GetArena());
+  // @@protoc_insertion_point(field_set_char:messageFS.Request.file)
+}
+inline void Request::set_file(const char* value,
+    size_t size) {
+  
+  file_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:messageFS.Request.file)
+}
+inline std::string* Request::_internal_mutable_file() {
+  
+  return file_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline std::string* Request::release_file() {
+  // @@protoc_insertion_point(field_release:messageFS.Request.file)
+  return file_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void Request::set_allocated_file(std::string* file) {
+  if (file != nullptr) {
+    
+  } else {
+    
+  }
+  file_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), file,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:messageFS.Request.file)
 }
 
 #ifdef __GNUC__

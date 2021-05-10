@@ -3,7 +3,11 @@
 
 CMakeFiles/clientnetwork.dir/Client/clientNetwork.cpp.o: ../Client/include/ClientNetwork.h
 CMakeFiles/clientnetwork.dir/Client/clientNetwork.cpp.o: ../Client/clientNetwork.cpp
+CMakeFiles/clientnetwork.dir/Client/clientNetwork.cpp.o: message.pb.h
 
 CMakeFiles/clientnetwork.dir/Client/src/ClientNetwork.cpp.o: ../Client/include/ClientNetwork.h
 CMakeFiles/clientnetwork.dir/Client/src/ClientNetwork.cpp.o: ../Client/src/ClientNetwork.cpp
+
+CMakeFiles/clientnetwork.dir/message.pb.cc.o: message.pb.cc
+CMakeFiles/clientnetwork.dir/message.pb.cc.o: message.pb.h
 

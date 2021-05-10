@@ -33,6 +33,6 @@ void ClientNetwork::readMessage(boost::system::error_code ec)
 void ClientNetwork::handleRead(boost::system::error_code ec)
 {
     //тут че то делается
-    for(int i = 0; i < 100; i++)
-        std::cout<<read_data[i];
+   /*  for(int i = 0; i < 100; i++)
+        std::cout<<read_data[i]; */
 }

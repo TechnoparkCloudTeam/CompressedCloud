@@ -1,8 +1,11 @@
 file(REMOVE_RECURSE
   "CMakeFiles/clientnetwork.dir/Client/clientNetwork.cpp.o"
   "CMakeFiles/clientnetwork.dir/Client/src/ClientNetwork.cpp.o"
+  "CMakeFiles/clientnetwork.dir/message.pb.cc.o"
   "clientnetwork"
   "clientnetwork.pdb"
+  "message.pb.cc"
+  "message.pb.h"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud
+CMAKE_SOURCE_DIR = /home/lyalyashechka/TP/c_c++/gitMain/CompressedCloud
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/build
+CMAKE_BINARY_DIR = /home/lyalyashechka/TP/c_c++/gitMain/CompressedCloud/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/server.dir/depend.make
@@ -59,76 +59,76 @@ include CMakeFiles/server.dir/flags.make
 
 message.pb.h: ../message.proto
 message.pb.h: /usr/bin/protoc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Running cpp protocol buffer compiler on message.proto"
-	/usr/bin/protoc --cpp_out /home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/build -I /home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud /home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/message.proto
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lyalyashechka/TP/c_c++/gitMain/CompressedCloud/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Running cpp protocol buffer compiler on message.proto"
+	/usr/bin/protoc --cpp_out /home/lyalyashechka/TP/c_c++/gitMain/CompressedCloud/build -I /home/lyalyashechka/TP/c_c++/gitMain/CompressedCloud /home/lyalyashechka/TP/c_c++/gitMain/CompressedCloud/message.proto
 
 message.pb.cc: message.pb.h
 	@$(CMAKE_COMMAND) -E touch_nocreate message.pb.cc
 
 CMakeFiles/server.dir/main.cpp.o: CMakeFiles/server.dir/flags.make
 CMakeFiles/server.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/server.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.dir/main.cpp.o -c /home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lyalyashechka/TP/c_c++/gitMain/CompressedCloud/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/server.dir/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.dir/main.cpp.o -c /home/lyalyashechka/TP/c_c++/gitMain/CompressedCloud/main.cpp
 
 CMakeFiles/server.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/main.cpp > CMakeFiles/server.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lyalyashechka/TP/c_c++/gitMain/CompressedCloud/main.cpp > CMakeFiles/server.dir/main.cpp.i
 
 CMakeFiles/server.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/main.cpp -o CMakeFiles/server.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lyalyashechka/TP/c_c++/gitMain/CompressedCloud/main.cpp -o CMakeFiles/server.dir/main.cpp.s
 
 CMakeFiles/server.dir/server/src/server.cpp.o: CMakeFiles/server.dir/flags.make
 CMakeFiles/server.dir/server/src/server.cpp.o: ../server/src/server.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/server.dir/server/src/server.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.dir/server/src/server.cpp.o -c /home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/server/src/server.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lyalyashechka/TP/c_c++/gitMain/CompressedCloud/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/server.dir/server/src/server.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.dir/server/src/server.cpp.o -c /home/lyalyashechka/TP/c_c++/gitMain/CompressedCloud/server/src/server.cpp
 
 CMakeFiles/server.dir/server/src/server.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/server/src/server.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/server/src/server.cpp > CMakeFiles/server.dir/server/src/server.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lyalyashechka/TP/c_c++/gitMain/CompressedCloud/server/src/server.cpp > CMakeFiles/server.dir/server/src/server.cpp.i
 
 CMakeFiles/server.dir/server/src/server.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/server/src/server.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/server/src/server.cpp -o CMakeFiles/server.dir/server/src/server.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lyalyashechka/TP/c_c++/gitMain/CompressedCloud/server/src/server.cpp -o CMakeFiles/server.dir/server/src/server.cpp.s
 
 CMakeFiles/server.dir/connection/src/connection.cpp.o: CMakeFiles/server.dir/flags.make
 CMakeFiles/server.dir/connection/src/connection.cpp.o: ../connection/src/connection.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/server.dir/connection/src/connection.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.dir/connection/src/connection.cpp.o -c /home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/connection/src/connection.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lyalyashechka/TP/c_c++/gitMain/CompressedCloud/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/server.dir/connection/src/connection.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.dir/connection/src/connection.cpp.o -c /home/lyalyashechka/TP/c_c++/gitMain/CompressedCloud/connection/src/connection.cpp
 
 CMakeFiles/server.dir/connection/src/connection.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/connection/src/connection.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/connection/src/connection.cpp > CMakeFiles/server.dir/connection/src/connection.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lyalyashechka/TP/c_c++/gitMain/CompressedCloud/connection/src/connection.cpp > CMakeFiles/server.dir/connection/src/connection.cpp.i
 
 CMakeFiles/server.dir/connection/src/connection.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/connection/src/connection.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/connection/src/connection.cpp -o CMakeFiles/server.dir/connection/src/connection.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lyalyashechka/TP/c_c++/gitMain/CompressedCloud/connection/src/connection.cpp -o CMakeFiles/server.dir/connection/src/connection.cpp.s
 
 CMakeFiles/server.dir/fileStorageWorker/src/FileStorageWorker.cpp.o: CMakeFiles/server.dir/flags.make
 CMakeFiles/server.dir/fileStorageWorker/src/FileStorageWorker.cpp.o: ../fileStorageWorker/src/FileStorageWorker.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/server.dir/fileStorageWorker/src/FileStorageWorker.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.dir/fileStorageWorker/src/FileStorageWorker.cpp.o -c /home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/fileStorageWorker/src/FileStorageWorker.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lyalyashechka/TP/c_c++/gitMain/CompressedCloud/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/server.dir/fileStorageWorker/src/FileStorageWorker.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.dir/fileStorageWorker/src/FileStorageWorker.cpp.o -c /home/lyalyashechka/TP/c_c++/gitMain/CompressedCloud/fileStorageWorker/src/FileStorageWorker.cpp
 
 CMakeFiles/server.dir/fileStorageWorker/src/FileStorageWorker.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/fileStorageWorker/src/FileStorageWorker.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/fileStorageWorker/src/FileStorageWorker.cpp > CMakeFiles/server.dir/fileStorageWorker/src/FileStorageWorker.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lyalyashechka/TP/c_c++/gitMain/CompressedCloud/fileStorageWorker/src/FileStorageWorker.cpp > CMakeFiles/server.dir/fileStorageWorker/src/FileStorageWorker.cpp.i
 
 CMakeFiles/server.dir/fileStorageWorker/src/FileStorageWorker.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/fileStorageWorker/src/FileStorageWorker.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/fileStorageWorker/src/FileStorageWorker.cpp -o CMakeFiles/server.dir/fileStorageWorker/src/FileStorageWorker.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lyalyashechka/TP/c_c++/gitMain/CompressedCloud/fileStorageWorker/src/FileStorageWorker.cpp -o CMakeFiles/server.dir/fileStorageWorker/src/FileStorageWorker.cpp.s
 
 CMakeFiles/server.dir/message.pb.cc.o: CMakeFiles/server.dir/flags.make
 CMakeFiles/server.dir/message.pb.cc.o: message.pb.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/server.dir/message.pb.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.dir/message.pb.cc.o -c /home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/build/message.pb.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lyalyashechka/TP/c_c++/gitMain/CompressedCloud/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/server.dir/message.pb.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.dir/message.pb.cc.o -c /home/lyalyashechka/TP/c_c++/gitMain/CompressedCloud/build/message.pb.cc
 
 CMakeFiles/server.dir/message.pb.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/message.pb.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/build/message.pb.cc > CMakeFiles/server.dir/message.pb.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lyalyashechka/TP/c_c++/gitMain/CompressedCloud/build/message.pb.cc > CMakeFiles/server.dir/message.pb.cc.i
 
 CMakeFiles/server.dir/message.pb.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/message.pb.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/build/message.pb.cc -o CMakeFiles/server.dir/message.pb.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lyalyashechka/TP/c_c++/gitMain/CompressedCloud/build/message.pb.cc -o CMakeFiles/server.dir/message.pb.cc.s
 
 # Object files for target server
 server_OBJECTS = \
@@ -152,7 +152,7 @@ server: /usr/lib/x86_64-linux-gnu/libboost_thread.a
 server: /usr/lib/x86_64-linux-gnu/libprotobuf.so
 server: /usr/lib/x86_64-linux-gnu/libboost_atomic.a
 server: CMakeFiles/server.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lyalyashechka/TP/c_c++/gitMain/CompressedCloud/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable server"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/server.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -166,6 +166,6 @@ CMakeFiles/server.dir/clean:
 
 CMakeFiles/server.dir/depend: message.pb.h
 CMakeFiles/server.dir/depend: message.pb.cc
-	cd /home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud /home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud /home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/build /home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/build /home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/build/CMakeFiles/server.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/lyalyashechka/TP/c_c++/gitMain/CompressedCloud/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lyalyashechka/TP/c_c++/gitMain/CompressedCloud /home/lyalyashechka/TP/c_c++/gitMain/CompressedCloud /home/lyalyashechka/TP/c_c++/gitMain/CompressedCloud/build /home/lyalyashechka/TP/c_c++/gitMain/CompressedCloud/build /home/lyalyashechka/TP/c_c++/gitMain/CompressedCloud/build/CMakeFiles/server.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/server.dir/depend
 

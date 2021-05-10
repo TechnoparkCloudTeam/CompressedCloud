@@ -47,7 +47,7 @@ void FileStorageWorker::createFile(const std::string &DirName,
                                    const std::string &fileName, const char *buffer)
 {
     fs::current_path(root / currentDir / DirName);
-    std::ofstream(fileName) << buffer;
+    std::ofstream(fileName, std::ios_base::binary) << buffer;
 }
 
 void FileStorageWorker::removeFileFromDir(const std::string &DirName, const std::string &FileName)

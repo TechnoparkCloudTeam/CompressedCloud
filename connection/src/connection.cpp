@@ -27,7 +27,7 @@ void Connection::read()
                 //это в отдельный класс
                 messageFS::Request req;
                 req.ParseFromString(data_);
-                std::cout<<req.id()<<" "<<req.name()<<std::endl; 
+                std::cout<<req.id()<<" "<<req.name()<<" "<<req.file()<< std::endl; 
                 //на это ивенты
                 if (req.id() == 1)
                 {
@@ -41,6 +41,11 @@ void Connection::read()
                     fsworker.removeFileFromDir(req.name(), "file.txt");
                    
                 }
+                if (req.id() == 3)
+                {
+                    std::cout<<"Got file from user: "<<req.name()<<std::endl;
+                    fsworker.createFile(req.name(), "test.txt", req.file().c_str());
+                }
                 write();
             }
         });
@@ -50,7 +55,7 @@ void Connection::read()
 void Connection::write()
 {
     auto self(shared_from_this());
-    boost::asio::async_write(socket_, boost::asio::buffer(data_, 128), [this, self](boost::system::error_code ec, std::size_t) {
+    boost::asio::async_write(socket_, boost::asio::buffer(data_, 8192), [this, self](boost::system::error_code ec, std::size_t) {
         if (!ec)
             read();
     });

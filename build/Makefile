@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud
+CMAKE_SOURCE_DIR = /home/lyalyashechka/TP/c_c++/gitMain/CompressedCloud
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/build
+CMAKE_BINARY_DIR = /home/lyalyashechka/TP/c_c++/gitMain/CompressedCloud/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/build/CMakeFiles /home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lyalyashechka/TP/c_c++/gitMain/CompressedCloud/build/CMakeFiles /home/lyalyashechka/TP/c_c++/gitMain/CompressedCloud/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lyalyashechka/TP/c_c++/gitMain/CompressedCloud/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -317,6 +317,7 @@ message.pb.o: message.pb.cc.o
 
 # target to build an object file
 message.pb.cc.o:
+	$(MAKE) -f CMakeFiles/clientnetwork.dir/build.make CMakeFiles/clientnetwork.dir/message.pb.cc.o
 	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/message.pb.cc.o
 	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/message.pb.cc.o
 .PHONY : message.pb.cc.o
@@ -327,6 +328,7 @@ message.pb.i: message.pb.cc.i
 
 # target to preprocess a source file
 message.pb.cc.i:
+	$(MAKE) -f CMakeFiles/clientnetwork.dir/build.make CMakeFiles/clientnetwork.dir/message.pb.cc.i
 	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/message.pb.cc.i
 	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/message.pb.cc.i
 .PHONY : message.pb.cc.i
@@ -337,6 +339,7 @@ message.pb.s: message.pb.cc.s
 
 # target to generate assembly for a file
 message.pb.cc.s:
+	$(MAKE) -f CMakeFiles/clientnetwork.dir/build.make CMakeFiles/clientnetwork.dir/message.pb.cc.s
 	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/message.pb.cc.s
 	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/message.pb.cc.s
 .PHONY : message.pb.cc.s

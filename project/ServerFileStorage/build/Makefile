@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerFileStorage
+CMAKE_SOURCE_DIR = /home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerFileStorage
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerFileStorage/build
+CMAKE_BINARY_DIR = /home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerFileStorage/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerFileStorage/build/CMakeFiles /home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerFileStorage/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerFileStorage/build/CMakeFiles /home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerFileStorage/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerFileStorage/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerFileStorage/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -297,113 +297,113 @@ fileStorageWorker/src/FileStorageWorker.cpp.s:
 	$(MAKE) -f CMakeFiles/serverFS.dir/build.make CMakeFiles/serverFS.dir/fileStorageWorker/src/FileStorageWorker.cpp.s
 .PHONY : fileStorageWorker/src/FileStorageWorker.cpp.s
 
-home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/connection/src/connection.o: home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/connection/src/connection.cpp.o
+home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/connection/src/connection.o: home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/connection/src/connection.cpp.o
 
-.PHONY : home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/connection/src/connection.o
-
-# target to build an object file
-home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/connection/src/connection.cpp.o:
-	$(MAKE) -f CMakeFiles/serverS.dir/build.make CMakeFiles/serverS.dir/home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/connection/src/connection.cpp.o
-.PHONY : home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/connection/src/connection.cpp.o
-
-home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/connection/src/connection.i: home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/connection/src/connection.cpp.i
-
-.PHONY : home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/connection/src/connection.i
-
-# target to preprocess a source file
-home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/connection/src/connection.cpp.i:
-	$(MAKE) -f CMakeFiles/serverS.dir/build.make CMakeFiles/serverS.dir/home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/connection/src/connection.cpp.i
-.PHONY : home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/connection/src/connection.cpp.i
-
-home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/connection/src/connection.s: home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/connection/src/connection.cpp.s
-
-.PHONY : home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/connection/src/connection.s
-
-# target to generate assembly for a file
-home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/connection/src/connection.cpp.s:
-	$(MAKE) -f CMakeFiles/serverS.dir/build.make CMakeFiles/serverS.dir/home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/connection/src/connection.cpp.s
-.PHONY : home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/connection/src/connection.cpp.s
-
-home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/fileStorageWorker/src/FileStorageWorker.o: home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/fileStorageWorker/src/FileStorageWorker.cpp.o
-
-.PHONY : home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/fileStorageWorker/src/FileStorageWorker.o
+.PHONY : home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/connection/src/connection.o
 
 # target to build an object file
-home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/fileStorageWorker/src/FileStorageWorker.cpp.o:
-	$(MAKE) -f CMakeFiles/serverS.dir/build.make CMakeFiles/serverS.dir/home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/fileStorageWorker/src/FileStorageWorker.cpp.o
-.PHONY : home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/fileStorageWorker/src/FileStorageWorker.cpp.o
+home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/connection/src/connection.cpp.o:
+	$(MAKE) -f CMakeFiles/serverS.dir/build.make CMakeFiles/serverS.dir/home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/connection/src/connection.cpp.o
+.PHONY : home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/connection/src/connection.cpp.o
 
-home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/fileStorageWorker/src/FileStorageWorker.i: home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/fileStorageWorker/src/FileStorageWorker.cpp.i
+home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/connection/src/connection.i: home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/connection/src/connection.cpp.i
 
-.PHONY : home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/fileStorageWorker/src/FileStorageWorker.i
+.PHONY : home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/connection/src/connection.i
 
 # target to preprocess a source file
-home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/fileStorageWorker/src/FileStorageWorker.cpp.i:
-	$(MAKE) -f CMakeFiles/serverS.dir/build.make CMakeFiles/serverS.dir/home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/fileStorageWorker/src/FileStorageWorker.cpp.i
-.PHONY : home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/fileStorageWorker/src/FileStorageWorker.cpp.i
+home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/connection/src/connection.cpp.i:
+	$(MAKE) -f CMakeFiles/serverS.dir/build.make CMakeFiles/serverS.dir/home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/connection/src/connection.cpp.i
+.PHONY : home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/connection/src/connection.cpp.i
 
-home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/fileStorageWorker/src/FileStorageWorker.s: home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/fileStorageWorker/src/FileStorageWorker.cpp.s
+home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/connection/src/connection.s: home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/connection/src/connection.cpp.s
 
-.PHONY : home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/fileStorageWorker/src/FileStorageWorker.s
+.PHONY : home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/connection/src/connection.s
 
 # target to generate assembly for a file
-home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/fileStorageWorker/src/FileStorageWorker.cpp.s:
-	$(MAKE) -f CMakeFiles/serverS.dir/build.make CMakeFiles/serverS.dir/home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/fileStorageWorker/src/FileStorageWorker.cpp.s
-.PHONY : home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/fileStorageWorker/src/FileStorageWorker.cpp.s
+home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/connection/src/connection.cpp.s:
+	$(MAKE) -f CMakeFiles/serverS.dir/build.make CMakeFiles/serverS.dir/home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/connection/src/connection.cpp.s
+.PHONY : home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/connection/src/connection.cpp.s
 
-home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/main.o: home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/main.cpp.o
+home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/fileStorageWorker/src/FileStorageWorker.o: home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/fileStorageWorker/src/FileStorageWorker.cpp.o
 
-.PHONY : home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/main.o
+.PHONY : home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/fileStorageWorker/src/FileStorageWorker.o
 
 # target to build an object file
-home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/main.cpp.o:
-	$(MAKE) -f CMakeFiles/serverS.dir/build.make CMakeFiles/serverS.dir/home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/main.cpp.o
-.PHONY : home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/main.cpp.o
+home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/fileStorageWorker/src/FileStorageWorker.cpp.o:
+	$(MAKE) -f CMakeFiles/serverS.dir/build.make CMakeFiles/serverS.dir/home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/fileStorageWorker/src/FileStorageWorker.cpp.o
+.PHONY : home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/fileStorageWorker/src/FileStorageWorker.cpp.o
 
-home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/main.i: home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/main.cpp.i
+home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/fileStorageWorker/src/FileStorageWorker.i: home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/fileStorageWorker/src/FileStorageWorker.cpp.i
 
-.PHONY : home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/main.i
+.PHONY : home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/fileStorageWorker/src/FileStorageWorker.i
 
 # target to preprocess a source file
-home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/main.cpp.i:
-	$(MAKE) -f CMakeFiles/serverS.dir/build.make CMakeFiles/serverS.dir/home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/main.cpp.i
-.PHONY : home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/main.cpp.i
+home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/fileStorageWorker/src/FileStorageWorker.cpp.i:
+	$(MAKE) -f CMakeFiles/serverS.dir/build.make CMakeFiles/serverS.dir/home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/fileStorageWorker/src/FileStorageWorker.cpp.i
+.PHONY : home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/fileStorageWorker/src/FileStorageWorker.cpp.i
 
-home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/main.s: home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/main.cpp.s
+home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/fileStorageWorker/src/FileStorageWorker.s: home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/fileStorageWorker/src/FileStorageWorker.cpp.s
 
-.PHONY : home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/main.s
+.PHONY : home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/fileStorageWorker/src/FileStorageWorker.s
 
 # target to generate assembly for a file
-home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/main.cpp.s:
-	$(MAKE) -f CMakeFiles/serverS.dir/build.make CMakeFiles/serverS.dir/home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/main.cpp.s
-.PHONY : home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/main.cpp.s
+home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/fileStorageWorker/src/FileStorageWorker.cpp.s:
+	$(MAKE) -f CMakeFiles/serverS.dir/build.make CMakeFiles/serverS.dir/home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/fileStorageWorker/src/FileStorageWorker.cpp.s
+.PHONY : home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/fileStorageWorker/src/FileStorageWorker.cpp.s
 
-home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/server/src/server.o: home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/server/src/server.cpp.o
+home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/main.o: home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/main.cpp.o
 
-.PHONY : home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/server/src/server.o
+.PHONY : home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/main.o
 
 # target to build an object file
-home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/server/src/server.cpp.o:
-	$(MAKE) -f CMakeFiles/serverS.dir/build.make CMakeFiles/serverS.dir/home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/server/src/server.cpp.o
-.PHONY : home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/server/src/server.cpp.o
+home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/main.cpp.o:
+	$(MAKE) -f CMakeFiles/serverS.dir/build.make CMakeFiles/serverS.dir/home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/main.cpp.o
+.PHONY : home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/main.cpp.o
 
-home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/server/src/server.i: home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/server/src/server.cpp.i
+home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/main.i: home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/main.cpp.i
 
-.PHONY : home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/server/src/server.i
+.PHONY : home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/main.i
 
 # target to preprocess a source file
-home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/server/src/server.cpp.i:
-	$(MAKE) -f CMakeFiles/serverS.dir/build.make CMakeFiles/serverS.dir/home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/server/src/server.cpp.i
-.PHONY : home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/server/src/server.cpp.i
+home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/main.cpp.i:
+	$(MAKE) -f CMakeFiles/serverS.dir/build.make CMakeFiles/serverS.dir/home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/main.cpp.i
+.PHONY : home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/main.cpp.i
 
-home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/server/src/server.s: home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/server/src/server.cpp.s
+home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/main.s: home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/main.cpp.s
 
-.PHONY : home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/server/src/server.s
+.PHONY : home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/main.s
 
 # target to generate assembly for a file
-home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/server/src/server.cpp.s:
-	$(MAKE) -f CMakeFiles/serverS.dir/build.make CMakeFiles/serverS.dir/home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/server/src/server.cpp.s
-.PHONY : home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/server/src/server.cpp.s
+home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/main.cpp.s:
+	$(MAKE) -f CMakeFiles/serverS.dir/build.make CMakeFiles/serverS.dir/home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/main.cpp.s
+.PHONY : home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/main.cpp.s
+
+home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/server/src/server.o: home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/server/src/server.cpp.o
+
+.PHONY : home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/server/src/server.o
+
+# target to build an object file
+home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/server/src/server.cpp.o:
+	$(MAKE) -f CMakeFiles/serverS.dir/build.make CMakeFiles/serverS.dir/home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/server/src/server.cpp.o
+.PHONY : home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/server/src/server.cpp.o
+
+home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/server/src/server.i: home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/server/src/server.cpp.i
+
+.PHONY : home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/server/src/server.i
+
+# target to preprocess a source file
+home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/server/src/server.cpp.i:
+	$(MAKE) -f CMakeFiles/serverS.dir/build.make CMakeFiles/serverS.dir/home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/server/src/server.cpp.i
+.PHONY : home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/server/src/server.cpp.i
+
+home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/server/src/server.s: home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/server/src/server.cpp.s
+
+.PHONY : home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/server/src/server.s
+
+# target to generate assembly for a file
+home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/server/src/server.cpp.s:
+	$(MAKE) -f CMakeFiles/serverS.dir/build.make CMakeFiles/serverS.dir/home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/server/src/server.cpp.s
+.PHONY : home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/server/src/server.cpp.s
 
 main.o: main.cpp.o
 
@@ -522,18 +522,18 @@ help:
 	@echo "... fileStorageWorker/src/FileStorageWorker.o"
 	@echo "... fileStorageWorker/src/FileStorageWorker.i"
 	@echo "... fileStorageWorker/src/FileStorageWorker.s"
-	@echo "... home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/connection/src/connection.o"
-	@echo "... home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/connection/src/connection.i"
-	@echo "... home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/connection/src/connection.s"
-	@echo "... home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/fileStorageWorker/src/FileStorageWorker.o"
-	@echo "... home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/fileStorageWorker/src/FileStorageWorker.i"
-	@echo "... home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/fileStorageWorker/src/FileStorageWorker.s"
-	@echo "... home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/main.o"
-	@echo "... home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/main.i"
-	@echo "... home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/main.s"
-	@echo "... home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/server/src/server.o"
-	@echo "... home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/server/src/server.i"
-	@echo "... home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerSync/server/src/server.s"
+	@echo "... home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/connection/src/connection.o"
+	@echo "... home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/connection/src/connection.i"
+	@echo "... home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/connection/src/connection.s"
+	@echo "... home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/fileStorageWorker/src/FileStorageWorker.o"
+	@echo "... home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/fileStorageWorker/src/FileStorageWorker.i"
+	@echo "... home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/fileStorageWorker/src/FileStorageWorker.s"
+	@echo "... home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/main.o"
+	@echo "... home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/main.i"
+	@echo "... home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/main.s"
+	@echo "... home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/server/src/server.o"
+	@echo "... home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/server/src/server.i"
+	@echo "... home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerSync/server/src/server.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

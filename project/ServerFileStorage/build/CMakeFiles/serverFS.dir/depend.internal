@@ -4,23 +4,23 @@
 CMakeFiles/serverFS.dir/connection/src/connection.cpp.o
  ../connection/include/connection.h
  ../fileStorageWorker/include/FileStorageWorker.h
- /home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerFileStorage/connection/src/connection.cpp
+ /home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerFileStorage/connection/src/connection.cpp
  message.pb.h
 CMakeFiles/serverFS.dir/fileStorageWorker/src/FileStorageWorker.cpp.o
  ../fileStorageWorker/include/FileStorageWorker.h
- /home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerFileStorage/fileStorageWorker/src/FileStorageWorker.cpp
+ /home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerFileStorage/fileStorageWorker/src/FileStorageWorker.cpp
 CMakeFiles/serverFS.dir/main.cpp.o
  ../connection/include/connection.h
  ../fileStorageWorker/include/FileStorageWorker.h
  ../server/include/server.h
- /home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerFileStorage/main.cpp
+ /home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerFileStorage/main.cpp
  message.pb.h
 CMakeFiles/serverFS.dir/message.pb.cc.o
- /home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerFileStorage/build/message.pb.cc
- /home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerFileStorage/build/message.pb.h
+ /home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerFileStorage/build/message.pb.cc
+ /home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerFileStorage/build/message.pb.h
 CMakeFiles/serverFS.dir/server/src/server.cpp.o
  ../connection/include/connection.h
  ../fileStorageWorker/include/FileStorageWorker.h
  ../server/include/server.h
- /home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerFileStorage/server/src/server.cpp
+ /home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerFileStorage/server/src/server.cpp
  message.pb.h

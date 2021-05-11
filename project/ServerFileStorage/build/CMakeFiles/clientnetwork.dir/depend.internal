@@ -3,12 +3,12 @@
 
 CMakeFiles/clientnetwork.dir/Client/clientNetwork.cpp.o
  ../Client/include/ClientNetwork.h
- /home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerFileStorage/Client/clientNetwork.cpp
+ /home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerFileStorage/Client/clientNetwork.cpp
  message.pb.h
 CMakeFiles/clientnetwork.dir/Client/src/ClientNetwork.cpp.o
  ../Client/include/ClientNetwork.h
- /home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerFileStorage/Client/src/ClientNetwork.cpp
+ /home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerFileStorage/Client/src/ClientNetwork.cpp
  message.pb.h
 CMakeFiles/clientnetwork.dir/message.pb.cc.o
- /home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerFileStorage/build/message.pb.cc
- /home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerFileStorage/build/message.pb.h
+ /home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerFileStorage/build/message.pb.cc
+ /home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerFileStorage/build/message.pb.h

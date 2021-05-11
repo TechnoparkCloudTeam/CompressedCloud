@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerFileStorage/build/message.pb.cc
+/home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerFileStorage/build/message.pb.cc
 message.pb.h
-/home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerFileStorage/build/message.pb.h
+/home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerFileStorage/build/message.pb.h
 algorithm
 -
 google/protobuf/io/coded_stream.h
@@ -30,7 +30,7 @@ google/protobuf/port_def.inc
 google/protobuf/port_undef.inc
 -
 
-/home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerFileStorage/build/message.pb.h
+/home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerFileStorage/build/message.pb.h
 limits
 -
 string
@@ -68,7 +68,7 @@ google/protobuf/port_def.inc
 google/protobuf/port_undef.inc
 -
 
-/home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerFileStorage/client.cpp
+/home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerFileStorage/client.cpp
 iostream
 -
 boost/array.hpp
@@ -80,7 +80,7 @@ google/protobuf/io/coded_stream.h
 google/protobuf/io/zero_copy_stream_impl.h
 -
 message.pb.h
-/home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerFileStorage/message.pb.h
+/home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerFileStorage/message.pb.h
 
 message.pb.h
 limits

@@ -11,7 +11,7 @@ int main()
     req.set_name("M.U.Lermontov");
     req.set_id(1);
     
-    std::ifstream file("/home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerFileStorage/Client/test.txt", std::ios_base::binary);
+    std::ifstream file("/home/lyalyashechka/TP/c_c++/gtiMAIN/CompressedCloud/project/ServerFileStorage/Client/test.txt", std::ios_base::binary);
 
     std::string file_string;
     file>>file_string;

@@ -1,0 +1,124 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../../DataBases/LocalDB/include/ChunkDB.h
+memory
+-
+LocalDB.h
+../../DataBases/LocalDB/include/LocalDB.h
+
+../../DataBases/LocalDB/include/FileDB.h
+vector
+-
+memory
+-
+string
+-
+
+../../DataBases/LocalDB/include/LocalDB.h
+ChunkDB.h
+../../DataBases/LocalDB/include/ChunkDB.h
+FileDB.h
+../../DataBases/LocalDB/include/FileDB.h
+memory
+-
+string
+-
+sqlite3.h
+-
+UserDB.h
+../../DataBases/LocalDB/include/UserDB.h
+
+../../DataBases/LocalDB/include/UserDB.h
+memory
+-
+string
+-
+
+../Application/include/Application.h
+../../ProgramInterface/include/ProgramInterface.h
+../ProgramInterface/include/ProgramInterface.h
+../../Chunker/include/Chunker.h
+../Chunker/include/Chunker.h
+../../Watcher/include/Watcher.h
+../Watcher/include/Watcher.h
+../../Indexer/include/Indexer.h
+../Indexer/include/Indexer.h
+memory
+-
+
+../Chunker/include/Chunker.h
+array
+-
+string
+-
+iostream
+-
+vector
+-
+filesystem
+-
+
+../Indexer/include/Indexer.h
+vector
+-
+filesystem
+-
+memory
+-
+
+../ProgramInterface/include/ProgramInterface.h
+string
+-
+
+../Watcher/include/Watcher.h
+cstdint
+-
+filesystem
+-
+vector
+-
+sys/inotify.h
+-
+unistd.h
+-
+WatcherConfig.h
+../Watcher/include/WatcherConfig.h
+iostream
+-
+string
+-
+
+../Watcher/include/WatcherConfig.h
+sys/inotify.h
+-
+
+/home/lyalyashechka/TP/c_c++/Project main/project/Client/main.cpp
+Indexer.h
+/home/lyalyashechka/TP/c_c++/Project main/project/Client/Indexer.h
+Watcher.h
+/home/lyalyashechka/TP/c_c++/Project main/project/Client/Watcher.h
+Chunker.h
+/home/lyalyashechka/TP/c_c++/Project main/project/Client/Chunker.h
+ProgramInterface.h
+/home/lyalyashechka/TP/c_c++/Project main/project/Client/ProgramInterface.h
+Application.h
+/home/lyalyashechka/TP/c_c++/Project main/project/Client/Application.h
+LocalDB.h
+/home/lyalyashechka/TP/c_c++/Project main/project/Client/LocalDB.h
+
+/home/lyalyashechka/TP/c_c++/Project main/project/DataBases/LocalDB/src/LocalDB.cpp
+LocalDB.h
+/home/lyalyashechka/TP/c_c++/Project main/project/DataBases/LocalDB/src/LocalDB.h
+boost/log/trivial.hpp
+/home/lyalyashechka/TP/c_c++/Project main/project/DataBases/LocalDB/src/boost/log/trivial.hpp
+utility
+-
+iostream
+-
+

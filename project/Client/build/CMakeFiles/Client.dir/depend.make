@@ -26,9 +26,9 @@ CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../../DataBas
 CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../../Server/fileStorageWorker/include/FileStorageWorker.h
 CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../Application/include/Application.h
 CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../Indexer/include/Indexer.h
-CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../ProgramInterface/include/ProgramInterface.h
 CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../Watcher/include/Watcher.h
 CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../Watcher/include/WatcherConfig.h
+CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../ProgramInterface/include/ProgramInterface.h
 CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../ProgramInterface/src/ProgramInterface.cpp
 
 CMakeFiles/Client.dir/Watcher/src/Watcher.cpp.o: ../Watcher/include/Watcher.h

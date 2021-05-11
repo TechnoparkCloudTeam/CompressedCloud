@@ -26,9 +26,10 @@ int main()
 	//watch.run("/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/testDir");
 
 	Application app(watchPtr, indexPtr, clientNetworkPtr);
-
+	app.setSyncFolder("/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build/UserWatchedDir");
 	std::shared_ptr<Application> appPtr(&app);
 	ProgramInterface console(appPtr);
+
 
 	console.run();
 	return 0;

@@ -27,9 +27,9 @@ CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o
  ../../Server/fileStorageWorker/include/FileStorageWorker.h
  ../Application/include/Application.h
  ../Indexer/include/Indexer.h
- ../ProgramInterface/include/ProgramInterface.h
  ../Watcher/include/Watcher.h
  ../Watcher/include/WatcherConfig.h
+ /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/ProgramInterface/include/ProgramInterface.h
  /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/ProgramInterface/src/ProgramInterface.cpp
 CMakeFiles/Client.dir/Watcher/src/Watcher.cpp.o
  /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/Watcher/include/Watcher.h

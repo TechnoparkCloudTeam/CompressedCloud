@@ -2,22 +2,20 @@
 
 
 Application::Application(std::shared_ptr<IWatcher> watch,
-     std::shared_ptr<I_Indexer> index, std::shared_ptr<ClientNetwork> network,
-     std::shared_ptr<FileStorageWorker> fileWorker) : 
+     std::shared_ptr<I_Indexer> index, std::shared_ptr<ClientNetwork> network) : 
      Watcher(watch),
      Indexer(index),
-     NetworkCommunication(network),
-     FileWorker(fileWorker) {}
+     NetworkCommunication(network) {}
 
 
-void Application::login() {
+void Application::login(std::string login, std::string pass) {
     //ClientNetwork.start();
     //ClientNetwork.writeMessage();
     //ClientNetwork.readMessage();
     //ClientNetwork.handleRead();
     return;
 }
-void Application::registerUser() {
+void Application::registerUser(std::string login, std::string pass) {
     //ClientNetwork.start();
     //ClientNetwork.writeMessage();
     //ClientNetwork.readMessage();
@@ -76,6 +74,10 @@ void Application::deleteFile() {
 }
 
 void Application::createFile() {
+    //ClientNetwork.start();
+    //ClientNetwork.writeMessage();
+    //ClientNetwork.readMessage();
+    //ClientNetwork.handleRead();
     return;
 }
 void Application::checkPassword() {
@@ -89,4 +91,8 @@ void Application::stopWatcher() {
 }
 void Application::synchronize() {
     downloadFile();
+}
+
+void Application::setSyncFolder(const std::string& synchFolder) {
+    this->synchFolder = synchFolder;
 }

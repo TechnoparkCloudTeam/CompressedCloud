@@ -10,8 +10,8 @@ class Application {
 public:
     Application(std::shared_ptr<IWatcher> watch,
      std::shared_ptr<I_Indexer> index, std::shared_ptr<ClientNetwork> network);
-    void login();
-    void registerUser();
+    void login(std::string login, std::string pass);
+    void registerUser(std::string login, std::string pass);
     void changePassword();
     bool isLogin();
     void logOut();
@@ -21,13 +21,14 @@ public:
     void deleteFile();
     void createFile();
     void synchronize();
+    void setSyncFolder(const std::string& synchFolder);
+    void runWatcher();
+    void stopWatcher();
 private:
     std::string synchFolder;
     std::string Login;
     std::string Password;
     void checkPassword();
-    void runWatcher();
-    void stopWatcher();
     std::shared_ptr<IWatcher> Watcher;
     std::shared_ptr<I_Indexer> Indexer;
     std::shared_ptr<ClientNetwork> NetworkCommunication;

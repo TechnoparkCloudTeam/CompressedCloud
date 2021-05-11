@@ -1,2 +1,0 @@
-/usr/bin/ar qc libclientlib.a  CMakeFiles/clientlib.dir/Watcher/src/Watcher.cpp.o CMakeFiles/clientlib.dir/ProgramInterface/src/ProgramInterface.cpp.o CMakeFiles/clientlib.dir/Chunker/src/Chunker.cpp.o
-/usr/bin/ranlib libclientlib.a

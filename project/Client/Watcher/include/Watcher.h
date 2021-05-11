@@ -7,10 +7,24 @@
 #include "WatcherConfig.h"
 #include <iostream>
 #include <string>
-struct InotifyEvent {
-	std::filesystem::path Path;
-	//Event event;
+#include <queue>
+
+enum FileObjectStatus : int {
+	CREATE = 0,
+	MODIFY = 1,
+	DELETE = 2
 };
+
+struct InotifyEvent {
+	std::string fileObjectName;
+	FileObjectStatus status;
+	bool is_dir;
+	InotifyEvent(std::string name = "", FileObjectStatus status = FileObjectStatus::DELETE, bool is_dir = 0) :
+		fileObjectName(name),
+		status(status),
+		is_dir(is_dir) {};
+};
+
 
 class IWatcher {
 public:
@@ -24,7 +38,7 @@ public:
 	void run(std::string Path) override;
 	void shutdown() override;
 	bool isWorking() override;
-	void readEventsFromBuffer();
+	std::string readEventsFromBuffer();
 private:
 	void SetEventMask(uint32_t EventMask);
 	void AddFileToWatch(std::string Path);
@@ -36,4 +50,5 @@ private:
 	std::string WorkDir;
 	uint32_t EventMask;
 	bool working;
+	std::queue<InotifyEvent> Events;
 };

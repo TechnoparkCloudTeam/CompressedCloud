@@ -103,6 +103,8 @@ iostream
 -
 string
 -
+queue
+-
 
 ../Watcher/include/WatcherConfig.h
 sys/inotify.h
@@ -112,9 +114,17 @@ sys/inotify.h
 Application.h
 /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/Application/src/Application.h
 
+/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/ProgramInterface/include/ProgramInterface.h
+string
+-
+memory
+-
+../../Application/include/Application.h
+-
+
 /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/ProgramInterface/src/ProgramInterface.cpp
-ProgramInterface.h
-/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/ProgramInterface/src/ProgramInterface.h
+../include/ProgramInterface.h
+/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/ProgramInterface/include/ProgramInterface.h
 string
 -
 

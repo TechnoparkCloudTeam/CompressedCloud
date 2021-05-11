@@ -1,0 +1,6 @@
+/home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerFileStorage/build/CMakeFiles/rebuild_cache.dir
+/home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerFileStorage/build/CMakeFiles/edit_cache.dir
+/home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerFileStorage/build/CMakeFiles/client.dir
+/home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerFileStorage/build/CMakeFiles/serverS.dir
+/home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerFileStorage/build/CMakeFiles/clientnetwork.dir
+/home/lyalyashechka/TP/c_c++/cloudgitmain/CompressedCloud/project/ServerFileStorage/build/CMakeFiles/serverFS.dir

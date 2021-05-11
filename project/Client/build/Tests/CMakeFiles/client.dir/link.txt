@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -pthread -fpic -fpic  -shared -Wl,-soname,libclient.so -o libclient.so CMakeFiles/client.dir/__/Watcher/src/Watcher.cpp.o CMakeFiles/client.dir/__/ProgramInterface/src/ProgramInterface.cpp.o CMakeFiles/client.dir/__/Chunker/src/Chunker.cpp.o CMakeFiles/client.dir/__/Indexer/src/Indexer.cpp.o CMakeFiles/client.dir/__/Application/src/Application.cpp.o 

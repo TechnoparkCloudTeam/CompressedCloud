@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/lyalyashechka/TP/c_c++/Project main/project/Client/Watcher/main.cpp" "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/Watcher/CMakeFiles/Watcher.dir/main.cpp.o"
-  "/home/lyalyashechka/TP/c_c++/Project main/project/Client/Watcher/src/Watcher.cpp" "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/Watcher/CMakeFiles/Watcher.dir/src/Watcher.cpp.o"
+  "/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/Watcher/main.cpp" "/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build/Watcher/CMakeFiles/Watcher.dir/main.cpp.o"
+  "/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/Watcher/src/Watcher.cpp" "/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build/Watcher/CMakeFiles/Watcher.dir/src/Watcher.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/lyalyashechka/TP/c_c++/Project main/project/Client/Chunker/include/Chunker.h
+/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/Chunker/include/Chunker.h
 array
 -
 string
@@ -18,9 +18,9 @@ vector
 filesystem
 -
 
-/home/lyalyashechka/TP/c_c++/Project main/project/Client/Chunker/main.cpp
+/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/Chunker/main.cpp
 
-/home/lyalyashechka/TP/c_c++/Project main/project/Client/Chunker/src/Chunker.cpp
+/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/Chunker/src/Chunker.cpp
 ../include/Chunker.h
-/home/lyalyashechka/TP/c_c++/Project main/project/Client/Chunker/include/Chunker.h
+/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/Chunker/include/Chunker.h
 

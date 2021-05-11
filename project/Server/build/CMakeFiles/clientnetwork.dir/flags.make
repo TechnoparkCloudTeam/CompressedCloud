@@ -6,5 +6,5 @@ CXX_FLAGS =   -std=gnu++2a
 
 CXX_DEFINES = -DBOOST_ALL_NO_LIB
 
-CXX_INCLUDES = -I"/home/lyalyashechka/TP/c_c++/Project main/project/Server/build" -I"/home/lyalyashechka/TP/c_c++/Project main/project/Server/connection/include" -I"/home/lyalyashechka/TP/c_c++/Project main/project/Server/server/include" -I"/home/lyalyashechka/TP/c_c++/Project main/project/Server/fileStorageWorker/include" -I"/home/lyalyashechka/TP/c_c++/Project main/project/Server/Client/include" 
+CXX_INCLUDES = -I/home/ilya/TechnoparkProjects/CompressedCloud/project/Server/build -I/home/ilya/TechnoparkProjects/CompressedCloud/project/Server/connection/include -I/home/ilya/TechnoparkProjects/CompressedCloud/project/Server/server/include -I/home/ilya/TechnoparkProjects/CompressedCloud/project/Server/fileStorageWorker/include -I/home/ilya/TechnoparkProjects/CompressedCloud/project/Server/Client/include 
 

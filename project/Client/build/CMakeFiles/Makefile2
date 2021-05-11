@@ -44,92 +44,28 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/lyalyashechka/TP/c_c++/Project main/project/Client"
+CMAKE_SOURCE_DIR = /home/ilya/TechnoparkProjects/CompressedCloud/project/Client
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build"
+CMAKE_BINARY_DIR = /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
 all: CMakeFiles/Client.dir/all
-all: CMakeFiles/clientlib.dir/all
-all: Watcher/all
-all: ProgramInterface/all
-all: Chunker/all
 
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall: Watcher/preinstall
-preinstall: ProgramInterface/preinstall
-preinstall: Chunker/preinstall
+preinstall:
 
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: CMakeFiles/Client.dir/clean
-clean: CMakeFiles/clientlib.dir/clean
-clean: Watcher/clean
-clean: ProgramInterface/clean
-clean: Chunker/clean
 
 .PHONY : clean
-
-#=============================================================================
-# Directory level rules for directory Chunker
-
-# Recursive "all" directory target.
-Chunker/all: Chunker/CMakeFiles/Chunker.dir/all
-
-.PHONY : Chunker/all
-
-# Recursive "preinstall" directory target.
-Chunker/preinstall:
-
-.PHONY : Chunker/preinstall
-
-# Recursive "clean" directory target.
-Chunker/clean: Chunker/CMakeFiles/Chunker.dir/clean
-
-.PHONY : Chunker/clean
-
-#=============================================================================
-# Directory level rules for directory ProgramInterface
-
-# Recursive "all" directory target.
-ProgramInterface/all: ProgramInterface/CMakeFiles/ProgramInterface.dir/all
-
-.PHONY : ProgramInterface/all
-
-# Recursive "preinstall" directory target.
-ProgramInterface/preinstall:
-
-.PHONY : ProgramInterface/preinstall
-
-# Recursive "clean" directory target.
-ProgramInterface/clean: ProgramInterface/CMakeFiles/ProgramInterface.dir/clean
-
-.PHONY : ProgramInterface/clean
-
-#=============================================================================
-# Directory level rules for directory Watcher
-
-# Recursive "all" directory target.
-Watcher/all: Watcher/CMakeFiles/Watcher.dir/all
-
-.PHONY : Watcher/all
-
-# Recursive "preinstall" directory target.
-Watcher/preinstall:
-
-.PHONY : Watcher/preinstall
-
-# Recursive "clean" directory target.
-Watcher/clean: Watcher/CMakeFiles/Watcher.dir/clean
-
-.PHONY : Watcher/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/Client.dir
@@ -138,14 +74,14 @@ Watcher/clean: Watcher/CMakeFiles/Watcher.dir/clean
 CMakeFiles/Client.dir/all:
 	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/depend
 	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/CMakeFiles" --progress-num=4,5,6 "Built target Client"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Built target Client"
 .PHONY : CMakeFiles/Client.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Client.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/CMakeFiles" 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build/CMakeFiles 8
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Client.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build/CMakeFiles 0
 .PHONY : CMakeFiles/Client.dir/rule
 
 # Convenience name for target.
@@ -157,114 +93,6 @@ Client: CMakeFiles/Client.dir/rule
 CMakeFiles/Client.dir/clean:
 	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/clean
 .PHONY : CMakeFiles/Client.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/clientlib.dir
-
-# All Build rule for target.
-CMakeFiles/clientlib.dir/all:
-	$(MAKE) -f CMakeFiles/clientlib.dir/build.make CMakeFiles/clientlib.dir/depend
-	$(MAKE) -f CMakeFiles/clientlib.dir/build.make CMakeFiles/clientlib.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/CMakeFiles" --progress-num=13,14,15,16 "Built target clientlib"
-.PHONY : CMakeFiles/clientlib.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/clientlib.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/CMakeFiles" 4
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/clientlib.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/CMakeFiles" 0
-.PHONY : CMakeFiles/clientlib.dir/rule
-
-# Convenience name for target.
-clientlib: CMakeFiles/clientlib.dir/rule
-
-.PHONY : clientlib
-
-# clean rule for target.
-CMakeFiles/clientlib.dir/clean:
-	$(MAKE) -f CMakeFiles/clientlib.dir/build.make CMakeFiles/clientlib.dir/clean
-.PHONY : CMakeFiles/clientlib.dir/clean
-
-#=============================================================================
-# Target rules for target Watcher/CMakeFiles/Watcher.dir
-
-# All Build rule for target.
-Watcher/CMakeFiles/Watcher.dir/all:
-	$(MAKE) -f Watcher/CMakeFiles/Watcher.dir/build.make Watcher/CMakeFiles/Watcher.dir/depend
-	$(MAKE) -f Watcher/CMakeFiles/Watcher.dir/build.make Watcher/CMakeFiles/Watcher.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/CMakeFiles" --progress-num=10,11,12 "Built target Watcher"
-.PHONY : Watcher/CMakeFiles/Watcher.dir/all
-
-# Build rule for subdir invocation for target.
-Watcher/CMakeFiles/Watcher.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/CMakeFiles" 3
-	$(MAKE) -f CMakeFiles/Makefile2 Watcher/CMakeFiles/Watcher.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/CMakeFiles" 0
-.PHONY : Watcher/CMakeFiles/Watcher.dir/rule
-
-# Convenience name for target.
-Watcher: Watcher/CMakeFiles/Watcher.dir/rule
-
-.PHONY : Watcher
-
-# clean rule for target.
-Watcher/CMakeFiles/Watcher.dir/clean:
-	$(MAKE) -f Watcher/CMakeFiles/Watcher.dir/build.make Watcher/CMakeFiles/Watcher.dir/clean
-.PHONY : Watcher/CMakeFiles/Watcher.dir/clean
-
-#=============================================================================
-# Target rules for target ProgramInterface/CMakeFiles/ProgramInterface.dir
-
-# All Build rule for target.
-ProgramInterface/CMakeFiles/ProgramInterface.dir/all:
-	$(MAKE) -f ProgramInterface/CMakeFiles/ProgramInterface.dir/build.make ProgramInterface/CMakeFiles/ProgramInterface.dir/depend
-	$(MAKE) -f ProgramInterface/CMakeFiles/ProgramInterface.dir/build.make ProgramInterface/CMakeFiles/ProgramInterface.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/CMakeFiles" --progress-num=7,8,9 "Built target ProgramInterface"
-.PHONY : ProgramInterface/CMakeFiles/ProgramInterface.dir/all
-
-# Build rule for subdir invocation for target.
-ProgramInterface/CMakeFiles/ProgramInterface.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/CMakeFiles" 3
-	$(MAKE) -f CMakeFiles/Makefile2 ProgramInterface/CMakeFiles/ProgramInterface.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/CMakeFiles" 0
-.PHONY : ProgramInterface/CMakeFiles/ProgramInterface.dir/rule
-
-# Convenience name for target.
-ProgramInterface: ProgramInterface/CMakeFiles/ProgramInterface.dir/rule
-
-.PHONY : ProgramInterface
-
-# clean rule for target.
-ProgramInterface/CMakeFiles/ProgramInterface.dir/clean:
-	$(MAKE) -f ProgramInterface/CMakeFiles/ProgramInterface.dir/build.make ProgramInterface/CMakeFiles/ProgramInterface.dir/clean
-.PHONY : ProgramInterface/CMakeFiles/ProgramInterface.dir/clean
-
-#=============================================================================
-# Target rules for target Chunker/CMakeFiles/Chunker.dir
-
-# All Build rule for target.
-Chunker/CMakeFiles/Chunker.dir/all:
-	$(MAKE) -f Chunker/CMakeFiles/Chunker.dir/build.make Chunker/CMakeFiles/Chunker.dir/depend
-	$(MAKE) -f Chunker/CMakeFiles/Chunker.dir/build.make Chunker/CMakeFiles/Chunker.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/CMakeFiles" --progress-num=1,2,3 "Built target Chunker"
-.PHONY : Chunker/CMakeFiles/Chunker.dir/all
-
-# Build rule for subdir invocation for target.
-Chunker/CMakeFiles/Chunker.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/CMakeFiles" 3
-	$(MAKE) -f CMakeFiles/Makefile2 Chunker/CMakeFiles/Chunker.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/CMakeFiles" 0
-.PHONY : Chunker/CMakeFiles/Chunker.dir/rule
-
-# Convenience name for target.
-Chunker: Chunker/CMakeFiles/Chunker.dir/rule
-
-.PHONY : Chunker
-
-# clean rule for target.
-Chunker/CMakeFiles/Chunker.dir/clean:
-	$(MAKE) -f Chunker/CMakeFiles/Chunker.dir/build.make Chunker/CMakeFiles/Chunker.dir/clean
-.PHONY : Chunker/CMakeFiles/Chunker.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

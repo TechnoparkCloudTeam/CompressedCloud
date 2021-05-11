@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/lyalyashechka/TP/c_c++/Project main/project/Client"
+CMAKE_SOURCE_DIR = /home/ilya/TechnoparkProjects/CompressedCloud/project/Client
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build"
+CMAKE_BINARY_DIR = /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build" && $(CMAKE_COMMAND) -E cmake_progress_start "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/CMakeFiles" "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/ProgramInterface/CMakeFiles/progress.marks"
-	cd "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build" && $(MAKE) -f CMakeFiles/Makefile2 ProgramInterface/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/CMakeFiles" 0
+	cd /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build/CMakeFiles /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build/ProgramInterface/CMakeFiles/progress.marks
+	cd /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build && $(MAKE) -f CMakeFiles/Makefile2 ProgramInterface/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build" && $(MAKE) -f CMakeFiles/Makefile2 ProgramInterface/clean
+	cd /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build && $(MAKE) -f CMakeFiles/Makefile2 ProgramInterface/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,22 +97,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build" && $(MAKE) -f CMakeFiles/Makefile2 ProgramInterface/preinstall
+	cd /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build && $(MAKE) -f CMakeFiles/Makefile2 ProgramInterface/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build" && $(MAKE) -f CMakeFiles/Makefile2 ProgramInterface/preinstall
+	cd /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build && $(MAKE) -f CMakeFiles/Makefile2 ProgramInterface/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build" && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 ProgramInterface/CMakeFiles/ProgramInterface.dir/rule:
-	cd "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build" && $(MAKE) -f CMakeFiles/Makefile2 ProgramInterface/CMakeFiles/ProgramInterface.dir/rule
+	cd /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build && $(MAKE) -f CMakeFiles/Makefile2 ProgramInterface/CMakeFiles/ProgramInterface.dir/rule
 .PHONY : ProgramInterface/CMakeFiles/ProgramInterface.dir/rule
 
 # Convenience name for target.
@@ -122,8 +122,35 @@ ProgramInterface: ProgramInterface/CMakeFiles/ProgramInterface.dir/rule
 
 # fast build rule for target.
 ProgramInterface/fast:
-	cd "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build" && $(MAKE) -f ProgramInterface/CMakeFiles/ProgramInterface.dir/build.make ProgramInterface/CMakeFiles/ProgramInterface.dir/build
+	cd /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build && $(MAKE) -f ProgramInterface/CMakeFiles/ProgramInterface.dir/build.make ProgramInterface/CMakeFiles/ProgramInterface.dir/build
 .PHONY : ProgramInterface/fast
+
+__/Application/src/Application.o: __/Application/src/Application.cpp.o
+
+.PHONY : __/Application/src/Application.o
+
+# target to build an object file
+__/Application/src/Application.cpp.o:
+	cd /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build && $(MAKE) -f ProgramInterface/CMakeFiles/ProgramInterface.dir/build.make ProgramInterface/CMakeFiles/ProgramInterface.dir/__/Application/src/Application.cpp.o
+.PHONY : __/Application/src/Application.cpp.o
+
+__/Application/src/Application.i: __/Application/src/Application.cpp.i
+
+.PHONY : __/Application/src/Application.i
+
+# target to preprocess a source file
+__/Application/src/Application.cpp.i:
+	cd /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build && $(MAKE) -f ProgramInterface/CMakeFiles/ProgramInterface.dir/build.make ProgramInterface/CMakeFiles/ProgramInterface.dir/__/Application/src/Application.cpp.i
+.PHONY : __/Application/src/Application.cpp.i
+
+__/Application/src/Application.s: __/Application/src/Application.cpp.s
+
+.PHONY : __/Application/src/Application.s
+
+# target to generate assembly for a file
+__/Application/src/Application.cpp.s:
+	cd /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build && $(MAKE) -f ProgramInterface/CMakeFiles/ProgramInterface.dir/build.make ProgramInterface/CMakeFiles/ProgramInterface.dir/__/Application/src/Application.cpp.s
+.PHONY : __/Application/src/Application.cpp.s
 
 main.o: main.cpp.o
 
@@ -131,7 +158,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	cd "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build" && $(MAKE) -f ProgramInterface/CMakeFiles/ProgramInterface.dir/build.make ProgramInterface/CMakeFiles/ProgramInterface.dir/main.cpp.o
+	cd /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build && $(MAKE) -f ProgramInterface/CMakeFiles/ProgramInterface.dir/build.make ProgramInterface/CMakeFiles/ProgramInterface.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -140,7 +167,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	cd "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build" && $(MAKE) -f ProgramInterface/CMakeFiles/ProgramInterface.dir/build.make ProgramInterface/CMakeFiles/ProgramInterface.dir/main.cpp.i
+	cd /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build && $(MAKE) -f ProgramInterface/CMakeFiles/ProgramInterface.dir/build.make ProgramInterface/CMakeFiles/ProgramInterface.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -149,7 +176,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	cd "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build" && $(MAKE) -f ProgramInterface/CMakeFiles/ProgramInterface.dir/build.make ProgramInterface/CMakeFiles/ProgramInterface.dir/main.cpp.s
+	cd /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build && $(MAKE) -f ProgramInterface/CMakeFiles/ProgramInterface.dir/build.make ProgramInterface/CMakeFiles/ProgramInterface.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 src/ProgramInterface.o: src/ProgramInterface.cpp.o
@@ -158,7 +185,7 @@ src/ProgramInterface.o: src/ProgramInterface.cpp.o
 
 # target to build an object file
 src/ProgramInterface.cpp.o:
-	cd "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build" && $(MAKE) -f ProgramInterface/CMakeFiles/ProgramInterface.dir/build.make ProgramInterface/CMakeFiles/ProgramInterface.dir/src/ProgramInterface.cpp.o
+	cd /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build && $(MAKE) -f ProgramInterface/CMakeFiles/ProgramInterface.dir/build.make ProgramInterface/CMakeFiles/ProgramInterface.dir/src/ProgramInterface.cpp.o
 .PHONY : src/ProgramInterface.cpp.o
 
 src/ProgramInterface.i: src/ProgramInterface.cpp.i
@@ -167,7 +194,7 @@ src/ProgramInterface.i: src/ProgramInterface.cpp.i
 
 # target to preprocess a source file
 src/ProgramInterface.cpp.i:
-	cd "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build" && $(MAKE) -f ProgramInterface/CMakeFiles/ProgramInterface.dir/build.make ProgramInterface/CMakeFiles/ProgramInterface.dir/src/ProgramInterface.cpp.i
+	cd /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build && $(MAKE) -f ProgramInterface/CMakeFiles/ProgramInterface.dir/build.make ProgramInterface/CMakeFiles/ProgramInterface.dir/src/ProgramInterface.cpp.i
 .PHONY : src/ProgramInterface.cpp.i
 
 src/ProgramInterface.s: src/ProgramInterface.cpp.s
@@ -176,7 +203,7 @@ src/ProgramInterface.s: src/ProgramInterface.cpp.s
 
 # target to generate assembly for a file
 src/ProgramInterface.cpp.s:
-	cd "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build" && $(MAKE) -f ProgramInterface/CMakeFiles/ProgramInterface.dir/build.make ProgramInterface/CMakeFiles/ProgramInterface.dir/src/ProgramInterface.cpp.s
+	cd /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build && $(MAKE) -f ProgramInterface/CMakeFiles/ProgramInterface.dir/build.make ProgramInterface/CMakeFiles/ProgramInterface.dir/src/ProgramInterface.cpp.s
 .PHONY : src/ProgramInterface.cpp.s
 
 # Help Target
@@ -188,6 +215,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... ProgramInterface"
+	@echo "... __/Application/src/Application.o"
+	@echo "... __/Application/src/Application.i"
+	@echo "... __/Application/src/Application.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
@@ -205,6 +235,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build" && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

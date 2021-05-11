@@ -1,6 +1,6 @@
 #include "../include/Indexer.h"
 
-Indexer::Indexer (LocalDB& localDB) {
+Indexer::Indexer (std::shared_ptr<UserDB> localDB) {
 
 }
 FileMeta Indexer::createFile(const std::filesystem::path& path, size_t chunksCnt) {

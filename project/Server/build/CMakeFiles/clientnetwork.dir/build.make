@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/lyalyashechka/TP/c_c++/Project main/project/Server"
+CMAKE_SOURCE_DIR = /home/ilya/TechnoparkProjects/CompressedCloud/project/Server
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/lyalyashechka/TP/c_c++/Project main/project/Server/build"
+CMAKE_BINARY_DIR = /home/ilya/TechnoparkProjects/CompressedCloud/project/Server/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/clientnetwork.dir/depend.make
@@ -58,51 +58,51 @@ include CMakeFiles/clientnetwork.dir/progress.make
 include CMakeFiles/clientnetwork.dir/flags.make
 
 message.pb.h: ../message.proto
-message.pb.h: /usr/bin/protoc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir="/home/lyalyashechka/TP/c_c++/Project main/project/Server/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Running cpp protocol buffer compiler on message.proto"
-	/usr/bin/protoc --cpp_out "/home/lyalyashechka/TP/c_c++/Project main/project/Server/build" -I "/home/lyalyashechka/TP/c_c++/Project main/project/Server" "/home/lyalyashechka/TP/c_c++/Project main/project/Server/message.proto"
+message.pb.h: /snap/bin/protoc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ilya/TechnoparkProjects/CompressedCloud/project/Server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Running cpp protocol buffer compiler on message.proto"
+	/snap/bin/protoc --cpp_out /home/ilya/TechnoparkProjects/CompressedCloud/project/Server/build -I /home/ilya/TechnoparkProjects/CompressedCloud/project/Server /home/ilya/TechnoparkProjects/CompressedCloud/project/Server/message.proto
 
 message.pb.cc: message.pb.h
 	@$(CMAKE_COMMAND) -E touch_nocreate message.pb.cc
 
 CMakeFiles/clientnetwork.dir/Client/clientNetwork.cpp.o: CMakeFiles/clientnetwork.dir/flags.make
 CMakeFiles/clientnetwork.dir/Client/clientNetwork.cpp.o: ../Client/clientNetwork.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/lyalyashechka/TP/c_c++/Project main/project/Server/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/clientnetwork.dir/Client/clientNetwork.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/clientnetwork.dir/Client/clientNetwork.cpp.o -c "/home/lyalyashechka/TP/c_c++/Project main/project/Server/Client/clientNetwork.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ilya/TechnoparkProjects/CompressedCloud/project/Server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/clientnetwork.dir/Client/clientNetwork.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/clientnetwork.dir/Client/clientNetwork.cpp.o -c /home/ilya/TechnoparkProjects/CompressedCloud/project/Server/Client/clientNetwork.cpp
 
 CMakeFiles/clientnetwork.dir/Client/clientNetwork.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/clientnetwork.dir/Client/clientNetwork.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/lyalyashechka/TP/c_c++/Project main/project/Server/Client/clientNetwork.cpp" > CMakeFiles/clientnetwork.dir/Client/clientNetwork.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ilya/TechnoparkProjects/CompressedCloud/project/Server/Client/clientNetwork.cpp > CMakeFiles/clientnetwork.dir/Client/clientNetwork.cpp.i
 
 CMakeFiles/clientnetwork.dir/Client/clientNetwork.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/clientnetwork.dir/Client/clientNetwork.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/lyalyashechka/TP/c_c++/Project main/project/Server/Client/clientNetwork.cpp" -o CMakeFiles/clientnetwork.dir/Client/clientNetwork.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ilya/TechnoparkProjects/CompressedCloud/project/Server/Client/clientNetwork.cpp -o CMakeFiles/clientnetwork.dir/Client/clientNetwork.cpp.s
 
 CMakeFiles/clientnetwork.dir/Client/src/ClientNetwork.cpp.o: CMakeFiles/clientnetwork.dir/flags.make
 CMakeFiles/clientnetwork.dir/Client/src/ClientNetwork.cpp.o: ../Client/src/ClientNetwork.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/lyalyashechka/TP/c_c++/Project main/project/Server/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/clientnetwork.dir/Client/src/ClientNetwork.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/clientnetwork.dir/Client/src/ClientNetwork.cpp.o -c "/home/lyalyashechka/TP/c_c++/Project main/project/Server/Client/src/ClientNetwork.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ilya/TechnoparkProjects/CompressedCloud/project/Server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/clientnetwork.dir/Client/src/ClientNetwork.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/clientnetwork.dir/Client/src/ClientNetwork.cpp.o -c /home/ilya/TechnoparkProjects/CompressedCloud/project/Server/Client/src/ClientNetwork.cpp
 
 CMakeFiles/clientnetwork.dir/Client/src/ClientNetwork.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/clientnetwork.dir/Client/src/ClientNetwork.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/lyalyashechka/TP/c_c++/Project main/project/Server/Client/src/ClientNetwork.cpp" > CMakeFiles/clientnetwork.dir/Client/src/ClientNetwork.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ilya/TechnoparkProjects/CompressedCloud/project/Server/Client/src/ClientNetwork.cpp > CMakeFiles/clientnetwork.dir/Client/src/ClientNetwork.cpp.i
 
 CMakeFiles/clientnetwork.dir/Client/src/ClientNetwork.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/clientnetwork.dir/Client/src/ClientNetwork.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/lyalyashechka/TP/c_c++/Project main/project/Server/Client/src/ClientNetwork.cpp" -o CMakeFiles/clientnetwork.dir/Client/src/ClientNetwork.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ilya/TechnoparkProjects/CompressedCloud/project/Server/Client/src/ClientNetwork.cpp -o CMakeFiles/clientnetwork.dir/Client/src/ClientNetwork.cpp.s
 
 CMakeFiles/clientnetwork.dir/message.pb.cc.o: CMakeFiles/clientnetwork.dir/flags.make
 CMakeFiles/clientnetwork.dir/message.pb.cc.o: message.pb.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/lyalyashechka/TP/c_c++/Project main/project/Server/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/clientnetwork.dir/message.pb.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/clientnetwork.dir/message.pb.cc.o -c "/home/lyalyashechka/TP/c_c++/Project main/project/Server/build/message.pb.cc"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ilya/TechnoparkProjects/CompressedCloud/project/Server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/clientnetwork.dir/message.pb.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/clientnetwork.dir/message.pb.cc.o -c /home/ilya/TechnoparkProjects/CompressedCloud/project/Server/build/message.pb.cc
 
 CMakeFiles/clientnetwork.dir/message.pb.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/clientnetwork.dir/message.pb.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/lyalyashechka/TP/c_c++/Project main/project/Server/build/message.pb.cc" > CMakeFiles/clientnetwork.dir/message.pb.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ilya/TechnoparkProjects/CompressedCloud/project/Server/build/message.pb.cc > CMakeFiles/clientnetwork.dir/message.pb.cc.i
 
 CMakeFiles/clientnetwork.dir/message.pb.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/clientnetwork.dir/message.pb.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/lyalyashechka/TP/c_c++/Project main/project/Server/build/message.pb.cc" -o CMakeFiles/clientnetwork.dir/message.pb.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ilya/TechnoparkProjects/CompressedCloud/project/Server/build/message.pb.cc -o CMakeFiles/clientnetwork.dir/message.pb.cc.s
 
 # Object files for target clientnetwork
 clientnetwork_OBJECTS = \
@@ -122,7 +122,7 @@ clientnetwork: /usr/lib/x86_64-linux-gnu/libboost_thread.a
 clientnetwork: /usr/lib/x86_64-linux-gnu/libprotobuf.so
 clientnetwork: /usr/lib/x86_64-linux-gnu/libboost_atomic.a
 clientnetwork: CMakeFiles/clientnetwork.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/lyalyashechka/TP/c_c++/Project main/project/Server/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable clientnetwork"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ilya/TechnoparkProjects/CompressedCloud/project/Server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable clientnetwork"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/clientnetwork.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -136,6 +136,6 @@ CMakeFiles/clientnetwork.dir/clean:
 
 CMakeFiles/clientnetwork.dir/depend: message.pb.h
 CMakeFiles/clientnetwork.dir/depend: message.pb.cc
-	cd "/home/lyalyashechka/TP/c_c++/Project main/project/Server/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/lyalyashechka/TP/c_c++/Project main/project/Server" "/home/lyalyashechka/TP/c_c++/Project main/project/Server" "/home/lyalyashechka/TP/c_c++/Project main/project/Server/build" "/home/lyalyashechka/TP/c_c++/Project main/project/Server/build" "/home/lyalyashechka/TP/c_c++/Project main/project/Server/build/CMakeFiles/clientnetwork.dir/DependInfo.cmake" --color=$(COLOR)
+	cd /home/ilya/TechnoparkProjects/CompressedCloud/project/Server/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ilya/TechnoparkProjects/CompressedCloud/project/Server /home/ilya/TechnoparkProjects/CompressedCloud/project/Server /home/ilya/TechnoparkProjects/CompressedCloud/project/Server/build /home/ilya/TechnoparkProjects/CompressedCloud/project/Server/build /home/ilya/TechnoparkProjects/CompressedCloud/project/Server/build/CMakeFiles/clientnetwork.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/clientnetwork.dir/depend
 

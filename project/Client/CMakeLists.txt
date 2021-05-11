@@ -7,10 +7,6 @@ set(BOOST_ROOT /usr/include/boost)
 set(Boost_USE_STATIC_LIBS ON)
 find_package(Boost COMPONENTS system thread)
 
-ADD_SUBDIRECTORY(Watcher)
-ADD_SUBDIRECTORY(ProgramInterface)
-ADD_SUBDIRECTORY(Chunker)
-
 INCLUDE_DIRECTORIES(${Boost_INCLUDE_DIR})
 find_package (SQLite3)
 include_directories(${SQLite3_INCLUDE_DIRS})
@@ -22,18 +18,16 @@ include_directories(${Boost_INCLUDE_DIRS})
 
 
 INCLUDE_DIRECTORIES(ProgramInterface/include)
-INCLUDE_DIRECTORIES(Chunker/include)
 INCLUDE_DIRECTORIES(Watcher/include)
 INCLUDE_DIRECTORIES(Indexer/include)
 INCLUDE_DIRECTORIES(Application/include)
 
 INCLUDE_DIRECTORIES(../DataBases/LocalDB/include)
+INCLUDE_DIRECTORIES(../Server/fileStorageWorker/include)
 
-ADD_LIBRARY(clientlib STATIC
-        Watcher/src/Watcher.cpp
-        ProgramInterface/src/ProgramInterface.cpp
-        Chunker/src/Chunker.cpp)
 
-add_executable(Client main.cpp ../DataBases/LocalDB/src/LocalDB.cpp)
+add_executable(Client main.cpp ../DataBases/LocalDB/src/LocalDB.cpp Watcher/src/Watcher.cpp
+ProgramInterface/src/ProgramInterface.cpp Application/src/Application.cpp Indexer/src/Indexer.cpp 
+../Server/fileStorageWorker/src/FileStorageWorker.cpp)
 
 target_link_libraries(Client ${SQLite3_LIBRARIES} ${Boost_LIBRARIES})

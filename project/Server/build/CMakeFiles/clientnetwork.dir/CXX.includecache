@@ -20,25 +20,21 @@ string
 iostream
 -
 
-/home/lyalyashechka/TP/c_c++/Project main/project/Server/Client/clientNetwork.cpp
+/home/ilya/TechnoparkProjects/CompressedCloud/project/Server/Client/clientNetwork.cpp
 ClientNetwork.h
-/home/lyalyashechka/TP/c_c++/Project main/project/Server/Client/ClientNetwork.h
+/home/ilya/TechnoparkProjects/CompressedCloud/project/Server/Client/ClientNetwork.h
 google/protobuf/io/coded_stream.h
 -
 google/protobuf/io/zero_copy_stream_impl.h
 -
 message.pb.h
-/home/lyalyashechka/TP/c_c++/Project main/project/Server/Client/message.pb.h
+/home/ilya/TechnoparkProjects/CompressedCloud/project/Server/Client/message.pb.h
 fstream
 -
 
-/home/lyalyashechka/TP/c_c++/Project main/project/Server/Client/src/ClientNetwork.cpp
-ClientNetwork.h
-/home/lyalyashechka/TP/c_c++/Project main/project/Server/Client/src/ClientNetwork.h
-
-/home/lyalyashechka/TP/c_c++/Project main/project/Server/build/message.pb.cc
+/home/ilya/TechnoparkProjects/CompressedCloud/project/Server/build/message.pb.cc
 message.pb.h
-/home/lyalyashechka/TP/c_c++/Project main/project/Server/build/message.pb.h
+/home/ilya/TechnoparkProjects/CompressedCloud/project/Server/build/message.pb.h
 algorithm
 -
 google/protobuf/io/coded_stream.h
@@ -60,7 +56,7 @@ google/protobuf/port_def.inc
 google/protobuf/port_undef.inc
 -
 
-/home/lyalyashechka/TP/c_c++/Project main/project/Server/build/message.pb.h
+/home/ilya/TechnoparkProjects/CompressedCloud/project/Server/build/message.pb.h
 limits
 -
 string
@@ -78,8 +74,6 @@ google/protobuf/arenastring.h
 google/protobuf/generated_message_table_driven.h
 -
 google/protobuf/generated_message_util.h
--
-google/protobuf/inlined_string_field.h
 -
 google/protobuf/metadata_lite.h
 -
@@ -116,8 +110,6 @@ google/protobuf/arenastring.h
 google/protobuf/generated_message_table_driven.h
 -
 google/protobuf/generated_message_util.h
--
-google/protobuf/inlined_string_field.h
 -
 google/protobuf/metadata_lite.h
 -

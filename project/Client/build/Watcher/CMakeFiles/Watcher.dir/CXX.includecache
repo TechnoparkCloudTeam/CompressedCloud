@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/lyalyashechka/TP/c_c++/Project main/project/Client/Watcher/include/Watcher.h
+/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/Watcher/include/Watcher.h
 cstdint
 -
 filesystem
@@ -18,23 +18,23 @@ sys/inotify.h
 unistd.h
 -
 WatcherConfig.h
-/home/lyalyashechka/TP/c_c++/Project main/project/Client/Watcher/include/WatcherConfig.h
+/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/Watcher/include/WatcherConfig.h
 iostream
 -
 string
 -
 
-/home/lyalyashechka/TP/c_c++/Project main/project/Client/Watcher/include/WatcherConfig.h
+/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/Watcher/include/WatcherConfig.h
 sys/inotify.h
 -
 
-/home/lyalyashechka/TP/c_c++/Project main/project/Client/Watcher/main.cpp
+/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/Watcher/main.cpp
 include/Watcher.h
-/home/lyalyashechka/TP/c_c++/Project main/project/Client/Watcher/include/Watcher.h
+/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/Watcher/include/Watcher.h
 iostream
 -
 
-/home/lyalyashechka/TP/c_c++/Project main/project/Client/Watcher/src/Watcher.cpp
+/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/Watcher/src/Watcher.cpp
 ../include/Watcher.h
-/home/lyalyashechka/TP/c_c++/Project main/project/Client/Watcher/include/Watcher.h
+/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/Watcher/include/Watcher.h
 

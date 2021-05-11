@@ -33,7 +33,7 @@ private:
 	void RemoveFileFromWatch();
 	void WriteEventsToBuffer();
 	char buffer[BUFFER_LEN];
-	std::filesystem::path WorkDir;
+	std::string WorkDir;
 	uint32_t EventMask;
 	bool working;
 };

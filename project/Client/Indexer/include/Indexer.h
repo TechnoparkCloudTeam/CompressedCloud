@@ -2,6 +2,7 @@
 #include <vector>
 #include <filesystem>
 #include <memory>
+#include "../../../DataBases/LocalDB/include/LocalDB.h"
 struct FileMeta {
         int id;
         std::string fileName;
@@ -13,13 +14,8 @@ struct FileMeta {
 
 struct LocalDB {};
 
-struct IDeviceDB {};
-
-struct IChunkDB {};
-
 struct IFileDB {};
 
-struct IUserDB {};
 
 class I_Indexer {
 public:
@@ -33,7 +29,7 @@ public:
 
 class Indexer : public I_Indexer {
 public:
-    Indexer (LocalDB& localDB);
+    Indexer (std::shared_ptr<UserDB> localDB);
     FileMeta createFile(const std::filesystem::path& path, size_t chunksCnt) override;
     FileMeta modifyFile(const std::filesystem::path& path, size_t chunksCnt) override;
     FileMeta renameFile(const std::filesystem::path& oldPath,
@@ -42,9 +38,6 @@ public:
     FileMeta getFileInfo(const std::filesystem::path& path) override;
 private:
     std::shared_ptr<LocalDB> LocalDataBase;
-    std::shared_ptr<IDeviceDB> DeviceDB;
-    std::shared_ptr<IChunkDB> ChunkDB;
-    std::shared_ptr<IUserDB> UserDB;
     std::shared_ptr<IFileDB> FileDB;
 };
 

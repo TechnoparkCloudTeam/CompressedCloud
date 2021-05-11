@@ -1,3 +1,4 @@
+#pragma once
 #include "ChunkDB.h"
 #include "FileDB.h"
 #include <memory>

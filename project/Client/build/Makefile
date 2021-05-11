@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/lyalyashechka/TP/c_c++/Project main/project/Client"
+CMAKE_SOURCE_DIR = /home/ilya/TechnoparkProjects/CompressedCloud/project/Client
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build"
+CMAKE_BINARY_DIR = /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/CMakeFiles" "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/CMakeFiles/progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build/CMakeFiles /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -123,84 +123,59 @@ Client/fast:
 	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/build
 .PHONY : Client/fast
 
-#=============================================================================
-# Target rules for targets named clientlib
+Application/src/Application.o: Application/src/Application.cpp.o
 
-# Build rule for target.
-clientlib: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 clientlib
-.PHONY : clientlib
-
-# fast build rule for target.
-clientlib/fast:
-	$(MAKE) -f CMakeFiles/clientlib.dir/build.make CMakeFiles/clientlib.dir/build
-.PHONY : clientlib/fast
-
-#=============================================================================
-# Target rules for targets named Watcher
-
-# Build rule for target.
-Watcher: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Watcher
-.PHONY : Watcher
-
-# fast build rule for target.
-Watcher/fast:
-	$(MAKE) -f Watcher/CMakeFiles/Watcher.dir/build.make Watcher/CMakeFiles/Watcher.dir/build
-.PHONY : Watcher/fast
-
-#=============================================================================
-# Target rules for targets named ProgramInterface
-
-# Build rule for target.
-ProgramInterface: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ProgramInterface
-.PHONY : ProgramInterface
-
-# fast build rule for target.
-ProgramInterface/fast:
-	$(MAKE) -f ProgramInterface/CMakeFiles/ProgramInterface.dir/build.make ProgramInterface/CMakeFiles/ProgramInterface.dir/build
-.PHONY : ProgramInterface/fast
-
-#=============================================================================
-# Target rules for targets named Chunker
-
-# Build rule for target.
-Chunker: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Chunker
-.PHONY : Chunker
-
-# fast build rule for target.
-Chunker/fast:
-	$(MAKE) -f Chunker/CMakeFiles/Chunker.dir/build.make Chunker/CMakeFiles/Chunker.dir/build
-.PHONY : Chunker/fast
-
-Chunker/src/Chunker.o: Chunker/src/Chunker.cpp.o
-
-.PHONY : Chunker/src/Chunker.o
+.PHONY : Application/src/Application.o
 
 # target to build an object file
-Chunker/src/Chunker.cpp.o:
-	$(MAKE) -f CMakeFiles/clientlib.dir/build.make CMakeFiles/clientlib.dir/Chunker/src/Chunker.cpp.o
-.PHONY : Chunker/src/Chunker.cpp.o
+Application/src/Application.cpp.o:
+	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/Application/src/Application.cpp.o
+.PHONY : Application/src/Application.cpp.o
 
-Chunker/src/Chunker.i: Chunker/src/Chunker.cpp.i
+Application/src/Application.i: Application/src/Application.cpp.i
 
-.PHONY : Chunker/src/Chunker.i
+.PHONY : Application/src/Application.i
 
 # target to preprocess a source file
-Chunker/src/Chunker.cpp.i:
-	$(MAKE) -f CMakeFiles/clientlib.dir/build.make CMakeFiles/clientlib.dir/Chunker/src/Chunker.cpp.i
-.PHONY : Chunker/src/Chunker.cpp.i
+Application/src/Application.cpp.i:
+	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/Application/src/Application.cpp.i
+.PHONY : Application/src/Application.cpp.i
 
-Chunker/src/Chunker.s: Chunker/src/Chunker.cpp.s
+Application/src/Application.s: Application/src/Application.cpp.s
 
-.PHONY : Chunker/src/Chunker.s
+.PHONY : Application/src/Application.s
 
 # target to generate assembly for a file
-Chunker/src/Chunker.cpp.s:
-	$(MAKE) -f CMakeFiles/clientlib.dir/build.make CMakeFiles/clientlib.dir/Chunker/src/Chunker.cpp.s
-.PHONY : Chunker/src/Chunker.cpp.s
+Application/src/Application.cpp.s:
+	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/Application/src/Application.cpp.s
+.PHONY : Application/src/Application.cpp.s
+
+Indexer/src/Indexer.o: Indexer/src/Indexer.cpp.o
+
+.PHONY : Indexer/src/Indexer.o
+
+# target to build an object file
+Indexer/src/Indexer.cpp.o:
+	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/Indexer/src/Indexer.cpp.o
+.PHONY : Indexer/src/Indexer.cpp.o
+
+Indexer/src/Indexer.i: Indexer/src/Indexer.cpp.i
+
+.PHONY : Indexer/src/Indexer.i
+
+# target to preprocess a source file
+Indexer/src/Indexer.cpp.i:
+	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/Indexer/src/Indexer.cpp.i
+.PHONY : Indexer/src/Indexer.cpp.i
+
+Indexer/src/Indexer.s: Indexer/src/Indexer.cpp.s
+
+.PHONY : Indexer/src/Indexer.s
+
+# target to generate assembly for a file
+Indexer/src/Indexer.cpp.s:
+	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/Indexer/src/Indexer.cpp.s
+.PHONY : Indexer/src/Indexer.cpp.s
 
 ProgramInterface/src/ProgramInterface.o: ProgramInterface/src/ProgramInterface.cpp.o
 
@@ -208,7 +183,7 @@ ProgramInterface/src/ProgramInterface.o: ProgramInterface/src/ProgramInterface.c
 
 # target to build an object file
 ProgramInterface/src/ProgramInterface.cpp.o:
-	$(MAKE) -f CMakeFiles/clientlib.dir/build.make CMakeFiles/clientlib.dir/ProgramInterface/src/ProgramInterface.cpp.o
+	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o
 .PHONY : ProgramInterface/src/ProgramInterface.cpp.o
 
 ProgramInterface/src/ProgramInterface.i: ProgramInterface/src/ProgramInterface.cpp.i
@@ -217,7 +192,7 @@ ProgramInterface/src/ProgramInterface.i: ProgramInterface/src/ProgramInterface.c
 
 # target to preprocess a source file
 ProgramInterface/src/ProgramInterface.cpp.i:
-	$(MAKE) -f CMakeFiles/clientlib.dir/build.make CMakeFiles/clientlib.dir/ProgramInterface/src/ProgramInterface.cpp.i
+	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.i
 .PHONY : ProgramInterface/src/ProgramInterface.cpp.i
 
 ProgramInterface/src/ProgramInterface.s: ProgramInterface/src/ProgramInterface.cpp.s
@@ -226,7 +201,7 @@ ProgramInterface/src/ProgramInterface.s: ProgramInterface/src/ProgramInterface.c
 
 # target to generate assembly for a file
 ProgramInterface/src/ProgramInterface.cpp.s:
-	$(MAKE) -f CMakeFiles/clientlib.dir/build.make CMakeFiles/clientlib.dir/ProgramInterface/src/ProgramInterface.cpp.s
+	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.s
 .PHONY : ProgramInterface/src/ProgramInterface.cpp.s
 
 Watcher/src/Watcher.o: Watcher/src/Watcher.cpp.o
@@ -235,7 +210,7 @@ Watcher/src/Watcher.o: Watcher/src/Watcher.cpp.o
 
 # target to build an object file
 Watcher/src/Watcher.cpp.o:
-	$(MAKE) -f CMakeFiles/clientlib.dir/build.make CMakeFiles/clientlib.dir/Watcher/src/Watcher.cpp.o
+	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/Watcher/src/Watcher.cpp.o
 .PHONY : Watcher/src/Watcher.cpp.o
 
 Watcher/src/Watcher.i: Watcher/src/Watcher.cpp.i
@@ -244,7 +219,7 @@ Watcher/src/Watcher.i: Watcher/src/Watcher.cpp.i
 
 # target to preprocess a source file
 Watcher/src/Watcher.cpp.i:
-	$(MAKE) -f CMakeFiles/clientlib.dir/build.make CMakeFiles/clientlib.dir/Watcher/src/Watcher.cpp.i
+	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/Watcher/src/Watcher.cpp.i
 .PHONY : Watcher/src/Watcher.cpp.i
 
 Watcher/src/Watcher.s: Watcher/src/Watcher.cpp.s
@@ -253,35 +228,62 @@ Watcher/src/Watcher.s: Watcher/src/Watcher.cpp.s
 
 # target to generate assembly for a file
 Watcher/src/Watcher.cpp.s:
-	$(MAKE) -f CMakeFiles/clientlib.dir/build.make CMakeFiles/clientlib.dir/Watcher/src/Watcher.cpp.s
+	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/Watcher/src/Watcher.cpp.s
 .PHONY : Watcher/src/Watcher.cpp.s
 
-home/lyalyashechka/TP/c_c++/Project_main/project/DataBases/LocalDB/src/LocalDB.o: home/lyalyashechka/TP/c_c++/Project_main/project/DataBases/LocalDB/src/LocalDB.cpp.o
+home/ilya/TechnoparkProjects/CompressedCloud/project/DataBases/LocalDB/src/LocalDB.o: home/ilya/TechnoparkProjects/CompressedCloud/project/DataBases/LocalDB/src/LocalDB.cpp.o
 
-.PHONY : home/lyalyashechka/TP/c_c++/Project_main/project/DataBases/LocalDB/src/LocalDB.o
+.PHONY : home/ilya/TechnoparkProjects/CompressedCloud/project/DataBases/LocalDB/src/LocalDB.o
 
 # target to build an object file
-home/lyalyashechka/TP/c_c++/Project_main/project/DataBases/LocalDB/src/LocalDB.cpp.o:
-	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/home/lyalyashechka/TP/c_c++/Project_main/project/DataBases/LocalDB/src/LocalDB.cpp.o
-.PHONY : home/lyalyashechka/TP/c_c++/Project_main/project/DataBases/LocalDB/src/LocalDB.cpp.o
+home/ilya/TechnoparkProjects/CompressedCloud/project/DataBases/LocalDB/src/LocalDB.cpp.o:
+	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/home/ilya/TechnoparkProjects/CompressedCloud/project/DataBases/LocalDB/src/LocalDB.cpp.o
+.PHONY : home/ilya/TechnoparkProjects/CompressedCloud/project/DataBases/LocalDB/src/LocalDB.cpp.o
 
-home/lyalyashechka/TP/c_c++/Project_main/project/DataBases/LocalDB/src/LocalDB.i: home/lyalyashechka/TP/c_c++/Project_main/project/DataBases/LocalDB/src/LocalDB.cpp.i
+home/ilya/TechnoparkProjects/CompressedCloud/project/DataBases/LocalDB/src/LocalDB.i: home/ilya/TechnoparkProjects/CompressedCloud/project/DataBases/LocalDB/src/LocalDB.cpp.i
 
-.PHONY : home/lyalyashechka/TP/c_c++/Project_main/project/DataBases/LocalDB/src/LocalDB.i
+.PHONY : home/ilya/TechnoparkProjects/CompressedCloud/project/DataBases/LocalDB/src/LocalDB.i
 
 # target to preprocess a source file
-home/lyalyashechka/TP/c_c++/Project_main/project/DataBases/LocalDB/src/LocalDB.cpp.i:
-	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/home/lyalyashechka/TP/c_c++/Project_main/project/DataBases/LocalDB/src/LocalDB.cpp.i
-.PHONY : home/lyalyashechka/TP/c_c++/Project_main/project/DataBases/LocalDB/src/LocalDB.cpp.i
+home/ilya/TechnoparkProjects/CompressedCloud/project/DataBases/LocalDB/src/LocalDB.cpp.i:
+	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/home/ilya/TechnoparkProjects/CompressedCloud/project/DataBases/LocalDB/src/LocalDB.cpp.i
+.PHONY : home/ilya/TechnoparkProjects/CompressedCloud/project/DataBases/LocalDB/src/LocalDB.cpp.i
 
-home/lyalyashechka/TP/c_c++/Project_main/project/DataBases/LocalDB/src/LocalDB.s: home/lyalyashechka/TP/c_c++/Project_main/project/DataBases/LocalDB/src/LocalDB.cpp.s
+home/ilya/TechnoparkProjects/CompressedCloud/project/DataBases/LocalDB/src/LocalDB.s: home/ilya/TechnoparkProjects/CompressedCloud/project/DataBases/LocalDB/src/LocalDB.cpp.s
 
-.PHONY : home/lyalyashechka/TP/c_c++/Project_main/project/DataBases/LocalDB/src/LocalDB.s
+.PHONY : home/ilya/TechnoparkProjects/CompressedCloud/project/DataBases/LocalDB/src/LocalDB.s
 
 # target to generate assembly for a file
-home/lyalyashechka/TP/c_c++/Project_main/project/DataBases/LocalDB/src/LocalDB.cpp.s:
-	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/home/lyalyashechka/TP/c_c++/Project_main/project/DataBases/LocalDB/src/LocalDB.cpp.s
-.PHONY : home/lyalyashechka/TP/c_c++/Project_main/project/DataBases/LocalDB/src/LocalDB.cpp.s
+home/ilya/TechnoparkProjects/CompressedCloud/project/DataBases/LocalDB/src/LocalDB.cpp.s:
+	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/home/ilya/TechnoparkProjects/CompressedCloud/project/DataBases/LocalDB/src/LocalDB.cpp.s
+.PHONY : home/ilya/TechnoparkProjects/CompressedCloud/project/DataBases/LocalDB/src/LocalDB.cpp.s
+
+home/ilya/TechnoparkProjects/CompressedCloud/project/Server/fileStorageWorker/src/FileStorageWorker.o: home/ilya/TechnoparkProjects/CompressedCloud/project/Server/fileStorageWorker/src/FileStorageWorker.cpp.o
+
+.PHONY : home/ilya/TechnoparkProjects/CompressedCloud/project/Server/fileStorageWorker/src/FileStorageWorker.o
+
+# target to build an object file
+home/ilya/TechnoparkProjects/CompressedCloud/project/Server/fileStorageWorker/src/FileStorageWorker.cpp.o:
+	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/home/ilya/TechnoparkProjects/CompressedCloud/project/Server/fileStorageWorker/src/FileStorageWorker.cpp.o
+.PHONY : home/ilya/TechnoparkProjects/CompressedCloud/project/Server/fileStorageWorker/src/FileStorageWorker.cpp.o
+
+home/ilya/TechnoparkProjects/CompressedCloud/project/Server/fileStorageWorker/src/FileStorageWorker.i: home/ilya/TechnoparkProjects/CompressedCloud/project/Server/fileStorageWorker/src/FileStorageWorker.cpp.i
+
+.PHONY : home/ilya/TechnoparkProjects/CompressedCloud/project/Server/fileStorageWorker/src/FileStorageWorker.i
+
+# target to preprocess a source file
+home/ilya/TechnoparkProjects/CompressedCloud/project/Server/fileStorageWorker/src/FileStorageWorker.cpp.i:
+	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/home/ilya/TechnoparkProjects/CompressedCloud/project/Server/fileStorageWorker/src/FileStorageWorker.cpp.i
+.PHONY : home/ilya/TechnoparkProjects/CompressedCloud/project/Server/fileStorageWorker/src/FileStorageWorker.cpp.i
+
+home/ilya/TechnoparkProjects/CompressedCloud/project/Server/fileStorageWorker/src/FileStorageWorker.s: home/ilya/TechnoparkProjects/CompressedCloud/project/Server/fileStorageWorker/src/FileStorageWorker.cpp.s
+
+.PHONY : home/ilya/TechnoparkProjects/CompressedCloud/project/Server/fileStorageWorker/src/FileStorageWorker.s
+
+# target to generate assembly for a file
+home/ilya/TechnoparkProjects/CompressedCloud/project/Server/fileStorageWorker/src/FileStorageWorker.cpp.s:
+	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/home/ilya/TechnoparkProjects/CompressedCloud/project/Server/fileStorageWorker/src/FileStorageWorker.cpp.s
+.PHONY : home/ilya/TechnoparkProjects/CompressedCloud/project/Server/fileStorageWorker/src/FileStorageWorker.cpp.s
 
 main.o: main.cpp.o
 
@@ -317,24 +319,26 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... Client"
 	@echo "... edit_cache"
-	@echo "... clientlib"
-	@echo "... Watcher"
-	@echo "... ProgramInterface"
-	@echo "... Chunker"
-	@echo "... Chunker/src/Chunker.o"
-	@echo "... Chunker/src/Chunker.i"
-	@echo "... Chunker/src/Chunker.s"
+	@echo "... Client"
+	@echo "... Application/src/Application.o"
+	@echo "... Application/src/Application.i"
+	@echo "... Application/src/Application.s"
+	@echo "... Indexer/src/Indexer.o"
+	@echo "... Indexer/src/Indexer.i"
+	@echo "... Indexer/src/Indexer.s"
 	@echo "... ProgramInterface/src/ProgramInterface.o"
 	@echo "... ProgramInterface/src/ProgramInterface.i"
 	@echo "... ProgramInterface/src/ProgramInterface.s"
 	@echo "... Watcher/src/Watcher.o"
 	@echo "... Watcher/src/Watcher.i"
 	@echo "... Watcher/src/Watcher.s"
-	@echo "... home/lyalyashechka/TP/c_c++/Project_main/project/DataBases/LocalDB/src/LocalDB.o"
-	@echo "... home/lyalyashechka/TP/c_c++/Project_main/project/DataBases/LocalDB/src/LocalDB.i"
-	@echo "... home/lyalyashechka/TP/c_c++/Project_main/project/DataBases/LocalDB/src/LocalDB.s"
+	@echo "... home/ilya/TechnoparkProjects/CompressedCloud/project/DataBases/LocalDB/src/LocalDB.o"
+	@echo "... home/ilya/TechnoparkProjects/CompressedCloud/project/DataBases/LocalDB/src/LocalDB.i"
+	@echo "... home/ilya/TechnoparkProjects/CompressedCloud/project/DataBases/LocalDB/src/LocalDB.s"
+	@echo "... home/ilya/TechnoparkProjects/CompressedCloud/project/Server/fileStorageWorker/src/FileStorageWorker.o"
+	@echo "... home/ilya/TechnoparkProjects/CompressedCloud/project/Server/fileStorageWorker/src/FileStorageWorker.i"
+	@echo "... home/ilya/TechnoparkProjects/CompressedCloud/project/Server/fileStorageWorker/src/FileStorageWorker.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

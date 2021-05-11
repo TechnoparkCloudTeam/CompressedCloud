@@ -1,25 +1,35 @@
 #include "Indexer.h"
 #include "Watcher.h"
-#include "Chunker.h"
+//#include "Chunker.h"
 #include "ProgramInterface.h"
 #include "Application.h"
-
 #include "LocalDB.h"
 
 int main()
 {
+	Watcher watch;
+	std::shared_ptr<Watcher> watchPtr(&watch);
 
 	UserDB DB("base.dblite");
-	DB.exec(R"(
-CREATE TABLE IF NOT EXISTS "User" (
-	"userId"	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
-	"login"	TEXT NOT NULL,
-	"password"	TEXT NOT NULL,
-	"deviceId"	INTEGER NOT NULL,
-	"deviceName"	INTEGER NOT NULL,
-	"synchFolder"	TEXT NOT NULL,
-	"lastUpdate"	TEXT NOT NULL);                  
-)");
+	std::shared_ptr<UserDB> userDBPtr(&DB);
 
+	Indexer index(userDBPtr);
+	std::shared_ptr<I_Indexer> indexPtr(&index);
+
+	ClientNetwork clientNet;
+	std::shared_ptr<ClientNetwork> clientNetworkPtr(&clientNet);
+
+	std::string path = "";
+	FileStorageWorker fileWorker(path);
+	std::shared_ptr<FileStorageWorker> fileWorkerPtr(&fileWorker);
+	
+	//watch.run("/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/testDir");
+
+	Application app(watchPtr, indexPtr, clientNetworkPtr);
+
+	std::shared_ptr<Application> appPtr(&app);
+	ProgramInterface console(appPtr);
+
+	console.run();
 	return 0;
 }

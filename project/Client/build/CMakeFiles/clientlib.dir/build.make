@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/lyalyashechka/TP/c_c++/Project main/project/Client"
+CMAKE_SOURCE_DIR = /home/ilya/TechnoparkProjects/CompressedCloud/project/Client
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build"
+CMAKE_BINARY_DIR = /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/clientlib.dir/depend.make
@@ -59,58 +59,73 @@ include CMakeFiles/clientlib.dir/flags.make
 
 CMakeFiles/clientlib.dir/Watcher/src/Watcher.cpp.o: CMakeFiles/clientlib.dir/flags.make
 CMakeFiles/clientlib.dir/Watcher/src/Watcher.cpp.o: ../Watcher/src/Watcher.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/clientlib.dir/Watcher/src/Watcher.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/clientlib.dir/Watcher/src/Watcher.cpp.o -c "/home/lyalyashechka/TP/c_c++/Project main/project/Client/Watcher/src/Watcher.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/clientlib.dir/Watcher/src/Watcher.cpp.o"
+	/bin/x86_64-linux-gnu-g++-9  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/clientlib.dir/Watcher/src/Watcher.cpp.o -c /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/Watcher/src/Watcher.cpp
 
 CMakeFiles/clientlib.dir/Watcher/src/Watcher.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/clientlib.dir/Watcher/src/Watcher.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/lyalyashechka/TP/c_c++/Project main/project/Client/Watcher/src/Watcher.cpp" > CMakeFiles/clientlib.dir/Watcher/src/Watcher.cpp.i
+	/bin/x86_64-linux-gnu-g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/Watcher/src/Watcher.cpp > CMakeFiles/clientlib.dir/Watcher/src/Watcher.cpp.i
 
 CMakeFiles/clientlib.dir/Watcher/src/Watcher.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/clientlib.dir/Watcher/src/Watcher.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/lyalyashechka/TP/c_c++/Project main/project/Client/Watcher/src/Watcher.cpp" -o CMakeFiles/clientlib.dir/Watcher/src/Watcher.cpp.s
+	/bin/x86_64-linux-gnu-g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/Watcher/src/Watcher.cpp -o CMakeFiles/clientlib.dir/Watcher/src/Watcher.cpp.s
 
 CMakeFiles/clientlib.dir/ProgramInterface/src/ProgramInterface.cpp.o: CMakeFiles/clientlib.dir/flags.make
 CMakeFiles/clientlib.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../ProgramInterface/src/ProgramInterface.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/clientlib.dir/ProgramInterface/src/ProgramInterface.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/clientlib.dir/ProgramInterface/src/ProgramInterface.cpp.o -c "/home/lyalyashechka/TP/c_c++/Project main/project/Client/ProgramInterface/src/ProgramInterface.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/clientlib.dir/ProgramInterface/src/ProgramInterface.cpp.o"
+	/bin/x86_64-linux-gnu-g++-9  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/clientlib.dir/ProgramInterface/src/ProgramInterface.cpp.o -c /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/ProgramInterface/src/ProgramInterface.cpp
 
 CMakeFiles/clientlib.dir/ProgramInterface/src/ProgramInterface.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/clientlib.dir/ProgramInterface/src/ProgramInterface.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/lyalyashechka/TP/c_c++/Project main/project/Client/ProgramInterface/src/ProgramInterface.cpp" > CMakeFiles/clientlib.dir/ProgramInterface/src/ProgramInterface.cpp.i
+	/bin/x86_64-linux-gnu-g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/ProgramInterface/src/ProgramInterface.cpp > CMakeFiles/clientlib.dir/ProgramInterface/src/ProgramInterface.cpp.i
 
 CMakeFiles/clientlib.dir/ProgramInterface/src/ProgramInterface.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/clientlib.dir/ProgramInterface/src/ProgramInterface.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/lyalyashechka/TP/c_c++/Project main/project/Client/ProgramInterface/src/ProgramInterface.cpp" -o CMakeFiles/clientlib.dir/ProgramInterface/src/ProgramInterface.cpp.s
+	/bin/x86_64-linux-gnu-g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/ProgramInterface/src/ProgramInterface.cpp -o CMakeFiles/clientlib.dir/ProgramInterface/src/ProgramInterface.cpp.s
 
-CMakeFiles/clientlib.dir/Chunker/src/Chunker.cpp.o: CMakeFiles/clientlib.dir/flags.make
-CMakeFiles/clientlib.dir/Chunker/src/Chunker.cpp.o: ../Chunker/src/Chunker.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/clientlib.dir/Chunker/src/Chunker.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/clientlib.dir/Chunker/src/Chunker.cpp.o -c "/home/lyalyashechka/TP/c_c++/Project main/project/Client/Chunker/src/Chunker.cpp"
+CMakeFiles/clientlib.dir/Application/src/Application.cpp.o: CMakeFiles/clientlib.dir/flags.make
+CMakeFiles/clientlib.dir/Application/src/Application.cpp.o: ../Application/src/Application.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/clientlib.dir/Application/src/Application.cpp.o"
+	/bin/x86_64-linux-gnu-g++-9  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/clientlib.dir/Application/src/Application.cpp.o -c /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/Application/src/Application.cpp
 
-CMakeFiles/clientlib.dir/Chunker/src/Chunker.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/clientlib.dir/Chunker/src/Chunker.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/lyalyashechka/TP/c_c++/Project main/project/Client/Chunker/src/Chunker.cpp" > CMakeFiles/clientlib.dir/Chunker/src/Chunker.cpp.i
+CMakeFiles/clientlib.dir/Application/src/Application.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/clientlib.dir/Application/src/Application.cpp.i"
+	/bin/x86_64-linux-gnu-g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/Application/src/Application.cpp > CMakeFiles/clientlib.dir/Application/src/Application.cpp.i
 
-CMakeFiles/clientlib.dir/Chunker/src/Chunker.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/clientlib.dir/Chunker/src/Chunker.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/lyalyashechka/TP/c_c++/Project main/project/Client/Chunker/src/Chunker.cpp" -o CMakeFiles/clientlib.dir/Chunker/src/Chunker.cpp.s
+CMakeFiles/clientlib.dir/Application/src/Application.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/clientlib.dir/Application/src/Application.cpp.s"
+	/bin/x86_64-linux-gnu-g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/Application/src/Application.cpp -o CMakeFiles/clientlib.dir/Application/src/Application.cpp.s
+
+CMakeFiles/clientlib.dir/Indexer/src/Indexer.cpp.o: CMakeFiles/clientlib.dir/flags.make
+CMakeFiles/clientlib.dir/Indexer/src/Indexer.cpp.o: ../Indexer/src/Indexer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/clientlib.dir/Indexer/src/Indexer.cpp.o"
+	/bin/x86_64-linux-gnu-g++-9  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/clientlib.dir/Indexer/src/Indexer.cpp.o -c /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/Indexer/src/Indexer.cpp
+
+CMakeFiles/clientlib.dir/Indexer/src/Indexer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/clientlib.dir/Indexer/src/Indexer.cpp.i"
+	/bin/x86_64-linux-gnu-g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/Indexer/src/Indexer.cpp > CMakeFiles/clientlib.dir/Indexer/src/Indexer.cpp.i
+
+CMakeFiles/clientlib.dir/Indexer/src/Indexer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/clientlib.dir/Indexer/src/Indexer.cpp.s"
+	/bin/x86_64-linux-gnu-g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/Indexer/src/Indexer.cpp -o CMakeFiles/clientlib.dir/Indexer/src/Indexer.cpp.s
 
 # Object files for target clientlib
 clientlib_OBJECTS = \
 "CMakeFiles/clientlib.dir/Watcher/src/Watcher.cpp.o" \
 "CMakeFiles/clientlib.dir/ProgramInterface/src/ProgramInterface.cpp.o" \
-"CMakeFiles/clientlib.dir/Chunker/src/Chunker.cpp.o"
+"CMakeFiles/clientlib.dir/Application/src/Application.cpp.o" \
+"CMakeFiles/clientlib.dir/Indexer/src/Indexer.cpp.o"
 
 # External object files for target clientlib
 clientlib_EXTERNAL_OBJECTS =
 
 libclientlib.a: CMakeFiles/clientlib.dir/Watcher/src/Watcher.cpp.o
 libclientlib.a: CMakeFiles/clientlib.dir/ProgramInterface/src/ProgramInterface.cpp.o
-libclientlib.a: CMakeFiles/clientlib.dir/Chunker/src/Chunker.cpp.o
+libclientlib.a: CMakeFiles/clientlib.dir/Application/src/Application.cpp.o
+libclientlib.a: CMakeFiles/clientlib.dir/Indexer/src/Indexer.cpp.o
 libclientlib.a: CMakeFiles/clientlib.dir/build.make
 libclientlib.a: CMakeFiles/clientlib.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library libclientlib.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX static library libclientlib.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/clientlib.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/clientlib.dir/link.txt --verbose=$(VERBOSE)
 
@@ -124,6 +139,6 @@ CMakeFiles/clientlib.dir/clean:
 .PHONY : CMakeFiles/clientlib.dir/clean
 
 CMakeFiles/clientlib.dir/depend:
-	cd "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/lyalyashechka/TP/c_c++/Project main/project/Client" "/home/lyalyashechka/TP/c_c++/Project main/project/Client" "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build" "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build" "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/CMakeFiles/clientlib.dir/DependInfo.cmake" --color=$(COLOR)
+	cd /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ilya/TechnoparkProjects/CompressedCloud/project/Client /home/ilya/TechnoparkProjects/CompressedCloud/project/Client /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build/CMakeFiles/clientlib.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/clientlib.dir/depend
 

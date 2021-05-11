@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/lyalyashechka/TP/c_c++/Project main/project/Client"
+CMAKE_SOURCE_DIR = /home/ilya/TechnoparkProjects/CompressedCloud/project/Client
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build"
+CMAKE_BINARY_DIR = /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build" && $(CMAKE_COMMAND) -E cmake_progress_start "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/CMakeFiles" "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/Chunker/CMakeFiles/progress.marks"
-	cd "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build" && $(MAKE) -f CMakeFiles/Makefile2 Chunker/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/CMakeFiles" 0
+	cd /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build/CMakeFiles /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build/Chunker/CMakeFiles/progress.marks
+	cd /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build && $(MAKE) -f CMakeFiles/Makefile2 Chunker/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build" && $(MAKE) -f CMakeFiles/Makefile2 Chunker/clean
+	cd /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build && $(MAKE) -f CMakeFiles/Makefile2 Chunker/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,22 +97,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build" && $(MAKE) -f CMakeFiles/Makefile2 Chunker/preinstall
+	cd /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build && $(MAKE) -f CMakeFiles/Makefile2 Chunker/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build" && $(MAKE) -f CMakeFiles/Makefile2 Chunker/preinstall
+	cd /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build && $(MAKE) -f CMakeFiles/Makefile2 Chunker/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build" && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 Chunker/CMakeFiles/Chunker.dir/rule:
-	cd "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build" && $(MAKE) -f CMakeFiles/Makefile2 Chunker/CMakeFiles/Chunker.dir/rule
+	cd /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build && $(MAKE) -f CMakeFiles/Makefile2 Chunker/CMakeFiles/Chunker.dir/rule
 .PHONY : Chunker/CMakeFiles/Chunker.dir/rule
 
 # Convenience name for target.
@@ -122,7 +122,7 @@ Chunker: Chunker/CMakeFiles/Chunker.dir/rule
 
 # fast build rule for target.
 Chunker/fast:
-	cd "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build" && $(MAKE) -f Chunker/CMakeFiles/Chunker.dir/build.make Chunker/CMakeFiles/Chunker.dir/build
+	cd /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build && $(MAKE) -f Chunker/CMakeFiles/Chunker.dir/build.make Chunker/CMakeFiles/Chunker.dir/build
 .PHONY : Chunker/fast
 
 main.o: main.cpp.o
@@ -131,7 +131,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	cd "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build" && $(MAKE) -f Chunker/CMakeFiles/Chunker.dir/build.make Chunker/CMakeFiles/Chunker.dir/main.cpp.o
+	cd /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build && $(MAKE) -f Chunker/CMakeFiles/Chunker.dir/build.make Chunker/CMakeFiles/Chunker.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -140,7 +140,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	cd "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build" && $(MAKE) -f Chunker/CMakeFiles/Chunker.dir/build.make Chunker/CMakeFiles/Chunker.dir/main.cpp.i
+	cd /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build && $(MAKE) -f Chunker/CMakeFiles/Chunker.dir/build.make Chunker/CMakeFiles/Chunker.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -149,7 +149,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	cd "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build" && $(MAKE) -f Chunker/CMakeFiles/Chunker.dir/build.make Chunker/CMakeFiles/Chunker.dir/main.cpp.s
+	cd /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build && $(MAKE) -f Chunker/CMakeFiles/Chunker.dir/build.make Chunker/CMakeFiles/Chunker.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 src/Chunker.o: src/Chunker.cpp.o
@@ -158,7 +158,7 @@ src/Chunker.o: src/Chunker.cpp.o
 
 # target to build an object file
 src/Chunker.cpp.o:
-	cd "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build" && $(MAKE) -f Chunker/CMakeFiles/Chunker.dir/build.make Chunker/CMakeFiles/Chunker.dir/src/Chunker.cpp.o
+	cd /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build && $(MAKE) -f Chunker/CMakeFiles/Chunker.dir/build.make Chunker/CMakeFiles/Chunker.dir/src/Chunker.cpp.o
 .PHONY : src/Chunker.cpp.o
 
 src/Chunker.i: src/Chunker.cpp.i
@@ -167,7 +167,7 @@ src/Chunker.i: src/Chunker.cpp.i
 
 # target to preprocess a source file
 src/Chunker.cpp.i:
-	cd "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build" && $(MAKE) -f Chunker/CMakeFiles/Chunker.dir/build.make Chunker/CMakeFiles/Chunker.dir/src/Chunker.cpp.i
+	cd /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build && $(MAKE) -f Chunker/CMakeFiles/Chunker.dir/build.make Chunker/CMakeFiles/Chunker.dir/src/Chunker.cpp.i
 .PHONY : src/Chunker.cpp.i
 
 src/Chunker.s: src/Chunker.cpp.s
@@ -176,7 +176,7 @@ src/Chunker.s: src/Chunker.cpp.s
 
 # target to generate assembly for a file
 src/Chunker.cpp.s:
-	cd "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build" && $(MAKE) -f Chunker/CMakeFiles/Chunker.dir/build.make Chunker/CMakeFiles/Chunker.dir/src/Chunker.cpp.s
+	cd /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build && $(MAKE) -f Chunker/CMakeFiles/Chunker.dir/build.make Chunker/CMakeFiles/Chunker.dir/src/Chunker.cpp.s
 .PHONY : src/Chunker.cpp.s
 
 # Help Target
@@ -205,6 +205,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build" && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

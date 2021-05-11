@@ -1,4 +1,4 @@
-# Install script for directory: /home/lyalyashechka/TP/c_c++/Project main/project/Client/Chunker
+# Install script for directory: /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/Chunker
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

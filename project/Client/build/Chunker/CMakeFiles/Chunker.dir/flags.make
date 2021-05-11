@@ -6,5 +6,5 @@ CXX_FLAGS =   -std=gnu++2a
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I"/home/lyalyashechka/TP/c_c++/Project main/project/Client/Chunker/include" 
+CXX_INCLUDES = -I/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/Chunker/include 
 

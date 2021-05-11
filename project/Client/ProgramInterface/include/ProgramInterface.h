@@ -1,18 +1,16 @@
 #pragma once
 #include <string>
+#include <memory>
+#include <../../Application/include/Application.h>
 class IProgramInterface {
 public:
-	virtual void ReadRequest() = 0;
-	virtual void ShowAnswer() = 0;
-	virtual void SendRequest() = 0;
+	virtual void run() = 0;
 };
 
 class ProgramInterface : public IProgramInterface {
 public:
-	void ReadRequest() override;
-	void ShowAnswer() override;
-	void SendRequest() override;
+	ProgramInterface(std::shared_ptr<Application> app);
+	void run() override;
 private:
-	std::string Request;
-	std::string Answer;
+	std::shared_ptr<Application> app;
 };

@@ -1,5 +1,10 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Client.dir/home/lyalyashechka/TP/c_c++/Project_main/project/DataBases/LocalDB/src/LocalDB.cpp.o"
+  "CMakeFiles/Client.dir/Application/src/Application.cpp.o"
+  "CMakeFiles/Client.dir/Indexer/src/Indexer.cpp.o"
+  "CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o"
+  "CMakeFiles/Client.dir/Watcher/src/Watcher.cpp.o"
+  "CMakeFiles/Client.dir/home/ilya/TechnoparkProjects/CompressedCloud/project/DataBases/LocalDB/src/LocalDB.cpp.o"
+  "CMakeFiles/Client.dir/home/ilya/TechnoparkProjects/CompressedCloud/project/Server/fileStorageWorker/src/FileStorageWorker.cpp.o"
   "CMakeFiles/Client.dir/main.cpp.o"
   "Client"
   "Client.pdb"

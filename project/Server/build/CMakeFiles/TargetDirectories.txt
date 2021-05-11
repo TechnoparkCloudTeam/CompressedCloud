@@ -1,5 +1,5 @@
-/home/lyalyashechka/TP/c_c++/Project main/project/Server/build/CMakeFiles/rebuild_cache.dir
-/home/lyalyashechka/TP/c_c++/Project main/project/Server/build/CMakeFiles/edit_cache.dir
-/home/lyalyashechka/TP/c_c++/Project main/project/Server/build/CMakeFiles/clientnetwork.dir
-/home/lyalyashechka/TP/c_c++/Project main/project/Server/build/CMakeFiles/client.dir
-/home/lyalyashechka/TP/c_c++/Project main/project/Server/build/CMakeFiles/server.dir
+/home/ilya/TechnoparkProjects/CompressedCloud/project/Server/build/CMakeFiles/rebuild_cache.dir
+/home/ilya/TechnoparkProjects/CompressedCloud/project/Server/build/CMakeFiles/edit_cache.dir
+/home/ilya/TechnoparkProjects/CompressedCloud/project/Server/build/CMakeFiles/clientnetwork.dir
+/home/ilya/TechnoparkProjects/CompressedCloud/project/Server/build/CMakeFiles/client.dir
+/home/ilya/TechnoparkProjects/CompressedCloud/project/Server/build/CMakeFiles/server.dir

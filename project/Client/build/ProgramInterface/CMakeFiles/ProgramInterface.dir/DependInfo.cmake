@@ -4,14 +4,16 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/lyalyashechka/TP/c_c++/Project main/project/Client/ProgramInterface/main.cpp" "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/ProgramInterface/CMakeFiles/ProgramInterface.dir/main.cpp.o"
-  "/home/lyalyashechka/TP/c_c++/Project main/project/Client/ProgramInterface/src/ProgramInterface.cpp" "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/ProgramInterface/CMakeFiles/ProgramInterface.dir/src/ProgramInterface.cpp.o"
+  "/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/Application/src/Application.cpp" "/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build/ProgramInterface/CMakeFiles/ProgramInterface.dir/__/Application/src/Application.cpp.o"
+  "/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/ProgramInterface/main.cpp" "/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build/ProgramInterface/CMakeFiles/ProgramInterface.dir/main.cpp.o"
+  "/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/ProgramInterface/src/ProgramInterface.cpp" "/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build/ProgramInterface/CMakeFiles/ProgramInterface.dir/src/ProgramInterface.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../ProgramInterface/include"
+  "../ProgramInterface/../Application/include"
   )
 
 # Targets to which this target links.

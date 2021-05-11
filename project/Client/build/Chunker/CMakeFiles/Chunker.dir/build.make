@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/lyalyashechka/TP/c_c++/Project main/project/Client"
+CMAKE_SOURCE_DIR = /home/ilya/TechnoparkProjects/CompressedCloud/project/Client
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build"
+CMAKE_BINARY_DIR = /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build
 
 # Include any dependencies generated for this target.
 include Chunker/CMakeFiles/Chunker.dir/depend.make
@@ -59,29 +59,29 @@ include Chunker/CMakeFiles/Chunker.dir/flags.make
 
 Chunker/CMakeFiles/Chunker.dir/src/Chunker.cpp.o: Chunker/CMakeFiles/Chunker.dir/flags.make
 Chunker/CMakeFiles/Chunker.dir/src/Chunker.cpp.o: ../Chunker/src/Chunker.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object Chunker/CMakeFiles/Chunker.dir/src/Chunker.cpp.o"
-	cd "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/Chunker" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Chunker.dir/src/Chunker.cpp.o -c "/home/lyalyashechka/TP/c_c++/Project main/project/Client/Chunker/src/Chunker.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object Chunker/CMakeFiles/Chunker.dir/src/Chunker.cpp.o"
+	cd /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build/Chunker && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Chunker.dir/src/Chunker.cpp.o -c /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/Chunker/src/Chunker.cpp
 
 Chunker/CMakeFiles/Chunker.dir/src/Chunker.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Chunker.dir/src/Chunker.cpp.i"
-	cd "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/Chunker" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/lyalyashechka/TP/c_c++/Project main/project/Client/Chunker/src/Chunker.cpp" > CMakeFiles/Chunker.dir/src/Chunker.cpp.i
+	cd /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build/Chunker && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/Chunker/src/Chunker.cpp > CMakeFiles/Chunker.dir/src/Chunker.cpp.i
 
 Chunker/CMakeFiles/Chunker.dir/src/Chunker.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Chunker.dir/src/Chunker.cpp.s"
-	cd "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/Chunker" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/lyalyashechka/TP/c_c++/Project main/project/Client/Chunker/src/Chunker.cpp" -o CMakeFiles/Chunker.dir/src/Chunker.cpp.s
+	cd /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build/Chunker && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/Chunker/src/Chunker.cpp -o CMakeFiles/Chunker.dir/src/Chunker.cpp.s
 
 Chunker/CMakeFiles/Chunker.dir/main.cpp.o: Chunker/CMakeFiles/Chunker.dir/flags.make
 Chunker/CMakeFiles/Chunker.dir/main.cpp.o: ../Chunker/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object Chunker/CMakeFiles/Chunker.dir/main.cpp.o"
-	cd "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/Chunker" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Chunker.dir/main.cpp.o -c "/home/lyalyashechka/TP/c_c++/Project main/project/Client/Chunker/main.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object Chunker/CMakeFiles/Chunker.dir/main.cpp.o"
+	cd /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build/Chunker && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Chunker.dir/main.cpp.o -c /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/Chunker/main.cpp
 
 Chunker/CMakeFiles/Chunker.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Chunker.dir/main.cpp.i"
-	cd "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/Chunker" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/lyalyashechka/TP/c_c++/Project main/project/Client/Chunker/main.cpp" > CMakeFiles/Chunker.dir/main.cpp.i
+	cd /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build/Chunker && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/Chunker/main.cpp > CMakeFiles/Chunker.dir/main.cpp.i
 
 Chunker/CMakeFiles/Chunker.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Chunker.dir/main.cpp.s"
-	cd "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/Chunker" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/lyalyashechka/TP/c_c++/Project main/project/Client/Chunker/main.cpp" -o CMakeFiles/Chunker.dir/main.cpp.s
+	cd /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build/Chunker && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/Chunker/main.cpp -o CMakeFiles/Chunker.dir/main.cpp.s
 
 # Object files for target Chunker
 Chunker_OBJECTS = \
@@ -95,8 +95,8 @@ Chunker/Chunker: Chunker/CMakeFiles/Chunker.dir/src/Chunker.cpp.o
 Chunker/Chunker: Chunker/CMakeFiles/Chunker.dir/main.cpp.o
 Chunker/Chunker: Chunker/CMakeFiles/Chunker.dir/build.make
 Chunker/Chunker: Chunker/CMakeFiles/Chunker.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable Chunker"
-	cd "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/Chunker" && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Chunker.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable Chunker"
+	cd /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build/Chunker && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Chunker.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 Chunker/CMakeFiles/Chunker.dir/build: Chunker/Chunker
@@ -104,10 +104,10 @@ Chunker/CMakeFiles/Chunker.dir/build: Chunker/Chunker
 .PHONY : Chunker/CMakeFiles/Chunker.dir/build
 
 Chunker/CMakeFiles/Chunker.dir/clean:
-	cd "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/Chunker" && $(CMAKE_COMMAND) -P CMakeFiles/Chunker.dir/cmake_clean.cmake
+	cd /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build/Chunker && $(CMAKE_COMMAND) -P CMakeFiles/Chunker.dir/cmake_clean.cmake
 .PHONY : Chunker/CMakeFiles/Chunker.dir/clean
 
 Chunker/CMakeFiles/Chunker.dir/depend:
-	cd "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/lyalyashechka/TP/c_c++/Project main/project/Client" "/home/lyalyashechka/TP/c_c++/Project main/project/Client/Chunker" "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build" "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/Chunker" "/home/lyalyashechka/TP/c_c++/Project main/project/Client/build/Chunker/CMakeFiles/Chunker.dir/DependInfo.cmake" --color=$(COLOR)
+	cd /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ilya/TechnoparkProjects/CompressedCloud/project/Client /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/Chunker /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build/Chunker /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/build/Chunker/CMakeFiles/Chunker.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : Chunker/CMakeFiles/Chunker.dir/depend
 

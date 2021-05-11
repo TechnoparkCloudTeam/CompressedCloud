@@ -40,28 +40,32 @@ memory
 string
 -
 
-../Application/include/Application.h
-../../ProgramInterface/include/ProgramInterface.h
-../ProgramInterface/include/ProgramInterface.h
-../../Chunker/include/Chunker.h
-../Chunker/include/Chunker.h
-../../Watcher/include/Watcher.h
-../Watcher/include/Watcher.h
-../../Indexer/include/Indexer.h
-../Indexer/include/Indexer.h
-memory
+../../Server/fileStorageWorker/include/FileStorageWorker.h
+string
 -
-
-../Chunker/include/Chunker.h
-array
+filesystem
+-
+memory
 -
 string
 -
 iostream
 -
-vector
+map
 -
-filesystem
+fstream
+-
+
+../Application/include/Application.h
+../../Watcher/include/Watcher.h
+../Watcher/include/Watcher.h
+../../Indexer/include/Indexer.h
+../Indexer/include/Indexer.h
+../../../Server/fileStorageWorker/include/FileStorageWorker.h
+../../Server/fileStorageWorker/include/FileStorageWorker.h
+memory
+-
+string
 -
 
 ../Indexer/include/Indexer.h
@@ -71,9 +75,15 @@ filesystem
 -
 memory
 -
+../../../DataBases/LocalDB/include/LocalDB.h
+../../DataBases/LocalDB/include/LocalDB.h
 
 ../ProgramInterface/include/ProgramInterface.h
 string
+-
+memory
+-
+../../Application/include/Application.h
 -
 
 ../Watcher/include/Watcher.h
@@ -98,27 +108,25 @@ string
 sys/inotify.h
 -
 
-/home/lyalyashechka/TP/c_c++/Project main/project/Client/main.cpp
-Indexer.h
-/home/lyalyashechka/TP/c_c++/Project main/project/Client/Indexer.h
-Watcher.h
-/home/lyalyashechka/TP/c_c++/Project main/project/Client/Watcher.h
-Chunker.h
-/home/lyalyashechka/TP/c_c++/Project main/project/Client/Chunker.h
-ProgramInterface.h
-/home/lyalyashechka/TP/c_c++/Project main/project/Client/ProgramInterface.h
+/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/Application/src/Application.cpp
 Application.h
-/home/lyalyashechka/TP/c_c++/Project main/project/Client/Application.h
-LocalDB.h
-/home/lyalyashechka/TP/c_c++/Project main/project/Client/LocalDB.h
+/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/Application/src/Application.h
 
-/home/lyalyashechka/TP/c_c++/Project main/project/DataBases/LocalDB/src/LocalDB.cpp
+/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/ProgramInterface/src/ProgramInterface.cpp
+ProgramInterface.h
+/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/ProgramInterface/src/ProgramInterface.h
+string
+-
+
+/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/main.cpp
+Indexer.h
+/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/Indexer.h
+Watcher.h
+/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/Watcher.h
+ProgramInterface.h
+/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/ProgramInterface.h
+Application.h
+/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/Application.h
 LocalDB.h
-/home/lyalyashechka/TP/c_c++/Project main/project/DataBases/LocalDB/src/LocalDB.h
-boost/log/trivial.hpp
-/home/lyalyashechka/TP/c_c++/Project main/project/DataBases/LocalDB/src/boost/log/trivial.hpp
-utility
--
-iostream
--
+/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/LocalDB.h
 

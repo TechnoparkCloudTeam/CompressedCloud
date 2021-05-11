@@ -4,6 +4,6 @@ project(ProgramInterface)
 set(CMAKE_CXX_STANDARD 20)
 
 INCLUDE_DIRECTORIES(include)
+INCLUDE_DIRECTORIES(../Application/include)
 
-
-add_executable(ProgramInterface src/ProgramInterface.cpp main.cpp)
+add_executable(ProgramInterface src/ProgramInterface.cpp ../Application/src/Application.cpp main.cpp)

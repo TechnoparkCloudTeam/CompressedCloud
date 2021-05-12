@@ -204,33 +204,6 @@ ProgramInterface/src/ProgramInterface.cpp.s:
 	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.s
 .PHONY : ProgramInterface/src/ProgramInterface.cpp.s
 
-Watcher/src/Watcher.o: Watcher/src/Watcher.cpp.o
-
-.PHONY : Watcher/src/Watcher.o
-
-# target to build an object file
-Watcher/src/Watcher.cpp.o:
-	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/Watcher/src/Watcher.cpp.o
-.PHONY : Watcher/src/Watcher.cpp.o
-
-Watcher/src/Watcher.i: Watcher/src/Watcher.cpp.i
-
-.PHONY : Watcher/src/Watcher.i
-
-# target to preprocess a source file
-Watcher/src/Watcher.cpp.i:
-	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/Watcher/src/Watcher.cpp.i
-.PHONY : Watcher/src/Watcher.cpp.i
-
-Watcher/src/Watcher.s: Watcher/src/Watcher.cpp.s
-
-.PHONY : Watcher/src/Watcher.s
-
-# target to generate assembly for a file
-Watcher/src/Watcher.cpp.s:
-	$(MAKE) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/Watcher/src/Watcher.cpp.s
-.PHONY : Watcher/src/Watcher.cpp.s
-
 home/ilya/TechnoparkProjects/CompressedCloud/project/DataBases/LocalDB/src/LocalDB.o: home/ilya/TechnoparkProjects/CompressedCloud/project/DataBases/LocalDB/src/LocalDB.cpp.o
 
 .PHONY : home/ilya/TechnoparkProjects/CompressedCloud/project/DataBases/LocalDB/src/LocalDB.o
@@ -330,9 +303,6 @@ help:
 	@echo "... ProgramInterface/src/ProgramInterface.o"
 	@echo "... ProgramInterface/src/ProgramInterface.i"
 	@echo "... ProgramInterface/src/ProgramInterface.s"
-	@echo "... Watcher/src/Watcher.o"
-	@echo "... Watcher/src/Watcher.i"
-	@echo "... Watcher/src/Watcher.s"
 	@echo "... home/ilya/TechnoparkProjects/CompressedCloud/project/DataBases/LocalDB/src/LocalDB.o"
 	@echo "... home/ilya/TechnoparkProjects/CompressedCloud/project/DataBases/LocalDB/src/LocalDB.i"
 	@echo "... home/ilya/TechnoparkProjects/CompressedCloud/project/DataBases/LocalDB/src/LocalDB.s"

@@ -44,12 +44,6 @@
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 21,
-				"parent" : 0
-			},
-			{
-				"command" : 2,
-				"file" : 0,
 				"line" : 22,
 				"parent" : 0
 			},
@@ -100,22 +94,18 @@
 				},
 				{
 					"backtrace" : 4,
-					"path" : "/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/Watcher/include"
-				},
-				{
-					"backtrace" : 5,
 					"path" : "/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/Indexer/include"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/Application/include"
 				},
 				{
-					"backtrace" : 7,
+					"backtrace" : 6,
 					"path" : "/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/../DataBases/LocalDB/include"
 				},
 				{
-					"backtrace" : 8,
+					"backtrace" : 7,
 					"path" : "/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/../Server/fileStorageWorker/include"
 				}
 			],
@@ -127,8 +117,7 @@
 				2,
 				3,
 				4,
-				5,
-				6
+				5
 			]
 		}
 	],
@@ -203,8 +192,7 @@
 				2,
 				3,
 				4,
-				5,
-				6
+				5
 			]
 		}
 	],
@@ -220,12 +208,6 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "/home/ilya/TechnoparkProjects/CompressedCloud/project/DataBases/LocalDB/src/LocalDB.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "Watcher/src/Watcher.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{

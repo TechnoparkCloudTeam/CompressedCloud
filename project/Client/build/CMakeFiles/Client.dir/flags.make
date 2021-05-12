@@ -6,5 +6,5 @@ CXX_FLAGS = -g   -std=gnu++2a
 
 CXX_DEFINES = -DBOOST_ALL_NO_LIB
 
-CXX_INCLUDES = -I/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/ProgramInterface/include -I/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/Watcher/include -I/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/Indexer/include -I/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/Application/include -I/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/../DataBases/LocalDB/include -I/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/../Server/fileStorageWorker/include 
+CXX_INCLUDES = -I/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/ProgramInterface/include -I/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/Indexer/include -I/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/Application/include -I/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/../DataBases/LocalDB/include -I/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/../Server/fileStorageWorker/include 
 

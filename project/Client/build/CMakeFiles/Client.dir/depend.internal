@@ -9,8 +9,6 @@ CMakeFiles/Client.dir/Application/src/Application.cpp.o
  ../../Server/fileStorageWorker/include/FileStorageWorker.h
  ../Application/include/Application.h
  ../Indexer/include/Indexer.h
- ../Watcher/include/Watcher.h
- ../Watcher/include/WatcherConfig.h
  /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/Application/src/Application.cpp
 CMakeFiles/Client.dir/Indexer/src/Indexer.cpp.o
  /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/Indexer/include/Indexer.h
@@ -27,14 +25,8 @@ CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o
  ../../Server/fileStorageWorker/include/FileStorageWorker.h
  ../Application/include/Application.h
  ../Indexer/include/Indexer.h
- ../Watcher/include/Watcher.h
- ../Watcher/include/WatcherConfig.h
  /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/ProgramInterface/include/ProgramInterface.h
  /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/ProgramInterface/src/ProgramInterface.cpp
-CMakeFiles/Client.dir/Watcher/src/Watcher.cpp.o
- /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/Watcher/include/Watcher.h
- /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/Watcher/include/WatcherConfig.h
- /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/Watcher/src/Watcher.cpp
 CMakeFiles/Client.dir/home/ilya/TechnoparkProjects/CompressedCloud/project/DataBases/LocalDB/src/LocalDB.cpp.o
  /home/ilya/TechnoparkProjects/CompressedCloud/project/DataBases/LocalDB/include/ChunkDB.h
  /home/ilya/TechnoparkProjects/CompressedCloud/project/DataBases/LocalDB/include/FileDB.h
@@ -53,6 +45,4 @@ CMakeFiles/Client.dir/main.cpp.o
  ../Application/include/Application.h
  ../Indexer/include/Indexer.h
  ../ProgramInterface/include/ProgramInterface.h
- ../Watcher/include/Watcher.h
- ../Watcher/include/WatcherConfig.h
  /home/ilya/TechnoparkProjects/CompressedCloud/project/Client/main.cpp

@@ -1,14 +1,16 @@
 #pragma once
-#include "../../Watcher/include/Watcher.h"
+//#include "../../Watcher/include/Watcher.h"
 #include "../../Indexer/include/Indexer.h"
 #include "../../../Server/fileStorageWorker/include/FileStorageWorker.h"
 #include <memory>
 #include <string>
+class Watcher {};
+
 struct ClientNetwork {};
 
 class Application {
 public:
-    Application(std::shared_ptr<IWatcher> watch,
+    Application(std::shared_ptr<Watcher> watch,
      std::shared_ptr<I_Indexer> index, std::shared_ptr<ClientNetwork> network);
     void login(std::string login, std::string pass);
     void registerUser(std::string login, std::string pass);
@@ -29,7 +31,7 @@ private:
     std::string Login;
     std::string Password;
     void checkPassword();
-    std::shared_ptr<IWatcher> Watcher;
+    std::shared_ptr<Watcher> watcher;
     std::shared_ptr<I_Indexer> Indexer;
     std::shared_ptr<ClientNetwork> NetworkCommunication;
     std::shared_ptr<FileStorageWorker> FileWorker;

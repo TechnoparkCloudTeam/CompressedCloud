@@ -8,8 +8,6 @@ CMakeFiles/Client.dir/Application/src/Application.cpp.o: ../../DataBases/LocalDB
 CMakeFiles/Client.dir/Application/src/Application.cpp.o: ../../Server/fileStorageWorker/include/FileStorageWorker.h
 CMakeFiles/Client.dir/Application/src/Application.cpp.o: ../Application/include/Application.h
 CMakeFiles/Client.dir/Application/src/Application.cpp.o: ../Indexer/include/Indexer.h
-CMakeFiles/Client.dir/Application/src/Application.cpp.o: ../Watcher/include/Watcher.h
-CMakeFiles/Client.dir/Application/src/Application.cpp.o: ../Watcher/include/WatcherConfig.h
 CMakeFiles/Client.dir/Application/src/Application.cpp.o: ../Application/src/Application.cpp
 
 CMakeFiles/Client.dir/Indexer/src/Indexer.cpp.o: ../Indexer/include/Indexer.h
@@ -26,14 +24,8 @@ CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../../DataBas
 CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../../Server/fileStorageWorker/include/FileStorageWorker.h
 CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../Application/include/Application.h
 CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../Indexer/include/Indexer.h
-CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../Watcher/include/Watcher.h
-CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../Watcher/include/WatcherConfig.h
 CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../ProgramInterface/include/ProgramInterface.h
 CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../ProgramInterface/src/ProgramInterface.cpp
-
-CMakeFiles/Client.dir/Watcher/src/Watcher.cpp.o: ../Watcher/include/Watcher.h
-CMakeFiles/Client.dir/Watcher/src/Watcher.cpp.o: ../Watcher/include/WatcherConfig.h
-CMakeFiles/Client.dir/Watcher/src/Watcher.cpp.o: ../Watcher/src/Watcher.cpp
 
 CMakeFiles/Client.dir/home/ilya/TechnoparkProjects/CompressedCloud/project/DataBases/LocalDB/src/LocalDB.cpp.o: /home/ilya/TechnoparkProjects/CompressedCloud/project/DataBases/LocalDB/include/ChunkDB.h
 CMakeFiles/Client.dir/home/ilya/TechnoparkProjects/CompressedCloud/project/DataBases/LocalDB/src/LocalDB.cpp.o: /home/ilya/TechnoparkProjects/CompressedCloud/project/DataBases/LocalDB/include/FileDB.h
@@ -52,7 +44,5 @@ CMakeFiles/Client.dir/main.cpp.o: ../../Server/fileStorageWorker/include/FileSto
 CMakeFiles/Client.dir/main.cpp.o: ../Application/include/Application.h
 CMakeFiles/Client.dir/main.cpp.o: ../Indexer/include/Indexer.h
 CMakeFiles/Client.dir/main.cpp.o: ../ProgramInterface/include/ProgramInterface.h
-CMakeFiles/Client.dir/main.cpp.o: ../Watcher/include/Watcher.h
-CMakeFiles/Client.dir/main.cpp.o: ../Watcher/include/WatcherConfig.h
 CMakeFiles/Client.dir/main.cpp.o: ../main.cpp
 

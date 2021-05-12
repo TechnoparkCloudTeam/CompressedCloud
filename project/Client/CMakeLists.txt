@@ -18,7 +18,7 @@ include_directories(${Boost_INCLUDE_DIRS})
 
 
 INCLUDE_DIRECTORIES(ProgramInterface/include)
-INCLUDE_DIRECTORIES(Watcher/include)
+#INCLUDE_DIRECTORIES(Watcher/include)
 INCLUDE_DIRECTORIES(Indexer/include)
 INCLUDE_DIRECTORIES(Application/include)
 
@@ -26,7 +26,7 @@ INCLUDE_DIRECTORIES(../DataBases/LocalDB/include)
 INCLUDE_DIRECTORIES(../Server/fileStorageWorker/include)
 
 
-add_executable(Client main.cpp ../DataBases/LocalDB/src/LocalDB.cpp Watcher/src/Watcher.cpp
+add_executable(Client main.cpp ../DataBases/LocalDB/src/LocalDB.cpp
 ProgramInterface/src/ProgramInterface.cpp Application/src/Application.cpp Indexer/src/Indexer.cpp 
 ../Server/fileStorageWorker/src/FileStorageWorker.cpp)
 

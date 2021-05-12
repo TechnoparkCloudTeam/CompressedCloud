@@ -1,9 +1,10 @@
 #include "Application.h"
 
 
-Application::Application(std::shared_ptr<IWatcher> watch,
+
+Application::Application(std::shared_ptr<Watcher> watch,
      std::shared_ptr<I_Indexer> index, std::shared_ptr<ClientNetwork> network) : 
-     Watcher(watch),
+     watcher(watch),
      Indexer(index),
      NetworkCommunication(network) {}
 
@@ -43,10 +44,10 @@ void Application::downloadFile() {
     //ClientNetwork.start();
     //ClientNetwork.writeMessage();
     //ClientNetwork.readMessage();
-    Watcher->shutdown();
+    //Watcher->shutdown();
     //ClientNetwork.handleRead();
     //fileWorker->createFile();
-    Watcher->run(synchFolder);
+    //Watcher->run(synchFolder);
     return;
 }
 void Application::sendFile() {
@@ -84,10 +85,10 @@ void Application::checkPassword() {
     return;
 }
 void Application::runWatcher() {
-    Watcher->run(synchFolder);
+    //Watcher->run(synchFolder);
 }
 void Application::stopWatcher() {
-    Watcher->shutdown();
+    //Watcher->shutdown();
 }
 void Application::synchronize() {
     downloadFile();

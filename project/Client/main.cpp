@@ -1,9 +1,11 @@
 #include "Indexer.h"
-#include "Watcher.h"
+//#include "Watcher.h"
 //#include "Chunker.h"
 #include "ProgramInterface.h"
 #include "Application.h"
 #include "LocalDB.h"
+
+
 
 int main()
 {

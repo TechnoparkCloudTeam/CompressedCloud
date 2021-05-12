@@ -1,3 +1,0 @@
-/home/ilya/TechnoparkProjects/Client/Watcher/build/CMakeFiles/rebuild_cache.dir
-/home/ilya/TechnoparkProjects/Client/Watcher/build/CMakeFiles/edit_cache.dir
-/home/ilya/TechnoparkProjects/Client/Watcher/build/CMakeFiles/Watcher.dir

@@ -1,0 +1,5 @@
+/home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/DataBases/PostgresDB/build/CMakeFiles/rebuild_cache.dir
+/home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/DataBases/PostgresDB/build/CMakeFiles/edit_cache.dir
+/home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/DataBases/PostgresDB/build/CMakeFiles/MetaDB-dev.dir
+/home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/DataBases/PostgresDB/build/CMakeFiles/UserDB-dev.dir
+/home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/DataBases/PostgresDB/build/CMakeFiles/PostgresDB.dir

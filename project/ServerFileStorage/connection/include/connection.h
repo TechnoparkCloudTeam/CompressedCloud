@@ -28,5 +28,5 @@ private:
     //std::array<char, 8192> buffer_In;
     char data_[8192];
 
-    FileStorageWorker fsworker = FileStorageWorker("/home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/ServerFileStorage/build/content");
+    FileStorageWorker fsworker = FileStorageWorker("/home/lyalyashechka/TP/c_c++/gitMAIN/CompressedCloud/project/build/content");
 };

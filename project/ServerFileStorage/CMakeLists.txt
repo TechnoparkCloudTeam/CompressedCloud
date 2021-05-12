@@ -23,6 +23,8 @@ include_directories(Client/include)
 include_directories(../ServerSynch/connection/include)
 include_directories(../ServerSynch/fileStorageWorker/include)
 include_directories(../ServerSynch/server/include)
+include_directories(../statusRequest)
+
 
 add_executable(serverFS main.cpp server/src/server.cpp connection/src/connection.cpp fileStorageWorker/src/FileStorageWorker.cpp ${PROTO_SRCS} ${PROTO_HDRS})
 target_link_libraries(serverFS ${Boost_LIBRARIES} ${Protobuf_LIBRARIES}) 

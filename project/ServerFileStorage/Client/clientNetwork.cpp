@@ -27,7 +27,7 @@ int main()
     boost::system::error_code ec;
     
 boost::thread t(boost::bind(&boost::asio::io_service::run, &io_service));
-    cn.writeMessageToFS(ec, msg);
+    cn.writeMessageToS(ec, msg);
     
 
 

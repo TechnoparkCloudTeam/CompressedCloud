@@ -1,17 +1,31 @@
 #include "ClientNetwork.h"
+enum ServerSynchoRead
+{
+    OKREG = 0,
+    REGISTRATION = 1,
+    AUTORIZATION = 2,
+};
 
+enum ServerFSWrite
+{
+    
+    CREATEFOLDER = 1,
+    
+};
  ClientNetwork::ClientNetwork(boost::asio::io_service &io_service) : socket_(io_service),
                                                                     socketS_(io_service),
                                                                     socketToSynch(io_service),
                                                                     io_service_(io_service)
 {
+
+    boost::asio::ip::tcp::endpoint eps(boost::asio::ip::address::from_string("127.0.0.1"), 6666);
+    socketS_.async_connect(eps, boost::bind(&ClientNetwork::handleConnectS, this,
+                                           boost::asio::placeholders::error));
+
     boost::asio::ip::tcp::endpoint ep(boost::asio::ip::address::from_string("127.0.0.1"), 8888);
     socket_.async_connect(ep, boost::bind(&ClientNetwork::handleConnectFS, this,
                                           boost::asio::placeholders::error));
 
-    boost::asio::ip::tcp::endpoint eps(boost::asio::ip::address::from_string("127.0.0.1"), 7777);
-    socketS_.async_connect(eps, boost::bind(&ClientNetwork::handleConnectS, this,
-                                           boost::asio::placeholders::error));
 }
 void ClientNetwork::handleConnectFS(boost::system::error_code ec)
 {
@@ -69,11 +83,25 @@ void ClientNetwork::handleConnectS(boost::system::error_code ec)
 
 void ClientNetwork::handleReadS(boost::system::error_code ec)
 {
+    messageFS::Request readRequest;
+    messageFS::Request writeRequest;
     std::string readed;
     readed = read_data;
-    messageFS::Request answ;
-    answ.ParseFromString(readed);
-    std::cout << answ.id() << std::endl;
+    readRequest.ParseFromString(readed);
+    std::cout << readRequest.id() << std::endl;
+    switch (readRequest.id())
+    {
+    case ServerSynchoRead::OKREG:
+        std::cout<<"ya tut bil";
+        writeRequest.set_id(ServerFSWrite::CREATEFOLDER);
+        writeRequest.SerializePartialToString(&readed);
+        writeMessageToFS(ec, readed);
+        break;
+    
+    default:
+        break;
+    }
+    
     boost::asio::async_read(socketS_, boost::asio::buffer(read_data, max_size_buf), boost::asio::transfer_at_least(1),
                             boost::bind(&ClientNetwork::handleReadS, this, boost::asio::placeholders::error));
 }
@@ -107,18 +135,3 @@ void ClientNetwork::writeHeandlerS()
                                  boost::bind(&ClientNetwork::writeHeandlerS, this));
     }
 } 
-
-//--------------------------------------------------------------------------------------------------------------------------
-/* ClientNetwork::ClientNetwork(boost::asio::io_service &io_service) : socket_(io_service),
-                                                                    socketS_(io_service),
-                                                                    socketToSynch(io_service),
-                                                                    io_service_(io_service)
-{
-    boost::asio::ip::tcp::endpoint ep(boost::asio::ip::address::from_string("127.0.0.1"), 8888);
-    socket_.async_connect(ep, boost::bind(&ClientNetwork::handleConnectFS, this,
-                                          boost::asio::placeholders::error));
-
-    boost::asio::ip::tcp::endpoint eps(boost::asio::ip::address::from_string("127.0.0.1"), 7777);
-    socketS_.async_connect(eps, boost::bind(&ClientNetwork::handleConnectS, this,
-                                           boost::asio::placeholders::error));
-} */

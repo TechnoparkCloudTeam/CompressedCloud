@@ -30,7 +30,7 @@ UserIds UsersDB::Registration(const UserInfo &userInfo) {
     pqExec("begin;", PostgresExceptions("invalid to start transaction"));  // Начало транзакции
     pqExec("savepoint f_savepoint;", PostgresExceptions("invalid to savepoint"));  // Точка сохранения
 
-    std::string query = "SELECT count(*) from Users Where login like '" + userInfo.login + "' ;";
+     std::string query = "SELECT count(*) from Users Where login like '" + userInfo.login + "' ;";
     if (userExist(query)) {
       throw PostgresExceptions("User already exist");
     }
@@ -40,9 +40,10 @@ UserIds UsersDB::Registration(const UserInfo &userInfo) {
 	query =
 		"SELECT id from Users Where login like '" + userInfo.login + "' and password like '" + userInfo.password
 			+ "';";
+  /*
     UserIds usr{.id = getUserId(query, PostgresExceptions("invalid to select id"))};
     pqExec("commit;", PostgresExceptions("invalid to end transation"));
-    return usr;
+    return usr;*/
   } catch (PostgresExceptions &exceptions) {
     throw PostgresExceptions(exceptions.what());
   }

@@ -33,6 +33,10 @@ sqlite3.h
 -
 UserDB.h
 ../../DataBases/LocalDB/include/UserDB.h
+functional
+-
+vector
+-
 
 ../../DataBases/LocalDB/include/UserDB.h
 memory
@@ -76,7 +80,21 @@ memory
 ../../../DataBases/LocalDB/include/LocalDB.h
 ../../DataBases/LocalDB/include/LocalDB.h
 
-/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/Application/src/Application.cpp
+../ProgramInterface/include/ProgramInterface.h
+string
+-
+memory
+-
+../../Application/include/Application.h
+-
+
+/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/main.cpp
+Indexer.h
+/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/Indexer.h
+ProgramInterface.h
+/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/ProgramInterface.h
 Application.h
-/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/Application/src/Application.h
+/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/Application.h
+LocalDB.h
+/home/ilya/TechnoparkProjects/CompressedCloud/project/Client/LocalDB.h
 

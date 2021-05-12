@@ -27,10 +27,10 @@ CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../Indexer/in
 CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../ProgramInterface/include/ProgramInterface.h
 CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../ProgramInterface/src/ProgramInterface.cpp
 
-CMakeFiles/Client.dir/home/ilya/TechnoparkProjects/CompressedCloud/project/DataBases/LocalDB/src/LocalDB.cpp.o: /home/ilya/TechnoparkProjects/CompressedCloud/project/DataBases/LocalDB/include/ChunkDB.h
-CMakeFiles/Client.dir/home/ilya/TechnoparkProjects/CompressedCloud/project/DataBases/LocalDB/src/LocalDB.cpp.o: /home/ilya/TechnoparkProjects/CompressedCloud/project/DataBases/LocalDB/include/FileDB.h
-CMakeFiles/Client.dir/home/ilya/TechnoparkProjects/CompressedCloud/project/DataBases/LocalDB/src/LocalDB.cpp.o: /home/ilya/TechnoparkProjects/CompressedCloud/project/DataBases/LocalDB/include/LocalDB.h
-CMakeFiles/Client.dir/home/ilya/TechnoparkProjects/CompressedCloud/project/DataBases/LocalDB/src/LocalDB.cpp.o: /home/ilya/TechnoparkProjects/CompressedCloud/project/DataBases/LocalDB/include/UserDB.h
+CMakeFiles/Client.dir/home/ilya/TechnoparkProjects/CompressedCloud/project/DataBases/LocalDB/src/LocalDB.cpp.o: ../../DataBases/LocalDB/include/ChunkDB.h
+CMakeFiles/Client.dir/home/ilya/TechnoparkProjects/CompressedCloud/project/DataBases/LocalDB/src/LocalDB.cpp.o: ../../DataBases/LocalDB/include/FileDB.h
+CMakeFiles/Client.dir/home/ilya/TechnoparkProjects/CompressedCloud/project/DataBases/LocalDB/src/LocalDB.cpp.o: ../../DataBases/LocalDB/include/LocalDB.h
+CMakeFiles/Client.dir/home/ilya/TechnoparkProjects/CompressedCloud/project/DataBases/LocalDB/src/LocalDB.cpp.o: ../../DataBases/LocalDB/include/UserDB.h
 CMakeFiles/Client.dir/home/ilya/TechnoparkProjects/CompressedCloud/project/DataBases/LocalDB/src/LocalDB.cpp.o: /home/ilya/TechnoparkProjects/CompressedCloud/project/DataBases/LocalDB/src/LocalDB.cpp
 
 CMakeFiles/Client.dir/home/ilya/TechnoparkProjects/CompressedCloud/project/Server/fileStorageWorker/src/FileStorageWorker.cpp.o: ../../Server/fileStorageWorker/include/FileStorageWorker.h

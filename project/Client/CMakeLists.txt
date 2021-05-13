@@ -23,11 +23,11 @@ INCLUDE_DIRECTORIES(Indexer/include)
 INCLUDE_DIRECTORIES(Application/include)
 
 INCLUDE_DIRECTORIES(../DataBases/LocalDB/include)
-INCLUDE_DIRECTORIES(../Server/fileStorageWorker/include)
+INCLUDE_DIRECTORIES(../Server/ServerFileStorage/fileStorageWorker/include)
 
 
 add_executable(Client main.cpp ../DataBases/LocalDB/src/LocalDB.cpp
 ProgramInterface/src/ProgramInterface.cpp Application/src/Application.cpp Indexer/src/Indexer.cpp 
-../Server/fileStorageWorker/src/FileStorageWorker.cpp)
+../Server/ServerFileStorage/fileStorageWorker/src/FileStorageWorker.cpp)
 
 target_link_libraries(Client ${SQLite3_LIBRARIES} ${Boost_LIBRARIES})

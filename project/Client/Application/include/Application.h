@@ -1,7 +1,7 @@
 #pragma once
 //#include "../../Watcher/include/Watcher.h"
 #include "../../Indexer/include/Indexer.h"
-#include "../../../Server/fileStorageWorker/include/FileStorageWorker.h"
+#include "../../../Server/ServerFileStorage/fileStorageWorker/include/FileStorageWorker.h"
 #include <memory>
 #include <string>
 class Watcher {};

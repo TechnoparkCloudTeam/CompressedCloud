@@ -7,21 +7,21 @@ Indexer::Indexer (std::shared_ptr<UserDB> localDB) {
 Indexer::Indexer() {
     
 }
-FileMeta Indexer::createFile(const std::filesystem::path& path, size_t chunksCnt) {
-    return FileMeta();
+void Indexer::createFile(const std::filesystem::path& path, size_t chunksCnt) {
+    return;
 }
-FileMeta Indexer::modifyFile(const std::filesystem::path& path, size_t chunksCnt) {
-    return FileMeta();
+void Indexer::modifyFile(const std::filesystem::path& path, size_t chunksCnt) {
+    return;
 }
-FileMeta Indexer::renameFile(const std::filesystem::path& oldPath,
+void Indexer::renameFile(const std::filesystem::path& oldPath,
         const std::filesystem::path& newPath) {
-        return FileMeta();
+        return;
         }
-FileMeta Indexer::deleteFile(const std::filesystem::path& path) {
-    return FileMeta();
+void Indexer::deleteFile(const std::filesystem::path& path) {
+    return;
 }
-FileMeta Indexer::getFileInfo(const std::filesystem::path& path) {
-    return FileMeta();
+void Indexer::getFileInfo(const std::filesystem::path& path) {
+    return;
 }
 
 void Indexer::AddUser(UserDB& DB) {

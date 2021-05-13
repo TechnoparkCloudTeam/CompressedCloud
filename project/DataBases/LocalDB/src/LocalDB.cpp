@@ -45,57 +45,17 @@ UserDB::UserDB(const std::string_view userNameDB)
   }
 
   
-bool UserDB::exec(const std::string_view sql,
-                std::function<int(const s_record& r,void* context)> record_callback
-                ,void* context
-                )
+bool UserDB::exec(const std::string_view sql)
   {
     if(!(_database)) return false;
     char *err = 0;
  
-    if(record_callback)
+    if (sqlite3_exec(_database.get(), sql.data(), 0, 0, &err))
     {
-            struct s_local_context
-            {
-               void* context{};
-               std::function<int(const s_record& r,void* context)> record_callback{};
-            };
-
-     s_local_context lc{context,record_callback};
-
-     if (sqlite3_exec(_database.get(), sql.data(), [/*&record_callback*/](void* context,int cols_count,char** texts_array,char** names_array)
-                            {
-                              s_local_context* lc=reinterpret_cast<s_local_context*>(context);
-                              s_record r;
-                              r.reserve(cols_count);
-                              for(int col=0; col< cols_count; col++)
-                              {
-                                s_column c {names_array[col],texts_array[col]};
-
-                                r.emplace_back(c);
-                                //std::cout<<names_array[col]<<"="<<texts_array[col]<<',';
-                              }
-                              //std::cout<<'\n';
-                              return lc->record_callback(r,lc->context);
-                              
-                            },&lc,  &err))
-     {
-       fprintf(stderr, "Ошибка SQL: %sn", err);
-       sqlite3_free(err);
-       return false;
-     }
+      fprintf(stderr, "Ошибка SQL: %sn", err);
+      sqlite3_free(err);
+      return false;
     }
-    else
-    {
-      if (sqlite3_exec(_database.get(), sql.data(),0, 0, &err))
-     {
-        fprintf(stderr, "Ошибка SQL: %sn", err);
-        sqlite3_free(err);
-        return false;
-     }
-    }
-
-
     return true;
   }
 
@@ -198,7 +158,7 @@ voidLOcalDB::selectId(const std::string &query) {
 }*/
 
 void UserDB::deleteUser(int id) {
-        std::string query = "DELETE FROM User WHERE userId = " + std::to_string(id) + ";";
+        std::string query = "DELETE FROM User WHERE user_id = " + std::to_string(id) + ";";
         exec(query.data());
 
         BOOST_LOG_TRIVIAL(debug) << "User deleted";
@@ -207,26 +167,8 @@ void UserDB::deleteUser(int id) {
 }
 
 int UserDB::selectUserId() {
-         const std::string query = "SELECT userId FROM User;";
-
-
-         std::vector<s_record> result;
-         int id = exec(query.data(),[&result](const s_record& r,void* context)
-         {
-            result.emplace_back(r);
-            return 0;
-         },this);
-
-         for(const auto& rec:result)
-         {
-          for(const auto& col:rec)
-          {
-            std::cout<<col.col_name<<"="<<col.col_text<<',';
-          }
-          std::cout<<'\n';
-         }
-
-
+         const std::string query = "SELECT userId FROM User:";
+         int id = exec(query.data());
          return id;
 }
 

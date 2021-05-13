@@ -1,12 +1,11 @@
-#pragma once
 #include "ChunkDB.h"
 #include "FileDB.h"
 #include <memory>
 #include <string>
 #include <sqlite3.h>
 #include "UserDB.h"
-#include <functional>
-#include <vector>
+
+
 
 struct sqlite3_deleter {
   void operator()(sqlite3* sql) {
@@ -19,17 +18,6 @@ struct sqlite3_stmt_deleter {
 	sqlite3_finalize(sql);
   }
 };
-
-struct s_column
-{
-   std::string col_name;
-   std::string col_text;
-};
-
-struct s_record:public std::vector<s_column>
-{
-};
-
 
 /*class LocalDB {
 public:
@@ -63,11 +51,7 @@ public:
 	UserDB(const std::string_view  userNameDB);
 	bool connect(const std::string_view userNameDB);
         void disconnect();
-        bool exec(const std::string_view sql,
-                std::function<int(const s_record& r,void* context)> record_callback=nullptr //retuen false to continue enumeration
-                ,void* context=nullptr
-                );
-
+        bool exec(const std::string_view sql);
         //void createTable();
         int selectUserId();
         void deleteUser(int id);

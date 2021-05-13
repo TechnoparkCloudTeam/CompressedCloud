@@ -98,11 +98,11 @@ CREATE TABLE IF NOT EXISTS "User" (
 	"deviceName"	INTEGER NOT NULL,
 	"synchFolder"	TEXT NOT NULL,
 	"lastUpdate"	TEXT NOT NULL);                  
-)",0,0);
+)");
 
   {
    User user;
-   user.userId = 46;
+  // user.userId = 46;
    user.login = "dsagfkshsgrth";
    user.password = "ffgerkheaghf";
    user.deviceId = 27;
@@ -111,9 +111,6 @@ CREATE TABLE IF NOT EXISTS "User" (
    user.lastUpdate = "vshvgrurjukej";
 
     DB.addUser(user);
-    std::cout << DB.getUserId(user) << std::endl;
-    DB.deleteUser(47);
-    std::cout << DB.selectUserId();
   }
 
 

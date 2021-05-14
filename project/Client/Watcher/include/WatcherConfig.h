@@ -4,3 +4,4 @@
 #define MAX_EPOLL_EVENTS 1
 #define EVENT_SIZE (sizeof(inotify_event))
 #define PIPE_ERROR -1
+#define ADDITIONAL_EVENT_SIZE 16

@@ -11,7 +11,7 @@ Watcher::Watcher() :
     mIgnoredDirs(vector<string>()),
     mInotifyFileDescriptor(0),
     mOnEventTimeout([](FileSysEvent) {}),
-    mEventBuffer(MAX_EVENTS_COUNT * (EVENT_SIZE + 16), 0),
+    mEventBuffer(MAX_EVENTS_COUNT * (EVENT_SIZE + ADDITIONAL_EVENT_SIZE), 0),
     mPipeReadIdx(0),
     mPipeWriteIdx(0) 
 {

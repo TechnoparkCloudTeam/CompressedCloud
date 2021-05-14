@@ -29,6 +29,7 @@ using std::vector;
 using std::queue;
 using boost::bimap;
 using std::function;
+using steadyClock = std::chrono::steady_clock;
 class Watcher {
 public:
 	Watcher();

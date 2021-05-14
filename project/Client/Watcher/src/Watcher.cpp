@@ -1,118 +1,65 @@
 #include "../include/Watcher.h"
+#include <fcntl.h>
 
 
+Watcher::Watcher() :
+    mError(0),
+    mEventTimeout(0),
+    mLastEventTime(steadyClock::now()),
+    mEventMask(IN_ALL_EVENTS),
+    mThreadSleep(250),
+    mIgnoredDirs(vector<string>()),
+    mInotifyFileDescriptor(0),
+    mOnEventTimeout([](FileSysEvent) {}),
+    mEventBuffer(MAX_EVENTS_COUNT * (EVENT_SIZE + 16), 0),
+    mPipeReadIdx(0),
+    mPipeWriteIdx(0) 
+{
+    mStopped = false;
 
-void Watcher::run(std::string Path) {
-    int length, i = 0, wd;
-    int fd;
-    char buffer[BUFFER_LEN];
 
-     /* Инициализация Inotify*/
-    fd = inotify_init1(0);
-    if ( fd < 0 ) {
-        perror( "Couldn't initialize inotify");
-    }
-     /* добавим наблюдение для директории*/
-    wd = inotify_add_watch(fd, Path.c_str(), IN_CLOSE | IN_MODIFY | IN_CREATE | IN_DELETE);
-    if (wd == -1)
-    {
-        printf("Couldn't add watch to %s\n",Path.c_str());
-    }
-    else
-    {
-        printf("Watching:: %s\n", Path);
-    }
-
-    while(1)
-    {
-        i = 0;
-  	/* высчитываем размер файлового дескриптора*/
-        length = read( fd, buffer, BUFFER_LEN );
-        if ( length < 0 ) {
-            perror( "read" );
-        }
-
-        while ( i < length ) {
-        struct inotify_event *event = ( struct inotify_event * ) &buffer[ i ];
-        if ( event->len ) {
-            if ( event->mask & IN_CREATE) {
-                
-                if (event->mask & IN_ISDIR) {
-                    printf( "The directory %s was created.\n", event->name );
-                    Events.push(InotifyEvent(event->name, FileObjectStatus::CREATE, 1));
-                }
-                else {
-                    printf( "The file %s was created with WD %d\n", event->name, event->wd );
-                    Events.push(InotifyEvent(event->name, FileObjectStatus::CREATE, 0));
-                }
-            }
-            if ( event->mask & IN_MODIFY) {
-                if (event->mask & IN_ISDIR) {
-                    printf( "The directory %s was modified.\n", event->name );
-                    Events.push(InotifyEvent(event->name, FileObjectStatus::MODIFY, 1));
-                } else {
-                    printf( "The file %s was modified with WD %d\n", event->name, event->wd );
-                    Events.push(InotifyEvent(event->name, FileObjectStatus::MODIFY, 0));
-                }
-            }
-            if ( event->mask & IN_DELETE_SELF) {
-                if (event->mask & IN_ISDIR) {
-                    printf( "The directory %s was deleted.\n", event->name );
-                    Events.push(InotifyEvent(event->name, FileObjectStatus::DELETE, 1));
-                } else {
-                    printf( "The file %s was deleteed with WD %d\n", event->name, event->wd );
-                    Events.push(InotifyEvent(event->name, FileObjectStatus::DELETE, 0));
-                }
-            }
-            
-                i += EVENT_SIZE + event->len;
-            }
-        }
-    }
-    /* Освобождение ресурсов*/
-    inotify_rm_watch( fd, wd );
-    close( fd );
 }
 
+Watcher::~Watcher() {
 
-void Watcher::shutdown() {
-    return;
 }
 
-bool Watcher::isWorking() {
-    return 0;
+void Watcher::watchDirRecursive(fsPath path) {
+
 }
 
-void Watcher::SetEventMask(uint32_t EventMask) {
-    return;
+void Watcher::watchFile(fsPath file) {
+
 }
 
-void Watcher::AddFileToWatch(std::string Path) {
-    return;
+void Watcher::ignoreFileOnce(fsPath file) {
+
 }
 
-void Watcher::AddDirToWatch() {
-    return;
+void Watcher::ignoreFile(fsPath file) {
+
 }
 
-void Watcher::RemoveDirFromWatch() {
-    return;
+void Watcher::setEventMask(uint32_t eventMask) {
+    this->mEventMask = eventMask;
 }
 
-void Watcher::RemoveFileFromWatch() {
-    return;
+uint32_t Watcher::getEventMask() {
+    return mEventMask;
 }
 
-void Watcher::WriteEventsToBuffer() {
-    return;
+void Watcher::setEventTimeout(milliseconds eventTimeout, function<void(FileSysEvent)> onEventTimeout) {
+
 }
 
-std::string Watcher::readEventsFromBuffer() {
-    std::string events;
-    InotifyEvent event;
-    while (!Events.empty()) {
-        event = Events.front();
-        events += event.fileObjectName + " " + std::to_string(event.status) + " " + std::to_string(event.is_dir) + "\n";
-    }
-    return events;
+std::optional<FileSysEvent> Watcher::getNextEvent() {
+    return std::optional<FileSysEvent>();
+}
+
+void Watcher::shutDown() {
+
+}
+
+bool Watcher::isStopped() {
+    return false;
 }

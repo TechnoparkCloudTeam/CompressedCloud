@@ -31,3 +31,13 @@ enum class InotifyEvent : std::uint32_t {
         static_cast<std::underlying_type<InotifyEvent>::type>(lhs)
         & static_cast<std::underlying_type<InotifyEvent>::type>(rhs));
 }
+
+InotifyEvent operator|(InotifyEvent lhs, InotifyEvent rhs) {
+    return static_cast<InotifyEvent>(
+        static_cast<std::underlying_type<InotifyEvent>::type>(lhs)
+        | static_cast<std::underlying_type<InotifyEvent>::type>(rhs));
+}
+
+std::ostream& operator<<(std::ostream&  stream , const InotifyEvent& event);
+
+bool hasInotifyEvent(const InotifyEvent& allEvents, const InotifyEvent& event);

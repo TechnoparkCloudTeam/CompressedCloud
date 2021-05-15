@@ -59,11 +59,50 @@ Watcher::Watcher() :
 }
 
 Watcher::~Watcher() {
+    epoll_ctl(mEpollFd, EPOLL_CTL_DEL, mInotifyFileDescriptor, 0);
+    epoll_ctl(mEpollFd, EPOLL_CTL_DEL, StopPipeFileDescriptor[mPipeReadIdx], 0);
 
+    if (!close(mInotifyFileDescriptor)) {
+        mError = errno;
+    }
+
+    if (!close(mEpollFd)) {
+        mError = errno;
+    }
+
+    close(StopPipeFileDescriptor[mPipeReadIdx]);
+    close(StopPipeFileDescriptor[mPipeWriteIdx]);
 }
 
 void Watcher::watchDirRecursive(fsPath path) {
+    vector<fsPath> paths;
+    if (fs::exists(path)) {
+        paths.push_back(path);
 
+        if (fs::is_directory(path)) {
+            std::error_code ec;
+            fs::recursive_directory_iterator it(
+                path, fs::directory_options::follow_directory_symlink, ec);
+            fs::recursive_directory_iterator end;
+
+            for (; it != end; it.increment(ec)) {
+                fsPath currentPath = *it;
+
+                if (!fs::is_directory(currentPath) && 
+                !fs::is_symlink(currentPath)) {
+                    continue;
+                }
+
+                paths.push_back(currentPath);
+            }
+        }
+    } else {
+        throw std::invalid_argument("Can't watch Path! Path does not exist. Path" + path.string());
+    }
+
+    for (auto& path : paths) {
+        watchFile(path);
+    }
 }
 
 void Watcher::watchFile(fsPath file) {

@@ -30,6 +30,7 @@ using std::queue;
 using boost::bimap;
 using std::function;
 using steadyClock = std::chrono::steady_clock;
+using fs = filesystem
 class Watcher {
 public:
 	Watcher();

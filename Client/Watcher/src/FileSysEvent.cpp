@@ -1,4 +1,4 @@
-#include "../Watcher/include/FileSysEvent.h"
+#include "../include/FileSysEvent.h"
 
 FileSysEvent::FileSysEvent(
             int _WatchDescriptor,
@@ -10,3 +10,4 @@ FileSysEvent::FileSysEvent(
         Path(_Path),
         EventTime(_EventTime) {}
 
+FileSysEvent::~FileSysEvent(){}

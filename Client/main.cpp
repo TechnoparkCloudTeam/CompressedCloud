@@ -3,10 +3,10 @@
 //#include "Chunker.h"
 #include "ProgramInterface.h"
 #include "Application.h"
+#include "WatcherNotifierBuilder.h"
 
 int main()
 {
-	std::shared_ptr<Watcher> watchPtr(new Watcher);
 
 	std::shared_ptr<UserDB> userDBPtr(new UserDB("base.dblite"));
 
@@ -16,7 +16,7 @@ int main()
 
 	std::shared_ptr<FileStorageWorker> fileWorkerPtr(new FileStorageWorker(""));
 	
-	std::shared_ptr<Application> appPtr(new Application(watchPtr, indexPtr, clientNetworkPtr));
+	std::shared_ptr<Application> appPtr(new Application(indexPtr, clientNetworkPtr));
 	ProgramInterface console(appPtr);  
 
 

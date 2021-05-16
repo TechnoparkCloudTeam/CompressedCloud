@@ -17,7 +17,7 @@
 #include <exception>
 #include <errno.h>
 #include <chrono>
-
+#include <optional>
 #include "FileSysEvent.h"
 #include "WatcherConfig.h"
 
@@ -30,13 +30,15 @@ using std::queue;
 using boost::bimap;
 using std::function;
 using steadyClock = std::chrono::steady_clock;
-using fs = filesystem
+namespace fs = std::filesystem;
+using std::stringstream;
 class Watcher {
 public:
 	Watcher();
 	~Watcher();
 	void watchDirRecursive(fsPath path);
 	void watchFile(fsPath file);
+	void unwatchFile(fsPath file);
 	void ignoreFileOnce(fsPath file);
 	void ignoreFile(fsPath file);
 	void setEventMask(uint32_t eventMask);
@@ -47,6 +49,14 @@ public:
 	bool isStopped();
 	
 private:
+	fsPath wdToPath(int watchDescriptor);
+	bool isIgnored(std::string file);
+	bool isOnTimeout(const steadyClock::time_point &eventTime);
+	void removeWatch(int watchDescriptor);
+	ssize_t readEventsIntoBuffer(vector<uint8_t>& eventBuffer);
+	void readEventsFromBuffer(uint8_t* buffer, int length, vector<FileSysEvent> &events);
+	void filterEvents(vector<FileSysEvent>& events, queue<FileSysEvent>& eventQueue);
+	void sendStopSignal();
 	int mError;
 	milliseconds mEventTimeout;
 	timePoint mLastEventTime;

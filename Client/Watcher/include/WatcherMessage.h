@@ -26,13 +26,13 @@ enum class InotifyEvent : std::uint32_t {
     _all = IN_ALL_EVENTS
 };
 
- InotifyEvent operator&(InotifyEvent lhs, InotifyEvent rhs) {
+constexpr InotifyEvent operator&(InotifyEvent lhs, InotifyEvent rhs) {
     return static_cast<InotifyEvent>(
         static_cast<std::underlying_type<InotifyEvent>::type>(lhs)
         & static_cast<std::underlying_type<InotifyEvent>::type>(rhs));
 }
 
-InotifyEvent operator|(InotifyEvent lhs, InotifyEvent rhs) {
+constexpr InotifyEvent operator|(InotifyEvent lhs, InotifyEvent rhs) {
     return static_cast<InotifyEvent>(
         static_cast<std::underlying_type<InotifyEvent>::type>(lhs)
         | static_cast<std::underlying_type<InotifyEvent>::type>(rhs));

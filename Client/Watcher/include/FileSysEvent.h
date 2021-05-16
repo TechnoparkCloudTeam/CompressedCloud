@@ -15,7 +15,6 @@ class FileSysEvent {
             const timePoint _EventTime
         );
         ~FileSysEvent();
-    private:
     int WatchDescriptor;
     uint32_t EventMask;
     fsPath Path;

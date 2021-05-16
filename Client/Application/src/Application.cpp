@@ -2,9 +2,8 @@
 
 
 
-Application::Application(std::shared_ptr<Watcher> watch,
-     std::shared_ptr<I_Indexer> index, std::shared_ptr<ClientNetwork> network) : 
-     watcher(watch),
+Application::Application(std::shared_ptr<I_Indexer> index,
+    std::shared_ptr<ClientNetwork> network) : 
      Indexer(index),
      NetworkCommunication(network) {}
 

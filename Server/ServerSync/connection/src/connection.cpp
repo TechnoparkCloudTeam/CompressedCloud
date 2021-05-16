@@ -1,10 +1,10 @@
 #include <iostream>
 #include "connection.h"
 #include "PostgreSQLDB.h"
-#include "../../../DataBases/PostgresDB/UserDB/include/UserDB.h"
-#include "../../../DataBases/PostgresDB/MetaDB/include/MetaDB.h"
-#include "../../../DataBases/PostgresDB/UserDB/include/UserInfo.h"
-#include "../../../DataBases/PostgresDB/MetaDB/include/FileInfo.h"
+#include "../../../../DataBases/PostgresDB/UserDB/include/UserDB.h"
+#include "../../../../DataBases/PostgresDB/MetaDB/include/MetaDB.h"
+#include "../../../../DataBases/PostgresDB/UserDB/include/UserInfo.h"
+#include "../../../../DataBases/PostgresDB/MetaDB/include/FileInfo.h"
 enum ServerSyncho
 {
     OK = 0,

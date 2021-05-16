@@ -1,4 +1,4 @@
-#include "ClientNetwork.h"
+#include "../include/ClientNetwork.h"
 enum ServerSynchoRead
 {
     OKREG = 0,

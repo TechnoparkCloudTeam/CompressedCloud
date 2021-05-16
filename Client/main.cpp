@@ -4,10 +4,15 @@
 #include "ProgramInterface.h"
 #include "Application.h"
 #include "WatcherNotifierBuilder.h"
+#include <filesystem>
+#include <thread>
+std::string GetCurrentPath() {
+	std::filesystem::path Path = std::filesystem::current_path();
+	return Path.c_str();
+}
 
 int main()
 {
-
 	std::shared_ptr<UserDB> userDBPtr(new UserDB("base.dblite"));
 
 	std::shared_ptr<I_Indexer> indexPtr(new Indexer);

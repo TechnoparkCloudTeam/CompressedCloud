@@ -11,17 +11,17 @@ int main(int argc, char **argv) {
 UserDB DB("user.dblite");
   {
    User user;
-   user.userId = 110;
-   user.login = "hhhhhhhhhhhhhhhhhhhhhhhhh";
-   user.password = "ggggggggggggggggggggggggggggg";
+   user.userId = 1;
+   user.login = "lida";
+   user.password = "123";
    user.deviceId = 27;
-   user.deviceName = "kdgrtuurufj";
-   user.synchFolder = "lrshtgh";
-   user.lastUpdate = "vshvgrurjukej";
+   user.deviceName = "ipadlida";
+   user.synchFolder = "images";
+   user.lastUpdate = "2021-5-17 2:26:47";
 
     DB.addUser(user);
     std::cout << DB.getUserId(user) << std::endl;
-    DB.deleteUser(2);
+    DB.deleteUser(1);
     std::cout << DB.selectUserId();
     std::cout << DB.getDeviceId(user) << std::endl;
     std::cout << DB.getLogin(user) << std::endl;
@@ -41,7 +41,7 @@ UserDB DB("user.dblite");
 
     std::cout << DB.getSynchFolder(user) << std::endl;
 
-    DB.updatePassword(user, "asdfghjkl");
+    DB.updatePassword(user, "12345678");
 
     std::cout << DB.getPassword(user) << std::endl;
 
@@ -57,14 +57,14 @@ std::cout << fileDB.isFileExist(1) << std::endl;
  {
   FileMeta f;
  // f.fileId = 34;
-  f.fileName = "jhflksdl;uw";
-  f.fileExtention = "hghgkg";
-  f.createDate = "kjhkk";
-  f.updateDate = "looo";
+  f.fileName = "photo";
+  f.fileExtention = "jpg";
+  f.createDate = "2021-5-17 1:26:47";
+  f.updateDate = "2021-5-17 2:26:47";
   f.isDownload = false;
   f.version = 1;
   f.chunksCount = 0;
-  f.filePath = "kjgjhfjhkf";
+  f.filePath = "desktop";
   f.fileSize = 232;
   fileDB.addFile(f);
   fileDB.updateFile(f);  

@@ -1,5 +1,6 @@
 #include "UserDB.h"
-#include <boost/lexical_cast.hpp>
+//#include <boost/lexical_cast.hpp>
+#include <iostream>
 
 UserIds UsersDB::Login(const UserInfo &userInfo) {
   try {
@@ -12,7 +13,7 @@ UserIds UsersDB::Login(const UserInfo &userInfo) {
 	}
 
     query = "SELECT password from Users Where login like '" + userInfo.login + "';";
-	if (!isPasswordCorrect(query, userInfo)) {
+	if (!isPasswordCorrect(query, userInfo, PostgresExceptions("wrong password of user\n"))) {
 	  throw PostgresExceptions("incorrent password");
 	}
 	query =
@@ -40,10 +41,9 @@ UserIds UsersDB::Registration(const UserInfo &userInfo) {
 	query =
 		"SELECT id from Users Where login like '" + userInfo.login + "' and password like '" + userInfo.password
 			+ "';";
-  /*
     UserIds usr{.id = getUserId(query, PostgresExceptions("invalid to select id"))};
     pqExec("commit;", PostgresExceptions("invalid to end transation"));
-    return usr;*/
+    return usr;
   } catch (PostgresExceptions &exceptions) {
     throw PostgresExceptions(exceptions.what());
   }
@@ -62,22 +62,22 @@ int UsersDB::getUserId(const std::string &query, PostgresExceptions exceptions) 
     PQclear(res);
     throw exceptions;
   }
-  int id = boost::lexical_cast<int>(PQgetvalue(res, 0, 0));
+  int id = strtol(PQgetvalue(res, 0, 0),0,10);
   PQclear(res);
   return id;
 }
 
-bool UsersDB::isPasswordCorrect(const std::string &query, const UserInfo &userInfo) {
+bool UsersDB::isPasswordCorrect(const std::string &query, const UserInfo &userInfo, PostgresExceptions exceptions) {
   PGresult *res = PQexec(_conn, query.c_str());
   if (PQresultStatus(res) != PGRES_TUPLES_OK) {
 	PQexec(_conn, "rollback to savepoint f_savepoint;");
 	PQclear(res);
 	throw PostgresExceptions("faild to select count of users");
   }
-  auto password = boost::lexical_cast<std::string>(PQgetvalue(res, 0, 0));
+  auto compare_result = strtol(PQgetvalue(res, 0, 0),0,10);
   PQclear(res);
 
-  return password==userInfo.password;
+  return !!compare_result;
 }
 
 bool UsersDB::userExist(const std::string &query) {
@@ -87,7 +87,7 @@ bool UsersDB::userExist(const std::string &query) {
     PQclear(res);
     throw PostgresExceptions("faild to select count of users");
   }
-  int id = boost::lexical_cast<int>(PQgetvalue(res, 0, 0));
+  int id = strtol(PQgetvalue(res, 0, 0),0,10);
   PQclear(res);
 
   return id == 1;

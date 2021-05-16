@@ -33,7 +33,7 @@ int main() {
     const char* sql1=R"(create table if not exists Users (
        login text,
        password text,
-       id integer
+       id serial primary key
        ))";
     std::cout << "creating table of Users\n";
     postgres_sqldb1.pqExec(sql1, PostgresExceptions("can't create table of Users\n"));
@@ -58,11 +58,13 @@ int main() {
       .createDate = "2020-12-12 0:47:25"
   };*/
 
-   auto user = UserInfo
-  {
-      .login = "lida",
-      .password = "123", 
-  };
+   auto user = UserInfo{"lida","123"};
+    auto user2 = UserInfo{"fill", "123"};
+
+
+    std::string sql3="select case when '"+user.password+"' =(select password from users where id="+std::to_string(/*user.id*/2)+") then 1 else 0 end";
+
+    std::cout << sql3<<'\n';
 
 /*  std::vector<ChunkMeta> chunksMetaVector;
   for (int i = 0; i < 2; ++i) {
@@ -78,11 +80,25 @@ int main() {
 
   auto fileInfo =
       FileInfo{.userId = 3, .file = file, .chunkMeta = chunksMetaVector, .fileChunksMeta = fileChunksMetaVector};*/
+
+try
+{
+        postgres_sqldb1.Registration(user2);
+
+}
+ catch (PostgresExceptions &exceptions) {
+    std::cout << exceptions.what() << std::endl;
+  }
+
+
+
   try {
   /*   postgres_sqldb.InsertFile(fileInfo);
      auto tt = UserDate{3, "2020-12-19 0:47:25"};
 	   postgres_sqldb.GetUserFilesByTime(tt);*/
-     postgres_sqldb1.Registration(user);
+//     postgres_sqldb1.Registration(user);
+        std::cout << postgres_sqldb1.isPasswordCorrect(sql3.data(), user, PostgresExceptions("wrong password of user\n"));
+
   } catch (PostgresExceptions &exceptions) {
     std::cout << exceptions.what() << std::endl;
   }

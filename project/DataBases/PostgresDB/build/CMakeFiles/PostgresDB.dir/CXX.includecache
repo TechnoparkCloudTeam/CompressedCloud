@@ -24,6 +24,28 @@ string
 utility
 -
 
+../MetaDB/include/FileInfo.h
+vector
+-
+
+../MetaDB/include/MetaDB.h
+vector
+-
+string
+-
+PostgreSQLDB.h
+../MetaDB/include/PostgreSQLDB.h
+PostgresExceptions.h
+../MetaDB/include/PostgresExceptions.h
+FileInfo.h
+../MetaDB/include/FileInfo.h
+UserDate.h
+../MetaDB/include/UserDate.h
+
+../MetaDB/include/UserDate.h
+string
+-
+
 ../UserDB/include/UserDB.h
 vector
 -
@@ -46,11 +68,15 @@ string
 string
 -
 
-/home/lida/CloudProject/CompressedCloud/project/DataBases/PostgresDB/UserDB/src/UserDB.cpp
-UserDB.h
-/home/lida/CloudProject/CompressedCloud/project/DataBases/PostgresDB/UserDB/src/UserDB.h
-boost/lexical_cast.hpp
+/home/lida/CloudProject/CompressedCloud/project/DataBases/PostgresDB/main.cpp
+iostream
 -
+PostgreSQLDB.h
+/home/lida/CloudProject/CompressedCloud/project/DataBases/PostgresDB/PostgreSQLDB.h
+MetaDB.h
+/home/lida/CloudProject/CompressedCloud/project/DataBases/PostgresDB/MetaDB.h
+UserDB.h
+/home/lida/CloudProject/CompressedCloud/project/DataBases/PostgresDB/UserDB.h
 
 /usr/include/postgresql/libpq-fe.h
 stdio.h

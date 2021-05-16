@@ -18,7 +18,7 @@ class UsersDB : public PostgresSQLDB {
   explicit UsersDB(std::string_view info);
   UsersDB(const UsersDB &users_db);
   UsersDB &operator=(const UsersDB &users_db);
-  bool isPasswordCorrect(const std::string &query, const UserInfo &userInfo);
+  bool isPasswordCorrect(const std::string &query, const UserInfo &userInfo, PostgresExceptions exceptions);
   bool userExist(const std::string &query);
   int getUserId(const std::string &query, PostgresExceptions exceptions);
 };

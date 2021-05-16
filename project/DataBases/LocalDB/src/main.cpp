@@ -4,107 +4,16 @@
 #include "boost/log/trivial.hpp"
 #include <sqlite3.h>
 
+
+
 int main(int argc, char **argv) {
-       // test();
-  //UserDB userDB("UserDB.db3");
- /* std::string dbname="UserDB.db3";
 
-  sqlite3* pDB{};
-  sqlite3_smtp* pStmt{};
-
-#if 1
-  if (SQLITE_OK != sqlite3_open_v2(dbname.c_str(), &pDB, SQLITE_OPEN_CREATE | SQLITE_OPEN_READWRITE, nullptr)) {
-                BOOST_LOG_TRIVIAL(error) << "LocalDB can't connect";
-                return false;
-                }
-
-  std::string createQueryUser=R"(
-CREATE TABLE IF NOT EXISTS "User" (
-	"userId"	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
-	"login"	TEXT NOT NULL,
-	"password"	TEXT NOT NULL,
-	"deviceId"	INTEGER NOT NULL,
-	"deviceName"	INTEGER NOT NULL,
-	"synchFolder"	TEXT NOT NULL,
-	"lastUpdate"	TEXT NOT NULL);                  
-)";
-
-    std::cout <<  "Table will creates    " << createQueryUser.c_str();
-  sqlite3_prepare(pDB, createQueryUser.c_str(), createQueryUser.size(), &pStmt, nullptr);
-
-  if(sqlite3_step(pStmt) != SQLITE_DONE) {
-    std::string error = "LocalDB didn't create table";
-    BOOST_LOG_TRIVIAL(error) << error;
-  }
-  BOOST_LOG_TRIVIAL(debug) << "UserDB created";
-
-  //userDB.disconnect();
-  //userDB.deleteUser(50);
-  //std::cout << "Deleted User /n/n/n/n/n/n/n";
-  User u;
-  u.userId = 46;
-  u.login = "dsagfkshsgrth";
-  u.password = "ffgerkheaghf";
-  u.deviceId = 27;
-  u.deviceName = "kdgrtuurufj";
-  u.synchFolder = "lrshtgh";
-  u.lastUpdate = "vshvgrurjukej";
-  userDB.addUser(u);
-#endif*/
-
- /* UserDB DB("UserDB.dblite");
-    DB.exec(R"(
-CREATE TABLE IF NOT EXISTS "User" (
-	"userId"	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
-	"login"	TEXT NOT NULL,
-	"password"	TEXT NOT NULL,
-	"deviceId"	INTEGER NOT NULL,
-	"deviceName"	INTEGER NOT NULL,
-	"synchFolder"	TEXT NOT NULL,
-	"lastUpdate"	TEXT NOT NULL);                  
-)");*/
-  /*  {
-   User user;
-  // user.userId = 46;
-   user.login = "dsagfkshsgrth";
-   user.password = "ffgerkheaghf";
-   user.deviceId = 27;
-   user.deviceName = "kdgrtuurufj";
-   user.synchFolder = "lrshtgh";
-   user.lastUpdate = "vshvgrurjukej";
-
-    DB.addUser(user);
-  }
-*/
-
-  /*User u;
-  u.userId = 46;
-  u.login = "dsagfkshsgrth";
-  u.password = "ffgerkheaghf";
-  u.deviceId = 27;
-  u.deviceName = "kdgrtuurufj";
-  u.synchFolder = "lrshtgh";
-  u.lastUpdate = "vshvgrurjukej";
-  DB.addUser(u);
-*/
-
-UserDB DB("base.dblite");
-        DB.exec(R"(
-CREATE TABLE IF NOT EXISTS "User" (
-	"userId"	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
-	"login"	TEXT NOT NULL,
-	"password"	TEXT NOT NULL,
-	"deviceId"	INTEGER NOT NULL,
-	"deviceName"	INTEGER NOT NULL,
-	"synchFolder"	TEXT NOT NULL,
-	"lastUpdate"	TEXT NOT NULL);                  
-)",0,0);
-
+UserDB DB("user.dblite");
   {
    User user;
-   user.userId = 46;
-   user.login = "dsagfkshsgrth";
-   user.password = "ffgerkheaghf";
+   user.userId = 110;
+   user.login = "hhhhhhhhhhhhhhhhhhhhhhhhh";
+   user.password = "ggggggggggggggggggggggggggggg";
    user.deviceId = 27;
    user.deviceName = "kdgrtuurufj";
    user.synchFolder = "lrshtgh";
@@ -112,12 +21,78 @@ CREATE TABLE IF NOT EXISTS "User" (
 
     DB.addUser(user);
     std::cout << DB.getUserId(user) << std::endl;
-    DB.deleteUser(47);
+    DB.deleteUser(2);
     std::cout << DB.selectUserId();
+    std::cout << DB.getDeviceId(user) << std::endl;
+    std::cout << DB.getLogin(user) << std::endl;
+    std::cout << DB.getPassword(user) << std::endl;
+    std::cout << DB.getSynchFolder(user) << std::endl;
+
+
+    std::cout << DB.selectDeviceId() << std::endl;
+    std::cout << DB.selectLogin() << std::endl;
+    std::cout << DB.selectPassword(user) << std::endl;
+    std::cout << DB.selectFolder() << std::endl;
+    std::cout << DB.selectLastUpdate() << std::endl;
+
+    std::cout << DB.isUserExist(2) << std::endl;
+
+    DB.updateSynchFolder(user, "ffffffff");
+
+    std::cout << DB.getSynchFolder(user) << std::endl;
+
+    DB.updatePassword(user, "asdfghjkl");
+
+    std::cout << DB.getPassword(user) << std::endl;
+
+    DB.saveLastUpdate(user);
+
+    std::cout << DB.getLastUpdate(user) << std::endl;
+
   }
 
+FileDB fileDB("file.dblite");
+        
+std::cout << fileDB.isFileExist(1) << std::endl;
+ {
+  FileMeta f;
+ // f.fileId = 34;
+  f.fileName = "jhflksdl;uw";
+  f.fileExtention = "hghgkg";
+  f.createDate = "kjhkk";
+  f.updateDate = "looo";
+  f.isDownload = false;
+  f.version = 1;
+  f.chunksCount = 0;
+  f.filePath = "kjgjhfjhkf";
+  f.fileSize = 232;
+  fileDB.addFile(f);
+  fileDB.updateFile(f);  
+}
+std::cout << fileDB.selectFileId() << std::endl;
 
+std::cout << fileDB.selectId() << std::endl;
+
+fileDB.deleteFile(10);
+
+fileDB.downloadFile(13);
+
+if(auto file=fileDB.getOneFile(2))
+{
+        file->printContent();
+}
+std::cout<<"\n\n";
+
+
+if(auto list =fileDB.selectAllFiles(); list.size())
+{
+    for(auto& file:list)
+    {
+       file.printContent();
+       std::cout<<'\n';
+    }
+
+}
 
   return 0;
 }
-

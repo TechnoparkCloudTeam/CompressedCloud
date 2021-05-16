@@ -24,4 +24,3 @@ struct FileMeta {
   void fillMeFromRecord(const s_record& r);
   void printContent() const;
 };
-

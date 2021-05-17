@@ -8,7 +8,7 @@
 #include <string>
 #include <iostream>
 #include <deque>
-#define max_size_buf 100
+#define max_size_buf 200
 
 class ClientNetwork : public boost::enable_shared_from_this<ClientNetwork>
 {

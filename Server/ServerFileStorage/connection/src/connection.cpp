@@ -41,7 +41,7 @@ void Connection::read()
     ans.set_id(1);
     std::string ans_string;
     ans.SerializePartialToString(&ans_string);
-    boost::asio::async_write(socket_, boost::asio::buffer(ans_string, 100), boost::bind(&Connection::write, shared_from_this()));
+    boost::asio::async_write(socket_, boost::asio::buffer(ans_string, 250), boost::bind(&Connection::write, shared_from_this()));
 }
 void Connection::write()
 {

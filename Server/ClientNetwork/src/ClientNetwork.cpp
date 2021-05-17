@@ -39,8 +39,8 @@ void ClientNetwork::handleReadFS(boost::system::error_code ec)
     readed = read_data;
     messageFS::Request answ;
     answ.ParseFromString(readed);
-    std::cout << answ.id() << std::endl;
-    writeMessageToS(ec,readed);
+    std::cout << "read from FS"<<std::endl;
+    //writeMessageToS(ec,readed);
     boost::asio::async_read(socket_, boost::asio::buffer(read_data, max_size_buf), boost::asio::transfer_at_least(1),
                             boost::bind(&ClientNetwork::handleReadFS, this, boost::asio::placeholders::error));
 }
@@ -83,16 +83,15 @@ void ClientNetwork::handleConnectS(boost::system::error_code ec)
 
 void ClientNetwork::handleReadS(boost::system::error_code ec)
 {
+    std::cout<<"read from s"<<std::endl;
     messageFS::Request readRequest;
     messageFS::Request writeRequest;
     std::string readed;
     readed = read_data;
     readRequest.ParseFromString(readed);
-    std::cout << readRequest.id() << std::endl;
     switch (readRequest.id())
     {
     case ServerSynchoRead::OKREG:
-        std::cout<<"ya tut bil";
         writeRequest.set_id(ServerFSWrite::CREATEFOLDER);
         writeRequest.SerializePartialToString(&readed);
         writeMessageToFS(ec, readed);

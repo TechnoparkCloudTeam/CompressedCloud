@@ -3,6 +3,27 @@
 #include <boost/lexical_cast.hpp>
 #include <iostream>
 //#include <boost/log/trivial.hpp>
+
+void MetaDataDB::createTable() {
+        const char* sql=R"(create table if not exists Files (
+       fileId integer,
+       userId integer,
+       version integer,
+       fileName text,
+       fileExtention text,
+       filePath text,
+       fileSize integer,
+       chunksCount integer,
+       isDownload boolean,
+       isDeleted boolean,
+       isCurrent boolean,
+       updateDate timestamp,
+       createDate timestamp
+))";
+    std::cout << "creating table of Files\n";
+    pqExec(sql, PostgresExceptions("can't create table of Files\n"));
+}
+
 MetaDataDB::MetaDataDB(std::string_view info)
     : PostgresSQLDB(info) {
 }
@@ -139,7 +160,7 @@ std::cout << "PostgresSQLDB: Faild to get data";
 
     filesInfo.push_back(fileInfo);
   }
-std::cout << "PostgresSQLDB: count files = " << filesInfo.size();
+std::cout << "PostgresSQLDB: count files = " << filesInfo.size() << std::endl;
 
   return filesInfo;
 }

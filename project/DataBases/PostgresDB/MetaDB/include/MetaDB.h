@@ -12,6 +12,7 @@ class MetaDataDB : public PostgresSQLDB {
  public:
   ~MetaDataDB() override = default;
   static MetaDataDB &shared(std::string_view info);
+  void createTable();
   void InsertFile(const FileInfo &fileMeta);
   std::vector<FileInfo> GetUserFilesByTime(const UserDate &userDate);
 

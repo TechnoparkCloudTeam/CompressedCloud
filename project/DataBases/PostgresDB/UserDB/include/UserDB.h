@@ -11,8 +11,9 @@ class UsersDB : public PostgresSQLDB {
  public:
   ~UsersDB() override = default;
   static UsersDB &shared(std::string_view info);
-  UserIds Login(const UserInfo &userInfo);
-  UserIds Registration(const UserInfo &userInfo);
+  void createTable();
+  bool Login(const UserInfo &userInfo);
+  UserInfo Registration(const UserInfo &userInfo);
 
  //private:
   explicit UsersDB(std::string_view info);

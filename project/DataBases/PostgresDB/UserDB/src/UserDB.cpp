@@ -2,31 +2,43 @@
 //#include <boost/lexical_cast.hpp>
 #include <iostream>
 
-UserIds UsersDB::Login(const UserInfo &userInfo) {
+
+void UsersDB::createTable() {
+   const char* sql1=R"(create table if not exists Users (
+       login text,
+       password text,
+       id serial primary key
+       ))";
+    std::cout << "creating table of Users\n";
+    pqExec(sql1, PostgresExceptions("can't create table of Users\n"));
+}
+
+bool UsersDB::Login(const UserInfo &userInfo) {
   try {
     pqExec("begin;", PostgresExceptions("invalid to start transaction"));  // Начало транзакции
     pqExec("savepoint f_savepoint;", PostgresExceptions("invalid to insert"));  // Точка сохранения
     std::string query = "SELECT count(*) from Users Where login like '" + userInfo.login + "' ;";
 
 	if (!userExist(query)) {
-	  throw PostgresExceptions("No one such user");
+	  return false;
 	}
 
     query = "SELECT password from Users Where login like '" + userInfo.login + "';";
 	if (!isPasswordCorrect(query, userInfo, PostgresExceptions("wrong password of user\n"))) {
-	  throw PostgresExceptions("incorrent password");
+	  throw PostgresExceptions("incorrect password");
 	}
 	query =
 		"SELECT id from Users Where login like '" + userInfo.login + "' and password like '" + userInfo.password
 			+ "';";
-	UserIds usr{.id = getUserId(query, PostgresExceptions("invalid to select id"))};
+	UserInfo usr{.id = getUserId(query, PostgresExceptions("invalid to select id"))};
     pqExec("commit;", PostgresExceptions("invalid to end transation"));
-    return usr;
+    std::cout << "User logged in" << std::endl;
+    return true;
   } catch (PostgresExceptions &exceptions) {
     throw PostgresExceptions(exceptions.what());
   }
 }
-UserIds UsersDB::Registration(const UserInfo &userInfo) {
+UserInfo UsersDB::Registration(const UserInfo &userInfo) {
   try {
     pqExec("begin;", PostgresExceptions("invalid to start transaction"));  // Начало транзакции
     pqExec("savepoint f_savepoint;", PostgresExceptions("invalid to savepoint"));  // Точка сохранения
@@ -41,8 +53,9 @@ UserIds UsersDB::Registration(const UserInfo &userInfo) {
 	query =
 		"SELECT id from Users Where login like '" + userInfo.login + "' and password like '" + userInfo.password
 			+ "';";
-    UserIds usr{.id = getUserId(query, PostgresExceptions("invalid to select id"))};
+    UserInfo usr{.id = getUserId(query, PostgresExceptions("invalid to select id"))};
     pqExec("commit;", PostgresExceptions("invalid to end transation"));
+    std::cout << "User registered" << std::endl;
     return usr;
   } catch (PostgresExceptions &exceptions) {
     throw PostgresExceptions(exceptions.what());

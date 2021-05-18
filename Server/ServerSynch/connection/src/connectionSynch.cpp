@@ -5,15 +5,7 @@
 #include "../../../../DataBases/PostgresDB/MetaDB/include/MetaDB.h"
 #include "../../../../DataBases/PostgresDB/UserDB/include/UserInfo.h"
 #include "../../../../DataBases/PostgresDB/MetaDB/include/FileInfo.h"
-enum ServerSyncho
-{
-    OK = 0,
-    BAD = 1,
-    REGISTRATION = 2,
-    AUTORIZATION = 3,
-    EXERTFILE = 4,
-};
-
+#include "../../../config.h"
 Connection::Connection(boost::asio::ip::tcp::socket socket_, std::shared_ptr<UsersDB> postgres_sqldb12) : socket_(std::move(socket_)),
                                                                                                           postgres_sqldb1(postgres_sqldb12)
 {

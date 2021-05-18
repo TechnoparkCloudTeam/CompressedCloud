@@ -2,10 +2,8 @@
 
 
 
-Application::Application(std::shared_ptr<I_Indexer> index,
-    std::shared_ptr<ClientNetwork> network) : 
-     Indexer(index),
-     NetworkCommunication(network) {}
+Application::Application(std::shared_ptr<I_Indexer> index) : 
+     Indexer(index) {}
 
 
 void Application::login(std::string login, std::string pass) {

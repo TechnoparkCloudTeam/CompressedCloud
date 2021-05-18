@@ -4,12 +4,11 @@
 #include "../../../Server/ServerFileStorage/fileStorageWorker/include/FileStorageWorker.h"
 #include <memory>
 #include <string>
-struct ClientNetwork {};
 
 class Application {
 public:
     Application(
-     std::shared_ptr<I_Indexer> index, std::shared_ptr<ClientNetwork> network);
+     std::shared_ptr<I_Indexer> index);
     void login(std::string login, std::string pass);
     void registerUser(std::string login, std::string pass);
     void changePassword();
@@ -30,6 +29,5 @@ private:
     std::string Password;
     void checkPassword();
     std::shared_ptr<I_Indexer> Indexer;
-    std::shared_ptr<ClientNetwork> NetworkCommunication;
     std::shared_ptr<FileStorageWorker> FileWorker;
 };

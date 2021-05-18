@@ -4,45 +4,14 @@
 #include "UserDB.h"
 
 int main() {
-  MetaDataDB &postgres_sqldb = MetaDataDB::shared("user=lida password=123 dbname=mydb host=127.0.0.1 port=5432");
-  postgres_sqldb.Connect();
+    MetaDataDB &postgres_sqldb = MetaDataDB::shared("user=lida password=123 dbname=mydb host=127.0.0.1 port=5432");
+    postgres_sqldb.Connect();
+    postgres_sqldb.createTable();
 //  UsersDB &postgres_sqldb1 = UsersDB::shared("user=lida password=123 dbname=mydb host=127.0.0.1 port=5432");
 //  postgres_sqldb1.Connect();
+//  postgres_sqldb1.createTable();
 
- try
-  {
-const char* sql=R"(create table if not exists Files (
-       fileId integer,
-       userId integer,
-       version integer,
-       fileName text,
-       fileExtention text,
-       filePath text,
-       fileSize integer,
-       chunksCount integer,
-       isDownload boolean,
-       isDeleted boolean,
-       isCurrent boolean,
-       updateDate timestamp,
-       createDate timestamp
-))";
-    std::cout << "creating table of Files\n";
-    postgres_sqldb.pqExec(sql, PostgresExceptions("can't create table of Files\n"));
-
-
-    /*const char* sql1=R"(create table if not exists Users (
-       login text,
-       password text,
-       id integer
-       ))";
-    std::cout << "creating table of Users\n";
-    postgres_sqldb1.pqExec(sql1, PostgresExceptions("can't create table of Users\n"));*/
-  }
-  catch (PostgresExceptions &exceptions)
-  {
-    std::cout << exceptions.what();
-  }
-  auto file = FileMeta
+    auto file = FileMeta
   {
       .fileId = 1,
       .version = 1,
@@ -58,11 +27,12 @@ const char* sql=R"(create table if not exists Files (
       .createDate = "2020-12-12 0:47:25"
   };
 
-/*   auto user = UserInfo
-  {
-      .login = "lida",
-      .password = "123", 
-  };*/
+//  auto user = UserInfo{"lida","123"};
+//  auto user2 = UserInfo{"fill", "123"};
+
+
+//  std::string sql3 = "select case when '"+user.password+"' =(select password from users where id="+std::to_string(2)+") then 1 else 0 end";
+//  std::string sql4 = "select id from users order by id desc limit 1";   
 
   std::vector<ChunkMeta> chunksMetaVector;
   for (int i = 0; i < 2; ++i) {
@@ -78,14 +48,55 @@ const char* sql=R"(create table if not exists Files (
 
   auto fileInfo =
       FileInfo{.userId = 3, .file = file, .chunkMeta = chunksMetaVector, .fileChunksMeta = fileChunksMetaVector};
+/*
+try
+{
+        postgres_sqldb1.Registration(user2);
+
+}
+ catch (PostgresExceptions &exceptions) {
+    std::cout << exceptions.what() << std::endl;
+  }
+
+try
+{
+        postgres_sqldb1.Login(user2);
+
+}
+ catch (PostgresExceptions &exceptions) {
+    std::cout << exceptions.what() << std::endl;
+  }*/
+
   try {
      postgres_sqldb.InsertFile(fileInfo);
      auto tt = UserDate{3, "2020-12-19 0:47:25"};
 	   postgres_sqldb.GetUserFilesByTime(tt);
-     //postgres_sqldb1.Login(user);
+     // postgres_sqldb1.Registration(user);
+        
   } catch (PostgresExceptions &exceptions) {
     std::cout << exceptions.what() << std::endl;
   }
+
+/*try
+{
+        std::cout << postgres_sqldb1.isPasswordCorrect(sql3.data(), user, PostgresExceptions("wrong password of user\n")) << std::endl;
+
+}
+ catch (PostgresExceptions &exceptions) {
+    std::cout << exceptions.what() << std::endl;
+  }
+
+try
+{
+        std::cout << postgres_sqldb1.getUserId(sql4, PostgresExceptions("invalid to select id")) << std::endl;
+
+}
+ catch (PostgresExceptions &exceptions) {
+    std::cout << exceptions.what() << std::endl;
+  }
+
+*/
+
   return 0;
 }
 

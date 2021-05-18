@@ -5,15 +5,15 @@
 #include <array>
 #include <string>
 #include "PostgreSQLDB.h"
-#include "../../../DataBases/PostgresDB/UserDB/include/UserDB.h"
+#include "../../../../DataBases/PostgresDB/UserDB/include/UserDB.h"
 
-#include "../../../DataBases/PostgresDB/UserDB/include/UserInfo.h"
+#include "../../../../DataBases/PostgresDB/UserDB/include/UserInfo.h"
 #include "message.pb.h"
 
 class Connection : public std::enable_shared_from_this<Connection>
 {
 public:
-    explicit Connection(boost::asio::ip::tcp::socket socket_);
+    explicit Connection(boost::asio::ip::tcp::socket socket_, std::shared_ptr<UsersDB> postgres_sqldb12);
 
     void start();
 
@@ -28,11 +28,7 @@ private:
 
     boost::asio::ip::tcp::socket socket_;
 
-    //std::array<char, 8192> buffer_In;
     char data_[8192];
 
-
-    
-    
-  
+    std::shared_ptr<UsersDB> postgres_sqldb1;
 };

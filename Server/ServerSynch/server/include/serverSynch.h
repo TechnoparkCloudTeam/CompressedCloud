@@ -4,16 +4,19 @@
 #include <vector>
 #include <thread>
 #include <string>
+#include "../../../../DataBases/PostgresDB/UserDB/include/UserDB.h"
+#include <boost/enable_shared_from_this.hpp>
 
-#include "connection.h"
+#include "../../../../DataBases/PostgresDB/UserDB/include/UserInfo.h"
+#include "../../connection/include/connectionSynch.h"
 
-namespace fsServer
+namespace sServer
 {
     class Server
     {
     public:
-        explicit Server(int port/* , const std::string& filed */);
-        
+        explicit Server(int port, std::shared_ptr<UsersDB> postgres_sqldb12/* , const std::string& filed */);
+         
         ~Server();
         
         void run();
@@ -31,8 +34,7 @@ namespace fsServer
         
         boost::asio::ip::tcp::socket socket_;
         
-
-       /*  FileStorageWorker fsworker; */
+        std::shared_ptr<UsersDB> postgres_sqldb1;
     };
 
 }

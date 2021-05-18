@@ -1,11 +1,12 @@
-#include "ChunkDB.h"
 #include "FileDB.h"
 #include <memory>
 #include <string>
 #include <sqlite3.h>
 #include "UserDB.h"
-
-
+#include <functional>
+#include <vector>
+#include <ctime>
+#include <optional>
 
 struct sqlite3_deleter {
   void operator()(sqlite3* sql) {
@@ -13,83 +14,85 @@ struct sqlite3_deleter {
   }
 };
 
-struct sqlite3_stmt_deleter {
-  void operator()(sqlite3_stmt* sql) {
-	sqlite3_finalize(sql);
-  }
+struct s_column
+{
+   std::string col_name;
+   std::string col_text;
 };
 
-/*class LocalDB {
-public:
-        bool connect();
-        void disconnect();
-        void createTable();
-        const std::string processRequest(const std::string &query);
-        void deleteUserInfo(int id);
-        void add(const std::string &query);
-        int selectId(const std::string& query); 
-private:
-	explicit LocalDB(std::string  nameDB);
-       // std::string nameDB;
-        std::unique_ptr<sqlite3, sqlite3_deleter> _database;
-  	std::unique_ptr<sqlite3_stmt, sqlite3_stmt_deleter> _stmt;
-	std::string _nameDB;
-	const std::string createQueryFiles = "CREATE TABLE IF NOT EXISTS  \"Files\" (\n"
-							   "\t\"id\"\tINTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,\n"
-							   "\t\"file_name\"\tTEXT NOT NULL,\n"
-							   "\t\"quantityChunks\"\tINTEGER NOT NULL,\n"
-							   "\t\"version\"\tINTEGER NOT NULL,\n"
-							   ");";
+struct s_record:public std::vector<s_column>
+{
 };
-
-*/
-
-//void test();
-									   
+							   
 class UserDB {
 public:
 	UserDB(const std::string_view  userNameDB);
-	bool connect(const std::string_view userNameDB);
-        void disconnect();
-        bool exec(const std::string_view sql);
-        //void createTable();
-        int selectUserId();
-        void deleteUser(int id);
-        //void add(const std::string &query);
-        //int selectId(const std::string& query); 
-        int getUserId(const User& user);
-        bool addUser(const User &user);
-private:
-        //LocalDB localDB;
-        //int _userId;
-        //std::string _userNameDB;
-        //User user;
-        std::unique_ptr<sqlite3, sqlite3_deleter> _database;
-  	//std::unique_ptr<sqlite3_stmt, sqlite3_stmt_deleter> _stmt;
-  	const std::string createQueryUser = "CREATE TABLE IF NOT EXISTS \"User\" (\n"
-							  "\t\"userId\"\tINTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,\n"
-							  "\t\"login\"\tTEXT NOT NULL,\n"
-							  "\t\"password\"\tTEXT NOT NULL,\n"
-							  "\t\"deviceId\"\tINTEGER NOT NULL,\n"
-							  "\t\"deviceName\"\tINTEGER NOT NULL,\n"
-							  "\t\"synchFolder\"\tTEXT NOT NULL,\n"
-							  "\t\"lastUpdate\"\tTEXT NOT NULL\n"
-							  ");";
+	
+	bool exec(const std::string_view sql,
+                std::function<int(const s_record& r,void* context)> record_callback=nullptr //retuen false to continue enumeration
+                ,void* context=nullptr
+                );
 
+        bool connect(const std::string_view userNameDB);
+        void disconnect();
+        void createTable();
+
+	bool addUser(const User &user);
+        void deleteUser(int id);
+        
+        bool isUserExist(const int &userId);
+        
+        int getUserId(const User& user);
+  	int getDeviceId(const User& user);
+  	std::string getLogin(const User& user);
+  	int getPassword(const User& user);
+	std::string getSynchFolder(const User& user);
+	std::string getLastUpdate(User& user);
+	 
+	int selectUserId();
+        int selectDeviceId();
+ 	int selectLogin();
+  	bool selectPassword(const User& user);
+  	int selectFolder();
+  	int selectLastUpdate();
+  	
+        bool updateSynchFolder(User& user, const std::string &newFolder);
+        bool updatePassword(User& user, const std::string &newPassword);
+        
+        void saveLastUpdate(User& user);
+private:
+        std::unique_ptr<sqlite3, sqlite3_deleter> _database;
 };
 
-/*class FileDB {
+class FileDB {
 public:
-        void renameFile(FileMeta &file);
-        void addFile(FileMeta &file);
-        void deleteFile(FileMeta &file);
-        void updateFile(FileMeta &file);
-        FileMeta selectFile(const int &fileId);
-        FileMeta getFile(const std::string &path, const std::string &name);
-        int getFileId(const std::string &path, const std::string &name);
-        std::vector<FileMeta> selectAllFiles();
-        void updateSynchFolder(const std::string  &newFolder);
+	FileDB(const std::string_view  fileNameDB);
+	
+	bool exec(const std::string_view sql,
+                std::function<int(const s_record& r,void* context)> record_callback=nullptr //retuen false to continue enumeration
+                ,void* context=nullptr
+                );
+	
+	bool connect(const std::string_view fileNameDB);
+	void disconnect(); 
+	void createTable();
+	
+	void addFile(FileMeta &file);
+        void deleteFile(const int &fileId); 
+        void downloadFile(const int &fileId);
+	
+	bool isFileExist(const int &fileId);
+
+        std::optional<FileMeta> getOneFile(const int id);
         
-        FileMeta fileMeta;
-        LocalDB localDB;;
-};*/
+        static std::time_t getTime_unixtime();
+        
+        int selectId();
+        int selectFileId();
+        FileMeta selectFile(const int &fileId);
+        std::vector<FileMeta> selectAllFiles();
+        
+        void updateFile(FileMeta &file);
+private:
+       std::unique_ptr<sqlite3, sqlite3_deleter> _database;   
+};

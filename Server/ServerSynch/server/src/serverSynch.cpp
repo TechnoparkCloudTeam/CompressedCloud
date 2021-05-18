@@ -1,38 +1,40 @@
 #include <iostream>
-#include "server.h"
-fsServer::Server::Server(int port/* , const std::string& filed */)
+#include "serverSynch.h"
+
+sServer::Server::Server(int port, std::shared_ptr<UsersDB> postgres_sqldb12 /* , const std::string& filed */)
     : io_service_(),
       acceptor_(io_service_, boost::asio::ip::tcp::endpoint(boost::asio::ip::tcp::v4(), port)),
-      socket_(io_service_)
-      //fsworker("/home/lyalyashechka/TP/c_c++/main server/build")
+      socket_(io_service_),
+      postgres_sqldb1(postgres_sqldb12)
 {
     waitForClientConnection();
 }
 
-fsServer::Server::~Server()
+sServer::Server::~Server()
 {
     stop();
 }
 
-void fsServer::Server::run()
+void sServer::Server::run()
 {
     std::cout << "Run" << std::endl;
     io_service_.run();
 }
 
-void fsServer::Server::stop()
+void sServer::Server::stop()
 {
     io_service_.stop();
     std::cout << "Stop" << std::endl;
 }
 
-void fsServer::Server::waitForClientConnection()
+void sServer::Server::waitForClientConnection()
 {
     acceptor_.async_accept(socket_, [this](boost::system::error_code er) {
         if (!er)
         {
             std::cout << "Connect " << socket_.remote_endpoint() << std::endl;
-            std::make_shared<Connection>(std::move(socket_))->start();
+
+            std::make_shared<Connection>(std::move(socket_),postgres_sqldb1)->start();
         }
         waitForClientConnection();
     });

@@ -8,9 +8,7 @@ enum ServerSynchoRead
 
 enum ServerFSWrite
 {
-    
     CREATEFOLDER = 1,
-    
 };
  ClientNetwork::ClientNetwork(boost::asio::io_service &io_service) : socket_(io_service),
                                                                     socketS_(io_service),

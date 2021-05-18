@@ -1,5 +1,5 @@
 #include <iostream>
-#include "connection.h"
+#include "../include/connection.h"
 
 Connection::Connection(boost::asio::ip::tcp::socket socket_) : socket_(std::move(socket_))
 {

@@ -5,5 +5,6 @@ package messageFS;
 message Request {
     int32 id = 1;
     string name = 2;
-    string file = 3;
+    string password = 3;
+    string file = 4;
 }

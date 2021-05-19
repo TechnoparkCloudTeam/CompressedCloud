@@ -1,6 +1,0 @@
-/home/ilya/TechnoParkProjects/CompressedCloud/Server/build/CMakeFiles/rebuild_cache.dir
-/home/ilya/TechnoParkProjects/CompressedCloud/Server/build/CMakeFiles/edit_cache.dir
-/home/ilya/TechnoParkProjects/CompressedCloud/Server/build/CMakeFiles/serverS.dir
-/home/ilya/TechnoParkProjects/CompressedCloud/Server/build/CMakeFiles/clientnetwork.dir
-/home/ilya/TechnoParkProjects/CompressedCloud/Server/build/CMakeFiles/serverFS.dir
-/home/ilya/TechnoParkProjects/CompressedCloud/Server/build/CMakeFiles/fdb.dir

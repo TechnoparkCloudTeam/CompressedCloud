@@ -2,26 +2,40 @@
 
 
 
-Application::Application(std::shared_ptr<I_Indexer> index) : 
-     Indexer(index) {}
+Application::Application(
+     std::shared_ptr<ClientNetwork> network,
+     std::shared_ptr<UserDB> users,
+     std::shared_ptr<FileDB> files) :
+     Network(network),
+     Users(users),
+     Files(files)
+     {}
 
-
-void Application::login(std::string login, std::string pass) {
-    //ClientNetwork.start();
-    //ClientNetwork.writeMessage();
-    //ClientNetwork.readMessage();
-    //ClientNetwork.handleRead();
-    return;
-}
+/* void Application::login(std::string login, std::string pass) {
+    messageFS::Request req;
+    req.set_name(login);
+    req.set_password(pass);
+    req.set_id(ServerSyncho::AUTORIZATION);
+    std::string msg;
+	boost::system::error_code ec;
+    req.SerializePartialToString(&msg);
+	Network->writeMessageToS(ec, msg);
+} */
 void Application::registerUser(std::string login, std::string pass) {
-    //ClientNetwork.start();
-    //ClientNetwork.writeMessage();
-    //ClientNetwork.readMessage();
-    //ClientNetwork.handleRead();
-    //UserDB.connect();
-    //UserDB.addUser();
-    //UserDB.disconnect();
-    return;
+    messageFS::Request req;
+    req.set_name(login);
+    req.set_password(pass);
+    req.set_id(ServerSyncho::REGISTRATION);
+    std::string msg;
+	boost::system::error_code ec;
+    req.SerializePartialToString(&msg);
+	Network->writeMessageToS(ec, msg);
+    User user;
+    user.deviceName = "PC";
+    user.synchFolder = "/home/ilya/test";
+    user.login = login;
+    user.password = pass;
+    Users->addUser(user);
 }
 void Application::changePassword() {
     return;

@@ -32,6 +32,7 @@ void ProgramInterface::run() {
             std::cout << "Enter login: ";
             std::cin >> login;
             std::cout << "\nEnter password: ";
+            std::cin >> password;
             app->registerUser(login, password);
             std::cout << "User registered\n";
         } else if (input == "synchronize") {

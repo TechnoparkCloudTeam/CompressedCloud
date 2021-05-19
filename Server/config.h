@@ -1,4 +1,4 @@
-
+#pragma once
 enum ServerSyncho : int
 {
     OK = 0,

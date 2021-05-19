@@ -1,14 +1,18 @@
 #pragma once
-//#include "../../Watcher/include/Watcher.h"
-#include "../../Indexer/include/Indexer.h"
-#include "../../../Server/ServerFileStorage/fileStorageWorker/include/FileStorageWorker.h"
 #include <memory>
 #include <string>
-
+#include "../../Indexer/include/Indexer.h"
+#include "../../../Server/ServerFileStorage/fileStorageWorker/include/FileStorageWorker.h"
+#include "../../../DataBases/LocalDB/include/LocalDB.h"
+#include "../../../Server/ClientNetwork/include/ClientNetwork.h"
+#include "../../../Server/config.h"
 class Application {
 public:
     Application(
-     std::shared_ptr<I_Indexer> index);
+     std::shared_ptr<ClientNetwork> network,
+     std::shared_ptr<UserDB> users,
+     std::shared_ptr<FileDB> files);
+
     void login(std::string login, std::string pass);
     void registerUser(std::string login, std::string pass);
     void changePassword();
@@ -28,6 +32,8 @@ private:
     std::string Login;
     std::string Password;
     void checkPassword();
-    std::shared_ptr<I_Indexer> Indexer;
     std::shared_ptr<FileStorageWorker> FileWorker;
+    std::shared_ptr<ClientNetwork> Network;
+    std::shared_ptr<UserDB> Users;
+    std::shared_ptr<FileDB> Files;
 };

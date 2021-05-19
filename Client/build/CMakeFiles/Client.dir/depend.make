@@ -4,10 +4,13 @@
 CMakeFiles/Client.dir/Application/src/Application.cpp.o: ../../DataBases/LocalDB/include/FileDB.h
 CMakeFiles/Client.dir/Application/src/Application.cpp.o: ../../DataBases/LocalDB/include/LocalDB.h
 CMakeFiles/Client.dir/Application/src/Application.cpp.o: ../../DataBases/LocalDB/include/UserDB.h
+CMakeFiles/Client.dir/Application/src/Application.cpp.o: ../../Server/ClientNetwork/include/ClientNetwork.h
 CMakeFiles/Client.dir/Application/src/Application.cpp.o: ../../Server/ServerFileStorage/fileStorageWorker/include/FileStorageWorker.h
+CMakeFiles/Client.dir/Application/src/Application.cpp.o: ../../Server/config.h
 CMakeFiles/Client.dir/Application/src/Application.cpp.o: ../Application/include/Application.h
 CMakeFiles/Client.dir/Application/src/Application.cpp.o: ../Indexer/include/Indexer.h
 CMakeFiles/Client.dir/Application/src/Application.cpp.o: ../Application/src/Application.cpp
+CMakeFiles/Client.dir/Application/src/Application.cpp.o: message.pb.h
 
 CMakeFiles/Client.dir/Indexer/src/Indexer.cpp.o: ../Indexer/include/Indexer.h
 CMakeFiles/Client.dir/Indexer/src/Indexer.cpp.o: ../Indexer/src/Indexer.cpp
@@ -18,11 +21,14 @@ CMakeFiles/Client.dir/Indexer/src/Indexer.cpp.o: /home/ilya/TechnoParkProjects/C
 CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../../DataBases/LocalDB/include/FileDB.h
 CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../../DataBases/LocalDB/include/LocalDB.h
 CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../../DataBases/LocalDB/include/UserDB.h
+CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../../Server/ClientNetwork/include/ClientNetwork.h
 CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../../Server/ServerFileStorage/fileStorageWorker/include/FileStorageWorker.h
+CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../../Server/config.h
 CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../Application/include/Application.h
 CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../Indexer/include/Indexer.h
 CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../ProgramInterface/include/ProgramInterface.h
 CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../ProgramInterface/src/ProgramInterface.cpp
+CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: message.pb.h
 
 CMakeFiles/Client.dir/Watcher/src/FileSysEvent.cpp.o: ../Watcher/include/FileSysEvent.h
 CMakeFiles/Client.dir/Watcher/src/FileSysEvent.cpp.o: ../Watcher/src/FileSysEvent.cpp
@@ -54,6 +60,7 @@ CMakeFiles/Client.dir/home/ilya/TechnoParkProjects/CompressedCloud/DataBases/Loc
 
 CMakeFiles/Client.dir/home/ilya/TechnoParkProjects/CompressedCloud/Server/ClientNetwork/src/ClientNetwork.cpp.o: /home/ilya/TechnoParkProjects/CompressedCloud/Server/ClientNetwork/include/ClientNetwork.h
 CMakeFiles/Client.dir/home/ilya/TechnoParkProjects/CompressedCloud/Server/ClientNetwork/src/ClientNetwork.cpp.o: /home/ilya/TechnoParkProjects/CompressedCloud/Server/ClientNetwork/src/ClientNetwork.cpp
+CMakeFiles/Client.dir/home/ilya/TechnoParkProjects/CompressedCloud/Server/ClientNetwork/src/ClientNetwork.cpp.o: message.pb.h
 
 CMakeFiles/Client.dir/home/ilya/TechnoParkProjects/CompressedCloud/Server/ServerFileStorage/fileStorageWorker/src/FileStorageWorker.cpp.o: ../../Server/ServerFileStorage/fileStorageWorker/include/FileStorageWorker.h
 CMakeFiles/Client.dir/home/ilya/TechnoParkProjects/CompressedCloud/Server/ServerFileStorage/fileStorageWorker/src/FileStorageWorker.cpp.o: /home/ilya/TechnoParkProjects/CompressedCloud/Server/ServerFileStorage/fileStorageWorker/src/FileStorageWorker.cpp
@@ -63,6 +70,7 @@ CMakeFiles/Client.dir/main.cpp.o: ../../DataBases/LocalDB/include/LocalDB.h
 CMakeFiles/Client.dir/main.cpp.o: ../../DataBases/LocalDB/include/UserDB.h
 CMakeFiles/Client.dir/main.cpp.o: ../../Server/ClientNetwork/include/ClientNetwork.h
 CMakeFiles/Client.dir/main.cpp.o: ../../Server/ServerFileStorage/fileStorageWorker/include/FileStorageWorker.h
+CMakeFiles/Client.dir/main.cpp.o: ../../Server/config.h
 CMakeFiles/Client.dir/main.cpp.o: ../Application/include/Application.h
 CMakeFiles/Client.dir/main.cpp.o: ../Indexer/include/Indexer.h
 CMakeFiles/Client.dir/main.cpp.o: ../ProgramInterface/include/ProgramInterface.h

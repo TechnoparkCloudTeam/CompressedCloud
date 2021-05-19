@@ -1,3 +1,0 @@
-/home/ilya/TechnoParkProjects/CompressedCloud/Client/build/CMakeFiles/rebuild_cache.dir
-/home/ilya/TechnoParkProjects/CompressedCloud/Client/build/CMakeFiles/edit_cache.dir
-/home/ilya/TechnoParkProjects/CompressedCloud/Client/build/CMakeFiles/Client.dir

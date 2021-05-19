@@ -1,2 +1,0 @@
-# Hashes of file build rules.
-6c9945867e60511721287410498c2064 message.pb.h

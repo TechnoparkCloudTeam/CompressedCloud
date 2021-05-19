@@ -1,9 +1,11 @@
-
+#pragma once
 enum ServerSyncho : int
 {
-    OK = 0,
+    OKREG = 0,
     BAD = 1,
     REGISTRATION = 2,
-    AUTORIZATION = 3,
-    EXERTFILE = 4,
+    OKLOGIN = 3,
+    BADLOGIN = 4,
+    AUTORIZATION = 5,
+    EXERTFILE = 6,
 };

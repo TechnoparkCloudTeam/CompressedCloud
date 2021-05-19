@@ -8,9 +8,9 @@ int main()
 {
     messageFS::Request req;
 
-    req.set_name("A.S.Pushkiiiin");
+    req.set_name("A.S.Pushkin");
     req.set_password("12345678");
-    req.set_id(1);
+    req.set_id(3);
     
     std::ifstream file("/home/test.txt", std::ios_base::binary);
 

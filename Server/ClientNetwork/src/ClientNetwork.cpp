@@ -4,6 +4,8 @@ enum ServerSynchoRead
     OKREG = 0,
     REGISTRATION = 1,
     AUTORIZATION = 2,
+    OKLOGIN = 3,
+    BADLOGIN = 4
 };
 
 enum ServerFSWrite
@@ -94,7 +96,13 @@ void ClientNetwork::handleReadS(boost::system::error_code ec)
         writeRequest.SerializePartialToString(&readed);
         writeMessageToFS(ec, readed);
         break;
-    
+    case ServerSynchoRead::OKLOGIN:
+        this->IsLogged = true;
+        std::cout << "Logged in\n";
+        break;
+    case ServerSynchoRead::BADLOGIN:
+        std::cout << "Bad login try again\n";
+        break;
     default:
         break;
     }
@@ -132,3 +140,7 @@ void ClientNetwork::writeHeandlerS()
                                  boost::bind(&ClientNetwork::writeHeandlerS, this));
     }
 } 
+
+bool ClientNetwork::IsLogin() {
+    return IsLogged;
+}

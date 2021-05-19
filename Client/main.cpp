@@ -1,5 +1,4 @@
-#include "Indexer.h"
-//#include "Watcher.h"
+//#include "Indexer.h"
 //#include "Chunker.h"
 #include "ProgramInterface.h"
 #include "Application.h"
@@ -31,21 +30,25 @@ int main()
 {
  
 	std::string dirName = "/home/ilya/test";
-/*
-	 std::shared_ptr<UserDB> userDBPtr(new UserDB("base.dblite"));
 
-	std::shared_ptr<I_Indexer> indexPtr(new Indexer);
+	std::shared_ptr<UserDB> userDBPtr(new UserDB("base.dblite"));
 
-	std::shared_ptr<ClientNetwork> clientNetworkPtr(new ClientNetwork);
+	std::shared_ptr<FileDB> fileDBPtr(new FileDB("file.dblite"));
+
+	boost::asio::io_service io_service;
+	std::shared_ptr<ClientNetwork> clientNetworkPtr(new ClientNetwork(io_service));
+	boost::thread t(boost::bind(&boost::asio::io_service::run, &io_service));
+
 
 	std::shared_ptr<FileStorageWorker> fileWorkerPtr(new FileStorageWorker(""));
 	
-	std::shared_ptr<Application> appPtr(new Application(indexPtr, clientNetworkPtr));
+	std::shared_ptr<Application> appPtr(new Application(clientNetworkPtr, userDBPtr, fileDBPtr));
 	ProgramInterface console(appPtr);   
-*/
-	//console.run();
 
-	FileDB fileDB("file.dblite");
+	
+
+	console.run();
+
 
 	auto handleNotification = [&](WatcherNotification notification)
 	{
@@ -67,22 +70,22 @@ int main()
 		case InotifyEvent::_create:
 		{
 			if (isTmpFile(notification.Path.filename())) {
-				fileDB.addFile(f);
-				fileDB.updateFile(f);
+				//fileDB.addFile(f);
+				//fileDB.updateFile(f);
 			}
 			break;
 		}
 		case InotifyEvent::_modify:
 		{
 			if (isTmpFile(notification.Path.filename())) {
-				fileDB.updateFile(f);
+				//fileDB.updateFile(f);
 			}
 			break;
 		}
 		case InotifyEvent::_remove:
 		{
 			if (isTmpFile(notification.Path.filename())) {
-				fileDB.deleteFile(f.fileId);
+				//fileDB.deleteFile(f.fileId);
 			}
 			break;
 		}
@@ -108,25 +111,13 @@ int main()
 						.ignoreFileOnce("fileIgnoredOnce")
 						.onEvents(events, handleNotification)
 						.onUnexpectedEvent(handleUnexpectedNotification);
+
 	std::thread thread([&]()
 					   { notifier.run(); });
 
 	//std::this_thread::sleep_for(std::chrono::seconds(60));
 
-	boost::asio::io_service io_service;
-	ClientNetwork cn(io_service);
-	boost::thread t(boost::bind(&boost::asio::io_service::run, &io_service));
 
-	messageFS::Request req;
-
-    req.set_name("A.S.Ponasenkov");
-    req.set_password("12345678");
-    req.set_id(2);
-
-	std::string msg;
-	boost::system::error_code ec;
-    req.SerializePartialToString(&msg);
-	cn.writeMessageToS(ec, msg);
 	t.join();
 	thread.join();
 	return 0;

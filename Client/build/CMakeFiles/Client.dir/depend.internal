@@ -10,6 +10,12 @@ CMakeFiles/Client.dir/Application/src/Application.cpp.o
  ../../Server/config.h
  ../Application/include/Application.h
  ../Indexer/include/Indexer.h
+ ../Watcher/include/FileSysEvent.h
+ ../Watcher/include/Watcher.h
+ ../Watcher/include/WatcherConfig.h
+ ../Watcher/include/WatcherMessage.h
+ ../Watcher/include/WatcherNotification.h
+ ../Watcher/include/WatcherNotifierBuilder.h
  /home/ilya/TechnoParkProjects/CompressedCloud/Client/Application/src/Application.cpp
  message.pb.h
 CMakeFiles/Client.dir/Indexer/src/Indexer.cpp.o
@@ -27,6 +33,12 @@ CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o
  ../../Server/config.h
  ../Application/include/Application.h
  ../Indexer/include/Indexer.h
+ ../Watcher/include/FileSysEvent.h
+ ../Watcher/include/Watcher.h
+ ../Watcher/include/WatcherConfig.h
+ ../Watcher/include/WatcherMessage.h
+ ../Watcher/include/WatcherNotification.h
+ ../Watcher/include/WatcherNotifierBuilder.h
  /home/ilya/TechnoParkProjects/CompressedCloud/Client/ProgramInterface/include/ProgramInterface.h
  /home/ilya/TechnoParkProjects/CompressedCloud/Client/ProgramInterface/src/ProgramInterface.cpp
  message.pb.h

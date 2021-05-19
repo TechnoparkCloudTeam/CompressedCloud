@@ -6,6 +6,7 @@
 #include "../../../DataBases/LocalDB/include/LocalDB.h"
 #include "../../../Server/ClientNetwork/include/ClientNetwork.h"
 #include "../../../Server/config.h"
+#include "../../Watcher/include/WatcherNotifierBuilder.h"
 class Application {
 public:
     Application(
@@ -36,5 +37,6 @@ private:
     std::shared_ptr<ClientNetwork> Network;
     std::shared_ptr<UserDB> Users;
     std::shared_ptr<FileDB> Files;
+    std::shared_ptr<WatcherNotifierBuilder> Watcher;
     bool isLoggedIn;
 };

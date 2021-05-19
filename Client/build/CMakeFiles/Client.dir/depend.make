@@ -9,6 +9,12 @@ CMakeFiles/Client.dir/Application/src/Application.cpp.o: ../../Server/ServerFile
 CMakeFiles/Client.dir/Application/src/Application.cpp.o: ../../Server/config.h
 CMakeFiles/Client.dir/Application/src/Application.cpp.o: ../Application/include/Application.h
 CMakeFiles/Client.dir/Application/src/Application.cpp.o: ../Indexer/include/Indexer.h
+CMakeFiles/Client.dir/Application/src/Application.cpp.o: ../Watcher/include/FileSysEvent.h
+CMakeFiles/Client.dir/Application/src/Application.cpp.o: ../Watcher/include/Watcher.h
+CMakeFiles/Client.dir/Application/src/Application.cpp.o: ../Watcher/include/WatcherConfig.h
+CMakeFiles/Client.dir/Application/src/Application.cpp.o: ../Watcher/include/WatcherMessage.h
+CMakeFiles/Client.dir/Application/src/Application.cpp.o: ../Watcher/include/WatcherNotification.h
+CMakeFiles/Client.dir/Application/src/Application.cpp.o: ../Watcher/include/WatcherNotifierBuilder.h
 CMakeFiles/Client.dir/Application/src/Application.cpp.o: ../Application/src/Application.cpp
 CMakeFiles/Client.dir/Application/src/Application.cpp.o: message.pb.h
 
@@ -26,6 +32,12 @@ CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../../Server/
 CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../../Server/config.h
 CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../Application/include/Application.h
 CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../Indexer/include/Indexer.h
+CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../Watcher/include/FileSysEvent.h
+CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../Watcher/include/Watcher.h
+CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../Watcher/include/WatcherConfig.h
+CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../Watcher/include/WatcherMessage.h
+CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../Watcher/include/WatcherNotification.h
+CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../Watcher/include/WatcherNotifierBuilder.h
 CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../ProgramInterface/include/ProgramInterface.h
 CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../ProgramInterface/src/ProgramInterface.cpp
 CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: message.pb.h

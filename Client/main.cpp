@@ -30,25 +30,18 @@ int main()
 {
  
 	std::string dirName = "/home/ilya/test";
-
-	std::shared_ptr<UserDB> userDBPtr(new UserDB("base.dblite"));
-
 	std::shared_ptr<FileDB> fileDBPtr(new FileDB("file.dblite"));
-
+	std::shared_ptr<UserDB> userDBPtr(new UserDB("base.dblite"));
 	boost::asio::io_service io_service;
 	std::shared_ptr<ClientNetwork> clientNetworkPtr(new ClientNetwork(io_service));
 	boost::thread t(boost::bind(&boost::asio::io_service::run, &io_service));
 
-
-	std::shared_ptr<FileStorageWorker> fileWorkerPtr(new FileStorageWorker(""));
+	//std::shared_ptr<FileStorageWorker> fileWorkerPtr(new FileStorageWorker(""));
 	
 	std::shared_ptr<Application> appPtr(new Application(clientNetworkPtr, userDBPtr, fileDBPtr));
 	ProgramInterface console(appPtr);   
 
-	
-
 	console.run();
-
 
 	auto handleNotification = [&](WatcherNotification notification)
 	{

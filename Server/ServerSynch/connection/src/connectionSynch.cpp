@@ -55,11 +55,10 @@ void Connection::read()
     }
     default:
         break;
-
-        std::string ans_string;
-        writeRequest.SerializePartialToString(&ans_string);
-        boost::asio::async_write(socket_, boost::asio::buffer(ans_string, 250), boost::bind(&Connection::write, shared_from_this()));
     }
+    std::string ans_string;
+    writeRequest.SerializePartialToString(&ans_string);
+    boost::asio::async_write(socket_, boost::asio::buffer(ans_string, 250), boost::bind(&Connection::write, shared_from_this()));
 }
 void Connection::write()
 {

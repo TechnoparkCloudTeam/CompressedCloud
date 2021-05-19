@@ -7,8 +7,9 @@ Application::Application(
      Network(network),
      Users(users),
      Files(files),
-     isLoggedIn(false)
-     {}
+     isLoggedIn(false) {
+
+}
 
 void Application::login(std::string login, std::string pass) {
     messageFS::Request req;
@@ -97,7 +98,7 @@ void Application::checkPassword() {
     return;
 }
 void Application::runWatcher() {
-    //Watcher->run(synchFolder);
+    Watcher->run();
 }
 void Application::stopWatcher() {
     //Watcher->shutdown();

@@ -35,6 +35,8 @@ public:
     void handleReadFS(boost::system::error_code ec);
     
     void handleReadS(boost::system::error_code ec);
+
+    bool IsLogin();
 private:
 
     boost::asio::io_service& io_service_;
@@ -54,4 +56,6 @@ private:
     std::deque<std::string> qWrite;
 
     std::deque<std::string> qWriteS;
+
+    bool IsLogged = false;
 };

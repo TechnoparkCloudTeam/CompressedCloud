@@ -1,17 +1,16 @@
 #include "Application.h"
 
-
-
 Application::Application(
      std::shared_ptr<ClientNetwork> network,
      std::shared_ptr<UserDB> users,
      std::shared_ptr<FileDB> files) :
      Network(network),
      Users(users),
-     Files(files)
+     Files(files),
+     isLoggedIn(false)
      {}
 
-/* void Application::login(std::string login, std::string pass) {
+void Application::login(std::string login, std::string pass) {
     messageFS::Request req;
     req.set_name(login);
     req.set_password(pass);
@@ -20,7 +19,9 @@ Application::Application(
 	boost::system::error_code ec;
     req.SerializePartialToString(&msg);
 	Network->writeMessageToS(ec, msg);
-} */
+    isLoggedIn = Network->IsLogin();
+}
+
 void Application::registerUser(std::string login, std::string pass) {
     messageFS::Request req;
     req.set_name(login);
@@ -41,7 +42,7 @@ void Application::changePassword() {
     return;
 }
 bool Application::isLogin() {
-    return (this->Login != "");
+    return isLoggedIn;
 }
 void Application::logOut() {
     //ClientNetwork.start();

@@ -38,7 +38,7 @@ void Connection::read()
         us.login = readRequest.name();
         us.password = readRequest.password();
         postgres_sqldb1->Registration(us);
-        writeRequest.set_id(ServerSyncho::OK);
+        writeRequest.set_id(ServerSyncho::OKREG);
         break;
     }
     case ServerSyncho::AUTORIZATION:
@@ -49,9 +49,9 @@ void Connection::read()
         us1.password = readRequest.password();
         bool isUser =  postgres_sqldb1->Login(us1);
         if(isUser)
-            writeRequest.set_id(ServerSyncho::OK);
+            writeRequest.set_id(ServerSyncho::OKLOGIN);
         else
-            writeRequest.set_id(ServerSyncho::BAD);
+            writeRequest.set_id(ServerSyncho::BADLOGIN);
     }
     default:
         break;

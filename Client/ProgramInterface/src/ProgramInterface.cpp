@@ -9,6 +9,7 @@ void ProgramInterface::run() {
     std::string input;
     std::cout << "CompressedCloud initiated\nEnter <help> command to learn about the commands\n";
     while (1) {
+        std::cout << "/:";
         std::cin >> input;
         if (input == "help") {
             std::cout << "Commands: <help> - info about commands\n";
@@ -25,7 +26,6 @@ void ProgramInterface::run() {
             std::cout << "\nEnter password: ";
             std::cin >> password;
             app->login(login, password);
-            std::cout << "User logged in\n";
         } else if (input == "register"){
             std::string login;
             std::string password;
@@ -40,7 +40,7 @@ void ProgramInterface::run() {
                 app->synchronize();
                 std::cout << "Latest version is set\n";
             } else {
-                std::cout << "Can't synchronize no login in system, use <login> or <register>\n";
+                std::cout << "Can't synchronize you are not logged in the system, use <login> or <register>\n";
             }
         } else if (input == "quit") {
             std::cout << "Quitting application\n";

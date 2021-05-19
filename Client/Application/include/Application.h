@@ -36,4 +36,5 @@ private:
     std::shared_ptr<ClientNetwork> Network;
     std::shared_ptr<UserDB> Users;
     std::shared_ptr<FileDB> Files;
+    bool isLoggedIn;
 };

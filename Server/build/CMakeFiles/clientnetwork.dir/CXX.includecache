@@ -6,20 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/ilya/TechnoParkProjects/CompressedCloud/Server/ClientNetwork/clientNetwork.cpp
-include/ClientNetwork.h
-/home/ilya/TechnoParkProjects/CompressedCloud/Server/ClientNetwork/include/ClientNetwork.h
-google/protobuf/io/coded_stream.h
--
-google/protobuf/io/zero_copy_stream_impl.h
--
-message.pb.h
-/home/ilya/TechnoParkProjects/CompressedCloud/Server/ClientNetwork/message.pb.h
-fstream
--
-boost/thread.hpp
--
-
 /home/ilya/TechnoParkProjects/CompressedCloud/Server/ClientNetwork/include/ClientNetwork.h
 boost/asio.hpp
 -

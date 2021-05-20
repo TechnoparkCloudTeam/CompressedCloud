@@ -6,6 +6,23 @@
 #include "../../../../DataBases/PostgresDB/UserDB/include/UserInfo.h"
 #include "../../../../DataBases/PostgresDB/MetaDB/include/FileInfo.h"
 #include "../../../config.h"
+#define header_size 4
+unsigned decode_header(std::vector<boost::uint8_t> &buf)
+{
+    unsigned msg_size = 0;
+    for (unsigned i = 0; i < header_size; ++i)
+        msg_size = msg_size * 256 + (static_cast<unsigned>(buf[i]) & 0xFF);
+    return msg_size;
+}
+std::string encode_header(std::vector<boost::uint8_t> &buf, unsigned size)
+{
+    buf[0] = static_cast<boost::uint8_t>((size >> 24) & 0xFF);
+    buf[1] = static_cast<boost::uint8_t>((size >> 16) & 0xFF);
+    buf[2] = static_cast<boost::uint8_t>((size >> 8) & 0xFF);
+    buf[3] = static_cast<boost::uint8_t>(size & 0xFF);
+    std::string sizeStr(buf.begin(), buf.end());
+    return sizeStr;
+}
 Connection::Connection(boost::asio::ip::tcp::socket socket_, std::shared_ptr<UsersDB> postgres_sqldb12) : socket_(std::move(socket_)),
                                                                                                           postgres_sqldb1(postgres_sqldb12)
 {
@@ -18,51 +35,79 @@ void Connection::stop()
 
 void Connection::start()
 {
-    socket_.async_read_some(boost::asio::buffer(data_),
-                            boost::bind(&Connection::read, shared_from_this()));
+    start_read_header();
 }
-void Connection::read()
+
+void Connection::start_read_header()
+{
+    m_readbuf.resize(header_size);
+    boost::asio::async_read(socket_, boost::asio::buffer(m_readbuf),
+                            boost::bind(&Connection::handle_read_header, shared_from_this()));
+}
+
+void Connection::handle_read_header()
+{
+    unsigned msg_len = decode_header(m_readbuf);
+    std::cout << "MSG LEN: " << msg_len << std::endl;
+    start_read_body(msg_len);
+}
+
+void Connection::start_read_body(unsigned msg_len)
+{
+    m_readbuf.resize(header_size + msg_len);
+    boost::asio::mutable_buffers_1 buf = boost::asio::buffer(&m_readbuf[header_size], msg_len);
+    boost::asio::async_read(socket_, buf, boost::bind(&Connection::handle_read_body, shared_from_this()));
+}
+
+void Connection::handle_read_body()
 {
     messageFS::Request writeRequest;
-    messageFS::Request readRequest;
-
-    readRequest.ParseFromString(data_);
-    std::cout << readRequest.id() << " " << readRequest.name() << std::endl;
-
-    switch (readRequest.id())
+    messageFS::Request readed;
+    readed.ParseFromArray(&m_readbuf[header_size], m_readbuf.size() - header_size);
+    writeRequest.set_name(readed.name());
+    switch (readed.id())
     {
     case ServerSyncho::REGISTRATION:
     {
-        std::cout << "User has register " << readRequest.name() << std::endl;
+        std::cout << "User has register " << readed.name() << std::endl;
         UserInfo us;
-        us.login = readRequest.name();
-        us.password = readRequest.password();
+        us.login = readed.name();
+        us.password = readed.password();
         postgres_sqldb1->Registration(us);
         writeRequest.set_id(ServerSyncho::OKREG);
         break;
     }
     case ServerSyncho::AUTORIZATION:
     {
-        std::cout << "User autorizated " << readRequest.name() << std::endl;
+        std::string rsdafs = readed.name();
+        std::cout << "User autorizated " << readed.name() << std::endl;
         UserInfo us1;
-        us1.login = readRequest.name();
-        us1.password = readRequest.password();
-        bool isUser =  postgres_sqldb1->Login(us1);
-        if(isUser)
+
+        us1.login = readed.name();
+        us1.password = readed.password();
+        //bool isUser =  postgres_sqldb1->Login(us1);
+        bool isUser = true;
+        if (isUser)
             writeRequest.set_id(ServerSyncho::OKLOGIN);
         else
             writeRequest.set_id(ServerSyncho::BADLOGIN);
+        break;
     }
     default:
         break;
     }
+
     std::string ans_string;
     writeRequest.SerializePartialToString(&ans_string);
-    boost::asio::async_write(socket_, boost::asio::buffer(ans_string, 250), boost::bind(&Connection::write, shared_from_this()));
+    write(ans_string);
+    start_read_header();
+    //boost::asio::async_write(socket_, boost::asio::buffer(ans_string, ans_string.size()), boost::bind(&Connection::start_read_header, shared_from_this()));
 }
-void Connection::write()
+void Connection::write(std::string &msg)
 {
+    std::vector<boost::uint8_t> buf(4);
+    std::string size = encode_header(buf, msg.size());
+    msg = size + msg;
     std::cout << "writing" << std::endl;
-    socket_.async_read_some(boost::asio::buffer(data_),
-                            boost::bind(&Connection::read, shared_from_this()));
+    boost::asio::write(socket_, boost::asio::buffer(msg));
 }

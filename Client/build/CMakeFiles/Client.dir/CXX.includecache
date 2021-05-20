@@ -63,6 +63,8 @@ iostream
 -
 deque
 -
+vector
+-
 
 ../../Server/ServerFileStorage/fileStorageWorker/include/FileStorageWorker.h
 string
@@ -109,14 +111,6 @@ memory
 -
 ../../../DataBases/LocalDB/include/LocalDB.h
 ../../DataBases/LocalDB/include/LocalDB.h
-
-../ProgramInterface/include/ProgramInterface.h
-string
--
-memory
--
-../../Application/include/Application.h
--
 
 ../Watcher/include/FileSysEvent.h
 filesystem
@@ -204,21 +198,9 @@ Watcher.h
 WatcherNotification.h
 ../Watcher/include/WatcherNotification.h
 
-/home/ilya/TechnoParkProjects/CompressedCloud/Client/main.cpp
-ProgramInterface.h
-/home/ilya/TechnoParkProjects/CompressedCloud/Client/ProgramInterface.h
+/home/ilya/TechnoParkProjects/CompressedCloud/Client/Application/src/Application.cpp
 Application.h
-/home/ilya/TechnoParkProjects/CompressedCloud/Client/Application.h
-WatcherNotifierBuilder.h
-/home/ilya/TechnoParkProjects/CompressedCloud/Client/WatcherNotifierBuilder.h
-filesystem
--
-thread
--
-ClientNetwork.h
-/home/ilya/TechnoParkProjects/CompressedCloud/Client/ClientNetwork.h
-boost/thread.hpp
--
+/home/ilya/TechnoParkProjects/CompressedCloud/Client/Application/src/Application.h
 
 message.pb.h
 limits

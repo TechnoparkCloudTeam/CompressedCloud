@@ -58,7 +58,9 @@ UserInfo UsersDB::Registration(const UserInfo &userInfo) {
     std::cout << "User registered" << std::endl;
     return usr;
   } catch (PostgresExceptions &exceptions) {
-    throw PostgresExceptions(exceptions.what());
+
+    std::cout << exceptions.what() << "\n";
+    return UserInfo{};
   }
 }
 UsersDB::UsersDB(std::string_view info) : PostgresSQLDB(info) {}

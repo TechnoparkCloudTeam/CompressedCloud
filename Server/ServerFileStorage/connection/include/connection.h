@@ -11,22 +11,30 @@ class Connection : public std::enable_shared_from_this<Connection>
 {
 public:
     explicit Connection(boost::asio::ip::tcp::socket socket_);
-    
+
     void start();
 
     void stop();
 
 private:
-    void read();
-    
-    void write();
+    void start_read_header();
 
-    void handleRead();
+    void handle_read_header();
+
+    void start_read_body(unsigned msg_len);
+
+    void handle_read_body();
+
+    /* void read(); */
+
+    void write(std::string &msg);
 
     boost::asio::ip::tcp::socket socket_;
 
     //std::array<char, 8192> buffer_In;
     char data_[8192];
 
-    FileStorageWorker fsworker = FileStorageWorker("/home/ilya/Test3");
+    std::vector<uint8_t> m_readbuf;
+
+    FileStorageWorker fsworker = FileStorageWorker("/home/ilya/Techno");
 };

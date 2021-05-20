@@ -49,7 +49,7 @@ void ProgramInterface::run() {
         } else if (input == "quit") {
 
             std::cout << "Quitting application\n";
-            exit(0);
+            return;
 
         } else {
             std::cout << "Unknown command enter <help> command to learn about the commands\n";

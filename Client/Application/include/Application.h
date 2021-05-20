@@ -33,10 +33,13 @@ private:
     std::string Login;
     std::string Password;
     void checkPassword();
+    void initWatcher();
     std::shared_ptr<FileStorageWorker> FileWorker;
     std::shared_ptr<ClientNetwork> Network;
     std::shared_ptr<UserDB> Users;
     std::shared_ptr<FileDB> Files;
-    std::shared_ptr<WatcherNotifierBuilder> Watcher;
+    WatcherNotifierBuilder Watcher;
     bool isLoggedIn;
 };
+
+std::string GetCurrentPath();

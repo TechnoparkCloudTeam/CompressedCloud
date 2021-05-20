@@ -41,10 +41,14 @@ iostream
 -
 deque
 -
+vector
+-
 
 /home/ilya/TechnoParkProjects/CompressedCloud/Server/ClientNetwork/src/ClientNetwork.cpp
 ../include/ClientNetwork.h
 /home/ilya/TechnoParkProjects/CompressedCloud/Server/ClientNetwork/include/ClientNetwork.h
+string_view
+-
 
 /home/ilya/TechnoParkProjects/CompressedCloud/Server/build/message.pb.cc
 message.pb.h

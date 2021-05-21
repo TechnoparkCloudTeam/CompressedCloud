@@ -42,15 +42,17 @@ memory
 string
 -
 
-/home/lida/CloudProject/CompressedCloud/project/DataBases/LocalDB/src/main.cpp
-iostream
--
+/home/lida/CloudProject/CompressedCloud/project/DataBases/LocalDB/src/LocalDB.cpp
 LocalDB.h
 /home/lida/CloudProject/CompressedCloud/project/DataBases/LocalDB/src/LocalDB.h
-vector
--
 boost/log/trivial.hpp
 /home/lida/CloudProject/CompressedCloud/project/DataBases/LocalDB/src/boost/log/trivial.hpp
-sqlite3.h
+utility
+-
+iostream
+-
+boost/lexical_cast.hpp
+-
+stdlib.h
 -
 

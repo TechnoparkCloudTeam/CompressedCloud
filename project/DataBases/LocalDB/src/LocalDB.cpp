@@ -91,7 +91,7 @@ void UserDB::createTable()
         exec(R"(
     CREATE TABLE IF NOT EXISTS "User" (
 	  "userId"	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
-	  "login"	TEXT NOT NULL,
+	  "login"	TEXT NOT NULL PRIMARY KEY UNIQUE,
 	  "password"	TEXT NOT NULL,
 	  "deviceId"	INTEGER NOT NULL,
 	  "deviceName"	INTEGER NOT NULL,
@@ -674,7 +674,7 @@ std::vector<FileMeta> FileDB::selectAllFiles()
 
 void FileDB::updateFile(FileMeta &file) 
   {
-    BOOST_LOG_TRIVIAL(debug) << "UserDB: updateFile";
+    BOOST_LOG_TRIVIAL(debug) << "FileDB: updateFile";
 
     file.version++;
     auto date = getTime_unixtime();

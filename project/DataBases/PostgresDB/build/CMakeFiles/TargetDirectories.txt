@@ -1,5 +1,0 @@
-/home/lida/CloudProject/CompressedCloud/project/DataBases/PostgresDB/build/CMakeFiles/rebuild_cache.dir
-/home/lida/CloudProject/CompressedCloud/project/DataBases/PostgresDB/build/CMakeFiles/edit_cache.dir
-/home/lida/CloudProject/CompressedCloud/project/DataBases/PostgresDB/build/CMakeFiles/MetaDB-dev.dir
-/home/lida/CloudProject/CompressedCloud/project/DataBases/PostgresDB/build/CMakeFiles/UserDB-dev.dir
-/home/lida/CloudProject/CompressedCloud/project/DataBases/PostgresDB/build/CMakeFiles/PostgresDB.dir

@@ -16,7 +16,7 @@ std::string GetCurrentTime()
 
 bool isTmpFile(const std::string &fileName)
 {
-    return (fileName.find(".goutputstream") == std::string::npos);
+    return (fileName.find(".goutputstream") != std::string::npos);
 }
 
 Application::Application(
@@ -30,10 +30,14 @@ Application::Application(
     synchFolder = GetCurrentPath() + "/SynchFolder";
     std::filesystem::create_directories(synchFolder);
     initWatcher();
+    runWatcher();
+    
 }
 
 void Application::login(std::string login, std::string pass)
 {
+    this->Login = login;
+    this->Password = pass;
     messageFS::Request req;
     req.set_name(login);
     req.set_password(pass);
@@ -78,26 +82,43 @@ void Application::logOut()
     //ClientNetwork.readMessage();
     this->Login = "";
     this->Password = "";
-    return;
 }
-void Application::downloadFile()
+void Application::downloadFile(const std::string& fileName)
 {
-    //ClientNetwork.start();
-    //ClientNetwork.writeMessage();
-    //ClientNetwork.readMessage();
-    //Watcher->shutdown();
-    //ClientNetwork.handleRead();
-    //fileWorker->createFile();
-    //Watcher->run(synchFolder);
-    return;
+    messageFS::Request req;
+    req.set_name(Login);
+    req.set_password(Password);
+    req.set_id(4);
+    req.set_filename(fileName);
+    std::string msg;
+    boost::system::error_code ec;
+    req.SerializePartialToString(&msg);
+    Network->writeMessageToFS(ec, msg);
 }
-void Application::sendFile()
+void Application::sendFile(const std::filesystem::path& path)
 {
-    //ClientNetwork.start();
-    //ClientNetwork.writeMessage();
-    //ClientNetwork.readMessage();
-    //ClientNetwork.handleRead();
-    return;
+    messageFS::Request req;
+
+    req.set_name(Login);
+    req.set_password(Password);
+    req.set_id(3);
+    req.set_filename(path.filename());
+
+    std::ifstream file(path, std::ios_base::binary);
+
+    std::string file_string;
+    std::string tmp;
+    while (file >> tmp) {
+        file_string += tmp + "\n"; 
+    };
+
+    req.set_file(file_string.c_str());
+
+    std::string msg;
+    req.SerializePartialToString(&msg);
+    boost::system::error_code ec;
+
+    Network->writeMessageToFS(ec, msg);
 }
 void Application::renameFile()
 {
@@ -118,12 +139,8 @@ void Application::deleteFile()
     return;
 }
 
-void Application::createFile()
+void Application::createFile(const std::string fileName, const char* buffer)
 {
-    //ClientNetwork.start();
-    //ClientNetwork.writeMessage();
-    //ClientNetwork.readMessage();
-    //ClientNetwork.handleRead();
     return;
 }
 void Application::checkPassword()
@@ -132,15 +149,16 @@ void Application::checkPassword()
 }
 void Application::runWatcher()
 {
-    Watcher.run();
+    WatcherThread = std::thread([&]() { Watcher.run(); });
 }
 void Application::stopWatcher()
 {
-    //Watcher->shutdown();
+    Watcher.stop();
+    WatcherThread.join();
 }
 void Application::synchronize()
 {
-    downloadFile();
+    //downloadFile();
 }
 
 void Application::setSyncFolder(const std::string &synchFolder)
@@ -152,8 +170,9 @@ void Application::initWatcher()
 {
     auto handleNotification = [&](WatcherNotification notification)
     {
-        //std::cout << "Event " << notification.Event << " on " << notification.Path << " at "
-          //        << notification.Time.time_since_epoch().count() << " was triggered.\n";
+        if (!isTmpFile(notification.Path.filename())) {
+        std::cout << "Event " << notification.Event << " on " << notification.Path << " at "
+                  << notification.Time.time_since_epoch().count() << " was triggered.\n";
 
         FileMeta f;
         f.fileName = notification.Path.filename();
@@ -161,50 +180,25 @@ void Application::initWatcher()
         f.createDate = GetCurrentTime();
         f.updateDate = GetCurrentTime();
         f.isDownload = false;
-        f.version = 1;
+        f.version;
         f.chunksCount = 0;
         f.filePath = notification.Path;
         f.fileSize = 1000;
         switch (notification.Event)
         {
         case InotifyEvent::_create:
-        {
-            if (isTmpFile(notification.Path.filename()))
-            {
-                Files->addFile(f);
-                Files->updateFile(f);
-            }
+        { 
+            Files->addFile(f);
+            Files->updateFile(f);
             break;
         }
-        case InotifyEvent::_modify:
+        case InotifyEvent::_close_write:
         {
-            if (isTmpFile(notification.Path.filename()))
+            Files->updateFile(f);
+            
+            if (isLogin()) 
             {
-                Files->updateFile(f);
-            }
-            if (isLogin())
-            {
-                messageFS::Request req;
-
-                req.set_name(Login);
-                req.set_password(Password);
-                req.set_id(3);
-
-                std::ifstream file(notification.Path, std::ios_base::binary);
-
-                std::string file_string;
-                std::string tmp;
-                while (file >> tmp) {
-                    file_string += tmp + "\n"; 
-                };
-
-                req.set_file(file_string.c_str());
-
-                std::string msg;
-                req.SerializePartialToString(&msg);
-                boost::system::error_code ec;
-
-                Network->writeMessageToFS(ec, msg);
+                sendFile(notification.Path);
             }
             break;
         }
@@ -219,6 +213,7 @@ void Application::initWatcher()
         default:
             break;
         }
+        }
     };
 
     auto handleUnexpectedNotification = [](WatcherNotification notification) {};
@@ -227,6 +222,7 @@ void Application::initWatcher()
                    InotifyEvent::_create,
                    InotifyEvent::_modify,
                    InotifyEvent::_remove,
+                   InotifyEvent::_close_write,
                    InotifyEvent::_move};
 
     Watcher = BuildWatcherNotifier()
@@ -234,4 +230,8 @@ void Application::initWatcher()
                   .ignoreFileOnce("fileIgnoredOnce")
                   .onEvents(events, handleNotification)
                   .onUnexpectedEvent(handleUnexpectedNotification);
+}
+
+Application::~Application() {
+    
 }

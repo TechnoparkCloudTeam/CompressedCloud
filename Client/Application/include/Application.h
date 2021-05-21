@@ -13,17 +13,17 @@ public:
      std::shared_ptr<ClientNetwork> network,
      std::shared_ptr<UserDB> users,
      std::shared_ptr<FileDB> files);
-
+    ~Application();
     void login(std::string login, std::string pass);
     void registerUser(std::string login, std::string pass);
     void changePassword();
     bool isLogin();
     void logOut();
-    void downloadFile();
-    void sendFile();
+    void downloadFile(const std::string& fileName);
+    void sendFile(const std::filesystem::path& path);
     void renameFile();
     void deleteFile();
-    void createFile();
+    void createFile(const std::string fileName, const char* buffer);
     void synchronize();
     void setSyncFolder(const std::string& synchFolder);
     void runWatcher();
@@ -34,11 +34,11 @@ private:
     std::string Password;
     void checkPassword();
     void initWatcher();
-    std::shared_ptr<FileStorageWorker> FileWorker;
     std::shared_ptr<ClientNetwork> Network;
     std::shared_ptr<UserDB> Users;
     std::shared_ptr<FileDB> Files;
     WatcherNotifierBuilder Watcher;
+    std::thread WatcherThread;
     bool isLoggedIn;
 };
 

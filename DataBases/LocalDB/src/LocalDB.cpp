@@ -91,7 +91,7 @@ void UserDB::createTable()
         exec(R"(
     CREATE TABLE IF NOT EXISTS "User" (
 	  "userId"	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
-	  "login"	TEXT NOT NULL,
+	  "login"	TEXT NOT NULL unique,
 	  "password"	TEXT NOT NULL,
 	  "deviceId"	INTEGER NOT NULL,
 	  "deviceName"	INTEGER NOT NULL,

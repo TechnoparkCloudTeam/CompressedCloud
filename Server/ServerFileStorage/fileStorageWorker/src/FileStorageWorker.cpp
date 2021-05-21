@@ -55,3 +55,14 @@ void FileStorageWorker::removeFileFromDir(const std::string &DirName, const std:
     fs::current_path(root / currentDir / DirName);
     fs::remove(FileName);
 }
+
+std::string FileStorageWorker::fileToString(const std::string& DirName, const std::string& FileName) {
+    fs::current_path(root / currentDir / DirName);
+    std::string buffer;
+    std::ifstream stream(FileName, std::ios_base::binary) ;
+    std::string tmp;
+    while (stream >> tmp) {
+        buffer += tmp + "\n";
+    }
+    return buffer;
+}

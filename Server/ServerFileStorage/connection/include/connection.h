@@ -6,7 +6,7 @@
 #include <string>
 #include "FileStorageWorker.h"
 #include "message.pb.h"
-
+#include <thread>
 class Connection : public std::enable_shared_from_this<Connection>
 {
 public:

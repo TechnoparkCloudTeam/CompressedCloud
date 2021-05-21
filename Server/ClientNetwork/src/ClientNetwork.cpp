@@ -1,6 +1,6 @@
 #include "../include/ClientNetwork.h"
 #include <string_view>
-
+#include <fstream>
 #define header_size 4
 enum ServerSynchoRead
 {
@@ -55,7 +55,7 @@ void ClientNetwork::start_read_header_fs()
 {
     m_readbuf_fs.resize(header_size);
     boost::asio::async_read(socket_, boost::asio::buffer(m_readbuf_fs),
-                            boost::bind(&ClientNetwork::handle_read_header_s, this));
+                            boost::bind(&ClientNetwork::handle_read_header_fs, this));
 }
 
 void ClientNetwork::handle_read_header_fs()
@@ -73,9 +73,20 @@ void ClientNetwork::start_read_body_fs(unsigned msg_len)
 }
 void ClientNetwork::handle_read_body_fs()
 {
+    
     messageFS::Request readed;
     readed.ParseFromArray(&m_readbuf_fs[header_size], m_readbuf_fs.size() - header_size);
-
+    std::cout << "\n\nreaded: " << readed.id() << "\n\n";
+    switch (readed.id())
+    {
+    case 1:
+    {
+        std::ofstream( "SynchFolder/" + readed.filename(), std::ios_base::binary) << readed.file().c_str();
+        break;
+    }
+    default:
+        break;
+    }
     start_read_header_fs();
 }
 

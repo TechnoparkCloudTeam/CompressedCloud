@@ -22,6 +22,7 @@ public:
     void removeDirectoryFiles(const std::string& DirName);
     void createFile(const std::string& DirName, const std::string& fileName, const char* buffer);
     void removeFileFromDir(const std::string& DirName, const std::string& FileName);
+    std::string fileToString(const std::string& DirName, const std::string& FileName);
 private:
 	fs::path root;
 	fs::path currentDir;

@@ -7,4 +7,5 @@ message Request {
     string name = 2;
     string password = 3;
     string file = 4;
+    string filename = 5;
 }

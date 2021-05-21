@@ -80,17 +80,19 @@ void Connection::handle_read_body()
     case ServerSyncho::AUTORIZATION:
     {
         std::string rsdafs = readed.name();
-        std::cout << "User autorizated " << readed.name() << std::endl;
+        std::cout << "User tries to autorize " << readed.name() << std::endl;
         UserInfo us1;
 
         us1.login = readed.name();
         us1.password = readed.password();
-        //bool isUser =  postgres_sqldb1->Login(us1);
-        bool isUser = true;
-        if (isUser)
+        bool isUser =  postgres_sqldb1->Login(us1);
+        if (isUser) {
+            std::cout << "User: " << readed.name() << " authorized\n";
             writeRequest.set_id(ServerSyncho::OKLOGIN);
-        else
+        } else {
+            std::cout << "User: " << readed.name() << " failed to authorize\n";
             writeRequest.set_id(ServerSyncho::BADLOGIN);
+        }
         break;
     }
     default:

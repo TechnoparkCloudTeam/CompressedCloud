@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-package messageFS;
-
-message Request {
-    int32 id = 1;
-    string name = 2;
-    string file = 3;
-}

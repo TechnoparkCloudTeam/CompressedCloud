@@ -8,6 +8,7 @@ void ProgramInterface::run() {
     std::string input;
     std::cout << "CompressedCloud initiated\nEnter <help> command to learn about the commands\n";
     while (1) {
+        std::cout << ":/ ";
         std::cin >> input;
         if (input == "help") {
             std::cout << "Commands: <help> - info about commands\n";
@@ -50,7 +51,14 @@ void ProgramInterface::run() {
 
             std::cout << "Quitting application\n";
             return;
-
+        } else if (input == "stop") {
+            app->stopWatcher();
+        } else if (input == "run") {
+            app->runWatcher();
+        } else if (input == "getFile") {
+            std::string FileName;
+            std::cin >> FileName;
+            app->downloadFile(FileName);
         } else {
             std::cout << "Unknown command enter <help> command to learn about the commands\n";
         }

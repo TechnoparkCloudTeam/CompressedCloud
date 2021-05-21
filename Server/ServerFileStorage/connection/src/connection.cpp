@@ -52,13 +52,11 @@ void Connection::start_read_body(unsigned msg_len)
 }
 void Connection::handle_read_body()
 {
-    //это в отдельный класс
     messageFS::Request writeRequest;
     messageFS::Request readed;
     readed.ParseFromArray(&m_readbuf[header_size], m_readbuf.size() - header_size);
     writeRequest.set_name(readed.name());
     std::cout << readed.id() << " " << readed.name() << std::endl;
-    //на это ивенты
     switch (readed.id())
     {
     case 1:
@@ -68,9 +66,20 @@ void Connection::handle_read_body()
     case 2:
         std::cout << "Deleted file from user: " << readed.name() << std::endl;
         fsworker.removeFileFromDir(readed.name(), "file.txt");
+        break;
     case 3:
-        std::cout << "Got file from user: " << readed.name() << std::endl;
-        fsworker.createFile(readed.name(), "test.txt", readed.file().c_str());
+        std::cout << "Got file:" << readed.filename() << " from user: " << readed.name() << std::endl;
+        fsworker.createFile(readed.name(), readed.filename(), readed.file().c_str());
+        break;
+    case 4:
+        {
+        std::cout << "Sending file: " << readed.filename() <<  " to user: " << readed.name() << std::endl;
+        std::string buffer = fsworker.fileToString(readed.name(), readed.filename());
+        writeRequest.set_filename(readed.filename());
+        writeRequest.set_file(buffer.c_str());
+        writeRequest.set_id(1);
+        break;
+        }
     default:
         break;
     }
@@ -79,13 +88,6 @@ void Connection::handle_read_body()
     writeRequest.SerializePartialToString(&ans_string);
     write(ans_string);
     start_read_header();
-
-    /* messageFS::Request ans;
-    ans.set_id(1);
-    std::string ans_string;
-    ans.SerializePartialToString(&ans_string);
-    boost::asio::async_write(socket_, boost::asio::buffer(ans_string, 250), boost::bind(&Connection::write, shared_from_this()));
-*/
 }
 void Connection::write(std::string &msg)
 {
@@ -95,12 +97,3 @@ void Connection::write(std::string &msg)
     std::cout << "writing" << std::endl;
     boost::asio::write(socket_, boost::asio::buffer(msg));
 }
-/*
-void Connection::start()
-{
-    read();
-}
-
-
-
-*/

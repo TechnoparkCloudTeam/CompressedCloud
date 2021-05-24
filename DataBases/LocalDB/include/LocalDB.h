@@ -43,7 +43,7 @@ public:
         
         bool isUserExist(const int &userId);
         
-        int getUserId(const User& user);
+        int getUserId(const std::string &login);
   	int getDeviceId(const User& user);
   	std::string getLogin(const User& user);
   	int getPassword(const User& user);

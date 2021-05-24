@@ -76,6 +76,7 @@ void Connection::handle_read_body()
         UserInfo us;
         us.login = readed.name();
         us.password = readed.password();
+        us.id = readed.nameid();
         postgres_sqldb1->Registration(us);
         writeRequest.set_id(ServerSyncho::OKREG);
         break;
@@ -131,12 +132,12 @@ void Connection::handle_read_body()
         }
 
         auto fileInfo =
-            FileInfo{.userId = 3, .file = file, .chunkMeta = chunksMetaVector, .fileChunksMeta = fileChunksMetaVector};
+            FileInfo{.userId = readed.nameid(), .file = file, .chunkMeta = chunksMetaVector, .fileChunksMeta = fileChunksMetaVector};
 
         try
         {
             postgres_sqldb_file->InsertFile(fileInfo);
-            auto tt = UserDate{3, "2020-12-19 0:47:25"};
+            auto tt = UserDate{readed.nameid(), "2020-12-19 0:47:25"};
             postgres_sqldb_file->GetUserFilesByTime(tt);
             // postgres_sqldb1.Registration(user);
         }

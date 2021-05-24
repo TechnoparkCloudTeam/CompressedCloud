@@ -38,6 +38,7 @@ Application::Application(
 
 void Application::login(std::string login, std::string pass)
 {
+    this->idLogin = Users->getUserId(login);
     this->Login = login;
     this->Password = pass;
     messageFS::Request req;
@@ -56,18 +57,23 @@ void Application::registerUser(std::string login, std::string pass)
 {
     messageFS::Request req;
     req.set_name(login);
+    
     req.set_password(pass);
     req.set_id(ServerSyncho::REGISTRATION);
+    
     std::string msg;
     boost::system::error_code ec;
-    req.SerializePartialToString(&msg);
-    Network->writeMessageToS(ec, msg);
+    
     User user;
     user.deviceName = "PC";
     user.synchFolder = synchFolder;
     user.login = login;
     user.password = pass;
     Users->addUser(user);
+    this->idLogin = Users->getUserId(login);
+    req.set_nameid(this->idLogin);
+    req.SerializePartialToString(&msg);
+    Network->writeMessageToS(ec, msg);
 }
 void Application::changePassword()
 {
@@ -105,7 +111,7 @@ void Application::sendFile(const FileMeta &fileinfo)
     req.set_password(Password);
     req.set_id(ServerFS::SENDFILE);
     req.set_filename(fileinfo.fileName);
-    
+    req.set_nameid(this->idLogin);
     req.set_filepath(fileinfo.filePath);
     req.set_fileextention(fileinfo.fileExtention);
     std::ifstream file(fileinfo.filePath, std::ofstream::binary);

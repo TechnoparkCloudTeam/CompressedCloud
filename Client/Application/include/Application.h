@@ -40,6 +40,7 @@ private:
     WatcherNotifierBuilder Watcher;
     std::thread WatcherThread;
     bool isLoggedIn;
+    int idLogin;
 };
 
 std::string GetCurrentPath();

@@ -30,8 +30,10 @@ Application::Application(
     synchFolder = GetCurrentPath() + "/SynchFolder";
     std::filesystem::create_directories(synchFolder);
     initWatcher();
-    runWatcher();
-    
+    //runWatcher();
+    WatcherThread = std::thread([&]()
+                                { Watcher.run(); });
+    //WatcherThread.detach();
 }
 
 void Application::login(std::string login, std::string pass)
@@ -83,7 +85,7 @@ void Application::logOut()
     this->Login = "";
     this->Password = "";
 }
-void Application::downloadFile(const std::string& fileName)
+void Application::downloadFile(const std::string &fileName)
 {
     messageFS::Request req;
     req.set_name(Login);
@@ -95,7 +97,7 @@ void Application::downloadFile(const std::string& fileName)
     req.SerializePartialToString(&msg);
     Network->writeMessageToFS(ec, msg);
 }
-void Application::sendFile(const std::filesystem::path& path)
+void Application::sendFile(const std::filesystem::path &path)
 {
     messageFS::Request req;
 
@@ -104,16 +106,16 @@ void Application::sendFile(const std::filesystem::path& path)
     req.set_id(3);
     req.set_filename(path.filename());
 
-    std::ifstream file(path, std::ios_base::binary);
-
-    std::string file_string;
-    std::string tmp;
-    while (file >> tmp) {
-        file_string += tmp + "\n"; 
-    };
-
-    req.set_file(file_string.c_str());
-
+    std::ifstream file(path, std::ofstream::binary);
+    file.seekg(0, file.end);
+    int64_t size = file.tellg();
+    file.seekg(0);
+    char *buffer = new char[size];
+    file.read(buffer, size);
+    req.set_file(std::string(buffer, size));
+    delete[] buffer;
+    
+    req.set_filesize(size);
     std::string msg;
     req.SerializePartialToString(&msg);
     boost::system::error_code ec;
@@ -139,7 +141,7 @@ void Application::deleteFile()
     return;
 }
 
-void Application::createFile(const std::string fileName, const char* buffer)
+void Application::createFile(const std::string fileName, const char *buffer)
 {
     return;
 }
@@ -149,7 +151,10 @@ void Application::checkPassword()
 }
 void Application::runWatcher()
 {
-    WatcherThread = std::thread([&]() { Watcher.run(); });
+    Watcher.runAfterShutDown();
+    WatcherThread = std::thread([&]()
+                                { Watcher.run(); });
+    //WatcherThread.detach();
 }
 void Application::stopWatcher()
 {
@@ -170,60 +175,61 @@ void Application::initWatcher()
 {
     auto handleNotification = [&](WatcherNotification notification)
     {
-        if (!isTmpFile(notification.Path.filename())) {
-        std::cout << "Event " << notification.Event << " on " << notification.Path << " at "
-                  << notification.Time.time_since_epoch().count() << " was triggered.\n";
+        if (!isTmpFile(notification.Path.filename()))
+        {
+            //std::cout << "Event " << notification.Event << " on " << notification.Path << " at " << notification.Time.time_since_epoch().count() << " was triggered.\n";
+            FileMeta f;
+            f.fileName = notification.Path.filename();
+            f.fileExtention = notification.Path.extension();
+            f.createDate = GetCurrentTime();
+            f.updateDate = GetCurrentTime();
+            f.isDownload = false;
+            f.version;
+            f.chunksCount = 0;
+            f.filePath = notification.Path;
+            f.fileSize = 1000;
+            switch (notification.Event)
+            {
+            case InotifyEvent::_create:
+            {
+                Files->addFile(f);
+                Files->updateFile(f);
+                break;
+            }
+            case InotifyEvent::_close_write:
+            {
+                Files->updateFile(f);
 
-        FileMeta f;
-        f.fileName = notification.Path.filename();
-        f.fileExtention = notification.Path.extension();
-        f.createDate = GetCurrentTime();
-        f.updateDate = GetCurrentTime();
-        f.isDownload = false;
-        f.version;
-        f.chunksCount = 0;
-        f.filePath = notification.Path;
-        f.fileSize = 1000;
-        switch (notification.Event)
-        {
-        case InotifyEvent::_create:
-        { 
-            Files->addFile(f);
-            Files->updateFile(f);
-            break;
-        }
-        case InotifyEvent::_close_write:
-        {
-            Files->updateFile(f);
-            
-            if (isLogin()) 
-            {
-                sendFile(notification.Path);
+                if (isLogin())
+                {
+                    sendFile(notification.Path);
+                }
+                break;
             }
-            break;
-        }
-        case InotifyEvent::_remove:
-        {
-            if (isTmpFile(notification.Path.filename()))
+            case (InotifyEvent::_move & InotifyEvent::_moved_from):
             {
+                std::cout << "removing file";
                 Files->deleteFile(f.fileId);
+                break;
             }
-            break;
-        }
-        default:
-            break;
-        }
+            default:
+                break;
+            }
         }
     };
 
-    auto handleUnexpectedNotification = [](WatcherNotification notification) {};
+    auto handleUnexpectedNotification = [](WatcherNotification notification)
+    {
+    };
     auto events = {InotifyEvent::_open | InotifyEvent::_is_dir,
                    InotifyEvent::_access,
                    InotifyEvent::_create,
                    InotifyEvent::_modify,
                    InotifyEvent::_remove,
                    InotifyEvent::_close_write,
-                   InotifyEvent::_move};
+                   //InotifyEvent::_move | InotifyEvent::_moved_from,
+                   InotifyEvent::_move, InotifyEvent::_moved_from,
+                   InotifyEvent::_moved_to};
 
     Watcher = BuildWatcherNotifier()
                   .watchPathRecursively(synchFolder)
@@ -232,6 +238,6 @@ void Application::initWatcher()
                   .onUnexpectedEvent(handleUnexpectedNotification);
 }
 
-Application::~Application() {
-    
+Application::~Application()
+{
 }

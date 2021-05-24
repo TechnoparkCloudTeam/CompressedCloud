@@ -4,12 +4,13 @@
 ProgramInterface::ProgramInterface(std::shared_ptr<Application> app) : app(app) {
 };
 
+
 void ProgramInterface::run() {
     std::string input;
     std::cout << "CompressedCloud initiated\nEnter <help> command to learn about the commands\n";
     while (1) {
         std::cout << ":/ ";
-        std::cin >> input;
+        getline(std::cin, input);
         if (input == "help") {
             std::cout << "Commands: <help> - info about commands\n";
             std::cout << "          <synchronize> - download latest version from server\n";
@@ -21,20 +22,30 @@ void ProgramInterface::run() {
 
             std::string login;
             std::string password;
-            std::cout << "Enter login: ";
-            std::cin >> login;
-            std::cout << "\nEnter password: ";
-            std::cin >> password;
+            do {
+                std::cout << "Enter login: ";
+                getline(std::cin, login);
+            } while (login.empty());
+
+            do {
+                std::cout << "Enter password: ";
+                getline(std::cin, password);
+            } while (password.empty());
             app->login(login, password);
 
         } else if (input == "register"){
 
             std::string login;
             std::string password;
-            std::cout << "Enter login: ";
-            std::cin >> login;
-            std::cout << "\nEnter password: ";
-            std::cin >> password;
+            do {
+                std::cout << "Enter login: ";
+                getline(std::cin, login);
+            } while (login.empty());
+
+            do {
+                std::cout << "Enter password: ";
+                getline(std::cin, password);
+            } while (password.empty());
             app->registerUser(login, password);
             std::cout << "User registered\n";
 
@@ -44,13 +55,12 @@ void ProgramInterface::run() {
                 app->synchronize();
                 std::cout << "Latest version is set\n";
             } else {
-                std::cout << "Can't synchronize you are not logged in the system, use <login> or <register>\n";
+                std::cout << "Can't synchronize, you are not logged in the system, use <login> or <register>\n";
             }
 
         } else if (input == "quit") {
-
             std::cout << "Quitting application\n";
-            return;
+            break;
         } else if (input == "stop") {
             app->stopWatcher();
         } else if (input == "run") {
@@ -63,4 +73,5 @@ void ProgramInterface::run() {
             std::cout << "Unknown command enter <help> command to learn about the commands\n";
         }
     }
+
 }

@@ -47,7 +47,7 @@ public:
 	std::optional<FileSysEvent> getNextEvent();
 	void shutDown();
 	bool isStopped();
-	
+	void runAfterShutDown();
 private:
 	fsPath wdToPath(int watchDescriptor);
 	bool isIgnored(std::string file);

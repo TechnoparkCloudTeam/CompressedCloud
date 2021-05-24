@@ -29,7 +29,7 @@ class WatcherNotifierBuilder {
     auto onEvents(vector<InotifyEvent> events, EventObserver eventObserver) -> WatcherNotifierBuilder&;
     auto onUnexpectedEvent(EventObserver eventObserver) -> WatcherNotifierBuilder&;
     auto setEventTimeout(milliseconds timeout, EventObserver EventObserver) -> WatcherNotifierBuilder&;
-
+    auto runAfterShutDown() -> void;
     private:
     std::shared_ptr<Watcher> mWatcher;
     std::map<InotifyEvent, EventObserver> mEventObserver;

@@ -3,6 +3,8 @@
 #include <unistd.h>
 #include <sys/epoll.h>
 
+#include <iostream>
+
 Watcher::Watcher() :
     mError(0),
     mEventTimeout(0),
@@ -224,9 +226,8 @@ bool Watcher::isOnTimeout(const steadyClock::time_point &eventTime) {
 
 ssize_t Watcher::readEventsIntoBuffer(vector<uint8_t>& eventBuffer) {
     ssize_t length = 0;
-    auto timeout = -1;
+    auto timeout = 1;
     auto nFileDescReady = epoll_wait(mEpollFd, mEpollEvents, MAX_EPOLL_EVENTS, timeout);
-
     if (nFileDescReady == ERROR_DESC) {
         return length;
     }
@@ -235,7 +236,6 @@ ssize_t Watcher::readEventsIntoBuffer(vector<uint8_t>& eventBuffer) {
         if (mEpollEvents[n].data.fd == StopPipeFileDescriptor[mPipeReadIdx]) {
             break;
         }
-
         length = read(mEpollEvents[n].data.fd, eventBuffer.data(), eventBuffer.size());
         if (length == ERROR_DESC) {
             mError = errno;
@@ -300,4 +300,8 @@ void Watcher::filterEvents(vector<FileSysEvent>& events,
 void Watcher::sendStopSignal() {
     vector<std::uint8_t> buf(1, 0);
     write(StopPipeFileDescriptor[mPipeWriteIdx], buf.data(), buf.size());
+}
+
+void Watcher::runAfterShutDown() {
+    mStopped = false;
 }

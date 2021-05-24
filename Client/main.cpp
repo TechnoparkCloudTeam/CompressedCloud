@@ -15,12 +15,11 @@ int main()
 	boost::asio::io_service io_service;
 	std::shared_ptr<ClientNetwork> clientNetworkPtr(new ClientNetwork(io_service));
 	boost::thread t(boost::bind(&boost::asio::io_service::run, &io_service));
-
 	std::shared_ptr<Application> appPtr(new Application(clientNetworkPtr, userDBPtr, fileDBPtr));
 	ProgramInterface console(appPtr);   
-	//std::thread thread([&]() { appPtr->runWatcher(); });
 	console.run();
-	t.join();
-	//thread.join();
+	std::cout << "\n\nExiting interface\n\n";
+	//t.join();
+	std::cout << "\n\nNetwork finished";
 	return 0;
 }

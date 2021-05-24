@@ -44,10 +44,12 @@ void FileStorageWorker::removeDirectoryFiles(const std::string &DirName)
 }
 
 void FileStorageWorker::createFile(const std::string &DirName,
-                                   const std::string &fileName, const char *buffer)
+    const std::string &fileName, const char* buffer, const int64_t& size)
 {
     fs::current_path(root / currentDir / DirName);
-    std::ofstream(fileName, std::ios_base::binary) << buffer;
+    //std::ofstream(fileName, std::ios_base::binary) << buffer;
+    std::ofstream stream(fileName, std::ofstream::binary);
+    stream.write(buffer, size);
 }
 
 void FileStorageWorker::removeFileFromDir(const std::string &DirName, const std::string &FileName)
@@ -58,11 +60,13 @@ void FileStorageWorker::removeFileFromDir(const std::string &DirName, const std:
 
 std::string FileStorageWorker::fileToString(const std::string& DirName, const std::string& FileName) {
     fs::current_path(root / currentDir / DirName);
-    std::string buffer;
-    std::ifstream stream(FileName, std::ios_base::binary) ;
-    std::string tmp;
-    while (stream >> tmp) {
-        buffer += tmp + "\n";
-    }
-    return buffer;
+    std::ifstream inputStream(FileName, std::ofstream::binary) ;
+    inputStream.seekg(0, inputStream.end);
+    long size = inputStream.tellg();
+    inputStream.seekg(0);
+    char* buffer = new char[size];
+    inputStream.read(buffer, size);
+    std::string stringBuffer(buffer, size);
+    delete buffer;
+    return stringBuffer;
 }

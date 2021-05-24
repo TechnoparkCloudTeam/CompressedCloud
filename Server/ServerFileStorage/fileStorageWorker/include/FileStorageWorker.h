@@ -20,7 +20,7 @@ public:
     void createDirectory(const std::string& DirName);
     void removeDirectory(const std::string& DirName);
     void removeDirectoryFiles(const std::string& DirName);
-    void createFile(const std::string& DirName, const std::string& fileName, const char* buffer);
+    void createFile(const std::string& DirName, const std::string& fileName, const char* buffer, const int64_t& size);
     void removeFileFromDir(const std::string& DirName, const std::string& FileName);
     std::string fileToString(const std::string& DirName, const std::string& FileName);
 private:

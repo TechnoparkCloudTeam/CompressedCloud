@@ -81,7 +81,9 @@ void ClientNetwork::handle_read_body_fs()
     {
     case 1:
     {
-        std::ofstream( "SynchFolder/" + readed.filename(), std::ios_base::binary) << readed.file().c_str();
+        std::ofstream file( "SynchFolder/" + readed.filename(), std::ofstream::binary);
+        file.write(readed.file().c_str(),readed.filesize());
+        
         break;
     }
     default:

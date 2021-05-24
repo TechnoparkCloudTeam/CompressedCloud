@@ -15,6 +15,9 @@ auto WatcherNotifierBuilder::run() -> void {
 }
 
 auto WatcherNotifierBuilder::runOnce() -> void {
+    if (mWatcher->isStopped()) {
+        return;
+    }
     auto fileSysEvent = mWatcher->getNextEvent();
     if (!fileSysEvent) {
         return;
@@ -102,4 +105,8 @@ auto WatcherNotifierBuilder::setEventTimeout(milliseconds timeout, EventObserver
 
 WatcherNotifierBuilder BuildWatcherNotifier() {
     return {};
+}
+
+auto WatcherNotifierBuilder::runAfterShutDown() -> void {
+    mWatcher->runAfterShutDown();
 }

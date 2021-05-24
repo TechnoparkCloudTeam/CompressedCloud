@@ -6,7 +6,7 @@
 
 void MetaDataDB::createTable() {
         const char* sql=R"(create table if not exists Files (
-       fileId integer,
+       fileId serial primary key,
        userId integer,
        version integer,
        fileName text,
@@ -53,9 +53,9 @@ void MetaDataDB::InsertFile(const FileInfo &fileMeta) {
     pqExec(query, PostgresExceptions("invalid to insert"));  // Снятие старой версии
 */
     std::string query =
-        "INSERT INTO Files (fileId, userId, fileName, fileExtention, filePath ,fileSize, chunksCount, version, isCurrent, isDeleted, updateDate, createDate) VALUES ("
-            + std::to_string(fileMeta.file.fileId)
-            + ", " + std::to_string(fileMeta.userId)
+        "INSERT INTO Files (userId, fileName, fileExtention, filePath ,fileSize, chunksCount, version, isCurrent, isDeleted, updateDate, createDate) VALUES ("
+/*             + std::to_string(fileMeta.file.fileId) */
+            /* + ", "*/  + std::to_string(fileMeta.userId)
             + ", '" + fileMeta.file.fileName
             + "', '" + fileMeta.file.fileExtension
             + "', '" + fileMeta.file.filePath

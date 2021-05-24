@@ -97,18 +97,21 @@ void Application::downloadFile(const std::string &fileName)
     req.SerializePartialToString(&msg);
     Network->writeMessageToFS(ec, msg);
 }
-void Application::sendFile(const std::filesystem::path &path)
+void Application::sendFile(const FileMeta &fileinfo)
 {
     messageFS::Request req;
 
     req.set_name(Login);
     req.set_password(Password);
     req.set_id(ServerFS::SENDFILE);
-    req.set_filename(path.filename());
-
-    std::ifstream file(path, std::ofstream::binary);
+    req.set_filename(fileinfo.fileName);
+    
+    req.set_filepath(fileinfo.filePath);
+    req.set_fileextention(fileinfo.fileExtention);
+    std::ifstream file(fileinfo.filePath, std::ofstream::binary);
     file.seekg(0, file.end);
     int64_t size = file.tellg();
+    req.set_filesize(size);
     file.seekg(0);
     char *buffer = new char[size];
     file.read(buffer, size);
@@ -202,7 +205,7 @@ void Application::initWatcher()
 
                 if (isLogin())
                 {
-                    sendFile(notification.Path);
+                    sendFile(f);
                 }
                 break;
             }

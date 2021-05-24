@@ -7,8 +7,6 @@
 
 #define header_size 4
 
-
-
 unsigned decode_header(std::vector<boost::uint8_t> &buf)
 {
     unsigned msg_size = 0;
@@ -78,15 +76,32 @@ void ClientNetwork::handle_read_body_fs()
 {
 
     messageFS::Request readed;
+    messageFS::Request writeRequest;
     readed.ParseFromArray(&m_readbuf_fs[header_size], m_readbuf_fs.size() - header_size);
+    std::cout << readed.filename() << "\n\n\n\n"
+              << readed.filepath() << "\n\n\n\n";
     switch (readed.id())
     {
-    case ServerFS::OKSENDING:
+    case ServerFS::OKDOWNLOAD:
     {
+
         std::ofstream file("SynchFolder/" + readed.filename(), std::ofstream::binary);
         file.write(readed.file().c_str(), readed.filesize());
 
         break;
+    }
+    case ServerFS::OKSENDING:
+    {
+        writeRequest.set_id(ServerSyncho::ADDFILE);
+        writeRequest.set_name(readed.name());
+        writeRequest.set_filesize(readed.filesize());
+        writeRequest.set_filename(readed.filename());
+        writeRequest.set_filepath(readed.filepath());
+        writeRequest.set_fileextention(readed.fileextention());
+        std::string bufForSerial;
+        writeRequest.SerializePartialToString(&bufForSerial);
+        boost::system::error_code ec;
+        writeMessageToS(ec, bufForSerial);
     }
     default:
         break;

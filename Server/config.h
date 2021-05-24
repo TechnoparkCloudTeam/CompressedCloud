@@ -7,7 +7,7 @@ enum ServerSyncho : int
     OKLOGIN = 3,
     BADLOGIN = 4,
     AUTORIZATION = 5,
-    EXERTFILE = 6,
+    ADDFILE = 6,
 };
 
 enum ServerFS : int
@@ -17,4 +17,5 @@ enum ServerFS : int
     SENDFILE = 3,
     DOWNLOADFILE = 4,
     OKSENDING = 5,
+    OKDOWNLOAD = 6,
 };

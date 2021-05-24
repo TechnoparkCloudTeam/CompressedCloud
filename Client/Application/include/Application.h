@@ -20,7 +20,7 @@ public:
     bool isLogin();
     void logOut();
     void downloadFile(const std::string& fileName);
-    void sendFile(const std::filesystem::path& path);
+    void sendFile(const FileMeta &fileinfo);
     void renameFile();
     void deleteFile();
     void createFile(const std::string fileName, const char* buffer);

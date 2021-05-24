@@ -67,6 +67,7 @@ void Connection::handle_read_body()
     messageFS::Request readed;
     readed.ParseFromArray(&m_readbuf[header_size], m_readbuf.size() - header_size);
     writeRequest.set_name(readed.name());
+    readed.PrintDebugString();
     switch (readed.id())
     {
     case ServerSyncho::REGISTRATION:
@@ -100,21 +101,21 @@ void Connection::handle_read_body()
         }
         break;
     }
-    case 10:
+    case ServerSyncho::ADDFILE:
     {
         auto file = FileMeta{
-            .fileId = 1,
             .version = 1,
-            .fileName = "sgkldfgjflsdh;g",
-            .fileExtension = "txt",
-            .filePath = "static/",
-            .fileSize = 1,
+            .fileName = readed.filename(),
+            .fileExtension = readed.fileextention(),
+            .filePath = readed.filepath(),
+            .fileSize = readed.filesize(),
             .chunksCount = 1,
             .isDownload = true,
             .isDeleted = false,
             .isCurrent = true,
             .updateDate = "2020-12-12 0:47:25",
             .createDate = "2020-12-12 0:47:25"};
+        //TODO:: че то куда то это деть
         std::vector<ChunkMeta> chunksMetaVector;
         for (int i = 0; i < 2; ++i)
         {

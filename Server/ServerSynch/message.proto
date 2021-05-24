@@ -9,4 +9,6 @@ message Request {
     bytes file = 4;
     string filename = 5;
     int64 filesize = 6;
+    string filepath = 7;
+    string fileextention = 8;
 }

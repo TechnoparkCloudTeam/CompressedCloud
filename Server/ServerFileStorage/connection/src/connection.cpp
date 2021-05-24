@@ -70,17 +70,22 @@ void Connection::handle_read_body()
     case ServerFS::SENDFILE:
         std::cout << "Got file:" << readed.filename() << " from user: " << readed.name() << std::endl;
         fsworker.createFile(readed.name(), readed.filename(), readed.file().data(), readed.filesize());
+        writeRequest.set_filesize(readed.filesize());
+        writeRequest.set_filename(readed.filename());
+        writeRequest.set_filepath(readed.filepath());
+        writeRequest.set_fileextention(readed.fileextention());
+        writeRequest.set_id(ServerFS::OKSENDING);
         break;
     case ServerFS::DOWNLOADFILE:
-        {
-        std::cout << "Sending file: " << readed.filename() <<  " to user: " << readed.name() << std::endl;
+    {
+        std::cout << "Sending file: " << readed.filename() << " to user: " << readed.name() << std::endl;
         std::string buffer = fsworker.fileToString(readed.name(), readed.filename());
         writeRequest.set_filename(readed.filename());
         writeRequest.set_file(buffer);
-        writeRequest.set_id(ServerFS::OKSENDING);
+        writeRequest.set_id(ServerFS::OKDOWNLOAD);
         writeRequest.set_filesize(buffer.size());
         break;
-        }
+    }
     default:
         break;
     }

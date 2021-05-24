@@ -23,8 +23,10 @@ std::string encode_header(std::vector<boost::uint8_t> &buf, unsigned size)
     std::string sizeStr(buf.begin(), buf.end());
     return sizeStr;
 }
-Connection::Connection(boost::asio::ip::tcp::socket socket_, std::shared_ptr<UsersDB> postgres_sqldb12) : socket_(std::move(socket_)),
-                                                                                                          postgres_sqldb1(postgres_sqldb12)
+Connection::Connection(boost::asio::ip::tcp::socket socket_, std::shared_ptr<UsersDB> postgres_sqldb12, std::shared_ptr<MetaDataDB> postgres_sqldb_file)
+    : socket_(std::move(socket_)),
+      postgres_sqldb1(postgres_sqldb12),
+      postgres_sqldb_file(postgres_sqldb_file)
 {
 }
 
@@ -85,15 +87,62 @@ void Connection::handle_read_body()
 
         us1.login = readed.name();
         us1.password = readed.password();
-        bool isUser =  postgres_sqldb1->Login(us1);
-        if (isUser) {
+        bool isUser = postgres_sqldb1->Login(us1);
+        if (isUser)
+        {
             std::cout << "User: " << readed.name() << " authorized\n";
             writeRequest.set_id(ServerSyncho::OKLOGIN);
-        } else {
+        }
+        else
+        {
             std::cout << "User: " << readed.name() << " failed to authorize\n";
             writeRequest.set_id(ServerSyncho::BADLOGIN);
         }
         break;
+    }
+    case 10:
+    {
+        auto file = FileMeta{
+            .fileId = 1,
+            .version = 1,
+            .fileName = "sgkldfgjflsdh;g",
+            .fileExtension = "txt",
+            .filePath = "static/",
+            .fileSize = 1,
+            .chunksCount = 1,
+            .isDownload = true,
+            .isDeleted = false,
+            .isCurrent = true,
+            .updateDate = "2020-12-12 0:47:25",
+            .createDate = "2020-12-12 0:47:25"};
+        std::vector<ChunkMeta> chunksMetaVector;
+        for (int i = 0; i < 2; ++i)
+        {
+            auto chunkMeta = ChunkMeta{.chunkId = i};
+            chunksMetaVector.push_back(chunkMeta);
+        }
+
+        std::vector<FileChunksMeta> fileChunksMetaVector;
+        for (int i = 0; i < 2; ++i)
+        {
+            auto fileChunkMeta = FileChunksMeta{.chunkId = i, .chunkOrder = i};
+            fileChunksMetaVector.push_back(fileChunkMeta);
+        }
+
+        auto fileInfo =
+            FileInfo{.userId = 3, .file = file, .chunkMeta = chunksMetaVector, .fileChunksMeta = fileChunksMetaVector};
+
+        try
+        {
+            postgres_sqldb_file->InsertFile(fileInfo);
+            auto tt = UserDate{3, "2020-12-19 0:47:25"};
+            postgres_sqldb_file->GetUserFilesByTime(tt);
+            // postgres_sqldb1.Registration(user);
+        }
+        catch (PostgresExceptions &exceptions)
+        {
+            std::cout << exceptions.what() << std::endl;
+        }
     }
     default:
         break;

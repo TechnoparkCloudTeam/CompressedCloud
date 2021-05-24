@@ -6,6 +6,8 @@
 #include <string>
 #include <vector>
 #include "PostgreSQLDB.h"
+#include "MetaDB.h"
+
 #include "../../../../DataBases/PostgresDB/UserDB/include/UserDB.h"
 
 #include "../../../../DataBases/PostgresDB/UserDB/include/UserInfo.h"
@@ -14,7 +16,7 @@
 class Connection : public std::enable_shared_from_this<Connection>
 {
 public:
-    explicit Connection(boost::asio::ip::tcp::socket socket_, std::shared_ptr<UsersDB> postgres_sqldb12);
+    explicit Connection(boost::asio::ip::tcp::socket socket_, std::shared_ptr<UsersDB> postgres_sqldb12, std::shared_ptr<MetaDataDB> postgres_sqldb_file);
 
     void start();
 
@@ -40,4 +42,5 @@ private:
     char data_[8192];
     std::vector<uint8_t> m_readbuf;
     std::shared_ptr<UsersDB> postgres_sqldb1;
+    std::shared_ptr<MetaDataDB> postgres_sqldb_file;
 };

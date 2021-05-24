@@ -59,25 +59,25 @@ void Connection::handle_read_body()
     std::cout << readed.id() << " " << readed.name() << std::endl;
     switch (readed.id())
     {
-    case 1:
+    case ServerFS::CREATEFOLDER:
         std::cout << "Creating folder for user: " << readed.name() << std::endl;
         fsworker.createDirectory(readed.name());
         break;
-    case 2:
+    case ServerFS::DELETEFILE:
         std::cout << "Deleted file from user: " << readed.name() << std::endl;
         fsworker.removeFileFromDir(readed.name(), "file.txt");
         break;
-    case 3:
+    case ServerFS::SENDFILE:
         std::cout << "Got file:" << readed.filename() << " from user: " << readed.name() << std::endl;
         fsworker.createFile(readed.name(), readed.filename(), readed.file().data(), readed.filesize());
         break;
-    case 4:
+    case ServerFS::DOWNLOADFILE:
         {
         std::cout << "Sending file: " << readed.filename() <<  " to user: " << readed.name() << std::endl;
         std::string buffer = fsworker.fileToString(readed.name(), readed.filename());
         writeRequest.set_filename(readed.filename());
         writeRequest.set_file(buffer);
-        writeRequest.set_id(1);
+        writeRequest.set_id(ServerFS::OKSENDING);
         writeRequest.set_filesize(buffer.size());
         break;
         }

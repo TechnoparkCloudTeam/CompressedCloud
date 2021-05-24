@@ -1,20 +1,13 @@
 #include "../include/ClientNetwork.h"
 #include <string_view>
 #include <fstream>
-#define header_size 4
-enum ServerSynchoRead
-{
-    OKREG = 0,
-    REGISTRATION = 1,
-    AUTORIZATION = 2,
-    OKLOGIN = 3,
-    BADLOGIN = 4
-};
 
-enum ServerFSWrite
-{
-    CREATEFOLDER = 1,
-};
+#include "boost/log/trivial.hpp"
+#include <boost/lexical_cast.hpp>
+
+#define header_size 4
+
+
 
 unsigned decode_header(std::vector<boost::uint8_t> &buf)
 {
@@ -49,7 +42,17 @@ ClientNetwork::ClientNetwork(boost::asio::io_service &io_service) : socket_(io_s
 }
 void ClientNetwork::handleConnectFS(boost::system::error_code ec)
 {
-    start_read_header_fs();
+    boost::asio::ip::tcp::endpoint ep(boost::asio::ip::address::from_string("127.0.0.1"), 8888);
+
+    if (!ec)
+    {
+        start_read_header_fs();
+    }
+    else
+    {
+        socket_.async_connect(ep, boost::bind(&ClientNetwork::handleConnectFS, this,
+                                              boost::asio::placeholders::error));
+    }
 }
 void ClientNetwork::start_read_header_fs()
 {
@@ -61,7 +64,7 @@ void ClientNetwork::start_read_header_fs()
 void ClientNetwork::handle_read_header_fs()
 {
     unsigned msg_len = decode_header(m_readbuf_fs);
-    std::cout << "MSG LEN: " << msg_len << std::endl;
+    BOOST_LOG_TRIVIAL(debug) << "MSG LEN: " << msg_len << std::endl;
     start_read_body_fs(msg_len);
 }
 
@@ -73,17 +76,16 @@ void ClientNetwork::start_read_body_fs(unsigned msg_len)
 }
 void ClientNetwork::handle_read_body_fs()
 {
-    
+
     messageFS::Request readed;
     readed.ParseFromArray(&m_readbuf_fs[header_size], m_readbuf_fs.size() - header_size);
-    std::cout << "\n\nreaded: " << readed.id() << "\n\n";
     switch (readed.id())
     {
-    case 1:
+    case ServerFS::OKSENDING:
     {
-        std::ofstream file( "SynchFolder/" + readed.filename(), std::ofstream::binary);
-        file.write(readed.file().c_str(),readed.filesize());
-        
+        std::ofstream file("SynchFolder/" + readed.filename(), std::ofstream::binary);
+        file.write(readed.file().c_str(), readed.filesize());
+
         break;
     }
     default:
@@ -122,11 +124,20 @@ void ClientNetwork::writeHeandlerFS()
     }
 }
 
-
 //-------------------------------------------------------------------------------------------
 void ClientNetwork::handleConnectS(boost::system::error_code ec)
 {
-    start_read_header_s();
+    boost::asio::ip::tcp::endpoint eps(boost::asio::ip::address::from_string("127.0.0.1"), 6666);
+
+    if (!ec)
+    {
+        start_read_header_s();
+    }
+    else
+    {
+        socketS_.async_connect(eps, boost::bind(&ClientNetwork::handleConnectS, this,
+                                                boost::asio::placeholders::error));
+    }
 }
 
 void ClientNetwork::start_read_header_s()
@@ -139,7 +150,8 @@ void ClientNetwork::start_read_header_s()
 void ClientNetwork::handle_read_header_s()
 {
     unsigned msg_len = decode_header(m_readbuf_s);
-    std::cout << "MSG LEN: " << msg_len << std::endl;
+
+    BOOST_LOG_TRIVIAL(debug) << "MSG LEN: " << msg_len << std::endl;
     start_read_body_s(msg_len);
 }
 
@@ -159,19 +171,19 @@ void ClientNetwork::handle_read_body_s()
     std::cout << "Readed from s id: " << readed.id() << " name: " << readed.name() << std::endl;
     switch (readed.id())
     {
-    case ServerSynchoRead::OKREG:
+    case ServerSyncho::OKREG:
     {
-        readed.set_id(ServerFSWrite::CREATEFOLDER);
+        readed.set_id(ServerFS::CREATEFOLDER);
         std::string answer;
         readed.SerializePartialToString(&answer);
         writeMessageToFS(ec, answer);
     }
     break;
-    case ServerSynchoRead::OKLOGIN:
+    case ServerSyncho::OKLOGIN:
         this->IsLogged = true;
         std::cout << "Logged in\n";
         break;
-    case ServerSynchoRead::BADLOGIN:
+    case ServerSyncho::BADLOGIN:
         std::cout << "Bad login try again\n";
         break;
     default:
@@ -179,7 +191,6 @@ void ClientNetwork::handle_read_body_s()
     }
     start_read_header_s();
 }
-
 
 void ClientNetwork::writeMessageToS(boost::system::error_code ec, const std::string &msg)
 {

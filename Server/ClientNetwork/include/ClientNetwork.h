@@ -10,6 +10,8 @@
 #include <iostream>
 #include <deque>
 #include <vector>
+#include "../../config.h"
+
 #define max_size_buf 100
 
 class ClientNetwork : public boost::enable_shared_from_this<ClientNetwork>

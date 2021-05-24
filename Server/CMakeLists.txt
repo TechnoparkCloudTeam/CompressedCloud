@@ -60,10 +60,7 @@ target_include_directories(serverS PRIVATE ${PostgreSQL_INCLUDE_DIRS})
 
 target_link_libraries(serverS ${Boost_LIBRARIES} ${Protobuf_LIBRARIES} ${PostgreSQL_LIBRARIES}) 
 
-add_executable(clientnetwork 
-ClientNetwork/clientNetwork.cpp 
-ClientNetwork/src/ClientNetwork.cpp ${PROTO_SRCS} ${PROTO_HDRS})
-target_link_libraries(clientnetwork ${Boost_LIBRARIES} ${Protobuf_LIBRARIES})
+
 
 
 

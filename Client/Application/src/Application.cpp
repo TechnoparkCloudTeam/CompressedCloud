@@ -90,7 +90,7 @@ void Application::downloadFile(const std::string &fileName)
     messageFS::Request req;
     req.set_name(Login);
     req.set_password(Password);
-    req.set_id(4);
+    req.set_id(ServerFS::DOWNLOADFILE);
     req.set_filename(fileName);
     std::string msg;
     boost::system::error_code ec;
@@ -103,7 +103,7 @@ void Application::sendFile(const std::filesystem::path &path)
 
     req.set_name(Login);
     req.set_password(Password);
-    req.set_id(3);
+    req.set_id(ServerFS::SENDFILE);
     req.set_filename(path.filename());
 
     std::ifstream file(path, std::ofstream::binary);

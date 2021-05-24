@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/ilya/TechnoParkProjects/CompressedCloud/Server/ClientNetwork/include/ClientNetwork.h
+/home/lyalyashechka/TP/c_c++/project/CompressedCloud/Server/ClientNetwork/include/ClientNetwork.h
 boost/asio.hpp
 -
 boost/enable_shared_from_this.hpp
@@ -20,7 +20,7 @@ google/protobuf/io/coded_stream.h
 google/protobuf/io/zero_copy_stream_impl.h
 -
 message.pb.h
-/home/ilya/TechnoParkProjects/CompressedCloud/Server/ClientNetwork/include/message.pb.h
+/home/lyalyashechka/TP/c_c++/project/CompressedCloud/Server/ClientNetwork/include/message.pb.h
 string
 -
 iostream
@@ -29,14 +29,22 @@ deque
 -
 vector
 -
+../../config.h
+/home/lyalyashechka/TP/c_c++/project/CompressedCloud/Server/config.h
 
-/home/ilya/TechnoParkProjects/CompressedCloud/Server/ClientNetwork/src/ClientNetwork.cpp
+/home/lyalyashechka/TP/c_c++/project/CompressedCloud/Server/ClientNetwork/src/ClientNetwork.cpp
 ../include/ClientNetwork.h
-/home/ilya/TechnoParkProjects/CompressedCloud/Server/ClientNetwork/include/ClientNetwork.h
+/home/lyalyashechka/TP/c_c++/project/CompressedCloud/Server/ClientNetwork/include/ClientNetwork.h
 string_view
 -
 fstream
 -
+boost/log/trivial.hpp
+/home/lyalyashechka/TP/c_c++/project/CompressedCloud/Server/ClientNetwork/src/boost/log/trivial.hpp
+boost/lexical_cast.hpp
+-
+
+/home/lyalyashechka/TP/c_c++/project/CompressedCloud/Server/config.h
 
 message.pb.h
 limits

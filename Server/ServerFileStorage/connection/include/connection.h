@@ -5,6 +5,7 @@
 #include <array>
 #include <string>
 #include "FileStorageWorker.h"
+#include "../../../config.h"
 #include "message.pb.h"
 #include <thread>
 class Connection : public std::enable_shared_from_this<Connection>
@@ -36,5 +37,5 @@ private:
 
     std::vector<uint8_t> m_readbuf;
 
-    FileStorageWorker fsworker = FileStorageWorker("/home/ilya/Techno");
+    FileStorageWorker fsworker = FileStorageWorker("/home/lyalyashechka/filestorageDirectorie");
 };

@@ -192,15 +192,32 @@ void ClientNetwork::handle_read_body_s()
         std::string answer;
         readed.SerializePartialToString(&answer);
         writeMessageToFS(ec, answer);
+        break;
     }
-    break;
     case ServerSyncho::OKLOGIN:
+    {
         this->IsLogged = true;
         std::cout << "Logged in\n";
         break;
+    }
     case ServerSyncho::BADLOGIN:
+    {
         std::cout << "Bad login try again\n";
         break;
+    }
+    case ServerSyncho::CHECKFRIENDANDFILESUCCESSFUL:
+    {
+        readed.set_id(ServerFS::DOWNLOADFILE);
+        readed.set_name(readed.loginfriend());
+        std::string answer;
+        readed.SerializePartialToString(&answer);
+        writeMessageToFS(ec, answer);
+        break;
+    }
+    case ServerSyncho::FRIENDSHIPSUCCESSFUL:
+    {
+        std::cout<<"Friendship yspex\n";
+    }
     default:
         break;
     }

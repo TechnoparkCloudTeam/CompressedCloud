@@ -25,7 +25,7 @@ std::string encode_header(std::vector<boost::uint8_t> &buf, unsigned size)
     return sizeStr;
 }
 Connection::Connection(boost::asio::ip::tcp::socket socket_, std::shared_ptr<UsersDB> postgres_sqldb12,
-     std::shared_ptr<MetaDataDB> postgres_sqldb_file, std::shared_ptr<FriendDB> postgres_sqldb_friend)
+                       std::shared_ptr<MetaDataDB> postgres_sqldb_file, std::shared_ptr<FriendDB> postgres_sqldb_friend)
     : socket_(std::move(socket_)),
       postgres_sqldb1(postgres_sqldb12),
       postgres_sqldb_file(postgres_sqldb_file),
@@ -70,7 +70,7 @@ void Connection::handle_read_body()
     messageFS::Request readed;
     readed.ParseFromArray(&m_readbuf[header_size], m_readbuf.size() - header_size);
     writeRequest.set_name(readed.name());
-    readed.PrintDebugString();
+    //readed.PrintDebugString();
     switch (readed.id())
     {
     case ServerSyncho::REGISTRATION:
@@ -135,12 +135,14 @@ void Connection::handle_read_body()
 
         auto fileInfo =
             FileInfo{.userId = postgres_sqldb1->getUserIdFromLogin(readed.name()),
-             .file = file, .chunkMeta = chunksMetaVector, .fileChunksMeta = fileChunksMetaVector};
+                     .file = file,
+                     .chunkMeta = chunksMetaVector,
+                     .fileChunksMeta = fileChunksMetaVector};
 
         try
         {
             postgres_sqldb_file->InsertFile(fileInfo);
-           // auto tt = UserDate{readed.nameid(), "2020-12-19 0:47:25"};
+            // auto tt = UserDate{readed.nameid(), "2020-12-19 0:47:25"};
             //postgres_sqldb_file->GetUserFilesByTime(tt);
             // postgres_sqldb1.Registration(user);
         }
@@ -148,18 +150,44 @@ void Connection::handle_read_body()
         {
             std::cout << exceptions.what() << std::endl;
         }
+        break;
     }
     case ServerSyncho::ADDFRIEND:
     {
         std::cout << "Friend " << readed.name() << " added to friend: " << readed.loginfriend() << "\n";
         postgres_sqldb_friends->AddFriend(postgres_sqldb1->getUserIdFromLogin(readed.name()),
-        postgres_sqldb1->getUserIdFromLogin(readed.loginfriend()));
+                                          postgres_sqldb1->getUserIdFromLogin(readed.loginfriend()));
         if (postgres_sqldb_friends->CheckFriendship(postgres_sqldb1->getUserIdFromLogin(readed.name()),
-            postgres_sqldb1->getUserIdFromLogin(readed.loginfriend()))) {
-                std::cout << readed.name() + " is friend with " + readed.loginfriend() << "\n"; 
-            } else {
-                std::cout << readed.name() + " is not friend with " + readed.loginfriend() << "\n"; 
-            }
+                                                    postgres_sqldb1->getUserIdFromLogin(readed.loginfriend())))
+        {
+            std::cout << readed.name() + " is friend with " + readed.loginfriend() << "\n";
+            writeRequest.set_id(ServerSyncho::FRIENDSHIPSUCCESSFUL);
+        }
+        else
+        {
+            std::cout << readed.name() + " is not friend with " + readed.loginfriend() << "\n";
+            writeRequest.set_id(ServerSyncho::WAITINGFRIENDSHIP);
+        }
+        break;
+    }
+    case ServerSyncho::CHECKFRIENDANDFILE:
+    {
+        readed.PrintDebugString();
+        //TODO:: добавить также проверку на то, что у этого друга есть вообще этот файл
+        if (postgres_sqldb_friends->CheckFriendship(postgres_sqldb1->getUserIdFromLogin(readed.name()),
+                                                    postgres_sqldb1->getUserIdFromLogin(readed.loginfriend())))
+        {
+            writeRequest.set_id(ServerSyncho::CHECKFRIENDANDFILESUCCESSFUL);
+            writeRequest.set_loginfriend(readed.loginfriend());
+            writeRequest.set_filename(readed.filename());
+        }
+        else
+        {
+            writeRequest.set_id(ServerSyncho::CHECKFRIENDANDFILEBAD);
+            writeRequest.set_loginfriend(readed.loginfriend());
+            writeRequest.set_filename(readed.filename());
+        }
+        break;
     }
     default:
         break;

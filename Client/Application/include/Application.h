@@ -20,6 +20,7 @@ public:
     bool isLogin();
     void logOut();
     void downloadFile(const std::string& fileName);
+    void downloadFileFriend(const std::string& friendName, const std::string& file);
     void sendFile(const FileMeta &fileinfo);
     void renameFile();
     void deleteFile();

@@ -127,6 +127,19 @@ void Application::sendFile(const FileMeta &fileinfo)
 
     Network->writeMessageToFS(ec, msg);
 }
+
+void Application::downloadFileFriend(const std::string& friendName, const std::string& file)
+{
+    messageFS::Request req;
+    req.set_id(ServerSyncho::CHECKFRIENDANDFILE);
+    req.set_name(Login);
+    req.set_loginfriend(friendName);
+    req.set_filename(file);
+    std::string msg;
+    req.SerializePartialToString(&msg);
+    boost::system::error_code ec;
+    Network->writeMessageToS(ec, msg);
+}
 void Application::renameFile()
 {
 

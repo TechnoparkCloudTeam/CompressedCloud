@@ -56,7 +56,6 @@ void Connection::handle_read_body()
     messageFS::Request readed;
     readed.ParseFromArray(&m_readbuf[header_size], m_readbuf.size() - header_size);
     writeRequest.set_name(readed.name());
-    writeRequest.set_nameid(readed.nameid());
     std::cout << readed.id() << " " << readed.name() << std::endl;
     switch (readed.id())
     {

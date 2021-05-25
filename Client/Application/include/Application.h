@@ -28,6 +28,7 @@ public:
     void setSyncFolder(const std::string& synchFolder);
     void runWatcher();
     void stopWatcher();
+    void addFriend(const std::string& friendLogin);
 private:
     std::string synchFolder;
     std::string Login;
@@ -40,7 +41,6 @@ private:
     WatcherNotifierBuilder Watcher;
     std::thread WatcherThread;
     bool isLoggedIn;
-    int idLogin;
 };
 
 std::string GetCurrentPath();

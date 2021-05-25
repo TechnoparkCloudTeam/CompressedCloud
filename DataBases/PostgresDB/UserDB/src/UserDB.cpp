@@ -48,7 +48,7 @@ UserInfo UsersDB::Registration(const UserInfo &userInfo) {
       throw PostgresExceptions("User already exist");
     }
 
-    query = "INSERT INTO Users (login, password, id) VALUES ('" + userInfo.login + "', '" + userInfo.password + "','" + std::to_string(userInfo.id) + "');";
+    query = "INSERT INTO Users (login, password) VALUES ('" + userInfo.login + "', '" + userInfo.password + "');";
     pqExec(query, PostgresExceptions("invalid to register user"));
 	query =
 		"SELECT id from Users Where login like '" + userInfo.login + "' and password like '" + userInfo.password
@@ -68,6 +68,12 @@ UsersDB::UsersDB(std::string_view info) : PostgresSQLDB(info) {}
 UsersDB &UsersDB::shared(std::string_view info) {
   static UsersDB shared(info);
   return shared;
+}
+
+int UsersDB::getUserIdFromLogin(const std::string& login) {
+  std::string query =
+		"SELECT id from Users Where login like '" + login + "';";
+  return getUserId(query, PostgresExceptions("invalid to select id"));
 }
 
 int UsersDB::getUserId(const std::string &query, PostgresExceptions exceptions) {

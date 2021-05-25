@@ -38,7 +38,6 @@ Application::Application(
 
 void Application::login(std::string login, std::string pass)
 {
-    this->idLogin = Users->getUserId(login);
     this->Login = login;
     this->Password = pass;
     messageFS::Request req;
@@ -70,8 +69,6 @@ void Application::registerUser(std::string login, std::string pass)
     user.login = login;
     user.password = pass;
     Users->addUser(user);
-    this->idLogin = Users->getUserId(login);
-    req.set_nameid(this->idLogin);
     req.SerializePartialToString(&msg);
     Network->writeMessageToS(ec, msg);
 }
@@ -111,7 +108,6 @@ void Application::sendFile(const FileMeta &fileinfo)
     req.set_password(Password);
     req.set_id(ServerFS::SENDFILE);
     req.set_filename(fileinfo.fileName);
-    req.set_nameid(this->idLogin);
     req.set_filepath(fileinfo.filePath);
     req.set_fileextention(fileinfo.fileExtention);
     std::ifstream file(fileinfo.filePath, std::ofstream::binary);
@@ -247,6 +243,18 @@ void Application::initWatcher()
                   .onUnexpectedEvent(handleUnexpectedNotification);
 }
 
+void Application::addFriend(const std::string& friendLogin) {
+    messageFS::Request req;
+    req.set_name(Login);
+    req.set_loginfriend(friendLogin);
+    req.set_id(ServerSyncho::ADDFRIEND);
+    std::string msg;
+    boost::system::error_code ec;
+    req.SerializePartialToString(&msg);
+    Network->writeMessageToS(ec, msg);
+}
+
 Application::~Application()
 {
 }
+

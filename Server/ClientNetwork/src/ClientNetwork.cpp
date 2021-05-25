@@ -92,7 +92,6 @@ void ClientNetwork::handle_read_body_fs()
     }
     case ServerFS::OKSENDING:
     {
-        writeRequest.set_nameid(readed.nameid());
         writeRequest.set_id(ServerSyncho::ADDFILE);
         writeRequest.set_name(readed.name());
         writeRequest.set_filesize(readed.filesize());

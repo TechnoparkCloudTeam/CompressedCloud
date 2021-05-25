@@ -6,6 +6,7 @@
 #include "../../../../DataBases/PostgresDB/UserDB/include/UserInfo.h"
 #include "../../../../DataBases/PostgresDB/MetaDB/include/FileInfo.h"
 #include "../../../config.h"
+
 #define header_size 4
 unsigned decode_header(std::vector<boost::uint8_t> &buf)
 {
@@ -23,10 +24,12 @@ std::string encode_header(std::vector<boost::uint8_t> &buf, unsigned size)
     std::string sizeStr(buf.begin(), buf.end());
     return sizeStr;
 }
-Connection::Connection(boost::asio::ip::tcp::socket socket_, std::shared_ptr<UsersDB> postgres_sqldb12, std::shared_ptr<MetaDataDB> postgres_sqldb_file)
+Connection::Connection(boost::asio::ip::tcp::socket socket_, std::shared_ptr<UsersDB> postgres_sqldb12,
+     std::shared_ptr<MetaDataDB> postgres_sqldb_file, std::shared_ptr<FriendDB> postgres_sqldb_friend)
     : socket_(std::move(socket_)),
       postgres_sqldb1(postgres_sqldb12),
-      postgres_sqldb_file(postgres_sqldb_file)
+      postgres_sqldb_file(postgres_sqldb_file),
+      postgres_sqldb_friends(postgres_sqldb_friend)
 {
 }
 
@@ -76,7 +79,6 @@ void Connection::handle_read_body()
         UserInfo us;
         us.login = readed.name();
         us.password = readed.password();
-        us.id = readed.nameid();
         postgres_sqldb1->Registration(us);
         writeRequest.set_id(ServerSyncho::OKREG);
         break;
@@ -132,19 +134,32 @@ void Connection::handle_read_body()
         }
 
         auto fileInfo =
-            FileInfo{.userId = readed.nameid(), .file = file, .chunkMeta = chunksMetaVector, .fileChunksMeta = fileChunksMetaVector};
+            FileInfo{.userId = postgres_sqldb1->getUserIdFromLogin(readed.name()),
+             .file = file, .chunkMeta = chunksMetaVector, .fileChunksMeta = fileChunksMetaVector};
 
         try
         {
             postgres_sqldb_file->InsertFile(fileInfo);
-            auto tt = UserDate{readed.nameid(), "2020-12-19 0:47:25"};
-            postgres_sqldb_file->GetUserFilesByTime(tt);
+           // auto tt = UserDate{readed.nameid(), "2020-12-19 0:47:25"};
+            //postgres_sqldb_file->GetUserFilesByTime(tt);
             // postgres_sqldb1.Registration(user);
         }
         catch (PostgresExceptions &exceptions)
         {
             std::cout << exceptions.what() << std::endl;
         }
+    }
+    case ServerSyncho::ADDFRIEND:
+    {
+        std::cout << "Friend " << readed.name() << " added to friend: " << readed.loginfriend() << "\n";
+        postgres_sqldb_friends->AddFriend(postgres_sqldb1->getUserIdFromLogin(readed.name()),
+        postgres_sqldb1->getUserIdFromLogin(readed.loginfriend()));
+        if (postgres_sqldb_friends->CheckFriendship(postgres_sqldb1->getUserIdFromLogin(readed.name()),
+            postgres_sqldb1->getUserIdFromLogin(readed.loginfriend()))) {
+                std::cout << readed.name() + " is friend with " + readed.loginfriend() << "\n"; 
+            } else {
+                std::cout << readed.name() + " is not friend with " + readed.loginfriend() << "\n"; 
+            }
     }
     default:
         break;

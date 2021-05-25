@@ -69,6 +69,11 @@ void ProgramInterface::run() {
             std::string FileName;
             std::cin >> FileName;
             app->downloadFile(FileName);
+        } else if (input == "addFriend") {
+            std::cout << "Enter friend's login: ";
+            std::string FriendName;
+            std::cin >> FriendName;
+            app->addFriend(FriendName);
         } else {
             std::cout << "Unknown command enter <help> command to learn about the commands\n";
         }

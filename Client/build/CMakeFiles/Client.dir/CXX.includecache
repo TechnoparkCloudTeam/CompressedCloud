@@ -200,9 +200,19 @@ Watcher.h
 WatcherNotification.h
 ../Watcher/include/WatcherNotification.h
 
-/home/lyalyashechka/TP/c_c++/project/CompressedCloud/Client/Application/src/Application.cpp
-Application.h
-/home/lyalyashechka/TP/c_c++/project/CompressedCloud/Client/Application/src/Application.h
+/home/ilya/TechnoParkProjects/CompressedCloud/Client/ProgramInterface/include/ProgramInterface.h
+string
+-
+memory
+-
+../../Application/include/Application.h
+-
+
+/home/ilya/TechnoParkProjects/CompressedCloud/Client/ProgramInterface/src/ProgramInterface.cpp
+../include/ProgramInterface.h
+/home/ilya/TechnoParkProjects/CompressedCloud/Client/ProgramInterface/include/ProgramInterface.h
+string
+-
 
 message.pb.h
 limits

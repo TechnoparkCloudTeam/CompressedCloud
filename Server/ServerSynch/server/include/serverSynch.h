@@ -10,13 +10,15 @@
 
 #include "../../../../DataBases/PostgresDB/UserDB/include/UserInfo.h"
 #include "../../connection/include/connectionSynch.h"
+#include "FriendDB.h"
 
 namespace sServer
 {
     class Server
     {
     public:
-        explicit Server(int port, std::shared_ptr<UsersDB> postgres_sqldb12, std::shared_ptr<MetaDataDB> postgres_sqldb_file);
+        explicit Server(int port, std::shared_ptr<UsersDB> postgres_sqldb12, std::shared_ptr<MetaDataDB> postgres_sqldb_file,
+         std::shared_ptr<FriendDB> postgres_sqldb_friend);
 
         ~Server();
 
@@ -38,6 +40,8 @@ namespace sServer
         std::shared_ptr<UsersDB> postgres_sqldb1;
 
         std::shared_ptr<MetaDataDB> postgres_sqldb_file;
+
+        std::shared_ptr<FriendDB> postgres_sqldb_friends;
     };
 
 }

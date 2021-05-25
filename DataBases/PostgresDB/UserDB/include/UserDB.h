@@ -14,7 +14,7 @@ class UsersDB : public PostgresSQLDB {
   void createTable();
   bool Login(const UserInfo &userInfo);
   UserInfo Registration(const UserInfo &userInfo);
-
+  int getUserIdFromLogin(const std::string& login);
  //private:
   explicit UsersDB(std::string_view info);
   UsersDB(const UsersDB &users_db);

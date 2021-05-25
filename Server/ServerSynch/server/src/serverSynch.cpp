@@ -1,12 +1,14 @@
 #include <iostream>
 #include "serverSynch.h"
 
-sServer::Server::Server(int port, std::shared_ptr<UsersDB> postgres_sqldb12, std::shared_ptr<MetaDataDB> postgres_sqldb_file)
+sServer::Server::Server(int port, std::shared_ptr<UsersDB> postgres_sqldb12, std::shared_ptr<MetaDataDB> postgres_sqldb_file,
+         std::shared_ptr<FriendDB> postgres_sqldb_friend)
     : io_service_(),
       acceptor_(io_service_, boost::asio::ip::tcp::endpoint(boost::asio::ip::tcp::v4(), port)),
       socket_(io_service_),
       postgres_sqldb1(postgres_sqldb12),
-      postgres_sqldb_file(postgres_sqldb_file)
+      postgres_sqldb_file(postgres_sqldb_file),
+      postgres_sqldb_friends(postgres_sqldb_friend)
 {
     waitForClientConnection();
 }
@@ -35,7 +37,7 @@ void sServer::Server::waitForClientConnection()
         {
             std::cout << "Connect " << socket_.remote_endpoint() << std::endl;
 
-            std::make_shared<Connection>(std::move(socket_),postgres_sqldb1, postgres_sqldb_file)->start();
+            std::make_shared<Connection>(std::move(socket_),postgres_sqldb1, postgres_sqldb_file, postgres_sqldb_friends)->start();
         }
         waitForClientConnection();
     });

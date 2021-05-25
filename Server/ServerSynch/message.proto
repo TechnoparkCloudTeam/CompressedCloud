@@ -11,5 +11,5 @@ message Request {
     int64 filesize = 6;
     string filepath = 7;
     string fileextention = 8;
-    int64 nameid = 9;
+    string loginfriend = 9;
 }

@@ -18,7 +18,8 @@ void MetaDataDB::createTable() {
        isDeleted boolean,
        isCurrent boolean,
        updateDate timestamp,
-       createDate timestamp
+       createDate timestamp,
+       foreign key (userId) references users(id)
 ))";
     std::cout << "creating table of Files\n";
     pqExec(sql, PostgresExceptions("can't create table of Files\n"));

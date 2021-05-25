@@ -37,5 +37,5 @@ private:
 
     std::vector<uint8_t> m_readbuf;
 
-    FileStorageWorker fsworker = FileStorageWorker("/home/lyalyashechka/filestorageDirectorie");
+    FileStorageWorker fsworker = FileStorageWorker("/home/ilya/Techno");
 };

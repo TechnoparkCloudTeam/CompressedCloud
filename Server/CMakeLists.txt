@@ -33,10 +33,10 @@ include_directories(ServerSynch/connection/include)
 include_directories(ServerSynch/fileStorageWorker/include)
 include_directories(ServerSynch/server/include)
 
-
 INCLUDE_DIRECTORIES(../DataBases/PostgresDB/Base/include
 ../DataBases/PostgresDB/MetaDB/include
-../DataBases/PostgresDB/UserDB/include)
+../DataBases/PostgresDB/UserDB/include
+../DataBases/PostgresDB/FriendDB/include)
 
 
 
@@ -55,6 +55,7 @@ ServerSynch/connection/src/connectionSynch.cpp
 ../DataBases/PostgresDB/Base/src/PostgreSQLDB.cpp
 ../DataBases/PostgresDB/MetaDB/src/MetaDB.cpp
 ../DataBases/PostgresDB/UserDB/src/UserDB.cpp
+../DataBases/PostgresDB/FriendDB/src/FriendDB.cpp
 ${PROTO_SRCS} ${PROTO_HDRS})
 target_include_directories(serverS PRIVATE ${PostgreSQL_INCLUDE_DIRS})
 

@@ -8,6 +8,7 @@ enum ServerSyncho : int
     BADLOGIN = 4,
     AUTORIZATION = 5,
     ADDFILE = 6,
+    ADDFRIEND = 7,
 };
 
 enum ServerFS : int

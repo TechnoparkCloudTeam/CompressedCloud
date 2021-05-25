@@ -20,9 +20,9 @@ CMakeFiles/Client.dir/Application/src/Application.cpp.o: message.pb.h
 
 CMakeFiles/Client.dir/Indexer/src/Indexer.cpp.o: ../Indexer/include/Indexer.h
 CMakeFiles/Client.dir/Indexer/src/Indexer.cpp.o: ../Indexer/src/Indexer.cpp
-CMakeFiles/Client.dir/Indexer/src/Indexer.cpp.o: /home/lyalyashechka/TP/c_c++/project/CompressedCloud/DataBases/LocalDB/include/FileDB.h
-CMakeFiles/Client.dir/Indexer/src/Indexer.cpp.o: /home/lyalyashechka/TP/c_c++/project/CompressedCloud/DataBases/LocalDB/include/LocalDB.h
-CMakeFiles/Client.dir/Indexer/src/Indexer.cpp.o: /home/lyalyashechka/TP/c_c++/project/CompressedCloud/DataBases/LocalDB/include/UserDB.h
+CMakeFiles/Client.dir/Indexer/src/Indexer.cpp.o: /home/ilya/TechnoParkProjects/CompressedCloud/DataBases/LocalDB/include/FileDB.h
+CMakeFiles/Client.dir/Indexer/src/Indexer.cpp.o: /home/ilya/TechnoParkProjects/CompressedCloud/DataBases/LocalDB/include/LocalDB.h
+CMakeFiles/Client.dir/Indexer/src/Indexer.cpp.o: /home/ilya/TechnoParkProjects/CompressedCloud/DataBases/LocalDB/include/UserDB.h
 
 CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../../DataBases/LocalDB/include/FileDB.h
 CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../../DataBases/LocalDB/include/LocalDB.h
@@ -65,18 +65,18 @@ CMakeFiles/Client.dir/Watcher/src/WatcherNotifierBuilder.cpp.o: ../Watcher/inclu
 CMakeFiles/Client.dir/Watcher/src/WatcherNotifierBuilder.cpp.o: ../Watcher/include/WatcherNotifierBuilder.h
 CMakeFiles/Client.dir/Watcher/src/WatcherNotifierBuilder.cpp.o: ../Watcher/src/WatcherNotifierBuilder.cpp
 
-CMakeFiles/Client.dir/home/lyalyashechka/TP/c_c++/project/CompressedCloud/DataBases/LocalDB/src/LocalDB.cpp.o: ../../DataBases/LocalDB/include/FileDB.h
-CMakeFiles/Client.dir/home/lyalyashechka/TP/c_c++/project/CompressedCloud/DataBases/LocalDB/src/LocalDB.cpp.o: ../../DataBases/LocalDB/include/LocalDB.h
-CMakeFiles/Client.dir/home/lyalyashechka/TP/c_c++/project/CompressedCloud/DataBases/LocalDB/src/LocalDB.cpp.o: ../../DataBases/LocalDB/include/UserDB.h
-CMakeFiles/Client.dir/home/lyalyashechka/TP/c_c++/project/CompressedCloud/DataBases/LocalDB/src/LocalDB.cpp.o: /home/lyalyashechka/TP/c_c++/project/CompressedCloud/DataBases/LocalDB/src/LocalDB.cpp
+CMakeFiles/Client.dir/home/ilya/TechnoParkProjects/CompressedCloud/DataBases/LocalDB/src/LocalDB.cpp.o: ../../DataBases/LocalDB/include/FileDB.h
+CMakeFiles/Client.dir/home/ilya/TechnoParkProjects/CompressedCloud/DataBases/LocalDB/src/LocalDB.cpp.o: ../../DataBases/LocalDB/include/LocalDB.h
+CMakeFiles/Client.dir/home/ilya/TechnoParkProjects/CompressedCloud/DataBases/LocalDB/src/LocalDB.cpp.o: ../../DataBases/LocalDB/include/UserDB.h
+CMakeFiles/Client.dir/home/ilya/TechnoParkProjects/CompressedCloud/DataBases/LocalDB/src/LocalDB.cpp.o: /home/ilya/TechnoParkProjects/CompressedCloud/DataBases/LocalDB/src/LocalDB.cpp
 
-CMakeFiles/Client.dir/home/lyalyashechka/TP/c_c++/project/CompressedCloud/Server/ClientNetwork/src/ClientNetwork.cpp.o: /home/lyalyashechka/TP/c_c++/project/CompressedCloud/Server/ClientNetwork/include/ClientNetwork.h
-CMakeFiles/Client.dir/home/lyalyashechka/TP/c_c++/project/CompressedCloud/Server/ClientNetwork/src/ClientNetwork.cpp.o: /home/lyalyashechka/TP/c_c++/project/CompressedCloud/Server/ClientNetwork/src/ClientNetwork.cpp
-CMakeFiles/Client.dir/home/lyalyashechka/TP/c_c++/project/CompressedCloud/Server/ClientNetwork/src/ClientNetwork.cpp.o: /home/lyalyashechka/TP/c_c++/project/CompressedCloud/Server/config.h
-CMakeFiles/Client.dir/home/lyalyashechka/TP/c_c++/project/CompressedCloud/Server/ClientNetwork/src/ClientNetwork.cpp.o: message.pb.h
+CMakeFiles/Client.dir/home/ilya/TechnoParkProjects/CompressedCloud/Server/ClientNetwork/src/ClientNetwork.cpp.o: /home/ilya/TechnoParkProjects/CompressedCloud/Server/ClientNetwork/include/ClientNetwork.h
+CMakeFiles/Client.dir/home/ilya/TechnoParkProjects/CompressedCloud/Server/ClientNetwork/src/ClientNetwork.cpp.o: /home/ilya/TechnoParkProjects/CompressedCloud/Server/ClientNetwork/src/ClientNetwork.cpp
+CMakeFiles/Client.dir/home/ilya/TechnoParkProjects/CompressedCloud/Server/ClientNetwork/src/ClientNetwork.cpp.o: /home/ilya/TechnoParkProjects/CompressedCloud/Server/config.h
+CMakeFiles/Client.dir/home/ilya/TechnoParkProjects/CompressedCloud/Server/ClientNetwork/src/ClientNetwork.cpp.o: message.pb.h
 
-CMakeFiles/Client.dir/home/lyalyashechka/TP/c_c++/project/CompressedCloud/Server/ServerFileStorage/fileStorageWorker/src/FileStorageWorker.cpp.o: ../../Server/ServerFileStorage/fileStorageWorker/include/FileStorageWorker.h
-CMakeFiles/Client.dir/home/lyalyashechka/TP/c_c++/project/CompressedCloud/Server/ServerFileStorage/fileStorageWorker/src/FileStorageWorker.cpp.o: /home/lyalyashechka/TP/c_c++/project/CompressedCloud/Server/ServerFileStorage/fileStorageWorker/src/FileStorageWorker.cpp
+CMakeFiles/Client.dir/home/ilya/TechnoParkProjects/CompressedCloud/Server/ServerFileStorage/fileStorageWorker/src/FileStorageWorker.cpp.o: ../../Server/ServerFileStorage/fileStorageWorker/include/FileStorageWorker.h
+CMakeFiles/Client.dir/home/ilya/TechnoParkProjects/CompressedCloud/Server/ServerFileStorage/fileStorageWorker/src/FileStorageWorker.cpp.o: /home/ilya/TechnoParkProjects/CompressedCloud/Server/ServerFileStorage/fileStorageWorker/src/FileStorageWorker.cpp
 
 CMakeFiles/Client.dir/main.cpp.o: ../../DataBases/LocalDB/include/FileDB.h
 CMakeFiles/Client.dir/main.cpp.o: ../../DataBases/LocalDB/include/LocalDB.h

@@ -26,7 +26,6 @@ std::string encode_header(std::vector<boost::uint8_t> &buf, unsigned size)
 }
 ClientNetwork::ClientNetwork(boost::asio::io_service &io_service) : socket_(io_service),
                                                                     socketS_(io_service),
-                                                                    socketToSynch(io_service),
                                                                     io_service_(io_service)
 {
 
@@ -100,8 +99,7 @@ void ClientNetwork::handle_read_body_fs()
         writeRequest.set_fileextention(readed.fileextention());
         std::string bufForSerial;
         writeRequest.SerializePartialToString(&bufForSerial);
-        boost::system::error_code ec;
-        writeMessageToS(ec, bufForSerial);
+        writeMessageToS(bufForSerial);
     }
     default:
         break;
@@ -109,7 +107,7 @@ void ClientNetwork::handle_read_body_fs()
     start_read_header_fs();
 }
 
-void ClientNetwork::writeMessageToFS(boost::system::error_code ec, const std::string &msg)
+void ClientNetwork::writeMessageToFS(const std::string &msg)
 {
     io_service_.post(boost::bind(&ClientNetwork::doWriteFS, this, msg));
 }
@@ -179,8 +177,6 @@ void ClientNetwork::start_read_body_s(unsigned msg_len)
 
 void ClientNetwork::handle_read_body_s()
 {
-    boost::system::error_code ec;
-
     messageFS::Request readed;
     readed.ParseFromArray(&m_readbuf_s[header_size], m_readbuf_s.size() - header_size);
     std::cout << "Readed from s id: " << readed.id() << " name: " << readed.name() << std::endl;
@@ -191,7 +187,7 @@ void ClientNetwork::handle_read_body_s()
         readed.set_id(ServerFS::CREATEFOLDER);
         std::string answer;
         readed.SerializePartialToString(&answer);
-        writeMessageToFS(ec, answer);
+        writeMessageToFS(answer);
         break;
     }
     case ServerSyncho::OKLOGIN:
@@ -211,7 +207,7 @@ void ClientNetwork::handle_read_body_s()
         readed.set_name(readed.loginfriend());
         std::string answer;
         readed.SerializePartialToString(&answer);
-        writeMessageToFS(ec, answer);
+        writeMessageToFS(answer);
         break;
     }
     case ServerSyncho::FRIENDSHIPSUCCESSFUL:
@@ -224,7 +220,7 @@ void ClientNetwork::handle_read_body_s()
     start_read_header_s();
 }
 
-void ClientNetwork::writeMessageToS(boost::system::error_code ec, const std::string &msg)
+void ClientNetwork::writeMessageToS(const std::string &msg)
 {
     io_service_.post(boost::bind(&ClientNetwork::doWriteS, this, msg));
 }

@@ -45,9 +45,8 @@ void Application::login(std::string login, std::string pass)
     req.set_password(pass);
     req.set_id(ServerSyncho::AUTORIZATION);
     std::string msg;
-    boost::system::error_code ec;
     req.SerializePartialToString(&msg);
-    Network->writeMessageToS(ec, msg);
+    Network->writeMessageToS(msg);
     sleep(1);
     isLoggedIn = Network->IsLogin();
 }
@@ -56,13 +55,9 @@ void Application::registerUser(std::string login, std::string pass)
 {
     messageFS::Request req;
     req.set_name(login);
-    
     req.set_password(pass);
     req.set_id(ServerSyncho::REGISTRATION);
-    
-    std::string msg;
-    boost::system::error_code ec;
-    
+    std::string msg; 
     User user;
     user.deviceName = "PC";
     user.synchFolder = synchFolder;
@@ -70,7 +65,7 @@ void Application::registerUser(std::string login, std::string pass)
     user.password = pass;
     Users->addUser(user);
     req.SerializePartialToString(&msg);
-    Network->writeMessageToS(ec, msg);
+    Network->writeMessageToS(msg);
 }
 void Application::changePassword()
 {
@@ -96,9 +91,8 @@ void Application::downloadFile(const std::string &fileName)
     req.set_id(ServerFS::DOWNLOADFILE);
     req.set_filename(fileName);
     std::string msg;
-    boost::system::error_code ec;
     req.SerializePartialToString(&msg);
-    Network->writeMessageToFS(ec, msg);
+    Network->writeMessageToFS(msg);
 }
 void Application::sendFile(const FileMeta &fileinfo)
 {
@@ -119,13 +113,10 @@ void Application::sendFile(const FileMeta &fileinfo)
     file.read(buffer, size);
     req.set_file(std::string(buffer, size));
     delete[] buffer;
-    
     req.set_filesize(size);
     std::string msg;
     req.SerializePartialToString(&msg);
-    boost::system::error_code ec;
-
-    Network->writeMessageToFS(ec, msg);
+    Network->writeMessageToFS(msg);
 }
 
 void Application::downloadFileFriend(const std::string& friendName, const std::string& file)
@@ -137,8 +128,7 @@ void Application::downloadFileFriend(const std::string& friendName, const std::s
     req.set_filename(file);
     std::string msg;
     req.SerializePartialToString(&msg);
-    boost::system::error_code ec;
-    Network->writeMessageToS(ec, msg);
+    Network->writeMessageToS(msg);
 }
 void Application::renameFile()
 {
@@ -262,9 +252,8 @@ void Application::addFriend(const std::string& friendLogin) {
     req.set_loginfriend(friendLogin);
     req.set_id(ServerSyncho::ADDFRIEND);
     std::string msg;
-    boost::system::error_code ec;
     req.SerializePartialToString(&msg);
-    Network->writeMessageToS(ec, msg);
+    Network->writeMessageToS(msg);
 }
 
 Application::~Application()

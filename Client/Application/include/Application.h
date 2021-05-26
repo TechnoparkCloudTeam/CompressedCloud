@@ -11,12 +11,14 @@
 #include "../../../Server/ClientNetwork/include/ClientNetwork.h"
 #include "../../../Server/config.h"
 #include "../../Watcher/include/WatcherNotifierBuilder.h"
+#include "PatternWatcher.h"
 class Application {
 public:
     Application(
      std::shared_ptr<ClientNetwork> network,
      std::shared_ptr<UserDB> users,
-     std::shared_ptr<FileDB> files);
+     std::shared_ptr<FileDB> files, 
+     std::shared_ptr<PatternWatcher> PWPtr_);
     ~Application();
     void login(std::string login, std::string pass);
     void registerUser(std::string login, std::string pass);
@@ -46,6 +48,7 @@ private:
     WatcherNotifierBuilder Watcher;
     std::thread WatcherThread;
     bool isLoggedIn;
+    std::shared_ptr<PatternWatcher> PWPtr;
 };
 
 std::string GetCurrentPath();

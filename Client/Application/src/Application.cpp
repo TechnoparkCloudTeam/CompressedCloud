@@ -22,10 +22,12 @@ bool isTmpFile(const std::string &fileName)
 Application::Application(
     std::shared_ptr<ClientNetwork> network,
     std::shared_ptr<UserDB> users,
-    std::shared_ptr<FileDB> files) : Network(network),
+    std::shared_ptr<FileDB> files, 
+    std::shared_ptr<PatternWatcher> PWPtr_) : Network(network),
                                      Users(users),
                                      Files(files),
-                                     isLoggedIn(false)
+                                     isLoggedIn(false),
+                                     PWPtr(PWPtr_)
 {    
 }
 
@@ -41,9 +43,11 @@ void Application::login(std::string login, std::string pass)
     std::string msg;
     req.SerializePartialToString(&msg);
     Network->writeMessageToS(msg);
-    sleep(1);
-    isLoggedIn = Network->IsLogin();
+
+    //sleep(1);
+    isLoggedIn = PWPtr->waitCancelDownload();
     if (isLoggedIn) {
+        std::cout <<"\n\n\n\n goood login\n\n\n";
         synchFolder = login;
         initWatcher();
         WatcherThread = std::thread([&]()
@@ -100,7 +104,10 @@ void Application::downloadFile(const std::string &fileName)
     req.set_filename(fileName);
     std::string msg;
     req.SerializePartialToString(&msg);
+    stopWatcher();
     Network->writeMessageToFS(msg);
+    PWPtr->waitCancelDownload();
+    runWatcher();
 }
 void Application::sendFile(const FileMeta &fileinfo)
 {
@@ -136,7 +143,10 @@ void Application::downloadFileFriend(const std::string& friendName, const std::s
     req.set_filename(file);
     std::string msg;
     req.SerializePartialToString(&msg);
+    stopWatcher();
     Network->writeMessageToS(msg);
+    PWPtr->waitCancelDownload();
+    runWatcher();
 }
 void Application::renameFile()
 {

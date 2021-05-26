@@ -24,9 +24,10 @@ std::string encode_header(std::vector<boost::uint8_t> &buf, unsigned size)
     std::string sizeStr(buf.begin(), buf.end());
     return sizeStr;
 }
-ClientNetwork::ClientNetwork(boost::asio::io_service &io_service) : socket_(io_service),
+ClientNetwork::ClientNetwork(boost::asio::io_service &io_service, std::shared_ptr<PatternWatcher> PWPtr_) : socket_(io_service),
                                                                     socketS_(io_service),
-                                                                    io_service_(io_service)
+                                                                    io_service_(io_service),
+                                                                    PWPtr(PWPtr_)
 {
 
     boost::asio::ip::tcp::endpoint eps(boost::asio::ip::address::from_string("127.0.0.1"), 6666);
@@ -81,9 +82,10 @@ void ClientNetwork::handle_read_body_fs()
     {
     case ServerFS::OKDOWNLOAD:
     {
+        
         std::ofstream file(readed.name() + "/" + readed.filename(), std::ofstream::binary);
         file.write(readed.file().c_str(), readed.filesize());
-
+        PWPtr->add();
         break;
     }
     case ServerFS::OKSENDING:
@@ -190,7 +192,8 @@ void ClientNetwork::handle_read_body_s()
     }
     case ServerSyncho::OKLOGIN:
     {
-        this->IsLogged = true;
+        PWPtr->add();
+        //this->IsLogged = true;
         std::cout << "Logged in\n";
         break;
     }

@@ -27,6 +27,7 @@ INCLUDE_DIRECTORIES(ProgramInterface/include)
 INCLUDE_DIRECTORIES(Watcher/include)
 INCLUDE_DIRECTORIES(Indexer/include)
 INCLUDE_DIRECTORIES(Application/include)
+include_directories(PatternWatcher/include)
 
 INCLUDE_DIRECTORIES(../DataBases/LocalDB/include)
 INCLUDE_DIRECTORIES(../Server/ServerFileStorage/fileStorageWorker/include)
@@ -38,11 +39,12 @@ ProgramInterface/src/ProgramInterface.cpp
 Application/src/Application.cpp Indexer/src/Indexer.cpp 
 ../Server/ServerFileStorage/fileStorageWorker/src/FileStorageWorker.cpp
 ../Server/ClientNetwork/src/ClientNetwork
-Watcher/src/FileSysEvent.cpp;
-Watcher/src/Watcher.cpp;
-Watcher/src/WatcherMessage.cpp;
-Watcher/src/WatcherNotification.cpp;
-Watcher/src/WatcherNotifierBuilder.cpp;
+Watcher/src/FileSysEvent.cpp
+Watcher/src/Watcher.cpp
+Watcher/src/WatcherMessage.cpp
+Watcher/src/WatcherNotification.cpp
+Watcher/src/WatcherNotifierBuilder.cpp
+PatternWatcher/src/PatternWatcher.cpp
 ${PROTO_SRCS} ${PROTO_HDRS}
 )
 

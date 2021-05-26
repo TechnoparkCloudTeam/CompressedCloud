@@ -69,6 +69,8 @@ thread
 -
 ../../config.h
 ../../Server/config.h
+PatternWatcher.h
+../../Server/ClientNetwork/include/PatternWatcher.h
 
 ../../Server/ServerFileStorage/fileStorageWorker/include/FileStorageWorker.h
 string
@@ -113,6 +115,8 @@ iostream
 ../../Server/config.h
 ../../Watcher/include/WatcherNotifierBuilder.h
 ../Watcher/include/WatcherNotifierBuilder.h
+PatternWatcher.h
+../Application/include/PatternWatcher.h
 
 ../Indexer/include/Indexer.h
 vector
@@ -124,12 +128,10 @@ memory
 ../../../DataBases/LocalDB/include/LocalDB.h
 ../../DataBases/LocalDB/include/LocalDB.h
 
-../ProgramInterface/include/ProgramInterface.h
-string
+../PatternWatcher/include/PatternWatcher.h
+iostream
 -
-memory
--
-../../Application/include/Application.h
+queue
 -
 
 ../Watcher/include/FileSysEvent.h
@@ -218,41 +220,11 @@ Watcher.h
 WatcherNotification.h
 ../Watcher/include/WatcherNotification.h
 
-/home/ilya/TechnoParkProjects/CompressedCloud/Client/Application/src/Application.cpp
+/home/lyalyashechka/TP/c_c++/project/CompressedCloud/Client/Application/src/Application.cpp
 Application.h
-/home/ilya/TechnoParkProjects/CompressedCloud/Client/Application/src/Application.h
+/home/lyalyashechka/TP/c_c++/project/CompressedCloud/Client/Application/src/Application.h
 
-/home/ilya/TechnoParkProjects/CompressedCloud/Client/ProgramInterface/include/ProgramInterface.h
-string
--
-memory
--
-../../Application/include/Application.h
--
-
-/home/ilya/TechnoParkProjects/CompressedCloud/Client/ProgramInterface/src/ProgramInterface.cpp
-../include/ProgramInterface.h
-/home/ilya/TechnoParkProjects/CompressedCloud/Client/ProgramInterface/include/ProgramInterface.h
-string
--
-
-/home/ilya/TechnoParkProjects/CompressedCloud/Client/main.cpp
-ProgramInterface.h
-/home/ilya/TechnoParkProjects/CompressedCloud/Client/ProgramInterface.h
-Application.h
-/home/ilya/TechnoParkProjects/CompressedCloud/Client/Application.h
-WatcherNotifierBuilder.h
-/home/ilya/TechnoParkProjects/CompressedCloud/Client/WatcherNotifierBuilder.h
-ClientNetwork.h
-/home/ilya/TechnoParkProjects/CompressedCloud/Client/ClientNetwork.h
-filesystem
--
-thread
--
-boost/thread.hpp
--
-
-/home/ilya/TechnoParkProjects/CompressedCloud/Server/ClientNetwork/include/ClientNetwork.h
+/home/lyalyashechka/TP/c_c++/project/CompressedCloud/Server/ClientNetwork/include/ClientNetwork.h
 boost/asio.hpp
 -
 boost/enable_shared_from_this.hpp
@@ -266,7 +238,7 @@ google/protobuf/io/coded_stream.h
 google/protobuf/io/zero_copy_stream_impl.h
 -
 message.pb.h
-/home/ilya/TechnoParkProjects/CompressedCloud/Server/ClientNetwork/include/message.pb.h
+/home/lyalyashechka/TP/c_c++/project/CompressedCloud/Server/ClientNetwork/include/message.pb.h
 string
 -
 iostream
@@ -278,21 +250,23 @@ vector
 thread
 -
 ../../config.h
-/home/ilya/TechnoParkProjects/CompressedCloud/Server/config.h
+/home/lyalyashechka/TP/c_c++/project/CompressedCloud/Server/config.h
+PatternWatcher.h
+/home/lyalyashechka/TP/c_c++/project/CompressedCloud/Server/ClientNetwork/include/PatternWatcher.h
 
-/home/ilya/TechnoParkProjects/CompressedCloud/Server/ClientNetwork/src/ClientNetwork.cpp
+/home/lyalyashechka/TP/c_c++/project/CompressedCloud/Server/ClientNetwork/src/ClientNetwork.cpp
 ../include/ClientNetwork.h
-/home/ilya/TechnoParkProjects/CompressedCloud/Server/ClientNetwork/include/ClientNetwork.h
+/home/lyalyashechka/TP/c_c++/project/CompressedCloud/Server/ClientNetwork/include/ClientNetwork.h
 string_view
 -
 fstream
 -
 boost/log/trivial.hpp
-/home/ilya/TechnoParkProjects/CompressedCloud/Server/ClientNetwork/src/boost/log/trivial.hpp
+/home/lyalyashechka/TP/c_c++/project/CompressedCloud/Server/ClientNetwork/src/boost/log/trivial.hpp
 boost/lexical_cast.hpp
 -
 
-/home/ilya/TechnoParkProjects/CompressedCloud/Server/config.h
+/home/lyalyashechka/TP/c_c++/project/CompressedCloud/Server/config.h
 
 message.pb.h
 limits

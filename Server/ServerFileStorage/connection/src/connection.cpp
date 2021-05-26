@@ -78,13 +78,16 @@ void Connection::handle_read_body()
         break;
     case ServerFS::DOWNLOADFILE:
     {
+        
         std::cout << "Sending file: " << readed.filename() << " to user: " << readed.name() << std::endl;
         std::string buffer = fsworker.fileToString(readed.name(), readed.filename());
         writeRequest.set_filename(readed.filename());
         writeRequest.set_file(buffer);
         writeRequest.set_id(ServerFS::OKDOWNLOAD);
         writeRequest.set_filesize(buffer.size());
-        writeRequest.set_name(readed.loginfriend());
+        //writeRequest.set_name(readed.loginfriend()); работает на getfileFriend
+        writeRequest.set_name(readed.name()); //работает на getFile
+        //TODO:: METHOD
         break;
     }
     default:

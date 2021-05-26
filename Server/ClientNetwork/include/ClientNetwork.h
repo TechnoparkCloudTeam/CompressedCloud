@@ -10,8 +10,8 @@
 #include <iostream>
 #include <deque>
 #include <vector>
+#include <thread>
 #include "../../config.h"
-
 class ClientNetwork 
 {
 public:
@@ -22,6 +22,10 @@ public:
     void writeMessageToS(const std::string &msg);
 
     bool IsLogin();
+
+    bool IsRegister();
+
+    void SetIsRegisterToFalse();
 
 private:
     void handleConnectFS(boost::system::error_code ec);
@@ -67,5 +71,7 @@ private:
     std::vector<uint8_t> m_readbuf_fs;
 
     bool IsLogged = false;
+
+    bool IsRegisted = false;
 
 };

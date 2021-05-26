@@ -47,7 +47,6 @@ void ProgramInterface::run() {
                 getline(std::cin, password);
             } while (password.empty());
             app->registerUser(login, password);
-            std::cout << "User registered\n";
 
         } else if (input == "synchronize") {
 

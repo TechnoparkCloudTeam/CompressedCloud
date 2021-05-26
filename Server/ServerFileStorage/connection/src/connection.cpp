@@ -84,6 +84,7 @@ void Connection::handle_read_body()
         writeRequest.set_file(buffer);
         writeRequest.set_id(ServerFS::OKDOWNLOAD);
         writeRequest.set_filesize(buffer.size());
+        writeRequest.set_name(readed.loginfriend());
         break;
     }
     default:

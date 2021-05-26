@@ -77,14 +77,11 @@ void ClientNetwork::handle_read_body_fs()
     messageFS::Request readed;
     messageFS::Request writeRequest;
     readed.ParseFromArray(&m_readbuf_fs[header_size], m_readbuf_fs.size() - header_size);
-    std::cout << readed.filename() << "\n\n\n\n"
-              << readed.filepath() << "\n\n\n\n";
     switch (readed.id())
     {
     case ServerFS::OKDOWNLOAD:
     {
-
-        std::ofstream file("SynchFolder/" + readed.filename(), std::ofstream::binary);
+        std::ofstream file(readed.name() + "/" + readed.filename(), std::ofstream::binary);
         file.write(readed.file().c_str(), readed.filesize());
 
         break;
@@ -184,6 +181,7 @@ void ClientNetwork::handle_read_body_s()
     {
     case ServerSyncho::OKREG:
     {
+        IsRegisted = true;
         readed.set_id(ServerFS::CREATEFOLDER);
         std::string answer;
         readed.SerializePartialToString(&answer);
@@ -204,7 +202,8 @@ void ClientNetwork::handle_read_body_s()
     case ServerSyncho::CHECKFRIENDANDFILESUCCESSFUL:
     {
         readed.set_id(ServerFS::DOWNLOADFILE);
-        readed.set_name(readed.loginfriend());
+        readed.set_name(readed.name()); 
+        readed.set_loginfriend(readed.loginfriend());
         std::string answer;
         readed.SerializePartialToString(&answer);
         writeMessageToFS(answer);
@@ -255,3 +254,14 @@ bool ClientNetwork::IsLogin()
 {
     return IsLogged;
 }
+
+bool ClientNetwork::IsRegister()
+{
+    return IsRegisted;
+}
+
+void ClientNetwork::SetIsRegisterToFalse() 
+{
+    IsRegisted = false;
+}
+

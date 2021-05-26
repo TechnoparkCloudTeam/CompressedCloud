@@ -178,14 +178,16 @@ void Connection::handle_read_body()
                                                     postgres_sqldb1->getUserIdFromLogin(readed.loginfriend())))
         {
             writeRequest.set_id(ServerSyncho::CHECKFRIENDANDFILESUCCESSFUL);
-            writeRequest.set_loginfriend(readed.loginfriend());
+            writeRequest.set_loginfriend(readed.name());
             writeRequest.set_filename(readed.filename());
+            writeRequest.set_name(readed.loginfriend());
         }
         else
         {
             writeRequest.set_id(ServerSyncho::CHECKFRIENDANDFILEBAD);
             writeRequest.set_loginfriend(readed.loginfriend());
             writeRequest.set_filename(readed.filename());
+
         }
         break;
     }

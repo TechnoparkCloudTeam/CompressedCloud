@@ -1,7 +1,6 @@
 #pragma once
 enum ServerSyncho : int
 {
-    OKREG = 0,
     BAD = 1,
     REGISTRATION = 2,
     OKLOGIN = 3,
@@ -14,6 +13,7 @@ enum ServerSyncho : int
     WAITINGFRIENDSHIP = 10,
     CHECKFRIENDANDFILESUCCESSFUL = 11,
     CHECKFRIENDANDFILEBAD = 12,
+    OKREG = 13,
 };
 
 enum ServerFS : int

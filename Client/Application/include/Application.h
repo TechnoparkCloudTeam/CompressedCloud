@@ -1,6 +1,10 @@
 #pragma once
 #include <memory>
 #include <string>
+#include <thread>
+#include <filesystem>
+#include <chrono>
+#include <iostream>
 #include "../../Indexer/include/Indexer.h"
 #include "../../../Server/ServerFileStorage/fileStorageWorker/include/FileStorageWorker.h"
 #include "../../../DataBases/LocalDB/include/LocalDB.h"

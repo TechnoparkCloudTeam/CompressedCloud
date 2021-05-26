@@ -26,20 +26,14 @@ Application::Application(
                                      Users(users),
                                      Files(files),
                                      isLoggedIn(false)
-{
-    synchFolder = GetCurrentPath() + "/SynchFolder";
-    std::filesystem::create_directories(synchFolder);
-    initWatcher();
-    //runWatcher();
-    WatcherThread = std::thread([&]()
-                                { Watcher.run(); });
-    //WatcherThread.detach();
+{    
 }
 
 void Application::login(std::string login, std::string pass)
 {
     this->Login = login;
     this->Password = pass;
+    
     messageFS::Request req;
     req.set_name(login);
     req.set_password(pass);
@@ -49,6 +43,12 @@ void Application::login(std::string login, std::string pass)
     Network->writeMessageToS(msg);
     sleep(1);
     isLoggedIn = Network->IsLogin();
+    if (isLoggedIn) {
+        synchFolder = login;
+        initWatcher();
+        WatcherThread = std::thread([&]()
+                                { Watcher.run(); });
+    }
 }
 
 void Application::registerUser(std::string login, std::string pass)
@@ -63,9 +63,17 @@ void Application::registerUser(std::string login, std::string pass)
     user.synchFolder = synchFolder;
     user.login = login;
     user.password = pass;
-    Users->addUser(user);
+    
     req.SerializePartialToString(&msg);
     Network->writeMessageToS(msg);
+    std::this_thread::sleep_for(std::chrono::seconds(1));
+    if (Network->IsRegister()) {
+        Users->addUser(user);
+        std::filesystem::create_directory(login);
+        Network->SetIsRegisterToFalse();
+    } else {
+        std::cout << "Bad registration\n";
+    }
 }
 void Application::changePassword()
 {

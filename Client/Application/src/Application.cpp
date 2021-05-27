@@ -104,10 +104,20 @@ void Application::downloadFile(const std::string &fileName)
     req.set_filename(fileName);
     std::string msg;
     req.SerializePartialToString(&msg);
+        std::cout<<"stopping watcher before lock";
+
     stopWatcher();
+    std::cout<<"stopping watcher not lock";
     Network->writeMessageToFS(msg);
-    PWPtr->waitCancelDownload();
+    int wait = PWPtr->waitCancelDownload();
+    if(wait) {
+        std::cout<<"zapyckau watchera ept";
     runWatcher();
+    }
+    else 
+    {
+        std::cout<<"A ya nichego ne delau";
+    }
 }
 void Application::sendFile(const FileMeta &fileinfo)
 {
@@ -157,13 +167,15 @@ void Application::renameFile()
     //ClientNetwork.handleRead();
     return;
 }
-void Application::deleteFile()
+void Application::deleteFile(const std::string& fileName)
 {
-    //ClientNetwork.start();
-    //ClientNetwork.writeMessage();
-    //ClientNetwork.readMessage();
-    //ClientNetwork.handleRead();
-    //fileWorker->removeFileFromDir();
+    messageFS::Request req;
+    req.set_id(ServerFS::DELETEFILE);
+    req.set_name(Login);
+    req.set_filename(fileName);
+    std::string msg;
+    req.SerializePartialToString(&msg);
+    Network->writeMessageToFS(msg);
     return;
 }
 
@@ -177,15 +189,20 @@ void Application::checkPassword()
 }
 void Application::runWatcher()
 {
-    Watcher.runAfterShutDown();
-    WatcherThread = std::thread([&]()
+    std::cout<<"runwatcher";
+    initWatcher();
+        WatcherThread = std::thread([&]()
                                 { Watcher.run(); });
+    Watcher.runAfterShutDown();
+
     //WatcherThread.detach();
 }
 void Application::stopWatcher()
 {
     Watcher.stop();
+    std::cout<<"Problema v joine";
     WatcherThread.join();
+    std::cout<<"ending stop watcher";
 }
 void Application::synchronize()
 {
@@ -203,7 +220,7 @@ void Application::initWatcher()
     {
         if (!isTmpFile(notification.Path.filename()))
         {
-            //std::cout << "Event " << notification.Event << " on " << notification.Path << " at " << notification.Time.time_since_epoch().count() << " was triggered.\n";
+            std::cout << "Event " << notification.Event << " on " << notification.Path << " at " << notification.Time.time_since_epoch().count() << " was triggered.\n";
             FileMeta f;
             f.fileName = notification.Path.filename();
             f.fileExtention = notification.Path.extension();

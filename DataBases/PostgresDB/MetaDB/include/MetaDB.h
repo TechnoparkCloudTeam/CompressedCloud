@@ -14,8 +14,9 @@ class MetaDataDB : public PostgresSQLDB {
   static MetaDataDB &shared(std::string_view info);
   void createTable();
   void InsertFile(const FileInfo &fileMeta);
+  void feleteFile(std::string login, std::string fileName);
   std::vector<FileInfo> GetUserFilesByTime(const UserDate &userDate);
-
+  void deleteFile(std::string login, std::string fileName);
  private:
   explicit MetaDataDB(std::string_view info);
   MetaDataDB(const MetaDataDB &mongo_db);

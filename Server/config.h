@@ -14,6 +14,9 @@ enum ServerSyncho : int
     CHECKFRIENDANDFILESUCCESSFUL = 11,
     CHECKFRIENDANDFILEBAD = 12,
     OKREG = 13,
+    DELETEFILES = 14,
+    OKDELETES = 15,
+    OKSEND = 16,
 };
 
 enum ServerFS : int
@@ -24,4 +27,6 @@ enum ServerFS : int
     DOWNLOADFILE = 4,
     OKSENDING = 5,
     OKDOWNLOAD = 6,
+    OKDELETE = 7,
+    DOWNLOADFILRFRIEND = 8,
 };

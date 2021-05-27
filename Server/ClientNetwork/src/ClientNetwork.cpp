@@ -85,6 +85,7 @@ void ClientNetwork::handle_read_body_fs()
         
         std::ofstream file(readed.name() + "/" + readed.filename(), std::ofstream::binary);
         file.write(readed.file().c_str(), readed.filesize());
+        file.close();
         PWPtr->add();
         break;
     }
@@ -99,6 +100,17 @@ void ClientNetwork::handle_read_body_fs()
         std::string bufForSerial;
         writeRequest.SerializePartialToString(&bufForSerial);
         writeMessageToS(bufForSerial);
+        break;
+    }
+    case ServerFS::OKDELETE:
+    {
+        writeRequest.set_id(ServerSyncho::DELETEFILES);
+        writeRequest.set_name(readed.name());
+        writeRequest.set_filename(readed.filename());
+        std::string bufForSerial;
+        writeRequest.SerializePartialToString(&bufForSerial);
+        writeMessageToS(bufForSerial);
+        break;
     }
     default:
         break;
@@ -215,6 +227,12 @@ void ClientNetwork::handle_read_body_s()
     case ServerSyncho::FRIENDSHIPSUCCESSFUL:
     {
         std::cout<<"Friendship yspex\n";
+        break;
+    }
+    case ServerSyncho::OKSEND:
+    {
+        std::cout <<"Oksending file from s\n\n";
+        break;
     }
     default:
         break;

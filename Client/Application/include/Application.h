@@ -29,7 +29,7 @@ public:
     void downloadFileFriend(const std::string& friendName, const std::string& file);
     void sendFile(const FileMeta &fileinfo);
     void renameFile();
-    void deleteFile();
+    void deleteFile(const std::string& fileName);
     void createFile(const std::string fileName, const char* buffer);
     void synchronize();
     void setSyncFolder(const std::string& synchFolder);

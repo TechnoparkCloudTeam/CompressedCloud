@@ -26,13 +26,10 @@ private:
 
     void handle_read_body();
 
-    /* void read(); */
-
     void write(std::string &msg);
 
     boost::asio::ip::tcp::socket socket_;
 
-    //std::array<char, 8192> buffer_In;
     char data_[8192];
 
     std::vector<uint8_t> m_readbuf;

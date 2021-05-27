@@ -16,6 +16,10 @@ void ProgramInterface::run() {
             std::cout << "          <synchronize> - download latest version from server\n";
             std::cout << "          <login> login into the system \n";
             std::cout << "          <register> register on server \n";
+            std::cout << "          <getFile> - download file from cloud\n";
+            std::cout << "          <addFriend> - add friend\n";
+            std::cout << "          <getFileFriend> - download file from friend\n";
+            std::cout << "          <removeFile> - remote file in cloud\n";
             std::cout << "          <quit> - shutdown application\n";
             //std::cout << "          <currentDir> - show current directory";
         } else if (input == "login") {
@@ -67,13 +71,14 @@ void ProgramInterface::run() {
         } else if (input == "getFile") {
             std::string FileName;
             std::cin >> FileName;
+            std::cout<<"cin correct";
             app->downloadFile(FileName);
         } else if (input == "addFriend") {
             std::cout << "Enter friend's login: ";
             std::string FriendName;
             std::cin >> FriendName;
             app->addFriend(FriendName);
-        } else if (input =="downloadFileFriend") {
+        } else if (input =="getFileFriend") {
             std::cout << "Enter Friend";
             std::string FriendName;
             std::cin >> FriendName;
@@ -81,6 +86,11 @@ void ProgramInterface::run() {
             std::string FileName;
             std::cin >> FileName;
             app->downloadFileFriend(FriendName, FileName);
+        } else if (input == "removeFile") {
+            std::cout<<"Enter file name: ";
+            std::string FileName;
+            std::cin >> FileName;
+            app->deleteFile(FileName);
         } else {
             std::cout << "Unknown command enter <help> command to learn about the commands\n";
         }

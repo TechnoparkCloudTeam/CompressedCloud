@@ -106,6 +106,8 @@ void Connection::handle_read_body()
     }
     case ServerSyncho::ADDFILE:
     {
+        std::cout<<"addfiel";
+        readed.PrintDebugString();
         auto file = FileMeta{
             .version = 1,
             .fileName = readed.filename(),
@@ -138,10 +140,11 @@ void Connection::handle_read_body()
                      .file = file,
                      .chunkMeta = chunksMetaVector,
                      .fileChunksMeta = fileChunksMetaVector};
-
+        std::cout <<"\n\n\n UserID:: "<<fileInfo.userId<<"\n\n\n";
         try
         {
             postgres_sqldb_file->InsertFile(fileInfo);
+            
             // auto tt = UserDate{readed.nameid(), "2020-12-19 0:47:25"};
             //postgres_sqldb_file->GetUserFilesByTime(tt);
             // postgres_sqldb1.Registration(user);
@@ -150,6 +153,7 @@ void Connection::handle_read_body()
         {
             std::cout << exceptions.what() << std::endl;
         }
+        writeRequest.set_id(ServerSyncho::OKSEND);
         break;
     }
     case ServerSyncho::ADDFRIEND:
@@ -178,9 +182,9 @@ void Connection::handle_read_body()
                                                     postgres_sqldb1->getUserIdFromLogin(readed.loginfriend())))
         {
             writeRequest.set_id(ServerSyncho::CHECKFRIENDANDFILESUCCESSFUL);
-            writeRequest.set_loginfriend(readed.name());
+            writeRequest.set_loginfriend(readed.loginfriend());
             writeRequest.set_filename(readed.filename());
-            writeRequest.set_name(readed.loginfriend());
+            writeRequest.set_name(readed.name());
         }
         else
         {
@@ -190,6 +194,13 @@ void Connection::handle_read_body()
 
         }
         break;
+    }
+    case ServerSyncho::DELETEFILES: 
+    {
+        std::cout<<"deleted file";
+        postgres_sqldb_file->deleteFile(readed.name(), readed.filename());
+        writeRequest.set_id(ServerSyncho::OKDELETES);
+        break;   
     }
     default:
         break;

@@ -17,17 +17,17 @@ CMakeFiles/Client.dir/Application/src/Application.cpp.o
  ../Watcher/include/WatcherMessage.h
  ../Watcher/include/WatcherNotification.h
  ../Watcher/include/WatcherNotifierBuilder.h
- /home/lyalyashechka/TP/c_c++/project/CompressedCloud/Client/Application/src/Application.cpp
+ /home/ilya/CompressedCloudStableBackup/Client/Application/src/Application.cpp
  message.pb.h
 CMakeFiles/Client.dir/Indexer/src/Indexer.cpp.o
- /home/lyalyashechka/TP/c_c++/project/CompressedCloud/Client/Indexer/include/Indexer.h
- /home/lyalyashechka/TP/c_c++/project/CompressedCloud/Client/Indexer/src/Indexer.cpp
- /home/lyalyashechka/TP/c_c++/project/CompressedCloud/DataBases/LocalDB/include/FileDB.h
- /home/lyalyashechka/TP/c_c++/project/CompressedCloud/DataBases/LocalDB/include/LocalDB.h
- /home/lyalyashechka/TP/c_c++/project/CompressedCloud/DataBases/LocalDB/include/UserDB.h
+ /home/ilya/CompressedCloudStableBackup/Client/Indexer/include/Indexer.h
+ /home/ilya/CompressedCloudStableBackup/Client/Indexer/src/Indexer.cpp
+ /home/ilya/CompressedCloudStableBackup/DataBases/LocalDB/include/FileDB.h
+ /home/ilya/CompressedCloudStableBackup/DataBases/LocalDB/include/LocalDB.h
+ /home/ilya/CompressedCloudStableBackup/DataBases/LocalDB/include/UserDB.h
 CMakeFiles/Client.dir/PatternWatcher/src/PatternWatcher.cpp.o
  ../PatternWatcher/include/PatternWatcher.h
- /home/lyalyashechka/TP/c_c++/project/CompressedCloud/Client/PatternWatcher/src/PatternWatcher.cpp
+ /home/ilya/CompressedCloudStableBackup/Client/PatternWatcher/src/PatternWatcher.cpp
 CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o
  ../../DataBases/LocalDB/include/FileDB.h
  ../../DataBases/LocalDB/include/LocalDB.h
@@ -44,46 +44,46 @@ CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o
  ../Watcher/include/WatcherMessage.h
  ../Watcher/include/WatcherNotification.h
  ../Watcher/include/WatcherNotifierBuilder.h
- /home/lyalyashechka/TP/c_c++/project/CompressedCloud/Client/ProgramInterface/include/ProgramInterface.h
- /home/lyalyashechka/TP/c_c++/project/CompressedCloud/Client/ProgramInterface/src/ProgramInterface.cpp
+ /home/ilya/CompressedCloudStableBackup/Client/ProgramInterface/include/ProgramInterface.h
+ /home/ilya/CompressedCloudStableBackup/Client/ProgramInterface/src/ProgramInterface.cpp
  message.pb.h
 CMakeFiles/Client.dir/Watcher/src/FileSysEvent.cpp.o
- /home/lyalyashechka/TP/c_c++/project/CompressedCloud/Client/Watcher/include/FileSysEvent.h
- /home/lyalyashechka/TP/c_c++/project/CompressedCloud/Client/Watcher/src/FileSysEvent.cpp
+ /home/ilya/CompressedCloudStableBackup/Client/Watcher/include/FileSysEvent.h
+ /home/ilya/CompressedCloudStableBackup/Client/Watcher/src/FileSysEvent.cpp
 CMakeFiles/Client.dir/Watcher/src/Watcher.cpp.o
- /home/lyalyashechka/TP/c_c++/project/CompressedCloud/Client/Watcher/include/FileSysEvent.h
- /home/lyalyashechka/TP/c_c++/project/CompressedCloud/Client/Watcher/include/Watcher.h
- /home/lyalyashechka/TP/c_c++/project/CompressedCloud/Client/Watcher/include/WatcherConfig.h
- /home/lyalyashechka/TP/c_c++/project/CompressedCloud/Client/Watcher/src/Watcher.cpp
+ /home/ilya/CompressedCloudStableBackup/Client/Watcher/include/FileSysEvent.h
+ /home/ilya/CompressedCloudStableBackup/Client/Watcher/include/Watcher.h
+ /home/ilya/CompressedCloudStableBackup/Client/Watcher/include/WatcherConfig.h
+ /home/ilya/CompressedCloudStableBackup/Client/Watcher/src/Watcher.cpp
 CMakeFiles/Client.dir/Watcher/src/WatcherMessage.cpp.o
- /home/lyalyashechka/TP/c_c++/project/CompressedCloud/Client/Watcher/include/WatcherMessage.h
- /home/lyalyashechka/TP/c_c++/project/CompressedCloud/Client/Watcher/src/WatcherMessage.cpp
+ /home/ilya/CompressedCloudStableBackup/Client/Watcher/include/WatcherMessage.h
+ /home/ilya/CompressedCloudStableBackup/Client/Watcher/src/WatcherMessage.cpp
 CMakeFiles/Client.dir/Watcher/src/WatcherNotification.cpp.o
- /home/lyalyashechka/TP/c_c++/project/CompressedCloud/Client/Watcher/include/WatcherMessage.h
- /home/lyalyashechka/TP/c_c++/project/CompressedCloud/Client/Watcher/include/WatcherNotification.h
- /home/lyalyashechka/TP/c_c++/project/CompressedCloud/Client/Watcher/src/WatcherNotification.cpp
+ /home/ilya/CompressedCloudStableBackup/Client/Watcher/include/WatcherMessage.h
+ /home/ilya/CompressedCloudStableBackup/Client/Watcher/include/WatcherNotification.h
+ /home/ilya/CompressedCloudStableBackup/Client/Watcher/src/WatcherNotification.cpp
 CMakeFiles/Client.dir/Watcher/src/WatcherNotifierBuilder.cpp.o
- /home/lyalyashechka/TP/c_c++/project/CompressedCloud/Client/Watcher/include/FileSysEvent.h
- /home/lyalyashechka/TP/c_c++/project/CompressedCloud/Client/Watcher/include/Watcher.h
- /home/lyalyashechka/TP/c_c++/project/CompressedCloud/Client/Watcher/include/WatcherConfig.h
- /home/lyalyashechka/TP/c_c++/project/CompressedCloud/Client/Watcher/include/WatcherMessage.h
- /home/lyalyashechka/TP/c_c++/project/CompressedCloud/Client/Watcher/include/WatcherNotification.h
- /home/lyalyashechka/TP/c_c++/project/CompressedCloud/Client/Watcher/include/WatcherNotifierBuilder.h
- /home/lyalyashechka/TP/c_c++/project/CompressedCloud/Client/Watcher/src/WatcherNotifierBuilder.cpp
-CMakeFiles/Client.dir/home/lyalyashechka/TP/c_c++/project/CompressedCloud/DataBases/LocalDB/src/LocalDB.cpp.o
+ /home/ilya/CompressedCloudStableBackup/Client/Watcher/include/FileSysEvent.h
+ /home/ilya/CompressedCloudStableBackup/Client/Watcher/include/Watcher.h
+ /home/ilya/CompressedCloudStableBackup/Client/Watcher/include/WatcherConfig.h
+ /home/ilya/CompressedCloudStableBackup/Client/Watcher/include/WatcherMessage.h
+ /home/ilya/CompressedCloudStableBackup/Client/Watcher/include/WatcherNotification.h
+ /home/ilya/CompressedCloudStableBackup/Client/Watcher/include/WatcherNotifierBuilder.h
+ /home/ilya/CompressedCloudStableBackup/Client/Watcher/src/WatcherNotifierBuilder.cpp
+CMakeFiles/Client.dir/home/ilya/CompressedCloudStableBackup/DataBases/LocalDB/src/LocalDB.cpp.o
  ../../DataBases/LocalDB/include/FileDB.h
  ../../DataBases/LocalDB/include/LocalDB.h
  ../../DataBases/LocalDB/include/UserDB.h
- /home/lyalyashechka/TP/c_c++/project/CompressedCloud/DataBases/LocalDB/src/LocalDB.cpp
-CMakeFiles/Client.dir/home/lyalyashechka/TP/c_c++/project/CompressedCloud/Server/ClientNetwork/src/ClientNetwork.cpp.o
+ /home/ilya/CompressedCloudStableBackup/DataBases/LocalDB/src/LocalDB.cpp
+CMakeFiles/Client.dir/home/ilya/CompressedCloudStableBackup/Server/ClientNetwork/src/ClientNetwork.cpp.o
  ../PatternWatcher/include/PatternWatcher.h
- /home/lyalyashechka/TP/c_c++/project/CompressedCloud/Server/ClientNetwork/include/ClientNetwork.h
- /home/lyalyashechka/TP/c_c++/project/CompressedCloud/Server/ClientNetwork/src/ClientNetwork.cpp
- /home/lyalyashechka/TP/c_c++/project/CompressedCloud/Server/config.h
+ /home/ilya/CompressedCloudStableBackup/Server/ClientNetwork/include/ClientNetwork.h
+ /home/ilya/CompressedCloudStableBackup/Server/ClientNetwork/src/ClientNetwork.cpp
+ /home/ilya/CompressedCloudStableBackup/Server/config.h
  message.pb.h
-CMakeFiles/Client.dir/home/lyalyashechka/TP/c_c++/project/CompressedCloud/Server/ServerFileStorage/fileStorageWorker/src/FileStorageWorker.cpp.o
+CMakeFiles/Client.dir/home/ilya/CompressedCloudStableBackup/Server/ServerFileStorage/fileStorageWorker/src/FileStorageWorker.cpp.o
  ../../Server/ServerFileStorage/fileStorageWorker/include/FileStorageWorker.h
- /home/lyalyashechka/TP/c_c++/project/CompressedCloud/Server/ServerFileStorage/fileStorageWorker/src/FileStorageWorker.cpp
+ /home/ilya/CompressedCloudStableBackup/Server/ServerFileStorage/fileStorageWorker/src/FileStorageWorker.cpp
 CMakeFiles/Client.dir/main.cpp.o
  ../../DataBases/LocalDB/include/FileDB.h
  ../../DataBases/LocalDB/include/LocalDB.h
@@ -101,8 +101,8 @@ CMakeFiles/Client.dir/main.cpp.o
  ../Watcher/include/WatcherMessage.h
  ../Watcher/include/WatcherNotification.h
  ../Watcher/include/WatcherNotifierBuilder.h
- /home/lyalyashechka/TP/c_c++/project/CompressedCloud/Client/main.cpp
+ /home/ilya/CompressedCloudStableBackup/Client/main.cpp
  message.pb.h
 CMakeFiles/Client.dir/message.pb.cc.o
- /home/lyalyashechka/TP/c_c++/project/CompressedCloud/Client/build/message.pb.cc
- /home/lyalyashechka/TP/c_c++/project/CompressedCloud/Client/build/message.pb.h
+ /home/ilya/CompressedCloudStableBackup/Client/build/message.pb.cc
+ /home/ilya/CompressedCloudStableBackup/Client/build/message.pb.h

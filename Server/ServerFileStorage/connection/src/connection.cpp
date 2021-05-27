@@ -92,7 +92,6 @@ void Connection::handle_read_body()
         writeRequest.set_name(readed.name()); //работает на getFile
         break;
     }
-    //протестить
     case ServerFS::DOWNLOADFILRFRIEND:
     {
         std::cout << "Sending file: " << readed.filename() << " to user: " << readed.name() << std::endl;
@@ -102,6 +101,7 @@ void Connection::handle_read_body()
         writeRequest.set_id(ServerFS::OKDOWNLOAD);
         writeRequest.set_filesize(buffer.size());
         writeRequest.set_name(readed.name());
+        break;
     }
     default:
         break;

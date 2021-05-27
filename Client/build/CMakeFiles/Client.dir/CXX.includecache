@@ -220,19 +220,9 @@ Watcher.h
 WatcherNotification.h
 ../Watcher/include/WatcherNotification.h
 
-/home/lyalyashechka/TP/c_c++/project/CompressedCloud/Client/ProgramInterface/include/ProgramInterface.h
-string
--
-memory
--
-../../Application/include/Application.h
--
-
-/home/lyalyashechka/TP/c_c++/project/CompressedCloud/Client/ProgramInterface/src/ProgramInterface.cpp
-../include/ProgramInterface.h
-/home/lyalyashechka/TP/c_c++/project/CompressedCloud/Client/ProgramInterface/include/ProgramInterface.h
-string
--
+/home/ilya/CompressedCloudStableBackup/Client/Application/src/Application.cpp
+Application.h
+/home/ilya/CompressedCloudStableBackup/Client/Application/src/Application.h
 
 message.pb.h
 limits

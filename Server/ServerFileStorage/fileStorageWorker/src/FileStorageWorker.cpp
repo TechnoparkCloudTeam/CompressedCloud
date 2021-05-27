@@ -60,7 +60,7 @@ void FileStorageWorker::removeFileFromDir(const std::string &DirName, const std:
 
 std::string FileStorageWorker::fileToString(const std::string& DirName, const std::string& FileName) {
     fs::current_path(root / currentDir / DirName);
-    std::ifstream inputStream(FileName, std::ofstream::binary) ;
+    std::ifstream inputStream(FileName, std::ofstream::binary);
     inputStream.seekg(0, inputStream.end);
     long size = inputStream.tellg();
     inputStream.seekg(0);

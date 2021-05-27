@@ -43,15 +43,13 @@ void Application::login(std::string login, std::string pass)
     std::string msg;
     req.SerializePartialToString(&msg);
     Network->writeMessageToS(msg);
-
-    //sleep(1);
     isLoggedIn = PWPtr->waitCancelDownload();
     if (isLoggedIn) {
-        std::cout <<"\n\n\n\n goood login\n\n\n";
+        std::cout <<"Logged in successfully\n";
         synchFolder = login;
-        initWatcher();
-        WatcherThread = std::thread([&]()
-                                { Watcher.run(); });
+        runWatcher();
+    } else {
+        std::cout << "Can't login\n";
     }
 }
 
@@ -72,11 +70,12 @@ void Application::registerUser(std::string login, std::string pass)
     Network->writeMessageToS(msg);
     std::this_thread::sleep_for(std::chrono::seconds(1));
     if (Network->IsRegister()) {
+        std::cout << "Registerd succesfully\n";
         Users->addUser(user);
         std::filesystem::create_directory(login);
         Network->SetIsRegisterToFalse();
     } else {
-        std::cout << "Bad registration\n";
+        std::cout << "Can't registration\n";
     }
 }
 void Application::changePassword()
@@ -104,20 +103,11 @@ void Application::downloadFile(const std::string &fileName)
     req.set_filename(fileName);
     std::string msg;
     req.SerializePartialToString(&msg);
-        std::cout<<"stopping watcher before lock";
-
     stopWatcher();
-    std::cout<<"stopping watcher not lock";
     Network->writeMessageToFS(msg);
-    int wait = PWPtr->waitCancelDownload();
-    if(wait) {
-        std::cout<<"zapyckau watchera ept";
+    PWPtr->waitCancelDownload();
     runWatcher();
-    }
-    else 
-    {
-        std::cout<<"A ya nichego ne delau";
-    }
+
 }
 void Application::sendFile(const FileMeta &fileinfo)
 {
@@ -160,11 +150,6 @@ void Application::downloadFileFriend(const std::string& friendName, const std::s
 }
 void Application::renameFile()
 {
-
-    //ClientNetwork.start();
-    //ClientNetwork.writeMessage();
-    //ClientNetwork.readMessage();
-    //ClientNetwork.handleRead();
     return;
 }
 void Application::deleteFile(const std::string& fileName)
@@ -189,20 +174,15 @@ void Application::checkPassword()
 }
 void Application::runWatcher()
 {
-    std::cout<<"runwatcher";
     initWatcher();
-        WatcherThread = std::thread([&]()
+    WatcherThread = std::thread([&]()
                                 { Watcher.run(); });
-    Watcher.runAfterShutDown();
 
-    //WatcherThread.detach();
 }
 void Application::stopWatcher()
 {
     Watcher.stop();
-    std::cout<<"Problema v joine";
     WatcherThread.join();
-    std::cout<<"ending stop watcher";
 }
 void Application::synchronize()
 {
@@ -220,7 +200,8 @@ void Application::initWatcher()
     {
         if (!isTmpFile(notification.Path.filename()))
         {
-            std::cout << "Event " << notification.Event << " on " << notification.Path << " at " << notification.Time.time_since_epoch().count() << " was triggered.\n";
+            //std::cout << "Event " << notification.Event << " on " << notification.Path << " at " << notification.Time.time_since_epoch().count() << " was triggered.\n";
+
             FileMeta f;
             f.fileName = notification.Path.filename();
             f.fileExtention = notification.Path.extension();
@@ -246,12 +227,12 @@ void Application::initWatcher()
                 if (isLogin())
                 {
                     sendFile(f);
+                    std::cout << "\n\n Sending file from watcher\n\n";
                 }
                 break;
             }
             case (InotifyEvent::_move & InotifyEvent::_moved_from):
             {
-                std::cout << "removing file";
                 Files->deleteFile(f.fileId);
                 break;
             }
@@ -270,8 +251,8 @@ void Application::initWatcher()
                    InotifyEvent::_modify,
                    InotifyEvent::_remove,
                    InotifyEvent::_close_write,
-                   //InotifyEvent::_move | InotifyEvent::_moved_from,
-                   InotifyEvent::_move, InotifyEvent::_moved_from,
+                   InotifyEvent::_move,
+                   InotifyEvent::_moved_from,
                    InotifyEvent::_moved_to};
 
     Watcher = BuildWatcherNotifier()

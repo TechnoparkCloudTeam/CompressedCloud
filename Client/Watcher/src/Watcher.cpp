@@ -230,7 +230,6 @@ void Watcher::shutDown()
 {
 
     mStopped = true;
-    std::cout<<"ya tut bil shutdown watcher cpp";
     sendStopSignal();
 }
 
@@ -270,7 +269,7 @@ bool Watcher::isOnTimeout(const steadyClock::time_point &eventTime)
 ssize_t Watcher::readEventsIntoBuffer(vector<uint8_t> &eventBuffer)
 {
     ssize_t length = 0;
-    auto timeout = 1;
+    auto timeout = -1;
     auto nFileDescReady = epoll_wait(mEpollFd, mEpollEvents, MAX_EPOLL_EVENTS, timeout);
     if (nFileDescReady == ERROR_DESC)
     {

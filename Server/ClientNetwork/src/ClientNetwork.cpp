@@ -62,7 +62,7 @@ void ClientNetwork::start_read_header_fs()
 void ClientNetwork::handle_read_header_fs()
 {
     unsigned msg_len = decode_header(m_readbuf_fs);
-    BOOST_LOG_TRIVIAL(debug) << "MSG LEN: " << msg_len << std::endl;
+    //BOOST_LOG_TRIVIAL(debug) << "MSG LEN: " << msg_len << std::endl;
     start_read_body_fs(msg_len);
 }
 
@@ -175,7 +175,7 @@ void ClientNetwork::handle_read_header_s()
 {
     unsigned msg_len = decode_header(m_readbuf_s);
 
-    BOOST_LOG_TRIVIAL(debug) << "MSG LEN: " << msg_len << std::endl;
+    //BOOST_LOG_TRIVIAL(debug) << "MSG LEN: " << msg_len << std::endl;
     start_read_body_s(msg_len);
 }
 
@@ -190,7 +190,7 @@ void ClientNetwork::handle_read_body_s()
 {
     messageFS::Request readed;
     readed.ParseFromArray(&m_readbuf_s[header_size], m_readbuf_s.size() - header_size);
-    std::cout << "Readed from s id: " << readed.id() << " name: " << readed.name() << std::endl;
+    //std::cout << "Readed from s id: " << readed.id() << " name: " << readed.name() << std::endl;
     switch (readed.id())
     {
     case ServerSyncho::OKREG:
@@ -205,18 +205,15 @@ void ClientNetwork::handle_read_body_s()
     case ServerSyncho::OKLOGIN:
     {
         PWPtr->add();
-        //this->IsLogged = true;
-        std::cout << "Logged in\n";
         break;
     }
     case ServerSyncho::BADLOGIN:
     {
-        std::cout << "Bad login try again\n";
         break;
     }
     case ServerSyncho::CHECKFRIENDANDFILESUCCESSFUL:
     {
-        readed.set_id(ServerFS::DOWNLOADFILE);
+        readed.set_id(ServerFS::DOWNLOADFILRFRIEND);
         readed.set_name(readed.name()); 
         readed.set_loginfriend(readed.loginfriend());
         std::string answer;
@@ -226,12 +223,12 @@ void ClientNetwork::handle_read_body_s()
     }
     case ServerSyncho::FRIENDSHIPSUCCESSFUL:
     {
-        std::cout<<"Friendship yspex\n";
+        std::cout<<"Added friend successfully\n";
         break;
     }
     case ServerSyncho::OKSEND:
     {
-        std::cout <<"Oksending file from s\n\n";
+        std::cout << "\nok Sending\n";
         break;
     }
     default:

@@ -12,11 +12,11 @@
 #include <vector>
 #include <thread>
 #include "../../config.h"
-#include "PatternWatcher.h"
+#include "RequestCoordinator.h"
 class ClientNetwork 
 {
 public:
-    ClientNetwork(boost::asio::io_service &io_service, std::shared_ptr<PatternWatcher> PWPtr_);
+    ClientNetwork(boost::asio::io_service &io_service, std::shared_ptr<RequestCoordinator> PWPtr_);
 
     void writeMessageToFS(const std::string &msg);
 
@@ -75,5 +75,5 @@ private:
 
     bool IsRegisted = false;
 
-    std::shared_ptr<PatternWatcher> PWPtr;
+    std::shared_ptr<RequestCoordinator> PWPtr;
 };

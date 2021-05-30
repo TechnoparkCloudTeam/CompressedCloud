@@ -4,9 +4,8 @@
 #include <iostream>
 //#include <boost/log/trivial.hpp>
 
-void MetaDataDB::createTable()
-{
-  const char *sql = R"(create table if not exists Files (
+void MetaDataDB::createTable() {
+        const char* sql=R"(create table if not exists Files (
        fileId serial primary key,
        userId integer,
        version integer,
@@ -22,66 +21,53 @@ void MetaDataDB::createTable()
        createDate timestamp,
        foreign key (userId) references users(id)
 ))";
-  std::cout << "creating table of Files\n";
-  pqExec(sql, PostgresExceptions("can't create table of Files\n"));
+    std::cout << "creating table of Files\n";
+    pqExec(sql, PostgresExceptions("can't create table of Files\n"));
 }
 
 MetaDataDB::MetaDataDB(std::string_view info)
-    : PostgresSQLDB(info)
-{
+    : PostgresSQLDB(info) {
 }
 
-MetaDataDB &MetaDataDB::shared(std::string_view info)
-{
+MetaDataDB &MetaDataDB::shared(std::string_view info) {
   static MetaDataDB shared(info);
   return shared;
 }
 
-void MetaDataDB::InsertFile(const FileInfo &fileMeta)
-{
-  // BOOST_LOG_TRIVIAL(debug) « "PostgresSQLDB: InsertFile";
-  // auto updateDate = fileMeta.file.updateDate;
-  // std::string dateUpdate = getTime(updateDate);
-  // auto createDate = fileMeta.file.createDate;
-  // std::string dateCreateDate = getTime(createDate);
+void MetaDataDB::InsertFile(const FileMeta &fileMeta) {
 
-  try
-  {
-    pqExec("begin;", PostgresExceptions("invalid to start transaction")); // Начало транзакции
+  try {
+    pqExec("begin;", PostgresExceptions("invalid to start transaction"));  // Начало транзакции
     std::cout << "PostgresSQLDB: Begin transaction\n";
-    pqExec("savepoint f_savepoint;", PostgresExceptions("invalid to insert\n")); // Точка сохранения
-
-    /* std::cout « "PostgresSQLDB: Update file\n";
-std::string query = "Update Files set isCurrent = 0 where fileId = "
-+ std::to_string(fileMeta.file.fileId)
-+ " and userId = "
-+ std::to_string(fileMeta.userId) + ";\n";
-pqExec(query, PostgresExceptions("invalid to insert")); // Снятие старой версии
-*/
+    pqExec("savepoint f_savepoint;", PostgresExceptions("invalid to insert\n"));  // Точка сохранения
     std::string query =
         "INSERT INTO Files (userId, fileName, fileExtention, filePath ,fileSize, chunksCount, version, isCurrent, isDeleted, updateDate, createDate) VALUES ("
-        /* + std::to_string(fileMeta.file.fileId) */
-        /* + ", "*/
-        + std::to_string(fileMeta.userId) + ", '" + fileMeta.file.fileName + "', '" + fileMeta.file.fileExtension + "', '" + fileMeta.file.filePath + "', " + std::to_string(fileMeta.file.fileSize) + ", " + std::to_string(fileMeta.file.chunksCount) + ", " + std::to_string(fileMeta.file.version) + ", '" + std::to_string(fileMeta.file.isCurrent) + "', '" + std::to_string(fileMeta.file.isDeleted) + "', " + "'" + fileMeta.file.updateDate + "'," + "'" + fileMeta.file.createDate + "');";
+            /* + ", "*/  + std::to_string(fileMeta.userId)
+            + ", '" + fileMeta.fileName
+            + "', '" + fileMeta.fileExtension
+            + "', '" + fileMeta.filePath
+            + "', " + std::to_string(fileMeta.fileSize)
+            + ", " + std::to_string(fileMeta.chunksCount)
+            + ", " + std::to_string(fileMeta.version)
+            + ", '" + std::to_string(fileMeta.isCurrent)
+            + "', '" + std::to_string(fileMeta.isDeleted)
+            + "', " + "'" + fileMeta.updateDate + "'," + "'" + fileMeta.createDate + "');";
     std::cout << "PostgresSQLDB: Insert file\n";
 
     std::cout << "\n\n"<<query<<"\n\n";
-    pqExec(query, PostgresExceptions("invalid to insert data to db\n")); // Добавление нового файла
-
-    std::cout << "PostgresSQLDB: End transaction";
-    pqExec("commit;", PostgresExceptions("invalid to end transation")); // Завершение транзакции
+    pqExec(query, PostgresExceptions("invalid to insert data to db\n"));  // Добавление нового файла
+  std::cout << "PostgresSQLDB: End transaction";
+    pqExec("commit;", PostgresExceptions("invalid to end transation"));  // Завершение транзакции
   }
-  catch (PostgresExceptions &exceptions)
-  {
+  catch (PostgresExceptions &exceptions) {
     throw PostgresExceptions(exceptions.what());
   }
 }
-int MetaDataDB::getLastIdOfFileUser(const std::string &query, PostgresExceptions exceptions)
-{
-  std::cout << "PostgresSQLDB: getLastIdOfFileUser";
+
+int MetaDataDB::getLastIdOfFileUser(const std::string &query, PostgresExceptions exceptions) {
+std::cout<< "PostgresSQLDB: getLastIdOfFileUser";
   PGresult *res = PQexec(_conn, query.c_str());
-  if (PQresultStatus(res) != PGRES_TUPLES_OK)
-  {
+  if (PQresultStatus(res) != PGRES_TUPLES_OK) {
     PQexec(_conn, "rollback to savepoint f_savepoint;");
     PQclear(res);
     throw exceptions;
@@ -91,19 +77,17 @@ int MetaDataDB::getLastIdOfFileUser(const std::string &query, PostgresExceptions
   return id;
 }
 
-std::vector<FileInfo> MetaDataDB::GetUserFilesByTime(const UserDate &userDate)
-{
+std::vector<FileInfo> MetaDataDB::GetUserFilesByTime(const UserDate &userDate) {
   std::vector<FileInfo> filesInfo;
-  std::cout << "PostgresSQLDB: GetUserFilesByTime";
-  std::string query = "Select * from Files Where userId = " + std::to_string(userDate.userId) + " and updateDate > '" + userDate.date + "' ORDER BY id;";
+std::cout << "PostgresSQLDB: GetUserFilesByTime";
+  std::string query = "Select * from Files Where userId = " + std::to_string(userDate.userId)
+      + " and updateDate > '" + userDate.date + "' ORDER BY id;";
   PGresult *res = PQexec(_conn, query.c_str());
-  if (PQresultStatus(res) != PGRES_TUPLES_OK)
-  {
+  if (PQresultStatus(res) != PGRES_TUPLES_OK) {
     printf("No data retrieved\n");
   }
   int rows = PQntuples(res);
-  for (int i = 0; i < rows; i++)
-  {
+  for (int i = 0; i < rows; i++) {
     FileInfo fileInfo;
     fileInfo.userId = userDate.userId;
     fileInfo.file.fileId = boost::lexical_cast<int>(PQgetvalue(res, i, 1));
@@ -121,15 +105,13 @@ std::vector<FileInfo> MetaDataDB::GetUserFilesByTime(const UserDate &userDate)
     auto id = boost::lexical_cast<int>(PQgetvalue(res, i, 0));
     query = "Select * from version where fileId = " + std::to_string(id) + ";";
     PGresult *resChunks = PQexec(_conn, query.c_str());
-    if (PQresultStatus(resChunks) != PGRES_TUPLES_OK)
-    {
-      std::cout << "PostgresSQLDB: Faild to get data";
+    if (PQresultStatus(resChunks) != PGRES_TUPLES_OK) {
+std::cout << "PostgresSQLDB: Faild to get data";
       throw PostgresExceptions("PostgresSQLDB: PGRES_TUPLES_OK");
     }
     int rowsChunks = PQntuples(resChunks);
 
-    for (int j = 0; j < rowsChunks; j++)
-    {
+    for (int j = 0; j < rowsChunks; j++) {
       FileChunksMeta chunkMeta{
           .chunkId = boost::lexical_cast<int>(PQgetvalue(resChunks, j, 2)),
           .chunkOrder = boost::lexical_cast<int>(PQgetvalue(resChunks, j, 3))};
@@ -138,75 +120,83 @@ std::vector<FileInfo> MetaDataDB::GetUserFilesByTime(const UserDate &userDate)
 
     filesInfo.push_back(fileInfo);
   }
-  std::cout << "PostgresSQLDB: count files = " << filesInfo.size() << std::endl;
+std::cout << "PostgresSQLDB: count files = " << filesInfo.size() << std::endl;
 
   return filesInfo;
 }
 
-std::string MetaDataDB::getTime(std::string &time)
-{
+std::string MetaDataDB::getTime(std::string &time) {
   time.erase(std::find(time.begin(), time.end(), '.'), time.end());
 
   std::time_t ttime;
-  try
-  {
+  try {
     ttime = boost::lexical_cast<int>(time);
-  }
-  catch (std::exception &exception)
-  {
-    struct std::tm tm
-    {
-    };
+  } catch (std::exception &exception) {
+    struct std::tm tm{};
     std::istringstream ss(time);
     ss >> std::get_time(&tm, "%Y-%m-%d %H:%M:%S");
     ttime = mktime(&tm);
   }
 
   auto *local_time = localtime(&ttime);
-  std::string date = std::to_string(1900 + local_time->tm_year) + "-" + std::to_string(1 + local_time->tm_mon) + "-" + std::to_string(local_time->tm_mday) + " " + std::to_string(local_time->tm_hour) + ":" + std::to_string(local_time->tm_min) + ":" + std::to_string(local_time->tm_sec);
+  std::string date = std::to_string(1900 + local_time->tm_year) + "-" + std::to_string(1 + local_time->tm_mon) + "-"
+      + std::to_string(local_time->tm_mday) + " " + std::to_string(local_time->tm_hour) + ":"
+      + std::to_string(local_time->tm_min) + ":" + std::to_string(local_time->tm_sec);
 
   return date;
 }
 
-void MetaDataDB::deleteFile(std::string login, std::string fileName)
-{
-  auto query = "SELECT id from Users Where login like '" + login + "' ;";
-  PGresult *res1 = PQexec(_conn, query.c_str());
-  int id = strtol(PQgetvalue(res1, 0, 0), 0, 10);
-  query = "DELETE from Files Where userId =" + std::to_string(id) + " and fileName like '" + fileName + "' ;";
-  PGresult *res = PQexec(_conn, query.c_str());
-  if (PQresultStatus(res1) != PGRES_TUPLES_OK)
-  {
-    PQexec(_conn, "rollback to savepoint f_savepoint;");
-    PQclear(res);
-    throw PostgresExceptions("faild to delete file");
-  }
+bool MetaDataDB::isFileExist(std::string login) {
+std::string query = "SELECT id from Users Where login like '" + login + "' ;";
+PGresult *res1 = PQexec(_conn, query.c_str());
+int id = strtol(PQgetvalue(res1, 0, 0),0,10);
+query = "SELECT * from Files Where userId =" + std::to_string(id) + " ;";
+PGresult *res = PQexec(_conn, query.c_str());
+if (PQresultStatus(res) != PGRES_TUPLES_OK) {
+PQexec(_conn, "rollback to savepoint f_savepoint;");
+PQclear(res);
+throw PostgresExceptions("faild to select file");
+}
+int isFileExist = strtol(PQgetvalue(res, 0, 0),0,10);
+if(isFileExist != 0) {
+        return true;
+}
+return false;
 }
 
-/* #if 0
+void MetaDataDB::deleteFile(std::string login, std::string fileName) {
+auto query = "SELECT id from Users Where login like '" + login + "' ;";
+PGresult *res1 = PQexec(_conn, query.c_str());
+int id = strtol(PQgetvalue(res1, 0, 0),0,10);
+query = "DELETE from Files Where userId =" + std::to_string(id) + " and fileName like '" + fileName + "' ;";
+PGresult *res = PQexec(_conn, query.c_str());
+if (PQresultStatus(res1) != PGRES_TUPLES_OK) {
+PQexec(_conn, "rollback to savepoint f_savepoint;");
+PQclear(res);
+throw PostgresExceptions("faild to delete file");
+}
+}
 
-// ???
-    
-    for (const auto &chunk : fileMeta.chunkMeta) {
-      query = "INSERT INTO Chunks (id_chunk_for_user, id_user) VALUES ("
-          + std::to_string(chunk.chunkId) + ","
-          + std::to_string(fileMeta.userId) + ");";
-      pqExec(query, PostgresExceptions("invalid to insert data to db"));  // Добавление нового чанка
-    }
+std::string MetaDataDB::GetFile(std::string login) {
+std::string fileName = "";
+std::string result = "";
+std::string query = "SELECT id from Users Where login like '" + login + "' ;";
+PGresult *res1 = PQexec(_conn, query.c_str());
+int id = strtol(PQgetvalue(res1, 0, 0),0,10);
+query = "select fileName from Files Where userId =" + std::to_string(id) + " ;";
+PGresult *res = PQexec(_conn, query.c_str());
+if (PQresultStatus(res1) != PGRES_TUPLES_OK) {
+PQexec(_conn, "rollback to savepoint f_savepoint;");
+PQclear(res);
+throw PostgresExceptions("faild to select file");
+}
+int rows = PQntuples(res);
+  for (int i = 0; i < rows; i++) {
+    fileName = boost::lexical_cast<std::string>(PQgetvalue(res, i, 0));
+    result = result + " " + fileName;
 
-    query = "SELECT id FROM Files Where id_file_for_user = "
-        + std::to_string(fileMeta.file.fileId)
-        + "and id_user = "
-        + std::to_string(fileMeta.userId)
-        + " ORDER  BY  id  DESC Limit 1;";
+  }
+return result;
+}
 
-    int id = getLastIdOfFileUser(query, PostgresExceptions("invalid to select id"));
-    for (const auto &version : fileMeta.fileChunksMeta) {
-      query = "INSERT INTO Version (id_file , id_chunk, id_order) VALUES ("
-          + std::to_string(id) + ", "
-          + std::to_string(version.chunkId) + ", "
-          + std::to_string(version.chunkOrder) + ");";
-     std::cout << "PostgresSQLDB: Insert chunks";
-      pqExec(query, PostgresExceptions("invalid to insert data to db"));  // Добавление новой версии
-    }
-#endif */
+

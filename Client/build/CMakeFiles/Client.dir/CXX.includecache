@@ -69,8 +69,8 @@ thread
 -
 ../../config.h
 ../../Server/config.h
-PatternWatcher.h
-../../Server/ClientNetwork/include/PatternWatcher.h
+RequestCoordinator.h
+../../Server/ClientNetwork/include/RequestCoordinator.h
 
 ../../Server/ServerFileStorage/fileStorageWorker/include/FileStorageWorker.h
 string
@@ -103,20 +103,18 @@ chrono
 -
 iostream
 -
-../../Indexer/include/Indexer.h
-../Indexer/include/Indexer.h
-../../../Server/ServerFileStorage/fileStorageWorker/include/FileStorageWorker.h
-../../Server/ServerFileStorage/fileStorageWorker/include/FileStorageWorker.h
-../../../DataBases/LocalDB/include/LocalDB.h
-../../DataBases/LocalDB/include/LocalDB.h
-../../../Server/ClientNetwork/include/ClientNetwork.h
-../../Server/ClientNetwork/include/ClientNetwork.h
-../../../Server/config.h
-../../Server/config.h
-../../Watcher/include/WatcherNotifierBuilder.h
-../Watcher/include/WatcherNotifierBuilder.h
-PatternWatcher.h
-../Application/include/PatternWatcher.h
+FileStorageWorker.h
+../Application/include/FileStorageWorker.h
+LocalDB.h
+../Application/include/LocalDB.h
+ClientNetwork.h
+../Application/include/ClientNetwork.h
+WatcherNotifierBuilder.h
+../Application/include/WatcherNotifierBuilder.h
+RequestCoordinator.h
+../Application/include/RequestCoordinator.h
+Indexer.h
+../Application/include/Indexer.h
 
 ../Indexer/include/Indexer.h
 vector
@@ -128,7 +126,7 @@ memory
 ../../../DataBases/LocalDB/include/LocalDB.h
 ../../DataBases/LocalDB/include/LocalDB.h
 
-../PatternWatcher/include/PatternWatcher.h
+../RequestCoordinator/include/RequestCoordinator.h
 iostream
 -
 queue

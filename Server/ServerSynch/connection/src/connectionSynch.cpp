@@ -143,7 +143,7 @@ void Connection::handle_read_body()
         std::cout <<"\n\n\n UserID:: "<<fileInfo.userId<<"\n\n\n";
         try
         {
-            postgres_sqldb_file->InsertFile(fileInfo);
+            postgres_sqldb_file->InsertFile(file);
             
             // auto tt = UserDate{readed.nameid(), "2020-12-19 0:47:25"};
             //postgres_sqldb_file->GetUserFilesByTime(tt);

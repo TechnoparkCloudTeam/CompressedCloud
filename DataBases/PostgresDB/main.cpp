@@ -68,7 +68,7 @@ try
   }*/
 
   try {
-     postgres_sqldb.InsertFile(fileInfo);
+     postgres_sqldb.InsertFile(file);
      auto tt = UserDate{3, "2020-12-19 0:47:25"};
 	   postgres_sqldb.GetUserFilesByTime(tt);
      // postgres_sqldb1.Registration(user);

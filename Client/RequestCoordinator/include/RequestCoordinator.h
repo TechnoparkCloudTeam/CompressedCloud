@@ -3,7 +3,7 @@
 #include <iostream>
 #include <queue>
 
-class PatternWatcher
+class RequestCoordinator
 {
 public:
     int waitCancelDownload();

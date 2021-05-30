@@ -10,7 +10,7 @@ CMakeFiles/Client.dir/Application/src/Application.cpp.o
  ../../Server/config.h
  ../Application/include/Application.h
  ../Indexer/include/Indexer.h
- ../PatternWatcher/include/PatternWatcher.h
+ ../RequestCoordinator/include/RequestCoordinator.h
  ../Watcher/include/FileSysEvent.h
  ../Watcher/include/Watcher.h
  ../Watcher/include/WatcherConfig.h
@@ -25,9 +25,6 @@ CMakeFiles/Client.dir/Indexer/src/Indexer.cpp.o
  /home/ilya/CompressedCloudStableBackup/DataBases/LocalDB/include/FileDB.h
  /home/ilya/CompressedCloudStableBackup/DataBases/LocalDB/include/LocalDB.h
  /home/ilya/CompressedCloudStableBackup/DataBases/LocalDB/include/UserDB.h
-CMakeFiles/Client.dir/PatternWatcher/src/PatternWatcher.cpp.o
- ../PatternWatcher/include/PatternWatcher.h
- /home/ilya/CompressedCloudStableBackup/Client/PatternWatcher/src/PatternWatcher.cpp
 CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o
  ../../DataBases/LocalDB/include/FileDB.h
  ../../DataBases/LocalDB/include/LocalDB.h
@@ -37,7 +34,7 @@ CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o
  ../../Server/config.h
  ../Application/include/Application.h
  ../Indexer/include/Indexer.h
- ../PatternWatcher/include/PatternWatcher.h
+ ../RequestCoordinator/include/RequestCoordinator.h
  ../Watcher/include/FileSysEvent.h
  ../Watcher/include/Watcher.h
  ../Watcher/include/WatcherConfig.h
@@ -47,6 +44,8 @@ CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o
  /home/ilya/CompressedCloudStableBackup/Client/ProgramInterface/include/ProgramInterface.h
  /home/ilya/CompressedCloudStableBackup/Client/ProgramInterface/src/ProgramInterface.cpp
  message.pb.h
+CMakeFiles/Client.dir/RequestCoordinator/src/RequestCoordinator.cpp.o
+ /home/ilya/CompressedCloudStableBackup/Client/RequestCoordinator/src/RequestCoordinator.cpp
 CMakeFiles/Client.dir/Watcher/src/FileSysEvent.cpp.o
  /home/ilya/CompressedCloudStableBackup/Client/Watcher/include/FileSysEvent.h
  /home/ilya/CompressedCloudStableBackup/Client/Watcher/src/FileSysEvent.cpp
@@ -76,7 +75,7 @@ CMakeFiles/Client.dir/home/ilya/CompressedCloudStableBackup/DataBases/LocalDB/sr
  ../../DataBases/LocalDB/include/UserDB.h
  /home/ilya/CompressedCloudStableBackup/DataBases/LocalDB/src/LocalDB.cpp
 CMakeFiles/Client.dir/home/ilya/CompressedCloudStableBackup/Server/ClientNetwork/src/ClientNetwork.cpp.o
- ../PatternWatcher/include/PatternWatcher.h
+ ../RequestCoordinator/include/RequestCoordinator.h
  /home/ilya/CompressedCloudStableBackup/Server/ClientNetwork/include/ClientNetwork.h
  /home/ilya/CompressedCloudStableBackup/Server/ClientNetwork/src/ClientNetwork.cpp
  /home/ilya/CompressedCloudStableBackup/Server/config.h
@@ -93,8 +92,8 @@ CMakeFiles/Client.dir/main.cpp.o
  ../../Server/config.h
  ../Application/include/Application.h
  ../Indexer/include/Indexer.h
- ../PatternWatcher/include/PatternWatcher.h
  ../ProgramInterface/include/ProgramInterface.h
+ ../RequestCoordinator/include/RequestCoordinator.h
  ../Watcher/include/FileSysEvent.h
  ../Watcher/include/Watcher.h
  ../Watcher/include/WatcherConfig.h

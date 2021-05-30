@@ -79,7 +79,7 @@ public:
 	void createTable();
 	
 	void addFile(FileMeta &file);
-        void deleteFile(const int &fileId); 
+        void deleteFile(const std::string &fileName, const std::string &filePath); 
         void downloadFile(const int &fileId);
 	
 	bool isFileExist(const int &fileId);
@@ -94,6 +94,7 @@ public:
         std::vector<FileMeta> selectAllFiles();
         
         void updateFile(FileMeta &file);
+        
 private:
        std::unique_ptr<sqlite3, sqlite3_deleter> _database;   
 };

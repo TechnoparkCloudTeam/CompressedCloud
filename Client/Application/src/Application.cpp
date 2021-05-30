@@ -1,18 +1,5 @@
 #include "Application.h"
 
-std::string GetCurrentPath()
-{
-    std::filesystem::path Path = std::filesystem::current_path();
-    return Path.c_str();
-}
-
-std::string GetCurrentTime()
-{
-    auto ttime = time(nullptr);
-    auto *local_time = localtime(&ttime);
-    std::string lastTMPUpdate = std::to_string(1900 + local_time->tm_year) + "-" + std::to_string(1 + local_time->tm_mon) + "-" + std::to_string(local_time->tm_mday) + " " + std::to_string(local_time->tm_hour) + ":" + std::to_string(local_time->tm_min) + ":" + std::to_string(local_time->tm_sec);
-    return lastTMPUpdate;
-}
 
 bool isTmpFile(const std::string &fileName)
 {
@@ -21,13 +8,12 @@ bool isTmpFile(const std::string &fileName)
 
 Application::Application(
     std::shared_ptr<ClientNetwork> network,
-    std::shared_ptr<UserDB> users,
-    std::shared_ptr<FileDB> files, 
-    std::shared_ptr<PatternWatcher> PWPtr_) : Network(network),
-                                     Users(users),
-                                     Files(files),
-                                     isLoggedIn(false),
-                                     PWPtr(PWPtr_)
+    std::shared_ptr<Indexer> indexer,
+    std::shared_ptr<RequestCoordinator> requestCoordinator) :
+        Network(network),
+        Index(indexer),
+        isLoggedIn(false),
+        RequestCoord(requestCoordinator)
 {    
 }
 
@@ -43,7 +29,7 @@ void Application::login(std::string login, std::string pass)
     std::string msg;
     req.SerializePartialToString(&msg);
     Network->writeMessageToS(msg);
-    isLoggedIn = PWPtr->waitCancelDownload();
+    isLoggedIn = RequestCoord->waitCancelDownload();
     if (isLoggedIn) {
         std::cout <<"Logged in successfully\n";
         synchFolder = login;
@@ -60,40 +46,23 @@ void Application::registerUser(std::string login, std::string pass)
     req.set_password(pass);
     req.set_id(ServerSyncho::REGISTRATION);
     std::string msg; 
-    User user;
-    user.deviceName = "PC";
-    user.synchFolder = synchFolder;
-    user.login = login;
-    user.password = pass;
     
     req.SerializePartialToString(&msg);
     Network->writeMessageToS(msg);
-    std::this_thread::sleep_for(std::chrono::seconds(1));
+    RequestCoord->waitCancelDownload();
     if (Network->IsRegister()) {
         std::cout << "Registerd succesfully\n";
-        Users->addUser(user);
+        Index->AddUser(login, pass);
         std::filesystem::create_directory(login);
         Network->SetIsRegisterToFalse();
-    } else {
-        std::cout << "Can't registration\n";
     }
 }
-void Application::changePassword()
-{
-    return;
-}
+
 bool Application::isLogin()
 {
     return isLoggedIn;
 }
-void Application::logOut()
-{
-    //ClientNetwork.start();
-    //ClientNetwork.writeMessage();
-    //ClientNetwork.readMessage();
-    this->Login = "";
-    this->Password = "";
-}
+
 void Application::downloadFile(const std::string &fileName)
 {
     messageFS::Request req;
@@ -105,7 +74,7 @@ void Application::downloadFile(const std::string &fileName)
     req.SerializePartialToString(&msg);
     stopWatcher();
     Network->writeMessageToFS(msg);
-    PWPtr->waitCancelDownload();
+    RequestCoord->waitCancelDownload();
     runWatcher();
 
 }
@@ -145,12 +114,8 @@ void Application::downloadFileFriend(const std::string& friendName, const std::s
     req.SerializePartialToString(&msg);
     stopWatcher();
     Network->writeMessageToS(msg);
-    PWPtr->waitCancelDownload();
+    RequestCoord->waitCancelDownload();
     runWatcher();
-}
-void Application::renameFile()
-{
-    return;
 }
 void Application::deleteFile(const std::string& fileName)
 {
@@ -164,14 +129,6 @@ void Application::deleteFile(const std::string& fileName)
     return;
 }
 
-void Application::createFile(const std::string fileName, const char *buffer)
-{
-    return;
-}
-void Application::checkPassword()
-{
-    return;
-}
 void Application::runWatcher()
 {
     initWatcher();
@@ -184,15 +141,6 @@ void Application::stopWatcher()
     Watcher.stop();
     WatcherThread.join();
 }
-void Application::synchronize()
-{
-    //downloadFile();
-}
-
-void Application::setSyncFolder(const std::string &synchFolder)
-{
-    this->synchFolder = synchFolder;
-}
 
 void Application::initWatcher()
 {
@@ -202,38 +150,27 @@ void Application::initWatcher()
         {
             //std::cout << "Event " << notification.Event << " on " << notification.Path << " at " << notification.Time.time_since_epoch().count() << " was triggered.\n";
 
-            FileMeta f;
-            f.fileName = notification.Path.filename();
-            f.fileExtention = notification.Path.extension();
-            f.createDate = GetCurrentTime();
-            f.updateDate = GetCurrentTime();
-            f.isDownload = false;
-            f.version;
-            f.chunksCount = 0;
-            f.filePath = notification.Path;
-            f.fileSize = 1000;
             switch (notification.Event)
             {
             case InotifyEvent::_create:
             {
-                Files->addFile(f);
-                Files->updateFile(f);
+                Index->createFile(notification.Path);
+                sendFile(Index->GetFileInfo(notification.Path));
                 break;
             }
             case InotifyEvent::_close_write:
             {
-                Files->updateFile(f);
-
+                Index->modifyFile(notification.Path, 1);
                 if (isLogin())
                 {
-                    sendFile(f);
+                    sendFile(Index->GetFileInfo(notification.Path));
                     std::cout << "\n\n Sending file from watcher\n\n";
                 }
                 break;
             }
             case (InotifyEvent::_move & InotifyEvent::_moved_from):
             {
-                Files->deleteFile(f.fileId);
+                Index->deleteFile(notification.Path);
                 break;
             }
             default:

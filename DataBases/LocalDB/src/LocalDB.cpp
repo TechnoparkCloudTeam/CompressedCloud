@@ -5,8 +5,6 @@
 #include <boost/lexical_cast.hpp>
 #include <stdlib.h>
 
-//TODO: Put BOOST_LOG Output in file
-
 UserDB::UserDB(const std::string_view userNameDB)
 {
   if (connect(userNameDB))
@@ -70,25 +68,25 @@ bool UserDB::connect(const std::string_view userNameDB)
   auto pDB = _database.get();
   if (SQLITE_OK != sqlite3_open_v2(userNameDB.data(), &pDB, SQLITE_OPEN_CREATE | SQLITE_OPEN_READWRITE, nullptr))
   {
-    //BOOST_LOG_TRIVIAL(error) << "UserDB can't connect\n";
+    BOOST_LOG_TRIVIAL(error) << "UserDB can't connect\n";
     return false;
   }
 
   _database.reset(pDB);
-  //BOOST_LOG_TRIVIAL(debug) << "UserDB connect\n";
+  BOOST_LOG_TRIVIAL(debug) << "UserDB connect\n";
 
   return true;
 }
 
 void UserDB::disconnect()
 {
-  //BOOST_LOG_TRIVIAL(debug) << "UserDB close";
+  BOOST_LOG_TRIVIAL(debug) << "UserDB close";
   sqlite3_shutdown();
 }
 
 void UserDB::createTable()
 {
-  //BOOST_LOG_TRIVIAL(debug) << "UserDB: createTable";
+  BOOST_LOG_TRIVIAL(debug) << "UserDB: createTable";
   exec(R"(
     CREATE TABLE IF NOT EXISTS "User" (
 	  "userId"	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
@@ -100,12 +98,12 @@ void UserDB::createTable()
 	  "lastUpdate"	TEXT NOT NULL);                  
     )",
        0, 0);
-  //BOOST_LOG_TRIVIAL(debug) << "UserDB: Table created";
+  BOOST_LOG_TRIVIAL(debug) << "UserDB: Table created";
 }
 
 bool UserDB::addUser(const User &user)
 {
-  //BOOST_LOG_TRIVIAL(debug) << "UserDB: addUser";
+  BOOST_LOG_TRIVIAL(debug) << "UserDB: addUser";
 
   //if(!_database)return false;
   const std::string query = "INSERT INTO User ("
@@ -125,24 +123,24 @@ bool UserDB::addUser(const User &user)
                                                "'" +
                             user.lastUpdate + "'"
                                               ")";
-  //BOOST_LOG_TRIVIAL(debug) << "User added";
+  BOOST_LOG_TRIVIAL(debug) << "User added";
 
   return exec(query.data());
 }
 
 void UserDB::deleteUser(int id)
 {
-  //BOOST_LOG_TRIVIAL(debug) << "UserDB: deleteUser";
+  BOOST_LOG_TRIVIAL(debug) << "UserDB: deleteUser";
 
   std::string query = "DELETE FROM User WHERE userId = " + std::to_string(id) + ";";
   exec(query.data());
 
-  //BOOST_LOG_TRIVIAL(debug) << "User deleted";
+  BOOST_LOG_TRIVIAL(debug) << "User deleted";
 }
 
 bool UserDB::isUserExist(const int &userId)
 {
-  //BOOST_LOG_TRIVIAL(debug) << "UserDB: isUserExist";
+  BOOST_LOG_TRIVIAL(debug) << "UserDB: isUserExist";
 
   auto query = "SELECT userId id FROM User where id=" + std::to_string(userId) + ";";
   std::vector<s_record> result;
@@ -161,7 +159,7 @@ bool UserDB::isUserExist(const int &userId)
 int UserDB::getUserId(const std::string &login)
 {
 
-  //BOOST_LOG_TRIVIAL(debug) << "UserDB: getUserId";
+  BOOST_LOG_TRIVIAL(debug) << "UserDB: getUserId";
   std::cout << "\n\n\n login " << login << "\n\n\n";
 
   auto query = "SELECT userId FROM User where login='" + login + "';";
@@ -178,37 +176,37 @@ int UserDB::getUserId(const std::string &login)
 
 int UserDB::getDeviceId(const User &user)
 {
-  //BOOST_LOG_TRIVIAL(debug) << "UserDB: getDeviceId";
+  BOOST_LOG_TRIVIAL(debug) << "UserDB: getDeviceId";
   return user.deviceId;
 }
 
 std::string UserDB::getLogin(const User &user)
 {
-  //BOOST_LOG_TRIVIAL(debug) << "UserDB: getLogin";
+  BOOST_LOG_TRIVIAL(debug) << "UserDB: getLogin";
   return user.login;
 }
 
 int UserDB::getPassword(const User &user)
 {
-  //BOOST_LOG_TRIVIAL(debug) << "UserDB: getPassword";
+  BOOST_LOG_TRIVIAL(debug) << "UserDB: getPassword";
   return selectPassword(user);
 }
 
 std::string UserDB::getSynchFolder(const User &user)
 {
-  //BOOST_LOG_TRIVIAL(debug) << "UserDB: getSynchFolder";
+  BOOST_LOG_TRIVIAL(debug) << "UserDB: getSynchFolder";
   return user.synchFolder;
 }
 
 std::string UserDB::getLastUpdate(User &user)
 {
-  //BOOST_LOG_TRIVIAL(debug) << "UserDB: getLastUpdate";
+  BOOST_LOG_TRIVIAL(debug) << "UserDB: getLastUpdate";
   return user.lastUpdate;
 }
 
 int UserDB::selectUserId()
 {
-  //BOOST_LOG_TRIVIAL(debug) << "UserDB: selectUserId";
+  BOOST_LOG_TRIVIAL(debug) << "UserDB: selectUserId";
 
   const std::string query = "SELECT userId FROM User;";
   std::vector<s_record> result;
@@ -235,7 +233,7 @@ int UserDB::selectUserId()
 
 int UserDB::selectDeviceId()
 {
-  //BOOST_LOG_TRIVIAL(debug) << "UserDB: selectDeviceId";
+  BOOST_LOG_TRIVIAL(debug) << "UserDB: selectDeviceId";
   std::string query = "SELECT deviceId FROM User;";
   std::vector<s_record> result;
   int device_id = exec(
@@ -260,7 +258,7 @@ int UserDB::selectDeviceId()
 
 int UserDB::selectLogin()
 {
-  //BOOST_LOG_TRIVIAL(debug) << "UserDB: selectLogin";
+  BOOST_LOG_TRIVIAL(debug) << "UserDB: selectLogin";
 
   const std::string query = "SELECT login FROM User;";
   std::vector<s_record> result;
@@ -286,7 +284,7 @@ int UserDB::selectLogin()
 
 bool UserDB::selectPassword(const User &user)
 {
-  //BOOST_LOG_TRIVIAL(debug) << "UserDB: selectPassword";
+  BOOST_LOG_TRIVIAL(debug) << "UserDB: selectPassword";
 
   std::string query = "Select password from User where userId = " + std::to_string(user.userId) + ";";
   std::vector<s_record> result;
@@ -338,7 +336,7 @@ int UserDB::selectFolder()
 
 int UserDB::selectLastUpdate()
 {
-  //BOOST_LOG_TRIVIAL(debug) << "UserDB: selectLastUpdate";
+  BOOST_LOG_TRIVIAL(debug) << "UserDB: selectLastUpdate";
   const std::string query = "SELECT lastUpdate FROM User;";
   std::vector<s_record> result;
   int update = exec(
@@ -363,13 +361,13 @@ int UserDB::selectLastUpdate()
 
 bool UserDB::updateSynchFolder(User &user, const std::string &newFolder)
 {
-  //BOOST_LOG_TRIVIAL(debug) << "UserDB: updateSynchFolder";
+  BOOST_LOG_TRIVIAL(debug) << "UserDB: updateSynchFolder";
 
   auto query = "Update User set synchFolder = \"" + newFolder + "\" where userId = " + std::to_string(user.userId) + ";";
 
   user.synchFolder = newFolder;
 
-  //BOOST_LOG_TRIVIAL(debug) << "SynchFolder updated";
+  BOOST_LOG_TRIVIAL(debug) << "SynchFolder updated";
 
   return exec(query.data());
 }
@@ -380,14 +378,14 @@ bool UserDB::updatePassword(User &user, const std::string &newPassword)
 
   user.password = newPassword;
 
-  //BOOST_LOG_TRIVIAL(debug) << "Password updated";
+  BOOST_LOG_TRIVIAL(debug) << "Password updated";
 
   return exec(query.data());
 }
 
 void UserDB::saveLastUpdate(User &user)
 {
-  //BOOST_LOG_TRIVIAL(debug) << "UserDB: saveLastUpdate";
+  BOOST_LOG_TRIVIAL(debug) << "UserDB: saveLastUpdate";
 
   auto ttime = time(nullptr);
   auto *local_time = localtime(&ttime);
@@ -467,25 +465,25 @@ bool FileDB::connect(const std::string_view fileNameDB)
   auto pDB = _database.get();
   if (SQLITE_OK != sqlite3_open_v2(fileNameDB.data(), &pDB, SQLITE_OPEN_CREATE | SQLITE_OPEN_READWRITE, nullptr))
   {
-    //BOOST_LOG_TRIVIAL(error) << "FileDB can't connect\n";
+    BOOST_LOG_TRIVIAL(error) << "FileDB can't connect\n";
     return false;
   }
 
   _database.reset(pDB);
-  //BOOST_LOG_TRIVIAL(debug) << "FileDB connect\n";
+  BOOST_LOG_TRIVIAL(debug) << "FileDB connect\n";
 
   return true;
 }
 
 void FileDB::disconnect()
 {
-  //BOOST_LOG_TRIVIAL(debug) << "FileDB close";
+  BOOST_LOG_TRIVIAL(debug) << "FileDB close";
   sqlite3_shutdown();
 }
 
 void FileDB::createTable()
 {
-  //BOOST_LOG_TRIVIAL(debug) << "FileDB: createTable";
+  BOOST_LOG_TRIVIAL(debug) << "FileDB: createTable";
 
   exec(R"(
       CREATE TABLE IF NOT EXISTS  "Files" (
@@ -502,12 +500,12 @@ void FileDB::createTable()
          )",
        0, 0);
 
-  //BOOST_LOG_TRIVIAL(debug) << "FileDB: Table created";
+  BOOST_LOG_TRIVIAL(debug) << "FileDB: Table created";
 }
 
 void FileDB::addFile(FileMeta &file)
 {
-  //BOOST_LOG_TRIVIAL(debug) << "FileDB: addFile";
+  BOOST_LOG_TRIVIAL(debug) << "FileDB: addFile";
 
   file.version = 1;
   auto date = getTime_unixtime();
@@ -521,17 +519,17 @@ void FileDB::addFile(FileMeta &file)
   file.fileId = selectId();
 }
 
-void FileDB::deleteFile(const int &fileId)
+void FileDB::deleteFile(const std::string &fileName, const std::string &filePath)
 {
-  //BOOST_LOG_TRIVIAL(debug) << "FileDB: deleteFile";
+  BOOST_LOG_TRIVIAL(debug) << "FileDB: deleteFile";
 
-  auto query = "DELETE FROM Files WHERE fileId = " + std::to_string(fileId) + ";";
+  auto query = "DELETE FROM Files WHERE fileName = '" + fileName + "' " + "and filePath = '" + filePath + "';";
   exec(query.data());
 }
 
 void FileDB::downloadFile(const int &fileId)
 {
-  //BOOST_LOG_TRIVIAL(debug) << "FileDB: downloadFile";
+  BOOST_LOG_TRIVIAL(debug) << "FileDB: downloadFile";
 
   auto query = "UPDATE Files set isDownload = true where fileId = " +
                std::to_string(fileId) + " ;";
@@ -540,7 +538,7 @@ void FileDB::downloadFile(const int &fileId)
 
 bool FileDB::isFileExist(const int &fileId)
 {
-  //BOOST_LOG_TRIVIAL(debug) << "FileDB: isFileExist";
+  BOOST_LOG_TRIVIAL(debug) << "FileDB: isFileExist";
 
   auto query = "SELECT fileId id FROM Files where id=" + std::to_string(fileId) + ";";
   std::vector<s_record> result;
@@ -551,7 +549,7 @@ bool FileDB::isFileExist(const int &fileId)
       },
       this);
 
-  //BOOST_LOG_TRIVIAL(info) << "FileDB: Check exist file id=" + std::to_string(fileId);
+  BOOST_LOG_TRIVIAL(info) << "FileDB: Check exist file id=" + std::to_string(fileId);
   int count = result.size();
 
   return count != 0;
@@ -559,7 +557,7 @@ bool FileDB::isFileExist(const int &fileId)
 
 std::optional<FileMeta> FileDB::getOneFile(const int id)
 {
-  //BOOST_LOG_TRIVIAL(debug) << "FileDB: getOneFile";
+  BOOST_LOG_TRIVIAL(debug) << "FileDB: getOneFile";
 
   std::string query = "SELECT * " //fileName, fileExtention, fileSize, filePath, chunksCount, version, isDownload, updateDate, createDate FROM Files";
                       "FROM Files where fileid=" +
@@ -610,7 +608,7 @@ int FileDB::selectId()
 
 int FileDB::selectFileId()
 {
-  //BOOST_LOG_TRIVIAL(debug) << "FileDB: selectFileId";
+  BOOST_LOG_TRIVIAL(debug) << "FileDB: selectFileId";
 
   const std::string query = "SELECT fileId FROM Files;";
 
@@ -710,7 +708,7 @@ void FileMeta::printContent() const
 
 std::vector<FileMeta> FileDB::selectAllFiles()
 {
-  //BOOST_LOG_TRIVIAL(debug) << "FileDB: selectAllFiles";
+  BOOST_LOG_TRIVIAL(debug) << "FileDB: selectAllFiles";
 
   std::vector<FileMeta> list;
   std::string query = "SELECT * FROM Files";
@@ -735,7 +733,7 @@ std::vector<FileMeta> FileDB::selectAllFiles()
 
 void FileDB::updateFile(FileMeta &file)
 {
-  //BOOST_LOG_TRIVIAL(debug) << "UserDB: updateFile";
+  BOOST_LOG_TRIVIAL(debug) << "UserDB: updateFile";
 
   file.version++;
   auto date = getTime_unixtime();

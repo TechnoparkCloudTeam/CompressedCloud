@@ -9,7 +9,7 @@ CMakeFiles/Client.dir/Application/src/Application.cpp.o: ../../Server/ServerFile
 CMakeFiles/Client.dir/Application/src/Application.cpp.o: ../../Server/config.h
 CMakeFiles/Client.dir/Application/src/Application.cpp.o: ../Application/include/Application.h
 CMakeFiles/Client.dir/Application/src/Application.cpp.o: ../Indexer/include/Indexer.h
-CMakeFiles/Client.dir/Application/src/Application.cpp.o: ../PatternWatcher/include/PatternWatcher.h
+CMakeFiles/Client.dir/Application/src/Application.cpp.o: ../RequestCoordinator/include/RequestCoordinator.h
 CMakeFiles/Client.dir/Application/src/Application.cpp.o: ../Watcher/include/FileSysEvent.h
 CMakeFiles/Client.dir/Application/src/Application.cpp.o: ../Watcher/include/Watcher.h
 CMakeFiles/Client.dir/Application/src/Application.cpp.o: ../Watcher/include/WatcherConfig.h
@@ -25,9 +25,6 @@ CMakeFiles/Client.dir/Indexer/src/Indexer.cpp.o: /home/ilya/CompressedCloudStabl
 CMakeFiles/Client.dir/Indexer/src/Indexer.cpp.o: /home/ilya/CompressedCloudStableBackup/DataBases/LocalDB/include/LocalDB.h
 CMakeFiles/Client.dir/Indexer/src/Indexer.cpp.o: /home/ilya/CompressedCloudStableBackup/DataBases/LocalDB/include/UserDB.h
 
-CMakeFiles/Client.dir/PatternWatcher/src/PatternWatcher.cpp.o: ../PatternWatcher/include/PatternWatcher.h
-CMakeFiles/Client.dir/PatternWatcher/src/PatternWatcher.cpp.o: ../PatternWatcher/src/PatternWatcher.cpp
-
 CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../../DataBases/LocalDB/include/FileDB.h
 CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../../DataBases/LocalDB/include/LocalDB.h
 CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../../DataBases/LocalDB/include/UserDB.h
@@ -36,7 +33,7 @@ CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../../Server/
 CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../../Server/config.h
 CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../Application/include/Application.h
 CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../Indexer/include/Indexer.h
-CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../PatternWatcher/include/PatternWatcher.h
+CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../RequestCoordinator/include/RequestCoordinator.h
 CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../Watcher/include/FileSysEvent.h
 CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../Watcher/include/Watcher.h
 CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../Watcher/include/WatcherConfig.h
@@ -46,6 +43,8 @@ CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../Watcher/in
 CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../ProgramInterface/include/ProgramInterface.h
 CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: ../ProgramInterface/src/ProgramInterface.cpp
 CMakeFiles/Client.dir/ProgramInterface/src/ProgramInterface.cpp.o: message.pb.h
+
+CMakeFiles/Client.dir/RequestCoordinator/src/RequestCoordinator.cpp.o: ../RequestCoordinator/src/RequestCoordinator.cpp
 
 CMakeFiles/Client.dir/Watcher/src/FileSysEvent.cpp.o: ../Watcher/include/FileSysEvent.h
 CMakeFiles/Client.dir/Watcher/src/FileSysEvent.cpp.o: ../Watcher/src/FileSysEvent.cpp
@@ -75,7 +74,7 @@ CMakeFiles/Client.dir/home/ilya/CompressedCloudStableBackup/DataBases/LocalDB/sr
 CMakeFiles/Client.dir/home/ilya/CompressedCloudStableBackup/DataBases/LocalDB/src/LocalDB.cpp.o: ../../DataBases/LocalDB/include/UserDB.h
 CMakeFiles/Client.dir/home/ilya/CompressedCloudStableBackup/DataBases/LocalDB/src/LocalDB.cpp.o: /home/ilya/CompressedCloudStableBackup/DataBases/LocalDB/src/LocalDB.cpp
 
-CMakeFiles/Client.dir/home/ilya/CompressedCloudStableBackup/Server/ClientNetwork/src/ClientNetwork.cpp.o: ../PatternWatcher/include/PatternWatcher.h
+CMakeFiles/Client.dir/home/ilya/CompressedCloudStableBackup/Server/ClientNetwork/src/ClientNetwork.cpp.o: ../RequestCoordinator/include/RequestCoordinator.h
 CMakeFiles/Client.dir/home/ilya/CompressedCloudStableBackup/Server/ClientNetwork/src/ClientNetwork.cpp.o: /home/ilya/CompressedCloudStableBackup/Server/ClientNetwork/include/ClientNetwork.h
 CMakeFiles/Client.dir/home/ilya/CompressedCloudStableBackup/Server/ClientNetwork/src/ClientNetwork.cpp.o: /home/ilya/CompressedCloudStableBackup/Server/ClientNetwork/src/ClientNetwork.cpp
 CMakeFiles/Client.dir/home/ilya/CompressedCloudStableBackup/Server/ClientNetwork/src/ClientNetwork.cpp.o: /home/ilya/CompressedCloudStableBackup/Server/config.h
@@ -92,8 +91,8 @@ CMakeFiles/Client.dir/main.cpp.o: ../../Server/ServerFileStorage/fileStorageWork
 CMakeFiles/Client.dir/main.cpp.o: ../../Server/config.h
 CMakeFiles/Client.dir/main.cpp.o: ../Application/include/Application.h
 CMakeFiles/Client.dir/main.cpp.o: ../Indexer/include/Indexer.h
-CMakeFiles/Client.dir/main.cpp.o: ../PatternWatcher/include/PatternWatcher.h
 CMakeFiles/Client.dir/main.cpp.o: ../ProgramInterface/include/ProgramInterface.h
+CMakeFiles/Client.dir/main.cpp.o: ../RequestCoordinator/include/RequestCoordinator.h
 CMakeFiles/Client.dir/main.cpp.o: ../Watcher/include/FileSysEvent.h
 CMakeFiles/Client.dir/main.cpp.o: ../Watcher/include/Watcher.h
 CMakeFiles/Client.dir/main.cpp.o: ../Watcher/include/WatcherConfig.h

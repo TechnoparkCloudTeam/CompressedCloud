@@ -1,0 +1,3 @@
+/home/ilya/CompressedCloudStableBackup/Client/Indexer/build/CMakeFiles/rebuild_cache.dir
+/home/ilya/CompressedCloudStableBackup/Client/Indexer/build/CMakeFiles/edit_cache.dir
+/home/ilya/CompressedCloudStableBackup/Client/Indexer/build/CMakeFiles/indexer.dir

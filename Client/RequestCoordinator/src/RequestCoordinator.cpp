@@ -1,6 +1,6 @@
-#include "PatternWatcher.h"
+#include "RequestCoordinator.h"
 
-int PatternWatcher::waitCancelDownload()
+int RequestCoordinator::waitCancelDownload()
 {
     int i = 0;
     while(Q.empty())
@@ -11,7 +11,7 @@ int PatternWatcher::waitCancelDownload()
     return 1;
 }
 
-void PatternWatcher::add()
+void RequestCoordinator::add()
 {
     Q.push(1);
 }

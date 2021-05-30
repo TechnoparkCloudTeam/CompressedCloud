@@ -24,7 +24,7 @@ std::string encode_header(std::vector<boost::uint8_t> &buf, unsigned size)
     std::string sizeStr(buf.begin(), buf.end());
     return sizeStr;
 }
-ClientNetwork::ClientNetwork(boost::asio::io_service &io_service, std::shared_ptr<PatternWatcher> PWPtr_) : socket_(io_service),
+ClientNetwork::ClientNetwork(boost::asio::io_service &io_service, std::shared_ptr<RequestCoordinator> PWPtr_) : socket_(io_service),
                                                                     socketS_(io_service),
                                                                     io_service_(io_service),
                                                                     PWPtr(PWPtr_)

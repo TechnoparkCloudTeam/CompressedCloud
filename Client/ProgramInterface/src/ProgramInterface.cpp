@@ -52,15 +52,6 @@ void ProgramInterface::run() {
             } while (password.empty());
             app->registerUser(login, password);
 
-        } else if (input == "synchronize") {
-
-            if (app->isLogin()) {
-                app->synchronize();
-                std::cout << "Latest version is set\n";
-            } else {
-                std::cout << "Can't synchronize, you are not logged in the system, use <login> or <register>\n";
-            }
-
         } else if (input == "quit") {
             std::cout << "Quitting application\n";
             break;

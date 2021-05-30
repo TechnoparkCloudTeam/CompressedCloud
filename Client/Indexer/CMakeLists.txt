@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.16)
 project(Indexer)
+
 set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 INCLUDE_DIRECTORIES(include)
-INCLUDE_DIRECTORIES(../../../DataBases/LocalDB/include)
 
-add_executable(Indexer src/Indexer.cpp  ../../../DataBases/LocalDB/src/LocalDB.cpp main.cpp)
-
+add_executable(indexer main.cpp src/Indexer.cpp)

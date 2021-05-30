@@ -13,10 +13,12 @@ class MetaDataDB : public PostgresSQLDB {
   ~MetaDataDB() override = default;
   static MetaDataDB &shared(std::string_view info);
   void createTable();
-  void InsertFile(const FileInfo &fileMeta);
-  void feleteFile(std::string login, std::string fileName);
+  void InsertFile(const FileMeta &fileMeta);
   std::vector<FileInfo> GetUserFilesByTime(const UserDate &userDate);
+  bool isFileExist(std::string login);
   void deleteFile(std::string login, std::string fileName);
+  std::string GetFile(std::string login);
+
  private:
   explicit MetaDataDB(std::string_view info);
   MetaDataDB(const MetaDataDB &mongo_db);

@@ -32,11 +32,11 @@ public:
 private:
     void startReadHeader();
 
-    void handleReadHeader();
+    void handleReadHeader(const boost::system::error_code &error);
 
     void startReadBody(unsigned msg_len);
 
-    void handleReadBody();
+    void handleReadBody(const boost::system::error_code &error);
 
     void write(std::string &msg);
 

@@ -59,6 +59,6 @@ void Indexer::createFile(const std::filesystem::path& path) {
     fileInfo.updateDate = GetCurrentTime();
     fileInfo.createDate = GetCurrentTime();
     fileInfo.fileExtention = path.extension();
-    fileInfo.filePath = GetDirStartingFromBuild(path);
+    fileInfo.filePath = path;
     return fileInfo;
  }

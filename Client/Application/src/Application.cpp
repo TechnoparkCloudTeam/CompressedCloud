@@ -147,7 +147,7 @@ void Application::initWatcher()
     {
         if (!isTmpFile(notification.Path.filename()))
         {
-            //std::cout << "Event " << notification.Event << " on " << notification.Path << " at " << notification.Time.time_since_epoch().count() << " was triggered.\n";
+            std::cout << "Event " << notification.Event << " on " << notification.Path << " at " << notification.Time.time_since_epoch().count() << " was triggered.\n";
 
             switch (notification.Event)
             {
@@ -159,12 +159,9 @@ void Application::initWatcher()
             }
             case InotifyEvent::_close_write:
             {
+                Index->createFile(notification.Path);
                 Index->modifyFile(notification.Path, 1);
-                if (isLogin())
-                {
-                    sendFile(Index->GetFileInfo(notification.Path));
-                    std::cout << "\n\n Sending file from watcher\n\n";
-                }
+                sendFile(Index->GetFileInfo(notification.Path));
                 break;
             }
             case (InotifyEvent::_move & InotifyEvent::_moved_from):
@@ -182,7 +179,7 @@ void Application::initWatcher()
     };
     auto events = {InotifyEvent::_open | InotifyEvent::_is_dir,
                    InotifyEvent::_access,
-                   InotifyEvent::_create,
+                   //InotifyEvent::_create,
                    InotifyEvent::_modify,
                    InotifyEvent::_remove,
                    InotifyEvent::_close_write,

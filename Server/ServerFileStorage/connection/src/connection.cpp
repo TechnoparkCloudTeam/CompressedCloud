@@ -12,28 +12,28 @@ void Connection::stop()
 
 void Connection::start()
 {
-    start_read_header();
+    startReadHeader();
 }
-void Connection::start_read_header()
+void Connection::startReadHeader()
 {
     m_readbuf.resize(header_size);
     boost::asio::async_read(socket_, boost::asio::buffer(m_readbuf),
-                            boost::bind(&Connection::handle_read_header, shared_from_this()));
+                            boost::bind(&Connection::handleReadHeader, shared_from_this()));
 }
 
-void Connection::handle_read_header()
+void Connection::handleReadHeader()
 {
     unsigned msg_len = headerMenager.decodeHeader(m_readbuf);
     std::cout << "MSG LEN: " << msg_len << std::endl;
-    start_read_body(msg_len);
+    startReadBody(msg_len);
 }
-void Connection::start_read_body(unsigned msg_len)
+void Connection::startReadBody(unsigned msg_len)
 {
     m_readbuf.resize(header_size + msg_len);
     boost::asio::mutable_buffers_1 buf = boost::asio::buffer(&m_readbuf[header_size], msg_len);
-    boost::asio::async_read(socket_, buf, boost::bind(&Connection::handle_read_body, shared_from_this()));
+    boost::asio::async_read(socket_, buf, boost::bind(&Connection::handleReadBody, shared_from_this()));
 }
-void Connection::handle_read_body()
+void Connection::handleReadBody()
 {
     messageFS::Request writeRequest;
     messageFS::Request readed;
@@ -92,7 +92,7 @@ void Connection::handle_read_body()
     std::string ans_string;
     writeRequest.SerializePartialToString(&ans_string);
     write(ans_string);
-    start_read_header();
+    startReadHeader();
 }
 void Connection::write(std::string &msg)
 {

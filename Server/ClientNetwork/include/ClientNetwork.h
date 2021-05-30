@@ -44,21 +44,21 @@ private:
 
     void writeHeandlerS();
 
-    void start_read_header_s();
+    void startReadHeaderS();
 
-    void handle_read_header_s();
+    void handleReadHeaderS();
 
-    void start_read_body_s(unsigned msg_len);
+    void startReadBodyS(unsigned msg_len);
 
-    void handle_read_body_s();
+    void handleReadBodyS();
 
-    void start_read_header_fs();
+    void startReadHeaderFS();
 
-    void handle_read_header_fs();
+    void handleReadHeaderFS();
 
-    void start_read_body_fs(unsigned msg_len);
+    void startReadBodyFS(unsigned msg_len);
 
-    void handle_read_body_fs();
+    void handleReadBodyFS();
 
     boost::asio::io_service &io_service_;
 

@@ -30,13 +30,13 @@ public:
     void stop();
 
 private:
-    void start_read_header();
+    void startReadHeader();
 
-    void handle_read_header();
+    void handleReadHeader();
 
-    void start_read_body(unsigned msg_len);
+    void startReadBody(unsigned msg_len);
 
-    void handle_read_body();
+    void handleReadBody();
 
     void write(std::string &msg);
 

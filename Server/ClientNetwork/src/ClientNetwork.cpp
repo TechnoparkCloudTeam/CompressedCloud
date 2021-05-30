@@ -20,7 +20,7 @@ void ClientNetwork::handleConnectFS(boost::system::error_code ec)
 
     if (!ec)
     {
-        start_read_header_fs();
+        startReadHeaderFS();
     }
     else
     {
@@ -28,27 +28,27 @@ void ClientNetwork::handleConnectFS(boost::system::error_code ec)
                                               boost::asio::placeholders::error));
     }
 }
-void ClientNetwork::start_read_header_fs()
+void ClientNetwork::startReadHeaderFS()
 {
     m_readbuf_fs.resize(header_size);
     boost::asio::async_read(socket_, boost::asio::buffer(m_readbuf_fs),
-                            boost::bind(&ClientNetwork::handle_read_header_fs, this));
+                            boost::bind(&ClientNetwork::handleReadHeaderFS, this));
 }
 
-void ClientNetwork::handle_read_header_fs()
+void ClientNetwork::handleReadHeaderFS()
 {
     unsigned msg_len = headerMenager.decodeHeader(m_readbuf_fs);
     //BOOST_LOG_TRIVIAL(debug) << "MSG LEN: " << msg_len << std::endl;
-    start_read_body_fs(msg_len);
+    startReadBodyFS(msg_len);
 }
 
-void ClientNetwork::start_read_body_fs(unsigned msg_len)
+void ClientNetwork::startReadBodyFS(unsigned msg_len)
 {
     m_readbuf_fs.resize(header_size + msg_len);
     boost::asio::mutable_buffers_1 buf = boost::asio::buffer(&m_readbuf_fs[header_size], msg_len);
-    boost::asio::async_read(socket_, buf, boost::bind(&ClientNetwork::handle_read_body_fs, this));
+    boost::asio::async_read(socket_, buf, boost::bind(&ClientNetwork::handleReadBodyFS, this));
 }
-void ClientNetwork::handle_read_body_fs()
+void ClientNetwork::handleReadBodyFS()
 {
 
     messageFS::Request readed;
@@ -91,7 +91,7 @@ void ClientNetwork::handle_read_body_fs()
     default:
         break;
     }
-    start_read_header_fs();
+    startReadHeaderFS();
 }
 
 void ClientNetwork::writeMessageToFS(const std::string &msg)
@@ -131,7 +131,7 @@ void ClientNetwork::handleConnectS(boost::system::error_code ec)
 
     if (!ec)
     {
-        start_read_header_s();
+        startReadHeaderS();
     }
     else
     {
@@ -140,29 +140,29 @@ void ClientNetwork::handleConnectS(boost::system::error_code ec)
     }
 }
 
-void ClientNetwork::start_read_header_s()
+void ClientNetwork::startReadHeaderS()
 {
     m_readbuf_s.resize(header_size);
     boost::asio::async_read(socketS_, boost::asio::buffer(m_readbuf_s),
-                            boost::bind(&ClientNetwork::handle_read_header_s, this));
+                            boost::bind(&ClientNetwork::handleReadHeaderS, this));
 }
 
-void ClientNetwork::handle_read_header_s()
+void ClientNetwork::handleReadHeaderS()
 {
     unsigned msg_len = headerMenager.decodeHeader(m_readbuf_s);
 
     //BOOST_LOG_TRIVIAL(debug) << "MSG LEN: " << msg_len << std::endl;
-    start_read_body_s(msg_len);
+    startReadBodyS(msg_len);
 }
 
-void ClientNetwork::start_read_body_s(unsigned msg_len)
+void ClientNetwork::startReadBodyS(unsigned msg_len)
 {
     m_readbuf_s.resize(header_size + msg_len);
     boost::asio::mutable_buffers_1 buf = boost::asio::buffer(&m_readbuf_s[header_size], msg_len);
-    boost::asio::async_read(socketS_, buf, boost::bind(&ClientNetwork::handle_read_body_s, this));
+    boost::asio::async_read(socketS_, buf, boost::bind(&ClientNetwork::handleReadBodyS, this));
 }
 
-void ClientNetwork::handle_read_body_s()
+void ClientNetwork::handleReadBodyS()
 {
     messageFS::Request readed;
     readed.ParseFromArray(&m_readbuf_s[header_size], m_readbuf_s.size() - header_size);
@@ -210,7 +210,7 @@ void ClientNetwork::handle_read_body_s()
     default:
         break;
     }
-    start_read_header_s();
+    startReadHeaderS();
 }
 
 void ClientNetwork::writeMessageToS(const std::string &msg)

@@ -4,12 +4,11 @@
 #include <vector>
 #include <thread>
 #include <string>
-#include "../../../../DataBases/PostgresDB/UserDB/include/UserDB.h"
-#include <boost/enable_shared_from_this.hpp>
-#include "MetaDB.h"
 
-#include "../../../../DataBases/PostgresDB/UserDB/include/UserInfo.h"
-#include "../../connection/include/connectionSynch.h"
+#include "connectionSynch.h"
+#include "UserDB.h"
+#include "UserInfo.h"
+#include "MetaDB.h"
 #include "FriendDB.h"
 
 namespace sServer

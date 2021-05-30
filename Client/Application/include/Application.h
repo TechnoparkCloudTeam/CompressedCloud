@@ -9,7 +9,7 @@
 #include "../../../Server/ServerFileStorage/fileStorageWorker/include/FileStorageWorker.h"
 #include "../../../DataBases/LocalDB/include/LocalDB.h"
 #include "../../../Server/ClientNetwork/include/ClientNetwork.h"
-#include "../../../Server/config.h"
+#include "RequestStatus.h"
 #include "../../Watcher/include/WatcherNotifierBuilder.h"
 #include "PatternWatcher.h"
 class Application {

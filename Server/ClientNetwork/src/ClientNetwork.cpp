@@ -1,29 +1,5 @@
-#include "../include/ClientNetwork.h"
-#include <string_view>
-#include <fstream>
+#include "ClientNetwork.h"
 
-#include "boost/log/trivial.hpp"
-#include <boost/lexical_cast.hpp>
-
-#define header_size 4
-
-unsigned decode_header(std::vector<boost::uint8_t> &buf)
-{
-    unsigned msg_size = 0;
-    for (unsigned i = 0; i < header_size; ++i)
-        msg_size = msg_size * 256 + (static_cast<unsigned>(buf[i]) & 0xFF);
-    return msg_size;
-}
-
-std::string encode_header(std::vector<boost::uint8_t> &buf, unsigned size)
-{
-    buf[0] = static_cast<boost::uint8_t>((size >> 24) & 0xFF);
-    buf[1] = static_cast<boost::uint8_t>((size >> 16) & 0xFF);
-    buf[2] = static_cast<boost::uint8_t>((size >> 8) & 0xFF);
-    buf[3] = static_cast<boost::uint8_t>(size & 0xFF);
-    std::string sizeStr(buf.begin(), buf.end());
-    return sizeStr;
-}
 ClientNetwork::ClientNetwork(boost::asio::io_service &io_service, std::shared_ptr<PatternWatcher> PWPtr_) : socket_(io_service),
                                                                     socketS_(io_service),
                                                                     io_service_(io_service),
@@ -61,7 +37,7 @@ void ClientNetwork::start_read_header_fs()
 
 void ClientNetwork::handle_read_header_fs()
 {
-    unsigned msg_len = decode_header(m_readbuf_fs);
+    unsigned msg_len = headerMenager.decodeHeader(m_readbuf_fs);
     //BOOST_LOG_TRIVIAL(debug) << "MSG LEN: " << msg_len << std::endl;
     start_read_body_fs(msg_len);
 }
@@ -125,7 +101,7 @@ void ClientNetwork::writeMessageToFS(const std::string &msg)
 void ClientNetwork::doWriteFS(std::string &msg)
 {
     std::vector<boost::uint8_t> buf(4);
-    std::string size = encode_header(buf, msg.size());
+    std::string size = headerMenager.encodeHeader(buf, msg.size());
 
     msg = size + msg;
     bool write_in_progress = !qWrite.empty();
@@ -173,7 +149,7 @@ void ClientNetwork::start_read_header_s()
 
 void ClientNetwork::handle_read_header_s()
 {
-    unsigned msg_len = decode_header(m_readbuf_s);
+    unsigned msg_len = headerMenager.decodeHeader(m_readbuf_s);
 
     //BOOST_LOG_TRIVIAL(debug) << "MSG LEN: " << msg_len << std::endl;
     start_read_body_s(msg_len);
@@ -195,11 +171,11 @@ void ClientNetwork::handle_read_body_s()
     {
     case ServerSyncho::OKREG:
     {
-        IsRegisted = true;
         readed.set_id(ServerFS::CREATEFOLDER);
         std::string answer;
         readed.SerializePartialToString(&answer);
         writeMessageToFS(answer);
+        PWPtr->add();
         break;
     }
     case ServerSyncho::OKLOGIN:
@@ -245,7 +221,7 @@ void ClientNetwork::writeMessageToS(const std::string &msg)
 void ClientNetwork::doWriteS(std::string &msg)
 {
     std::vector<boost::uint8_t> buf(4);
-    std::string size = encode_header(buf, msg.size());
+    std::string size = headerMenager.encodeHeader(buf, msg.size());
 
     msg = size + msg;
     bool write_in_progress = !qWriteS.empty();
@@ -268,18 +244,5 @@ void ClientNetwork::writeHeandlerS()
     }
 }
 
-bool ClientNetwork::IsLogin()
-{
-    return IsLogged;
-}
 
-bool ClientNetwork::IsRegister()
-{
-    return IsRegisted;
-}
-
-void ClientNetwork::SetIsRegisterToFalse() 
-{
-    IsRegisted = false;
-}
 

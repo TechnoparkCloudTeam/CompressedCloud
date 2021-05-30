@@ -1,10 +1,10 @@
 #include <iostream>
 #include "server.h"
-fsServer::Server::Server(int port/* , const std::string& filed */)
+
+fsServer::Server::Server(int port)
     : io_service_(),
       acceptor_(io_service_, boost::asio::ip::tcp::endpoint(boost::asio::ip::tcp::v4(), port)),
       socket_(io_service_)
-      //fsworker("/home/lyalyashechka/TP/c_c++/main server/build")
 {
     waitForClientConnection();
 }
@@ -28,12 +28,13 @@ void fsServer::Server::stop()
 
 void fsServer::Server::waitForClientConnection()
 {
-    acceptor_.async_accept(socket_, [this](boost::system::error_code er) {
-        if (!er)
-        {
-            std::cout << "Connect " << socket_.remote_endpoint() << std::endl;
-            std::make_shared<Connection>(std::move(socket_))->start();
-        }
-        waitForClientConnection();
-    });
+    acceptor_.async_accept(socket_, [this](boost::system::error_code er)
+                           {
+                               if (!er)
+                               {
+                                   std::cout << "Connect " << socket_.remote_endpoint() << std::endl;
+                                   std::make_shared<Connection>(std::move(socket_))->start();
+                               }
+                               waitForClientConnection();
+                           });
 }

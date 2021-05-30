@@ -2,12 +2,14 @@
 #include <boost/bind.hpp>
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/io/zero_copy_stream_impl.h>
-#include <array>
 #include <string>
-#include "FileStorageWorker.h"
-#include "../../../config.h"
-#include "message.pb.h"
 #include <thread>
+
+#include "FileStorageWorker.h"
+#include "RequestStatus.h"
+#include "CodeHeader.h"
+#include "message.pb.h"
+
 class Connection : public std::enable_shared_from_this<Connection>
 {
 public:
@@ -30,9 +32,9 @@ private:
 
     boost::asio::ip::tcp::socket socket_;
 
-    char data_[8192];
-
     std::vector<uint8_t> m_readbuf;
 
-    FileStorageWorker fsworker = FileStorageWorker("/home/ilya/Techno");
+    FileStorageWorker fsworker = FileStorageWorker("/home/lyalyashechka/filestorageDirectorie");
+
+    CodeHeader headerMenager;
 };

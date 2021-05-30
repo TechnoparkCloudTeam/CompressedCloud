@@ -1,23 +1,6 @@
 #include <iostream>
-#include "../include/connection.h"
-#define header_size 4
+#include "connection.h"
 
-unsigned decode_header(std::vector<boost::uint8_t> &buf)
-{
-    unsigned msg_size = 0;
-    for (unsigned i = 0; i < header_size; ++i)
-        msg_size = msg_size * 256 + (static_cast<unsigned>(buf[i]) & 0xFF);
-    return msg_size;
-}
-std::string encode_header(std::vector<boost::uint8_t> &buf, unsigned size)
-{
-    buf[0] = static_cast<boost::uint8_t>((size >> 24) & 0xFF);
-    buf[1] = static_cast<boost::uint8_t>((size >> 16) & 0xFF);
-    buf[2] = static_cast<boost::uint8_t>((size >> 8) & 0xFF);
-    buf[3] = static_cast<boost::uint8_t>(size & 0xFF);
-    std::string sizeStr(buf.begin(), buf.end());
-    return sizeStr;
-}
 Connection::Connection(boost::asio::ip::tcp::socket socket_) : socket_(std::move(socket_))
 {
 }
@@ -40,7 +23,7 @@ void Connection::start_read_header()
 
 void Connection::handle_read_header()
 {
-    unsigned msg_len = decode_header(m_readbuf);
+    unsigned msg_len = headerMenager.decodeHeader(m_readbuf);
     std::cout << "MSG LEN: " << msg_len << std::endl;
     start_read_body(msg_len);
 }
@@ -88,8 +71,7 @@ void Connection::handle_read_body()
         writeRequest.set_file(buffer);
         writeRequest.set_id(ServerFS::OKDOWNLOAD);
         writeRequest.set_filesize(buffer.size());
-        //writeRequest.set_name(readed.loginfriend()); работает на getfileFriend
-        writeRequest.set_name(readed.name()); //работает на getFile
+        writeRequest.set_name(readed.name());
         break;
     }
     case ServerFS::DOWNLOADFILRFRIEND:
@@ -115,7 +97,7 @@ void Connection::handle_read_body()
 void Connection::write(std::string &msg)
 {
     std::vector<boost::uint8_t> buf(4);
-    std::string size = encode_header(buf, msg.size());
+    std::string size = headerMenager.encodeHeader(buf, msg.size());
     msg = size + msg;
     std::cout << "writing" << std::endl;
     boost::asio::write(socket_, boost::asio::buffer(msg));

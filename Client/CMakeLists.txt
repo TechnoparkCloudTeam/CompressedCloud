@@ -20,7 +20,7 @@ include_directories(${Boost_INCLUDE_DIRS})
 find_package(Protobuf REQUIRED)
 include_directories(${Protobuf_INCLUDE_DIRS})
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
-protobuf_generate_cpp(PROTO_SRCS PROTO_HDRS ../Server/ServerSynch/message.proto)
+protobuf_generate_cpp(PROTO_SRCS PROTO_HDRS ../Server/Message/message.proto)
 
 
 INCLUDE_DIRECTORIES(ProgramInterface/include)
@@ -28,7 +28,8 @@ INCLUDE_DIRECTORIES(Watcher/include)
 INCLUDE_DIRECTORIES(Indexer/include)
 INCLUDE_DIRECTORIES(Application/include)
 include_directories(PatternWatcher/include)
-
+include_directories(../Server/Message)
+include_directories(../Server/Message/CodeHeader/include)
 INCLUDE_DIRECTORIES(../DataBases/LocalDB/include)
 INCLUDE_DIRECTORIES(../Server/ServerFileStorage/fileStorageWorker/include)
 INCLUDE_DIRECTORIES(../Server/ClientNetwork/include)
@@ -45,6 +46,7 @@ Watcher/src/WatcherMessage.cpp
 Watcher/src/WatcherNotification.cpp
 Watcher/src/WatcherNotifierBuilder.cpp
 PatternWatcher/src/PatternWatcher.cpp
+../Server/Message/CodeHeader/src/CodeHeader.cpp
 ${PROTO_SRCS} ${PROTO_HDRS}
 )
 

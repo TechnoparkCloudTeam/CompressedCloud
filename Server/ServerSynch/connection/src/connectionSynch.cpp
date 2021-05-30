@@ -92,13 +92,6 @@ void Connection::handleReadBody(const boost::system::error_code &error)
         }
         case ServerSyncho::ADDFILE:
         {
-<<<<<<< HEAD
-            postgres_sqldb_file->InsertFile(file);
-            
-            // auto tt = UserDate{readed.nameid(), "2020-12-19 0:47:25"};
-            //postgres_sqldb_file->GetUserFilesByTime(tt);
-            // postgres_sqldb1.Registration(user);
-=======
             std::cout << "addfiel";
             readed.PrintDebugString();
             auto file = FileMeta{
@@ -136,7 +129,7 @@ void Connection::handleReadBody(const boost::system::error_code &error)
             std::cout << "\n\n\n UserID:: " << fileInfo.userId << "\n\n\n";
             try
             {
-                postgres_sqldb_file->InsertFile(fileInfo);
+                postgres_sqldb_file->InsertFile(file);
 
                 // auto tt = UserDate{readed.nameid(), "2020-12-19 0:47:25"};
                 //postgres_sqldb_file->GetUserFilesByTime(tt);
@@ -148,7 +141,6 @@ void Connection::handleReadBody(const boost::system::error_code &error)
             }
             writeRequest.set_id(ServerSyncho::OKSEND);
             break;
->>>>>>> 5bfd562df48969ca0c7244274cf6430e94ff9580
         }
         case ServerSyncho::ADDFRIEND:
         {

@@ -1,29 +1,5 @@
-#include "../include/ClientNetwork.h"
-#include <string_view>
-#include <fstream>
+#include "ClientNetwork.h"
 
-#include "boost/log/trivial.hpp"
-#include <boost/lexical_cast.hpp>
-
-#define header_size 4
-
-unsigned decode_header(std::vector<boost::uint8_t> &buf)
-{
-    unsigned msg_size = 0;
-    for (unsigned i = 0; i < header_size; ++i)
-        msg_size = msg_size * 256 + (static_cast<unsigned>(buf[i]) & 0xFF);
-    return msg_size;
-}
-
-std::string encode_header(std::vector<boost::uint8_t> &buf, unsigned size)
-{
-    buf[0] = static_cast<boost::uint8_t>((size >> 24) & 0xFF);
-    buf[1] = static_cast<boost::uint8_t>((size >> 16) & 0xFF);
-    buf[2] = static_cast<boost::uint8_t>((size >> 8) & 0xFF);
-    buf[3] = static_cast<boost::uint8_t>(size & 0xFF);
-    std::string sizeStr(buf.begin(), buf.end());
-    return sizeStr;
-}
 ClientNetwork::ClientNetwork(boost::asio::io_service &io_service, std::shared_ptr<RequestCoordinator> PWPtr_) : socket_(io_service),
                                                                     socketS_(io_service),
                                                                     io_service_(io_service),
@@ -44,7 +20,7 @@ void ClientNetwork::handleConnectFS(boost::system::error_code ec)
 
     if (!ec)
     {
-        start_read_header_fs();
+        startReadHeaderFS();
     }
     else
     {
@@ -52,27 +28,27 @@ void ClientNetwork::handleConnectFS(boost::system::error_code ec)
                                               boost::asio::placeholders::error));
     }
 }
-void ClientNetwork::start_read_header_fs()
+void ClientNetwork::startReadHeaderFS()
 {
     m_readbuf_fs.resize(header_size);
     boost::asio::async_read(socket_, boost::asio::buffer(m_readbuf_fs),
-                            boost::bind(&ClientNetwork::handle_read_header_fs, this));
+                            boost::bind(&ClientNetwork::handleReadHeaderFS, this));
 }
 
-void ClientNetwork::handle_read_header_fs()
+void ClientNetwork::handleReadHeaderFS()
 {
-    unsigned msg_len = decode_header(m_readbuf_fs);
+    unsigned msg_len = headerMenager.decodeHeader(m_readbuf_fs);
     //BOOST_LOG_TRIVIAL(debug) << "MSG LEN: " << msg_len << std::endl;
-    start_read_body_fs(msg_len);
+    startReadBodyFS(msg_len);
 }
 
-void ClientNetwork::start_read_body_fs(unsigned msg_len)
+void ClientNetwork::startReadBodyFS(unsigned msg_len)
 {
     m_readbuf_fs.resize(header_size + msg_len);
     boost::asio::mutable_buffers_1 buf = boost::asio::buffer(&m_readbuf_fs[header_size], msg_len);
-    boost::asio::async_read(socket_, buf, boost::bind(&ClientNetwork::handle_read_body_fs, this));
+    boost::asio::async_read(socket_, buf, boost::bind(&ClientNetwork::handleReadBodyFS, this));
 }
-void ClientNetwork::handle_read_body_fs()
+void ClientNetwork::handleReadBodyFS()
 {
 
     messageFS::Request readed;
@@ -115,7 +91,7 @@ void ClientNetwork::handle_read_body_fs()
     default:
         break;
     }
-    start_read_header_fs();
+    startReadHeaderFS();
 }
 
 void ClientNetwork::writeMessageToFS(const std::string &msg)
@@ -125,7 +101,7 @@ void ClientNetwork::writeMessageToFS(const std::string &msg)
 void ClientNetwork::doWriteFS(std::string &msg)
 {
     std::vector<boost::uint8_t> buf(4);
-    std::string size = encode_header(buf, msg.size());
+    std::string size = headerMenager.encodeHeader(buf, msg.size());
 
     msg = size + msg;
     bool write_in_progress = !qWrite.empty();
@@ -155,7 +131,7 @@ void ClientNetwork::handleConnectS(boost::system::error_code ec)
 
     if (!ec)
     {
-        start_read_header_s();
+        startReadHeaderS();
     }
     else
     {
@@ -164,29 +140,29 @@ void ClientNetwork::handleConnectS(boost::system::error_code ec)
     }
 }
 
-void ClientNetwork::start_read_header_s()
+void ClientNetwork::startReadHeaderS()
 {
     m_readbuf_s.resize(header_size);
     boost::asio::async_read(socketS_, boost::asio::buffer(m_readbuf_s),
-                            boost::bind(&ClientNetwork::handle_read_header_s, this));
+                            boost::bind(&ClientNetwork::handleReadHeaderS, this));
 }
 
-void ClientNetwork::handle_read_header_s()
+void ClientNetwork::handleReadHeaderS()
 {
-    unsigned msg_len = decode_header(m_readbuf_s);
+    unsigned msg_len = headerMenager.decodeHeader(m_readbuf_s);
 
     //BOOST_LOG_TRIVIAL(debug) << "MSG LEN: " << msg_len << std::endl;
-    start_read_body_s(msg_len);
+    startReadBodyS(msg_len);
 }
 
-void ClientNetwork::start_read_body_s(unsigned msg_len)
+void ClientNetwork::startReadBodyS(unsigned msg_len)
 {
     m_readbuf_s.resize(header_size + msg_len);
     boost::asio::mutable_buffers_1 buf = boost::asio::buffer(&m_readbuf_s[header_size], msg_len);
-    boost::asio::async_read(socketS_, buf, boost::bind(&ClientNetwork::handle_read_body_s, this));
+    boost::asio::async_read(socketS_, buf, boost::bind(&ClientNetwork::handleReadBodyS, this));
 }
 
-void ClientNetwork::handle_read_body_s()
+void ClientNetwork::handleReadBodyS()
 {
     messageFS::Request readed;
     readed.ParseFromArray(&m_readbuf_s[header_size], m_readbuf_s.size() - header_size);
@@ -195,11 +171,11 @@ void ClientNetwork::handle_read_body_s()
     {
     case ServerSyncho::OKREG:
     {
-        IsRegisted = true;
         readed.set_id(ServerFS::CREATEFOLDER);
         std::string answer;
         readed.SerializePartialToString(&answer);
         writeMessageToFS(answer);
+        PWPtr->add();
         break;
     }
     case ServerSyncho::OKLOGIN:
@@ -228,13 +204,12 @@ void ClientNetwork::handle_read_body_s()
     }
     case ServerSyncho::OKSEND:
     {
-        std::cout << "\nok Sending\n";
         break;
     }
     default:
         break;
     }
-    start_read_header_s();
+    startReadHeaderS();
 }
 
 void ClientNetwork::writeMessageToS(const std::string &msg)
@@ -245,7 +220,7 @@ void ClientNetwork::writeMessageToS(const std::string &msg)
 void ClientNetwork::doWriteS(std::string &msg)
 {
     std::vector<boost::uint8_t> buf(4);
-    std::string size = encode_header(buf, msg.size());
+    std::string size = headerMenager.encodeHeader(buf, msg.size());
 
     msg = size + msg;
     bool write_in_progress = !qWriteS.empty();
@@ -268,18 +243,5 @@ void ClientNetwork::writeHeandlerS()
     }
 }
 
-bool ClientNetwork::IsLogin()
-{
-    return IsLogged;
-}
 
-bool ClientNetwork::IsRegister()
-{
-    return IsRegisted;
-}
-
-void ClientNetwork::SetIsRegisterToFalse() 
-{
-    IsRegisted = false;
-}
 

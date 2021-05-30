@@ -13,6 +13,7 @@
 #include "WatcherNotifierBuilder.h"
 #include "RequestCoordinator.h"
 #include "Indexer.h"
+#include "RequestStatus.h"
 class Application {
 public:
     Application(

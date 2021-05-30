@@ -1,18 +1,27 @@
 #pragma once
+
+#include <string>
+#include <iostream>
+#include <deque>
+#include <vector>
+#include <thread>
+#include <string_view>
+#include <fstream>
 #include <boost/asio.hpp>
 #include <boost/enable_shared_from_this.hpp>
 #include <boost/shared_ptr.hpp>
 #include <boost/bind.hpp>
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/io/zero_copy_stream_impl.h>
-#include "message.pb.h"
-#include <string>
-#include <iostream>
-#include <deque>
-#include <vector>
-#include <thread>
-#include "../../config.h"
+#include "boost/log/trivial.hpp"
+#include <boost/lexical_cast.hpp>
+
+#include "RequestStatus.h"
+#include "CodeHeader.h"
 #include "RequestCoordinator.h"
+
+#include "message.pb.h"
+
 class ClientNetwork 
 {
 public:
@@ -21,12 +30,6 @@ public:
     void writeMessageToFS(const std::string &msg);
 
     void writeMessageToS(const std::string &msg);
-
-    bool IsLogin();
-
-    bool IsRegister();
-
-    void SetIsRegisterToFalse();
 
 private:
     void handleConnectFS(boost::system::error_code ec);
@@ -41,21 +44,21 @@ private:
 
     void writeHeandlerS();
 
-    void start_read_header_s();
+    void startReadHeaderS();
 
-    void handle_read_header_s();
+    void handleReadHeaderS();
 
-    void start_read_body_s(unsigned msg_len);
+    void startReadBodyS(unsigned msg_len);
 
-    void handle_read_body_s();
+    void handleReadBodyS();
 
-    void start_read_header_fs();
+    void startReadHeaderFS();
 
-    void handle_read_header_fs();
+    void handleReadHeaderFS();
 
-    void start_read_body_fs(unsigned msg_len);
+    void startReadBodyFS(unsigned msg_len);
 
-    void handle_read_body_fs();
+    void handleReadBodyFS();
 
     boost::asio::io_service &io_service_;
 
@@ -71,9 +74,7 @@ private:
 
     std::vector<uint8_t> m_readbuf_fs;
 
-    bool IsLogged = false;
-
-    bool IsRegisted = false;
-
     std::shared_ptr<RequestCoordinator> PWPtr;
+
+    CodeHeader headerMenager;
 };

@@ -21,7 +21,7 @@ void Application::login(std::string login, std::string pass)
 {
     this->Login = login;
     this->Password = pass;
-    
+
     messageFS::Request req;
     req.set_name(login);
     req.set_password(pass);
@@ -30,11 +30,14 @@ void Application::login(std::string login, std::string pass)
     req.SerializePartialToString(&msg);
     Network->writeMessageToS(msg);
     isLoggedIn = RequestCoord->waitCancelDownload();
-    if (isLoggedIn) {
-        std::cout <<"Logged in successfully\n";
+    if (isLoggedIn)
+    {
+        std::cout << "Logged in successfully\n";
         synchFolder = login;
         runWatcher();
-    } else {
+    }
+    else
+    {
         std::cout << "Can't login\n";
     }
 }
@@ -50,12 +53,10 @@ void Application::registerUser(std::string login, std::string pass)
     req.SerializePartialToString(&msg);
     Network->writeMessageToS(msg);
     RequestCoord->waitCancelDownload();
-    if (Network->IsRegister()) {
-        std::cout << "Registerd succesfully\n";
-        Index->AddUser(login, pass);
-        std::filesystem::create_directory(login);
-        Network->SetIsRegisterToFalse();
-    }
+    std::cout << "Registerd succesfully\n";
+    Index->AddUser(login, pass);
+    std::filesystem::create_directory(login);
+    
 }
 
 bool Application::isLogin()
@@ -76,7 +77,6 @@ void Application::downloadFile(const std::string &fileName)
     Network->writeMessageToFS(msg);
     RequestCoord->waitCancelDownload();
     runWatcher();
-
 }
 void Application::sendFile(const FileMeta &fileinfo)
 {
@@ -103,7 +103,7 @@ void Application::sendFile(const FileMeta &fileinfo)
     Network->writeMessageToFS(msg);
 }
 
-void Application::downloadFileFriend(const std::string& friendName, const std::string& file)
+void Application::downloadFileFriend(const std::string &friendName, const std::string &file)
 {
     messageFS::Request req;
     req.set_id(ServerSyncho::CHECKFRIENDANDFILE);
@@ -134,7 +134,6 @@ void Application::runWatcher()
     initWatcher();
     WatcherThread = std::thread([&]()
                                 { Watcher.run(); });
-
 }
 void Application::stopWatcher()
 {
@@ -179,8 +178,7 @@ void Application::initWatcher()
         }
     };
 
-    auto handleUnexpectedNotification = [](WatcherNotification notification)
-    {
+    auto handleUnexpectedNotification = [](WatcherNotification notification) {
     };
     auto events = {InotifyEvent::_open | InotifyEvent::_is_dir,
                    InotifyEvent::_access,
@@ -199,7 +197,8 @@ void Application::initWatcher()
                   .onUnexpectedEvent(handleUnexpectedNotification);
 }
 
-void Application::addFriend(const std::string& friendLogin) {
+void Application::addFriend(const std::string &friendLogin)
+{
     messageFS::Request req;
     req.set_name(Login);
     req.set_loginfriend(friendLogin);
@@ -212,4 +211,3 @@ void Application::addFriend(const std::string& friendLogin) {
 Application::~Application()
 {
 }
-

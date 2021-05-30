@@ -22,7 +22,7 @@ add_executable(fdb  ../DataBases/PostgresDB/main.cpp
 find_package(Protobuf REQUIRED)
 include_directories(${Protobuf_INCLUDE_DIRS})
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
-protobuf_generate_cpp(PROTO_SRCS PROTO_HDRS ServerSynch/message.proto)
+protobuf_generate_cpp(PROTO_SRCS PROTO_HDRS Message/message.proto)
 
 
 include_directories(ServerFileStorage/connection/include)
@@ -32,6 +32,9 @@ include_directories(ServerFileStorage/Client/include)
 include_directories(ServerSynch/connection/include)
 include_directories(ServerSynch/fileStorageWorker/include)
 include_directories(ServerSynch/server/include)
+include_directories(Message)
+include_directories(Message/CodeHeader/include)
+
 
 INCLUDE_DIRECTORIES(../DataBases/PostgresDB/Base/include
 ../DataBases/PostgresDB/MetaDB/include
@@ -45,6 +48,8 @@ ServerFileStorage/main.cpp
 ServerFileStorage/server/src/server.cpp 
 ServerFileStorage/connection/src/connection.cpp 
 ServerFileStorage/fileStorageWorker/src/FileStorageWorker.cpp 
+Message/CodeHeader/src/CodeHeader.cpp
+
 ${PROTO_SRCS} ${PROTO_HDRS})
 target_link_libraries(serverFS ${Boost_LIBRARIES} ${Protobuf_LIBRARIES}) 
 
@@ -56,6 +61,7 @@ ServerSynch/connection/src/connectionSynch.cpp
 ../DataBases/PostgresDB/MetaDB/src/MetaDB.cpp
 ../DataBases/PostgresDB/UserDB/src/UserDB.cpp
 ../DataBases/PostgresDB/FriendDB/src/FriendDB.cpp
+Message/CodeHeader/src/CodeHeader.cpp
 ${PROTO_SRCS} ${PROTO_HDRS})
 target_include_directories(serverS PRIVATE ${PostgreSQL_INCLUDE_DIRS})
 

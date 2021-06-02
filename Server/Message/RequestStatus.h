@@ -17,6 +17,7 @@ enum ServerSyncho : int
     DELETEFILES = 14,
     OKDELETES = 15,
     OKSEND = 16,
+    BADREG = 17,
 };
 
 enum ServerFS : int

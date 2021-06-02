@@ -65,8 +65,14 @@ void Connection::handleReadBody(const boost::system::error_code &error)
             UserInfo us;
             us.login = readed.name();
             us.password = readed.password();
-            postgres_sqldb1->Registration(us);
-            writeRequest.set_id(ServerSyncho::OKREG);
+            bool isCorrect = postgres_sqldb1->Registration(us);
+            if (isCorrect){
+                writeRequest.set_id(ServerSyncho::OKREG);
+            }
+            else
+            {
+                writeRequest.set_id(ServerSyncho::BADREG);
+            }
             break;
         }
         case ServerSyncho::AUTORIZATION:

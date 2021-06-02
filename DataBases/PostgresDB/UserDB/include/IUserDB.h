@@ -10,7 +10,7 @@ struct IUserDB : public PostgresSQLDB
     
     virtual bool Login(const UserInfo &userInfo) = 0;
     
-    virtual UserInfo Registration(const UserInfo &userInfo) = 0;
+    virtual bool Registration(const UserInfo &userInfo) = 0;
     
     virtual int getUserIdFromLogin(const std::string &login) = 0;
 };

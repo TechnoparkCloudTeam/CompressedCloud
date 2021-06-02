@@ -5,11 +5,12 @@ int RequestCoordinator::wait()
     while(Q.empty())
     {
     }
+    int status = Q.back();
     Q.pop();
-    return 1;
+    return status;
 }
 
-void RequestCoordinator::add()
+void RequestCoordinator::add(const int& status)
 {
-    Q.push(1);
+    Q.push(status);
 }

@@ -9,14 +9,14 @@ Application::Application(
     std::shared_ptr<IClientNetwork> network,
     std::shared_ptr<IIndexer> indexer,
     std::shared_ptr<IRequestCoordinator> requestCoordinator) : Network(network),
-                                                              Index(indexer),
-                                                              isLoggedIn(false),
-                                                              RequestCoord(requestCoordinator),
-                                                              isWatcherRunning(false)
+                                                               Index(indexer),
+                                                               isLoggedIn(false),
+                                                               RequestCoord(requestCoordinator),
+                                                               isWatcherRunning(false)
 {
 }
 
-void Application::login(const std::string& login, const std::string& pass)
+void Application::login(const std::string &login, const std::string &pass)
 {
     this->Login = login;
     this->Password = pass;
@@ -28,20 +28,20 @@ void Application::login(const std::string& login, const std::string& pass)
     std::string msg;
     req.SerializePartialToString(&msg);
     Network->writeMessageToS(msg);
-    isLoggedIn = RequestCoord->wait();
-    if (isLoggedIn)
+    int status = RequestCoord->wait();
+    if (status == ServerSyncho::OKLOGIN)
     {
         std::cout << "Logged in successfully\n";
-        synchFolder = "SynchFolder/"+login;
+        synchFolder = "SynchFolder/" + login;
         runWatcher();
     }
-    else
+    else if (status == ServerSyncho::BADLOGIN)
     {
         std::cout << "Can't login\n";
     }
 }
 
-void Application::registerUser(const std::string& login, const std::string& pass)
+void Application::registerUser(const std::string &login, const std::string &pass)
 {
     messageFS::Request req;
     req.set_name(login);
@@ -51,10 +51,17 @@ void Application::registerUser(const std::string& login, const std::string& pass
 
     req.SerializePartialToString(&msg);
     Network->writeMessageToS(msg);
-    RequestCoord->wait();
-    std::cout << "Registerd succesfully\n";
-    Index->AddUser(login, pass);
-    std::filesystem::create_directory("SynchFolder/"+login);
+    int status = RequestCoord->wait();
+    if (status == ServerSyncho::OKREG)
+    {
+        std::cout << "Registerd succesfully\n";
+        Index->AddUser(login, pass);
+        std::filesystem::create_directory("SynchFolder/" + login);
+    }
+    else if (status == ServerSyncho::BADREG)
+    {
+        std::cout <<"UserAllready exists\n";
+    }
 }
 
 bool Application::isLogin()

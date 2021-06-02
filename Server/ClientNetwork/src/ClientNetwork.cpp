@@ -62,7 +62,7 @@ void ClientNetwork::handleReadBodyFS()
         std::ofstream file("SynchFolder/" + readed.name() + "/" + readed.filename(), std::ofstream::binary);
         file.write(readed.file().c_str(), readed.filesize());
         file.close();
-        PWPtr->add();
+        PWPtr->add(ServerFS::OKDOWNLOAD);
         break;
     }
     case ServerFS::OKSENDING:
@@ -166,7 +166,6 @@ void ClientNetwork::handleReadBodyS()
 {
     messageFS::Request readed;
     readed.ParseFromArray(&m_readbuf_s[header_size], m_readbuf_s.size() - header_size);
-    //std::cout << "Readed from s id: " << readed.id() << " name: " << readed.name() << std::endl;
     switch (readed.id())
     {
     case ServerSyncho::OKREG:
@@ -175,16 +174,24 @@ void ClientNetwork::handleReadBodyS()
         std::string answer;
         readed.SerializePartialToString(&answer);
         writeMessageToFS(answer);
-        PWPtr->add();
+        PWPtr->add(ServerSyncho::OKREG);
         break;
     }
+    case ServerSyncho::BADREG:
+    {
+        PWPtr->add(ServerSyncho::BADREG);
+        break;
+    }
+
     case ServerSyncho::OKLOGIN:
     {
-        PWPtr->add();
+
+        PWPtr->add(ServerSyncho::OKLOGIN);
         break;
     }
     case ServerSyncho::BADLOGIN:
     {
+        PWPtr->add(ServerSyncho::BADLOGIN);
         break;
     }
     case ServerSyncho::CHECKFRIENDANDFILESUCCESSFUL:

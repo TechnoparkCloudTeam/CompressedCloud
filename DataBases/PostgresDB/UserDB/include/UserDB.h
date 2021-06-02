@@ -19,7 +19,7 @@ public:
   
   bool Login(const UserInfo &userInfo) override;
   
-  UserInfo Registration(const UserInfo &userInfo) override;
+  bool Registration(const UserInfo &userInfo) override;
   
   int getUserIdFromLogin(const std::string &login) override;
 

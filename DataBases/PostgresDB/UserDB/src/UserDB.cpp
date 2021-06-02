@@ -38,14 +38,14 @@ bool UsersDB::Login(const UserInfo &userInfo) {
     throw PostgresExceptions(exceptions.what());
   }
 }
-UserInfo UsersDB::Registration(const UserInfo &userInfo) {
+bool UsersDB::Registration(const UserInfo &userInfo) {
   try {
     pqExec("begin;", PostgresExceptions("invalid to start transaction"));  // Начало транзакции
     pqExec("savepoint f_savepoint;", PostgresExceptions("invalid to savepoint"));  // Точка сохранения
 
      std::string query = "SELECT count(*) from Users Where login like '" + userInfo.login + "' ;";
     if (userExist(query)) {
-      throw PostgresExceptions("User already exist");
+      return false;
     }
 
     query = "INSERT INTO Users (login, password) VALUES ('" + userInfo.login + "', '" + userInfo.password + "');";
@@ -56,11 +56,11 @@ UserInfo UsersDB::Registration(const UserInfo &userInfo) {
     UserInfo usr{.id = getUserId(query, PostgresExceptions("invalid to select id"))};
     pqExec("commit;", PostgresExceptions("invalid to end transation"));
     std::cout << "User registered" << std::endl;
-    return usr;
+    return true;
   } catch (PostgresExceptions &exceptions) {
 
     std::cout << exceptions.what() << "\n";
-    return UserInfo{};
+    return false;
   }
 }
 UsersDB::UsersDB(std::string_view info) : IUserDB(info) {}

@@ -1,5 +1,5 @@
 struct IRequestCoordinator
 {
     virtual int wait() = 0;
-    virtual void add() = 0;
+    virtual void add(const int& status) = 0;
 };

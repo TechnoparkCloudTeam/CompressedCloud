@@ -1,6 +1,6 @@
 #include "ClientNetwork.h"
 
-ClientNetwork::ClientNetwork(boost::asio::io_service &io_service, std::shared_ptr<RequestCoordinator> PWPtr_) : socket_(io_service),
+ClientNetwork::ClientNetwork(boost::asio::io_service &io_service, std::shared_ptr<IRequestCoordinator> PWPtr_) : socket_(io_service),
                                                                     socketS_(io_service),
                                                                     io_service_(io_service),
                                                                     PWPtr(PWPtr_)
@@ -59,7 +59,7 @@ void ClientNetwork::handleReadBodyFS()
     case ServerFS::OKDOWNLOAD:
     {
         
-        std::ofstream file(readed.name() + "/" + readed.filename(), std::ofstream::binary);
+        std::ofstream file("SynchFolder/" + readed.name() + "/" + readed.filename(), std::ofstream::binary);
         file.write(readed.file().c_str(), readed.filesize());
         file.close();
         PWPtr->add();
@@ -94,7 +94,7 @@ void ClientNetwork::handleReadBodyFS()
     startReadHeaderFS();
 }
 
-void ClientNetwork::writeMessageToFS(const std::string &msg)
+void ClientNetwork::writeMessageToFS(const std::string &msg) 
 {
     io_service_.post(boost::bind(&ClientNetwork::doWriteFS, this, msg));
 }
@@ -212,7 +212,7 @@ void ClientNetwork::handleReadBodyS()
     startReadHeaderS();
 }
 
-void ClientNetwork::writeMessageToS(const std::string &msg)
+void ClientNetwork::writeMessageToS(const std::string &msg) 
 {
     io_service_.post(boost::bind(&ClientNetwork::doWriteS, this, msg));
 }

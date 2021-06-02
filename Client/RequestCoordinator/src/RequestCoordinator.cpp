@@ -1,11 +1,9 @@
 #include "RequestCoordinator.h"
 
-int RequestCoordinator::waitCancelDownload()
+int RequestCoordinator::wait()
 {
-    int i = 0;
     while(Q.empty())
     {
-        i++;
     }
     Q.pop();
     return 1;

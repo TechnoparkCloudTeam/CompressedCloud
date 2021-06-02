@@ -13,7 +13,7 @@ void FriendDB::createTable()
   pqExec(sql1, PostgresExceptions("can't create table of Friends\n"));
 }
 
-FriendDB::FriendDB(std::string_view info) : PostgresSQLDB(info) {}
+FriendDB::FriendDB(std::string_view info) : IFriendDB(info) {}
 
 FriendDB &FriendDB::shared(std::string_view info)
 {

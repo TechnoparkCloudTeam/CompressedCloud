@@ -16,8 +16,8 @@ namespace sServer
     class Server
     {
     public:
-        explicit Server(int port, std::shared_ptr<UsersDB> postgres_sqldb12, std::shared_ptr<MetaDataDB> postgres_sqldb_file,
-         std::shared_ptr<FriendDB> postgres_sqldb_friend);
+        explicit Server(int port, std::shared_ptr<IUserDB> postgres_sqldb12, std::shared_ptr<IMetaDataDB> postgres_sqldb_file,
+         std::shared_ptr<IFriendDB> postgres_sqldb_friend);
 
         ~Server();
 
@@ -36,11 +36,11 @@ namespace sServer
 
         boost::asio::ip::tcp::socket socket_;
 
-        std::shared_ptr<UsersDB> postgres_sqldb1;
+        std::shared_ptr<IUserDB> postgres_sqldb1;
 
-        std::shared_ptr<MetaDataDB> postgres_sqldb_file;
+        std::shared_ptr<IMetaDataDB> postgres_sqldb_file;
 
-        std::shared_ptr<FriendDB> postgres_sqldb_friends;
+        std::shared_ptr<IFriendDB> postgres_sqldb_friends;
     };
 
 }

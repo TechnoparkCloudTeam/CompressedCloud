@@ -3,11 +3,13 @@
 #include <iostream>
 #include <queue>
 
-class RequestCoordinator
+#include "IRequestCoordinator.h"
+
+class RequestCoordinator : public IRequestCoordinator
 {
 public:
-    int waitCancelDownload();
-    void add();
+    int wait() override;
+    void add() override;
 private:
     std::queue<int> Q;
 };

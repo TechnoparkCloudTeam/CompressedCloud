@@ -1,31 +1,27 @@
 #pragma once
+
 #include <vector>
 #include <filesystem>
 #include <memory>
-#include "../../../DataBases/LocalDB/include/LocalDB.h"
+#include <iostream>
+
+#include "LocalDB.h"
+#include "IIndexer.h"
 
 std::string GetCurrentTime();
 
 std::string GetDirStartingFromBuild(const std::filesystem::path& path);
 
-class I_Indexer {
+class Indexer : public IIndexer {
 public:
-    virtual void createFile(const std::filesystem::path& path) = 0;
-    virtual void modifyFile(const std::filesystem::path& path, size_t chunksCnt) = 0;
-    virtual void deleteFile(const std::filesystem::path& path) = 0;
-    
-};
-
-class Indexer : public I_Indexer {
-public:
-    Indexer (std::shared_ptr<FileDB> FileDataBase, std::shared_ptr<UserDB> UserDataBase);
+    Indexer (std::shared_ptr<IFileDB> FileDataBase, std::shared_ptr<IUserDB> UserDataBase);
     void createFile(const std::filesystem::path& path) override;
     void modifyFile(const std::filesystem::path& path, size_t chunksCnt) override;
     void deleteFile(const std::filesystem::path& path) override;
-    void AddUser(const std::string& UserLogin, const std::string& UserPassword);
-    FileMeta GetFileInfo(const std::filesystem::path& path);
+    void AddUser(const std::string& UserLogin, const std::string& UserPassword) override;
+    FileMeta GetFileInfo(const std::filesystem::path& path) override;
 private:
-    std::shared_ptr<FileDB> LocalFileDataBase;
-    std::shared_ptr<UserDB> LocalUserDataBase;
+    std::shared_ptr<IFileDB> LocalFileDataBase;
+    std::shared_ptr<IUserDB> LocalUserDataBase;
 };
 

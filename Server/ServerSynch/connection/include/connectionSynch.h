@@ -22,8 +22,8 @@
 class Connection : public std::enable_shared_from_this<Connection>
 {
 public:
-    explicit Connection(boost::asio::ip::tcp::socket socket_, std::shared_ptr<UsersDB> postgres_sqldb12,
-                        std::shared_ptr<MetaDataDB> postgres_sqldb_file, std::shared_ptr<FriendDB> postgres_sqldb_friend);
+    explicit Connection(boost::asio::ip::tcp::socket socket_, std::shared_ptr<IUserDB> postgres_sqldb12,
+                        std::shared_ptr<IMetaDataDB> postgres_sqldb_file, std::shared_ptr<IFriendDB> postgres_sqldb_friend);
 
     void start();
 
@@ -44,11 +44,11 @@ private:
 
     std::vector<uint8_t> m_readbuf;
 
-    std::shared_ptr<UsersDB> postgres_sqldb1;
+    std::shared_ptr<IUserDB> postgres_sqldb1;
 
-    std::shared_ptr<MetaDataDB> postgres_sqldb_file;
+    std::shared_ptr<IMetaDataDB> postgres_sqldb_file;
 
-    std::shared_ptr<FriendDB> postgres_sqldb_friends;
+    std::shared_ptr<IFriendDB> postgres_sqldb_friends;
 
     CodeHeader headerMenager;
 };

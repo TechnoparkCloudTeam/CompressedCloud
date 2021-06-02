@@ -1,5 +1,4 @@
-#include "../include/Indexer.h"
-#include <iostream>
+#include "Indexer.h"
 
 std::string GetCurrentTime()
 {
@@ -15,7 +14,7 @@ std::string GetDirStartingFromBuild(const std::filesystem::path& path) {
     std::string dir = path;
 	return dir.substr(dir.find("build") + 5);
 }
-Indexer::Indexer (std::shared_ptr<FileDB> FileDataBase, std::shared_ptr<UserDB> UserDataBase) : 
+Indexer::Indexer (std::shared_ptr<IFileDB> FileDataBase, std::shared_ptr<IUserDB> UserDataBase) : 
     LocalFileDataBase(FileDataBase),
     LocalUserDataBase(UserDataBase) {
 }

@@ -1,100 +1,112 @@
 #pragma once
-#include "FileDB.h"
 #include <memory>
 #include <string>
 #include <sqlite3.h>
-#include "UserDB.h"
 #include <functional>
 #include <vector>
 #include <ctime>
 #include <optional>
 
-struct sqlite3_deleter {
-  void operator()(sqlite3* sql) {
-	sqlite3_close_v2(sql);
-  }
-};
+#include "IFileDB.h"
+#include "IUserDB.h"
 
-struct s_column
-{
-   std::string col_name;
-   std::string col_text;
-};
 
-struct s_record:public std::vector<s_column>
+
+class UserDB : public IUserDB
 {
-};
-							   
-class UserDB {
 public:
-	UserDB(const std::string_view  userNameDB);
-	
-	bool exec(const std::string_view sql,
-                std::function<int(const s_record& r,void* context)> record_callback=nullptr //retuen false to continue enumeration
-                ,void* context=nullptr
-                );
+        UserDB(const std::string_view userNameDB);
 
-        bool connect(const std::string_view userNameDB);
-        void disconnect();
-        void createTable();
+        bool exec(const std::string_view sql,
+                  std::function<int(const s_record &r, void *context)> record_callback = nullptr //retuen false to continue enumeration
+                  ,
+                  void *context = nullptr) override;
 
-	bool addUser(const User &user);
-        void deleteUser(int id);
-        
-        bool isUserExist(const int &userId);
-        
-        int getUserId(const std::string &login);
-  	int getDeviceId(const User& user);
-  	std::string getLogin(const User& user);
-  	int getPassword(const User& user);
-	std::string getSynchFolder(const User& user);
-	std::string getLastUpdate(User& user);
-	 
-	int selectUserId();
-        int selectDeviceId();
- 	int selectLogin();
-  	bool selectPassword(const User& user);
-  	int selectFolder();
-  	int selectLastUpdate();
-  	
-        bool updateSynchFolder(User& user, const std::string &newFolder);
-        bool updatePassword(User& user, const std::string &newPassword);
-        
-        void saveLastUpdate(User& user);
+        bool connect(const std::string_view userNameDB) override;
+
+        void disconnect() override;
+
+        void createTable() override;
+
+        bool addUser(const User &user) override;
+
+        void deleteUser(int id) override;
+
+        bool isUserExist(const int &userId) override;
+
+        int getUserId(const std::string &login) override;
+
+        int getDeviceId(const User &user) override;
+
+        std::string getLogin(const User &user) override;
+
+        int getPassword(const User &user) override;
+
+        std::string getSynchFolder(const User &user) override;
+
+        std::string getLastUpdate(User &user) override;
+
+        int selectUserId() override;
+
+        int selectDeviceId() override;
+
+        int selectLogin() override;
+
+        bool selectPassword(const User &user) override;
+
+        int selectFolder() override;
+
+        int selectLastUpdate() override;
+
+        bool updateSynchFolder(User &user, const std::string &newFolder) override;
+
+        bool updatePassword(User &user, const std::string &newPassword) override;
+
+        void saveLastUpdate(User &user) override;
+
 private:
         std::unique_ptr<sqlite3, sqlite3_deleter> _database;
 };
 
-class FileDB {
+class FileDB : public IFileDB
+{
 public:
-	FileDB(const std::string_view  fileNameDB);
-	
-	bool exec(const std::string_view sql,
-                std::function<int(const s_record& r,void* context)> record_callback=nullptr //retuen false to continue enumeration
-                ,void* context=nullptr
-                );
-	
-	bool connect(const std::string_view fileNameDB);
-	void disconnect(); 
-	void createTable();
-	
-	void addFile(FileMeta &file);
-        void deleteFile(const std::string &fileName, const std::string &filePath); 
-        void downloadFile(const int &fileId);
-	
-	bool isFileExist(const int &fileId);
+        FileDB(const std::string_view fileNameDB);
 
-        std::optional<FileMeta> getOneFile(const int id);
-        
+        bool exec(const std::string_view sql,
+                  std::function<int(const s_record &r, void *context)> record_callback = nullptr //retuen false to continue enumeration
+                  ,
+                  void *context = nullptr) override;
+
+        bool connect(const std::string_view fileNameDB) override;
+
+        void disconnect() override;
+
+        void createTable() override;
+
+        void addFile(FileMeta &file) override;
+
+        void deleteFile(const std::string &fileName, const std::string &filePath) override;
+
+        void downloadFile(const int &fileId) override;
+
+        bool isFileExist(const int &fileId) override;
+
+        std::optional<FileMeta> getOneFile(const int id) override;
+
+        int selectId() override;
+
+        int selectFileId() override;
+
+        /*    FileMeta selectFile(const int &fileId) override; */
+
+        std::vector<FileMeta> selectAllFiles() override;
+
+        void updateFile(FileMeta &file) override;
+
         static std::time_t getTime_unixtime();
-        
-        int selectId();
-        int selectFileId();
-        FileMeta selectFile(const int &fileId);
-        std::vector<FileMeta> selectAllFiles();
-        
-        void updateFile(FileMeta &file);
+
         
 private:
-       std::unique_ptr<sqlite3, sqlite3_deleter> _database;   
+        std::unique_ptr<sqlite3, sqlite3_deleter> _database;
 };

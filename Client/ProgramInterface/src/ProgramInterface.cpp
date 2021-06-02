@@ -54,6 +54,7 @@ void ProgramInterface::run() {
 
         } else if (input == "quit") {
             std::cout << "Quitting application\n";
+            app->stopWatcher();
             break;
         } else if (input == "stop") {
             app->stopWatcher();
@@ -76,13 +77,13 @@ void ProgramInterface::run() {
         } else if (input =="getFileFriend") {
             std::string FriendName;
             do {
-                std::cout << "Enter Friend"; 
+                std::cout << "Enter Friend: "; 
                 getline(std::cin, FriendName);
             } while (FriendName.empty());
 
             std::string FileName;
             do {
-                std::cout<< "Enter file name";
+                std::cout<< "Enter file name: ";
                 getline(std::cin, FileName);
             } while (FileName.empty());
             app->downloadFileFriend(FriendName, FileName);

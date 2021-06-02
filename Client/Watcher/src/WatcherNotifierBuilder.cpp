@@ -16,10 +16,12 @@ auto WatcherNotifierBuilder::run() -> void {
 
 auto WatcherNotifierBuilder::runOnce() -> void {
     if (mWatcher->isStopped()) {
+        std::cout<<"\n\n\n vishel esli nwatcher->isstopped\n\n\n";
         return;
     }
     auto fileSysEvent = mWatcher->getNextEvent();
     if (!fileSysEvent) {
+
         return;
     }
 

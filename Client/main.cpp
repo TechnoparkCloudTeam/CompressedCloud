@@ -12,18 +12,16 @@
 
 int main()
 {	
-	std::shared_ptr<RequestCoordinator> RequestProccessorPtr(new RequestCoordinator());
-	std::shared_ptr<FileDB> fileDBPtr(new FileDB("file.dblite"));
-	std::shared_ptr<UserDB> userDBPtr(new UserDB("users.dblite"));
-	std::shared_ptr<Indexer> indexerPtr(new Indexer(fileDBPtr, userDBPtr));
+	std::shared_ptr<IRequestCoordinator> RequestProccessorPtr(new RequestCoordinator());
+	std::shared_ptr<IFileDB> fileDBPtr(new FileDB("file.dblite"));
+	std::shared_ptr<IUserDB> userDBPtr(new UserDB("users.dblite"));
+	std::shared_ptr<IIndexer> indexerPtr(new Indexer(fileDBPtr, userDBPtr));
 	boost::asio::io_service io_service;
-	std::shared_ptr<ClientNetwork> clientNetworkPtr(new ClientNetwork(io_service, RequestProccessorPtr));
+	std::shared_ptr<IClientNetwork> clientNetworkPtr(new ClientNetwork(io_service, RequestProccessorPtr));
 	boost::thread t(boost::bind(&boost::asio::io_service::run, &io_service));
 	std::shared_ptr<Application> appPtr(new Application(clientNetworkPtr, indexerPtr , RequestProccessorPtr));
-	ProgramInterface console(appPtr);   
-	console.run();
-	std::cout << "\n\nExiting interface\n\n";
+	std::shared_ptr<IProgramInterface> console(new ProgramInterface(appPtr));
+	console->run();
 	//t.join();
-	std::cout << "\n\nNetwork finished";
 	return 0;
 }

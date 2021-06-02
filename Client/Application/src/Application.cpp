@@ -1,23 +1,22 @@
 #include "Application.h"
 
-
 bool isTmpFile(const std::string &fileName)
 {
     return (fileName.find(".goutputstream") != std::string::npos);
 }
 
 Application::Application(
-    std::shared_ptr<ClientNetwork> network,
-    std::shared_ptr<Indexer> indexer,
-    std::shared_ptr<RequestCoordinator> requestCoordinator) :
-        Network(network),
-        Index(indexer),
-        isLoggedIn(false),
-        RequestCoord(requestCoordinator)
-{    
+    std::shared_ptr<IClientNetwork> network,
+    std::shared_ptr<IIndexer> indexer,
+    std::shared_ptr<IRequestCoordinator> requestCoordinator) : Network(network),
+                                                              Index(indexer),
+                                                              isLoggedIn(false),
+                                                              RequestCoord(requestCoordinator),
+                                                              isWatcherRunning(false)
+{
 }
 
-void Application::login(std::string login, std::string pass)
+void Application::login(const std::string& login, const std::string& pass)
 {
     this->Login = login;
     this->Password = pass;
@@ -29,11 +28,11 @@ void Application::login(std::string login, std::string pass)
     std::string msg;
     req.SerializePartialToString(&msg);
     Network->writeMessageToS(msg);
-    isLoggedIn = RequestCoord->waitCancelDownload();
+    isLoggedIn = RequestCoord->wait();
     if (isLoggedIn)
     {
         std::cout << "Logged in successfully\n";
-        synchFolder = login;
+        synchFolder = "SynchFolder/"+login;
         runWatcher();
     }
     else
@@ -42,21 +41,20 @@ void Application::login(std::string login, std::string pass)
     }
 }
 
-void Application::registerUser(std::string login, std::string pass)
+void Application::registerUser(const std::string& login, const std::string& pass)
 {
     messageFS::Request req;
     req.set_name(login);
     req.set_password(pass);
     req.set_id(ServerSyncho::REGISTRATION);
-    std::string msg; 
-    
+    std::string msg;
+
     req.SerializePartialToString(&msg);
     Network->writeMessageToS(msg);
-    RequestCoord->waitCancelDownload();
+    RequestCoord->wait();
     std::cout << "Registerd succesfully\n";
     Index->AddUser(login, pass);
-    std::filesystem::create_directory(login);
-    
+    std::filesystem::create_directory("SynchFolder/"+login);
 }
 
 bool Application::isLogin()
@@ -75,7 +73,7 @@ void Application::downloadFile(const std::string &fileName)
     req.SerializePartialToString(&msg);
     stopWatcher();
     Network->writeMessageToFS(msg);
-    RequestCoord->waitCancelDownload();
+    RequestCoord->wait();
     runWatcher();
 }
 void Application::sendFile(const FileMeta &fileinfo)
@@ -114,10 +112,10 @@ void Application::downloadFileFriend(const std::string &friendName, const std::s
     req.SerializePartialToString(&msg);
     stopWatcher();
     Network->writeMessageToS(msg);
-    RequestCoord->waitCancelDownload();
+    RequestCoord->wait();
     runWatcher();
 }
-void Application::deleteFile(const std::string& fileName)
+void Application::deleteFile(const std::string &fileName)
 {
     messageFS::Request req;
     req.set_id(ServerFS::DELETEFILE);
@@ -131,14 +129,19 @@ void Application::deleteFile(const std::string& fileName)
 
 void Application::runWatcher()
 {
+    isWatcherRunning = true;
     initWatcher();
     WatcherThread = std::thread([&]()
                                 { Watcher.run(); });
 }
 void Application::stopWatcher()
 {
-    Watcher.stop();
-    WatcherThread.join();
+    if (isWatcherRunning)
+    {
+        Watcher.stop();
+        WatcherThread.join();
+        isWatcherRunning = false;
+    }
 }
 
 void Application::initWatcher()
@@ -147,7 +150,7 @@ void Application::initWatcher()
     {
         if (!isTmpFile(notification.Path.filename()))
         {
-            std::cout << "Event " << notification.Event << " on " << notification.Path << " at " << notification.Time.time_since_epoch().count() << " was triggered.\n";
+            //std::cout << "Event " << notification.Event << " on " << notification.Path << " at " << notification.Time.time_since_epoch().count() << " was triggered.\n";
 
             switch (notification.Event)
             {

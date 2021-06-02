@@ -228,7 +228,6 @@ std::optional<FileSysEvent> Watcher::getNextEvent()
 
 void Watcher::shutDown()
 {
-
     mStopped = true;
     sendStopSignal();
 }
@@ -269,7 +268,7 @@ bool Watcher::isOnTimeout(const steadyClock::time_point &eventTime)
 ssize_t Watcher::readEventsIntoBuffer(vector<uint8_t> &eventBuffer)
 {
     ssize_t length = 0;
-    auto timeout = -1;
+    auto timeout = 1;
     auto nFileDescReady = epoll_wait(mEpollFd, mEpollEvents, MAX_EPOLL_EVENTS, timeout);
     if (nFileDescReady == ERROR_DESC)
     {
@@ -362,8 +361,10 @@ void Watcher::filterEvents(vector<FileSysEvent> &events,
 
 void Watcher::sendStopSignal()
 {
+
     vector<std::uint8_t> buf(1, 0);
     write(StopPipeFileDescriptor[mPipeWriteIdx], buf.data(), buf.size());
+
 }
 
 void Watcher::runAfterShutDown()

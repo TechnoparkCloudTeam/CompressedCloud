@@ -1,10 +1,11 @@
 #include <iostream>
 #include "serverSynch.h"
 #include "message.pb.h"
-#include "../../DataBases/PostgresDB/UserDB/include/UserDB.h"
+#include "UserDB.h"
 #include "MetaDB.h"
 #include "FriendDB.h"
-#include "../../DataBases/PostgresDB/UserDB/include/UserInfo.h"
+#include "UserInfo.h"
+
 int main(int argc, char *argv[])
 {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -17,9 +18,9 @@ int main(int argc, char *argv[])
   FriendDB &postgres_sqldb2 = FriendDB::shared("user=lida password=123 dbname=mydb host=127.0.0.1 port=5432");
   postgres_sqldb2.Connect();
   postgres_sqldb2.createTable();
-  auto ptr = std::shared_ptr<UsersDB> (&postgres_sqldb1);
-  auto ptr1 = std::shared_ptr<MetaDataDB> (&postgres_sqldb);
-  auto ptr2 = std::shared_ptr<FriendDB> (&postgres_sqldb2);
+  auto ptr = std::shared_ptr<IUserDB> (&postgres_sqldb1);
+  auto ptr1 = std::shared_ptr<IMetaDataDB> (&postgres_sqldb);
+  auto ptr2 = std::shared_ptr<IFriendDB> (&postgres_sqldb2);
   sServer::Server serv(std::atoi(argv[1]), ptr, ptr1, ptr2);
   serv.run();
   //io_service_.run();

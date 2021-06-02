@@ -1,11 +1,10 @@
 #pragma once
+
 #include <string>
 #include <memory>
-#include <../../Application/include/Application.h>
-class IProgramInterface {
-public:
-	virtual void run() = 0;
-};
+
+#include "Application.h"
+#include "IProgramInterface.h"
 
 class ProgramInterface : public IProgramInterface {
 public:

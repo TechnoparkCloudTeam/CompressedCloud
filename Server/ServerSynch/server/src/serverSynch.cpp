@@ -1,8 +1,8 @@
 #include <iostream>
 #include "serverSynch.h"
 
-sServer::Server::Server(int port, std::shared_ptr<UsersDB> postgres_sqldb12, std::shared_ptr<MetaDataDB> postgres_sqldb_file,
-         std::shared_ptr<FriendDB> postgres_sqldb_friend)
+sServer::Server::Server(int port, std::shared_ptr<IUserDB> postgres_sqldb12, std::shared_ptr<IMetaDataDB> postgres_sqldb_file,
+         std::shared_ptr<IFriendDB> postgres_sqldb_friend)
     : io_service_(),
       acceptor_(io_service_, boost::asio::ip::tcp::endpoint(boost::asio::ip::tcp::v4(), port)),
       socket_(io_service_),

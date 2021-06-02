@@ -16,20 +16,21 @@
 #include "boost/log/trivial.hpp"
 #include <boost/lexical_cast.hpp>
 
+#include "IClientNetwork.h"
 #include "RequestStatus.h"
 #include "CodeHeader.h"
 #include "RequestCoordinator.h"
 
 #include "message.pb.h"
 
-class ClientNetwork 
+class ClientNetwork : public IClientNetwork
 {
 public:
-    ClientNetwork(boost::asio::io_service &io_service, std::shared_ptr<RequestCoordinator> PWPtr_);
+    ClientNetwork(boost::asio::io_service &io_service, std::shared_ptr<IRequestCoordinator> PWPtr_);
 
-    void writeMessageToFS(const std::string &msg);
+    void writeMessageToFS(const std::string &msg) override;
 
-    void writeMessageToS(const std::string &msg);
+    void writeMessageToS(const std::string &msg) override;
 
 private:
     void handleConnectFS(boost::system::error_code ec);
@@ -74,7 +75,7 @@ private:
 
     std::vector<uint8_t> m_readbuf_fs;
 
-    std::shared_ptr<RequestCoordinator> PWPtr;
+    std::shared_ptr<IRequestCoordinator> PWPtr;
 
     CodeHeader headerMenager;
 };

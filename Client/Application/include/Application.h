@@ -17,12 +17,12 @@
 class Application {
 public:
     Application(
-     std::shared_ptr<ClientNetwork> network,
-     std::shared_ptr<Indexer> indexer,
-     std::shared_ptr<RequestCoordinator> requestCoordinator);
+     std::shared_ptr<IClientNetwork> network,
+     std::shared_ptr<IIndexer> indexer,
+     std::shared_ptr<IRequestCoordinator> requestCoordinator);
     ~Application();
-    void login(std::string login, std::string pass);
-    void registerUser(std::string login, std::string pass);
+    void login(const std::string& login,const std::string& pass);
+    void registerUser(const std::string& login, const std::string& pass);
     bool isLogin();
     void downloadFile(const std::string& fileName);
     void downloadFileFriend(const std::string& friendName, const std::string& file);
@@ -32,15 +32,16 @@ public:
     void stopWatcher();
     void addFriend(const std::string& friendLogin);
 private:
+    bool isWatcherRunning;
     std::string synchFolder;
     std::string Login;
     std::string Password;
     void checkPassword();
     void initWatcher();
-    std::shared_ptr<ClientNetwork> Network;
-    std::shared_ptr<Indexer> Index;
+    std::shared_ptr<IClientNetwork> Network;
+    std::shared_ptr<IIndexer> Index;
     WatcherNotifierBuilder Watcher;
     std::thread WatcherThread;
     bool isLoggedIn;
-    std::shared_ptr<RequestCoordinator> RequestCoord;
+    std::shared_ptr<IRequestCoordinator> RequestCoord;
 };

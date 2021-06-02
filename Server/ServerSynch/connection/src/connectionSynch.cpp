@@ -1,7 +1,7 @@
 #include "connectionSynch.h"
 
-Connection::Connection(boost::asio::ip::tcp::socket socket_, std::shared_ptr<UsersDB> postgres_sqldb12,
-                       std::shared_ptr<MetaDataDB> postgres_sqldb_file, std::shared_ptr<FriendDB> postgres_sqldb_friend)
+Connection::Connection(boost::asio::ip::tcp::socket socket_, std::shared_ptr<IUserDB> postgres_sqldb12,
+                       std::shared_ptr<IMetaDataDB> postgres_sqldb_file, std::shared_ptr<IFriendDB> postgres_sqldb_friend)
     : socket_(std::move(socket_)),
       postgres_sqldb1(postgres_sqldb12),
       postgres_sqldb_file(postgres_sqldb_file),
@@ -93,8 +93,8 @@ void Connection::handleReadBody(const boost::system::error_code &error)
         case ServerSyncho::ADDFILE:
         {
             std::cout << "addfiel";
-            readed.PrintDebugString();
             auto file = FileMeta{
+                .userId = postgres_sqldb1->getUserIdFromLogin(readed.name()),
                 .version = 1,
                 .fileName = readed.filename(),
                 .fileExtension = readed.fileextention(),
@@ -107,26 +107,6 @@ void Connection::handleReadBody(const boost::system::error_code &error)
                 .updateDate = "2020-12-12 0:47:25",
                 .createDate = "2020-12-12 0:47:25"};
             //TODO:: че то куда то это деть
-            std::vector<ChunkMeta> chunksMetaVector;
-            for (int i = 0; i < 2; ++i)
-            {
-                auto chunkMeta = ChunkMeta{.chunkId = i};
-                chunksMetaVector.push_back(chunkMeta);
-            }
-
-            std::vector<FileChunksMeta> fileChunksMetaVector;
-            for (int i = 0; i < 2; ++i)
-            {
-                auto fileChunkMeta = FileChunksMeta{.chunkId = i, .chunkOrder = i};
-                fileChunksMetaVector.push_back(fileChunkMeta);
-            }
-
-            auto fileInfo =
-                FileInfo{.userId = postgres_sqldb1->getUserIdFromLogin(readed.name()),
-                         .file = file,
-                         .chunkMeta = chunksMetaVector,
-                         .fileChunksMeta = fileChunksMetaVector};
-            std::cout << "\n\n\n UserID:: " << fileInfo.userId << "\n\n\n";
             try
             {
                 postgres_sqldb_file->InsertFile(file);
@@ -162,7 +142,6 @@ void Connection::handleReadBody(const boost::system::error_code &error)
         }
         case ServerSyncho::CHECKFRIENDANDFILE:
         {
-            readed.PrintDebugString();
             //TODO:: добавить также проверку на то, что у этого друга есть вообще этот файл
             if (postgres_sqldb_friends->CheckFriendship(postgres_sqldb1->getUserIdFromLogin(readed.name()),
                                                         postgres_sqldb1->getUserIdFromLogin(readed.loginfriend())))

@@ -2,29 +2,28 @@
 
 #include <vector>
 #include <string>
-#include "PostgreSQLDB.h"
 #include "PostgresExceptions.h"
-#include "FileInfo.h"
-#include "UserDate.h"
 
-class MetaDataDB : public PostgresSQLDB {
- protected:
- public:
+#include "IMetaDB.h"
+
+class MetaDataDB : public IMetaDataDB
+{
+protected:
+public:
+  explicit MetaDataDB(std::string_view info);
   ~MetaDataDB() override = default;
   static MetaDataDB &shared(std::string_view info);
-  void createTable();
-  void InsertFile(const FileMeta &fileMeta);
-  std::vector<FileInfo> GetUserFilesByTime(const UserDate &userDate);
-  bool isFileExist(std::string login);
-  void deleteFile(std::string login, std::string fileName);
-  std::string GetFile(std::string login);
+  void createTable() override;
+  void InsertFile(const FileMeta &fileMeta) override;
+  std::vector<FileInfo> GetUserFilesByTime(const UserDate &userDate) override;
+  bool isFileExist(std::string login) override;
+  void deleteFile(std::string login, std::string fileName) override;
+  std::string GetFile(std::string login) override;
 
- private:
-  explicit MetaDataDB(std::string_view info);
+private:
   MetaDataDB(const MetaDataDB &mongo_db);
   MetaDataDB &operator=(const MetaDataDB &mongo_db);
 
   static std::string getTime(std::string &time);
   int getLastIdOfFileUser(const std::string &query, PostgresExceptions exceptions);
 };
-

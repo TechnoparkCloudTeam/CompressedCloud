@@ -63,7 +63,7 @@ UserInfo UsersDB::Registration(const UserInfo &userInfo) {
     return UserInfo{};
   }
 }
-UsersDB::UsersDB(std::string_view info) : PostgresSQLDB(info) {}
+UsersDB::UsersDB(std::string_view info) : IUserDB(info) {}
 
 UsersDB &UsersDB::shared(std::string_view info) {
   static UsersDB shared(info);

@@ -41,25 +41,25 @@ private:
 
     void doWriteS(std::string &msg);
 
-    void writeHeandlerFS();
+    void writeHeandlerFS(boost::system::error_code ec);
 
-    void writeHeandlerS();
+    void writeHeandlerS(boost::system::error_code ec);
 
     void startReadHeaderS();
 
-    void handleReadHeaderS();
+    void handleReadHeaderS(boost::system::error_code ec);
 
     void startReadBodyS(unsigned msg_len);
 
-    void handleReadBodyS();
+    void handleReadBodyS(boost::system::error_code ec);
 
     void startReadHeaderFS();
 
-    void handleReadHeaderFS();
+    void handleReadHeaderFS(boost::system::error_code ec);
 
     void startReadBodyFS(unsigned msg_len);
 
-    void handleReadBodyFS();
+    void handleReadBodyFS(boost::system::error_code ec);
 
     boost::asio::io_service &io_service_;
 
@@ -78,4 +78,7 @@ private:
     std::shared_ptr<IRequestCoordinator> PWPtr;
 
     CodeHeader headerMenager;
+
+    boost::asio::ip::tcp::endpoint ep;
+    boost::asio::ip::tcp::endpoint eps;
 };

@@ -1,22 +1,21 @@
 #include "ClientNetwork.h"
 
 ClientNetwork::ClientNetwork(boost::asio::io_service &io_service, std::shared_ptr<IRequestCoordinator> PWPtr_) : socket_(io_service),
-                                                                    socketS_(io_service),
-                                                                    io_service_(io_service),
-                                                                    PWPtr(PWPtr_)
+                                                                                                                 socketS_(io_service),
+                                                                                                                 io_service_(io_service),
+                                                                                                                 PWPtr(PWPtr_),
+                                                                                                                 ep(boost::asio::ip::address::from_string("127.0.0.1"), 8888),
+                                                                                                                 eps(boost::asio::ip::address::from_string("127.0.0.1"), 6666)
 {
 
-    boost::asio::ip::tcp::endpoint eps(boost::asio::ip::address::from_string("127.0.0.1"), 6666);
     socketS_.async_connect(eps, boost::bind(&ClientNetwork::handleConnectS, this,
                                             boost::asio::placeholders::error));
 
-    boost::asio::ip::tcp::endpoint ep(boost::asio::ip::address::from_string("127.0.0.1"), 8888);
     socket_.async_connect(ep, boost::bind(&ClientNetwork::handleConnectFS, this,
                                           boost::asio::placeholders::error));
 }
 void ClientNetwork::handleConnectFS(boost::system::error_code ec)
 {
-    boost::asio::ip::tcp::endpoint ep(boost::asio::ip::address::from_string("127.0.0.1"), 8888);
 
     if (!ec)
     {
@@ -32,69 +31,84 @@ void ClientNetwork::startReadHeaderFS()
 {
     m_readbuf_fs.resize(header_size);
     boost::asio::async_read(socket_, boost::asio::buffer(m_readbuf_fs),
-                            boost::bind(&ClientNetwork::handleReadHeaderFS, this));
+                            boost::bind(&ClientNetwork::handleReadHeaderFS, this, boost::asio::placeholders::error));
 }
 
-void ClientNetwork::handleReadHeaderFS()
+void ClientNetwork::handleReadHeaderFS(boost::system::error_code ec)
 {
-    unsigned msg_len = headerMenager.decodeHeader(m_readbuf_fs);
-    //BOOST_LOG_TRIVIAL(debug) << "MSG LEN: " << msg_len << std::endl;
-    startReadBodyFS(msg_len);
+    if (!ec)
+    {
+        unsigned msg_len = headerMenager.decodeHeader(m_readbuf_fs);
+        //BOOST_LOG_TRIVIAL(debug) << "MSG LEN: " << msg_len << std::endl;
+        startReadBodyFS(msg_len);
+    }
+    else
+    {
+        socket_.async_connect(ep, boost::bind(&ClientNetwork::handleConnectFS, this,
+                                              boost::asio::placeholders::error));
+    }
 }
 
 void ClientNetwork::startReadBodyFS(unsigned msg_len)
 {
     m_readbuf_fs.resize(header_size + msg_len);
     boost::asio::mutable_buffers_1 buf = boost::asio::buffer(&m_readbuf_fs[header_size], msg_len);
-    boost::asio::async_read(socket_, buf, boost::bind(&ClientNetwork::handleReadBodyFS, this));
+    boost::asio::async_read(socket_, buf, boost::bind(&ClientNetwork::handleReadBodyFS, this, boost::asio::placeholders::error));
 }
-void ClientNetwork::handleReadBodyFS()
+void ClientNetwork::handleReadBodyFS(boost::system::error_code ec)
 {
+    if (!ec)
+    {
+        messageFS::Request readed;
+        messageFS::Request writeRequest;
+        readed.ParseFromArray(&m_readbuf_fs[header_size], m_readbuf_fs.size() - header_size);
+        switch (readed.id())
+        {
+        case ServerFS::OKDOWNLOAD:
+        {
 
-    messageFS::Request readed;
-    messageFS::Request writeRequest;
-    readed.ParseFromArray(&m_readbuf_fs[header_size], m_readbuf_fs.size() - header_size);
-    switch (readed.id())
-    {
-    case ServerFS::OKDOWNLOAD:
-    {
-        
-        std::ofstream file("SynchFolder/" + readed.name() + "/" + readed.filename(), std::ofstream::binary);
-        file.write(readed.file().c_str(), readed.filesize());
-        file.close();
-        PWPtr->add(ServerFS::OKDOWNLOAD);
-        break;
+            std::ofstream file("SynchFolder/" + readed.name() + "/" + readed.filename(), std::ofstream::binary);
+            file.write(readed.file().c_str(), readed.filesize());
+            file.close();
+            PWPtr->add(ServerFS::OKDOWNLOAD);
+            break;
+        }
+        case ServerFS::OKSENDING:
+        {
+            writeRequest.set_id(ServerSyncho::ADDFILE);
+            writeRequest.set_name(readed.name());
+            writeRequest.set_filesize(readed.filesize());
+            writeRequest.set_filename(readed.filename());
+            writeRequest.set_filepath(readed.filepath());
+            writeRequest.set_fileextention(readed.fileextention());
+            std::string bufForSerial;
+            writeRequest.SerializePartialToString(&bufForSerial);
+            writeMessageToS(bufForSerial);
+            break;
+        }
+        case ServerFS::OKDELETE:
+        {
+            writeRequest.set_id(ServerSyncho::DELETEFILES);
+            writeRequest.set_name(readed.name());
+            writeRequest.set_filename(readed.filename());
+            std::string bufForSerial;
+            writeRequest.SerializePartialToString(&bufForSerial);
+            writeMessageToS(bufForSerial);
+            break;
+        }
+        default:
+            break;
+        }
+        startReadHeaderFS();
     }
-    case ServerFS::OKSENDING:
+    else
     {
-        writeRequest.set_id(ServerSyncho::ADDFILE);
-        writeRequest.set_name(readed.name());
-        writeRequest.set_filesize(readed.filesize());
-        writeRequest.set_filename(readed.filename());
-        writeRequest.set_filepath(readed.filepath());
-        writeRequest.set_fileextention(readed.fileextention());
-        std::string bufForSerial;
-        writeRequest.SerializePartialToString(&bufForSerial);
-        writeMessageToS(bufForSerial);
-        break;
+        socket_.async_connect(ep, boost::bind(&ClientNetwork::handleConnectFS, this,
+                                              boost::asio::placeholders::error));
     }
-    case ServerFS::OKDELETE:
-    {
-        writeRequest.set_id(ServerSyncho::DELETEFILES);
-        writeRequest.set_name(readed.name());
-        writeRequest.set_filename(readed.filename());
-        std::string bufForSerial;
-        writeRequest.SerializePartialToString(&bufForSerial);
-        writeMessageToS(bufForSerial);
-        break;
-    }
-    default:
-        break;
-    }
-    startReadHeaderFS();
 }
 
-void ClientNetwork::writeMessageToFS(const std::string &msg) 
+void ClientNetwork::writeMessageToFS(const std::string &msg)
 {
     io_service_.post(boost::bind(&ClientNetwork::doWriteFS, this, msg));
 }
@@ -110,25 +124,31 @@ void ClientNetwork::doWriteFS(std::string &msg)
     if (!write_in_progress)
     {
         boost::asio::async_write(socket_, boost::asio::buffer(qWrite.front().data(), qWrite.front().length()),
-                                 boost::bind(&ClientNetwork::writeHeandlerFS, this));
+                                 boost::bind(&ClientNetwork::writeHeandlerFS, this, boost::asio::placeholders::error));
     }
 }
 
-void ClientNetwork::writeHeandlerFS()
+void ClientNetwork::writeHeandlerFS(boost::system::error_code ec)
 {
-    qWrite.pop_front();
-    if (!qWrite.empty())
+    if (!ec)
     {
-        boost::asio::async_write(socket_, boost::asio::buffer(qWrite.front().data(), qWrite.front().length()),
-                                 boost::bind(&ClientNetwork::writeHeandlerS, this));
+        qWrite.pop_front();
+        if (!qWrite.empty())
+        {
+            boost::asio::async_write(socket_, boost::asio::buffer(qWrite.front().data(), qWrite.front().length()),
+                                     boost::bind(&ClientNetwork::writeHeandlerFS, this, boost::asio::placeholders::error));
+        }
+    }
+    else
+    {
+        socket_.async_connect(ep, boost::bind(&ClientNetwork::handleConnectFS, this,
+                                              boost::asio::placeholders::error));
     }
 }
 
 //-------------------------------------------------------------------------------------------
 void ClientNetwork::handleConnectS(boost::system::error_code ec)
 {
-    boost::asio::ip::tcp::endpoint eps(boost::asio::ip::address::from_string("127.0.0.1"), 6666);
-
     if (!ec)
     {
         startReadHeaderS();
@@ -144,82 +164,97 @@ void ClientNetwork::startReadHeaderS()
 {
     m_readbuf_s.resize(header_size);
     boost::asio::async_read(socketS_, boost::asio::buffer(m_readbuf_s),
-                            boost::bind(&ClientNetwork::handleReadHeaderS, this));
+                            boost::bind(&ClientNetwork::handleReadHeaderS, this, boost::asio::placeholders::error));
 }
 
-void ClientNetwork::handleReadHeaderS()
+void ClientNetwork::handleReadHeaderS(boost::system::error_code ec)
 {
-    unsigned msg_len = headerMenager.decodeHeader(m_readbuf_s);
-
-    //BOOST_LOG_TRIVIAL(debug) << "MSG LEN: " << msg_len << std::endl;
-    startReadBodyS(msg_len);
+    if (!ec)
+    {
+        unsigned msg_len = headerMenager.decodeHeader(m_readbuf_s);
+        //BOOST_LOG_TRIVIAL(debug) << "MSG LEN: " << msg_len << std::endl;
+        startReadBodyS(msg_len);
+    }
+    else
+    {
+        socketS_.async_connect(eps, boost::bind(&ClientNetwork::handleConnectS, this,
+                                                boost::asio::placeholders::error));
+    }
 }
 
 void ClientNetwork::startReadBodyS(unsigned msg_len)
 {
     m_readbuf_s.resize(header_size + msg_len);
     boost::asio::mutable_buffers_1 buf = boost::asio::buffer(&m_readbuf_s[header_size], msg_len);
-    boost::asio::async_read(socketS_, buf, boost::bind(&ClientNetwork::handleReadBodyS, this));
+    boost::asio::async_read(socketS_, buf, boost::bind(&ClientNetwork::handleReadBodyS, this, boost::asio::placeholders::error));
 }
 
-void ClientNetwork::handleReadBodyS()
+void ClientNetwork::handleReadBodyS(boost::system::error_code ec)
 {
-    messageFS::Request readed;
-    readed.ParseFromArray(&m_readbuf_s[header_size], m_readbuf_s.size() - header_size);
-    switch (readed.id())
+    if (!ec)
     {
-    case ServerSyncho::OKREG:
-    {
-        readed.set_id(ServerFS::CREATEFOLDER);
-        std::string answer;
-        readed.SerializePartialToString(&answer);
-        writeMessageToFS(answer);
-        PWPtr->add(ServerSyncho::OKREG);
-        break;
-    }
-    case ServerSyncho::BADREG:
-    {
-        PWPtr->add(ServerSyncho::BADREG);
-        break;
-    }
+        messageFS::Request readed;
+        readed.ParseFromArray(&m_readbuf_s[header_size], m_readbuf_s.size() - header_size);
+        switch (readed.id())
+        {
+        case ServerSyncho::OKREG:
+        {
+            readed.set_id(ServerFS::CREATEFOLDER);
+            std::string answer;
+            readed.SerializePartialToString(&answer);
+            writeMessageToFS(answer);
+            PWPtr->add(ServerSyncho::OKREG);
+            break;
+        }
+        case ServerSyncho::BADREG:
+        {
+            PWPtr->add(ServerSyncho::BADREG);
+            break;
+        }
 
-    case ServerSyncho::OKLOGIN:
-    {
+        case ServerSyncho::OKLOGIN:
+        {
 
-        PWPtr->add(ServerSyncho::OKLOGIN);
-        break;
+            PWPtr->add(ServerSyncho::OKLOGIN);
+            break;
+        }
+        case ServerSyncho::BADLOGIN:
+        {
+            PWPtr->add(ServerSyncho::BADLOGIN);
+            break;
+        }
+        case ServerSyncho::CHECKFRIENDANDFILESUCCESSFUL:
+        {
+            readed.set_id(ServerFS::DOWNLOADFILRFRIEND);
+            readed.set_name(readed.name());
+            readed.set_loginfriend(readed.loginfriend());
+            std::string answer;
+            readed.SerializePartialToString(&answer);
+            writeMessageToFS(answer);
+            break;
+        }
+        case ServerSyncho::FRIENDSHIPSUCCESSFUL:
+        {
+            std::cout << "Added friend successfully\n";
+            break;
+        }
+        case ServerSyncho::OKSEND:
+        {
+            break;
+        }
+        default:
+            break;
+        }
+        startReadHeaderS();
     }
-    case ServerSyncho::BADLOGIN:
+    else
     {
-        PWPtr->add(ServerSyncho::BADLOGIN);
-        break;
+        socketS_.async_connect(eps, boost::bind(&ClientNetwork::handleConnectS, this,
+                                                boost::asio::placeholders::error));
     }
-    case ServerSyncho::CHECKFRIENDANDFILESUCCESSFUL:
-    {
-        readed.set_id(ServerFS::DOWNLOADFILRFRIEND);
-        readed.set_name(readed.name()); 
-        readed.set_loginfriend(readed.loginfriend());
-        std::string answer;
-        readed.SerializePartialToString(&answer);
-        writeMessageToFS(answer);
-        break;
-    }
-    case ServerSyncho::FRIENDSHIPSUCCESSFUL:
-    {
-        std::cout<<"Added friend successfully\n";
-        break;
-    }
-    case ServerSyncho::OKSEND:
-    {
-        break;
-    }
-    default:
-        break;
-    }
-    startReadHeaderS();
 }
 
-void ClientNetwork::writeMessageToS(const std::string &msg) 
+void ClientNetwork::writeMessageToS(const std::string &msg)
 {
     io_service_.post(boost::bind(&ClientNetwork::doWriteS, this, msg));
 }
@@ -236,19 +271,24 @@ void ClientNetwork::doWriteS(std::string &msg)
     if (!write_in_progress)
     {
         boost::asio::async_write(socketS_, boost::asio::buffer(qWriteS.front().data(), qWriteS.front().length()),
-                                 boost::bind(&ClientNetwork::writeHeandlerS, this));
+                                 boost::bind(&ClientNetwork::writeHeandlerS, this, boost::asio::placeholders::error));
     }
 }
 
-void ClientNetwork::writeHeandlerS()
+void ClientNetwork::writeHeandlerS(boost::system::error_code ec)
 {
-    qWriteS.pop_front();
-    if (!qWriteS.empty())
+    if (!ec)
     {
-        boost::asio::async_write(socketS_, boost::asio::buffer(qWriteS.front().data(), qWriteS.front().length()),
-                                 boost::bind(&ClientNetwork::writeHeandlerS, this));
+        qWriteS.pop_front();
+        if (!qWriteS.empty())
+        {
+            boost::asio::async_write(socketS_, boost::asio::buffer(qWriteS.front().data(), qWriteS.front().length()),
+                                     boost::bind(&ClientNetwork::writeHeandlerS, this, boost::asio::placeholders::error));
+        }
+    }
+    else
+    {
+        socketS_.async_connect(eps, boost::bind(&ClientNetwork::handleConnectS, this,
+                                                boost::asio::placeholders::error));
     }
 }
-
-
-

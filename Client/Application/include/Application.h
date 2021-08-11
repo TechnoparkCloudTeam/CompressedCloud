@@ -6,7 +6,6 @@
 #include <chrono>
 #include <iostream>
 
-
 #include "FileStorageWorker.h"
 #include "LocalDB.h"
 #include "ClientNetwork.h"
@@ -14,23 +13,25 @@
 #include "RequestCoordinator.h"
 #include "Indexer.h"
 #include "RequestStatus.h"
-class Application {
+class Application
+{
 public:
     Application(
-     std::shared_ptr<IClientNetwork> network,
-     std::shared_ptr<IIndexer> indexer,
-     std::shared_ptr<IRequestCoordinator> requestCoordinator);
+        std::shared_ptr<IClientNetwork> network,
+        std::shared_ptr<IIndexer> indexer,
+        std::shared_ptr<IRequestCoordinator> requestCoordinator);
     ~Application();
-    void login(const std::string& login,const std::string& pass);
-    void registerUser(const std::string& login, const std::string& pass);
+    void login(const std::string &login, const std::string &pass);
+    void registerUser(const std::string &login, const std::string &pass);
     bool isLogin();
-    void downloadFile(const std::string& fileName);
-    void downloadFileFriend(const std::string& friendName, const std::string& file);
+    void downloadFile(const std::string &fileName);
+    void downloadFileFriend(const std::string &friendName, const std::string &file);
     void sendFile(const FileMeta &fileinfo);
-    void deleteFile(const std::string& fileName);
+    void deleteFile(const std::string &fileName);
     void runWatcher();
     void stopWatcher();
-    void addFriend(const std::string& friendLogin);
+    void addFriend(const std::string &friendLogin);
+
 private:
     bool isWatcherRunning;
     std::string synchFolder;

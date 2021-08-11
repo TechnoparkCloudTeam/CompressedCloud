@@ -23,16 +23,17 @@
 
 using timePoint = std::chrono::steady_clock::time_point;
 using fsPath = std::filesystem::path;
-using std::chrono::milliseconds;
-using std::string;
-using std::vector;
-using std::queue;
 using boost::bimap;
 using std::function;
+using std::queue;
+using std::string;
+using std::vector;
+using std::chrono::milliseconds;
 using steadyClock = std::chrono::steady_clock;
 namespace fs = std::filesystem;
 using std::stringstream;
-class Watcher {
+class Watcher
+{
 public:
 	Watcher();
 	~Watcher();
@@ -48,14 +49,15 @@ public:
 	void shutDown();
 	bool isStopped();
 	void runAfterShutDown();
+
 private:
 	fsPath wdToPath(int watchDescriptor);
 	bool isIgnored(std::string file);
 	bool isOnTimeout(const steadyClock::time_point &eventTime);
 	void removeWatch(int watchDescriptor);
-	ssize_t readEventsIntoBuffer(vector<uint8_t>& eventBuffer);
-	void readEventsFromBuffer(uint8_t* buffer, int length, vector<FileSysEvent> &events);
-	void filterEvents(vector<FileSysEvent>& events, queue<FileSysEvent>& eventQueue);
+	ssize_t readEventsIntoBuffer(vector<uint8_t> &eventBuffer);
+	void readEventsFromBuffer(uint8_t *buffer, int length, vector<FileSysEvent> &events);
+	void filterEvents(vector<FileSysEvent> &events, queue<FileSysEvent> &eventQueue);
 	void sendStopSignal();
 	int mError;
 	milliseconds mEventTimeout;

@@ -6,14 +6,13 @@
 using timePoint = std::chrono::steady_clock::time_point;
 using fsPath = std::filesystem::path;
 
-class WatcherNotification {
-    public:
-
+class WatcherNotification
+{
+public:
     WatcherNotification(
-        const InotifyEvent& event,
+        const InotifyEvent &event,
         const timePoint time,
-        const std::filesystem::path path
-    );
+        const std::filesystem::path path);
 
     const InotifyEvent Event;
     const timePoint Time;

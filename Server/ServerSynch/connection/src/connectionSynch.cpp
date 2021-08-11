@@ -31,7 +31,7 @@ void Connection::handleReadHeader(const boost::system::error_code &error)
     if (!error)
     {
         unsigned msg_len = headerMenager.decodeHeader(m_readbuf);
-        std::cout << "MSG LEN: " << msg_len << std::endl;
+        std::cerr << "MSG LEN: " << msg_len << std::endl;
         startReadBody(msg_len);
     }
     else
@@ -56,7 +56,6 @@ void Connection::handleReadBody(const boost::system::error_code &error)
         messageFS::Request readed;
         readed.ParseFromArray(&m_readbuf[header_size], m_readbuf.size() - header_size);
         writeRequest.set_name(readed.name());
-        //readed.PrintDebugString();
         switch (readed.id())
         {
         case ServerSyncho::REGISTRATION:
@@ -112,14 +111,10 @@ void Connection::handleReadBody(const boost::system::error_code &error)
                 .isCurrent = true,
                 .updateDate = "2020-12-12 0:47:25",
                 .createDate = "2020-12-12 0:47:25"};
-            //TODO:: че то куда то это деть
             try
             {
                 postgres_sqldb_file->InsertFile(file);
 
-                // auto tt = UserDate{readed.nameid(), "2020-12-19 0:47:25"};
-                //postgres_sqldb_file->GetUserFilesByTime(tt);
-                // postgres_sqldb1.Registration(user);
             }
             catch (PostgresExceptions &exceptions)
             {

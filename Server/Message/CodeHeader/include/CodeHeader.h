@@ -10,5 +10,6 @@ class CodeHeader
 {
 public:
     unsigned decodeHeader(std::vector<boost::uint8_t> &buf);
+    
     std::string encodeHeader(std::vector<boost::uint8_t> &buf, unsigned size);
 };

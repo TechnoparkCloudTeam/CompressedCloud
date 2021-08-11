@@ -1,3 +1,5 @@
 .vscode
 Server/build
 Client/build
+Client/Indexer/build
+DataBases/LocalDB/build

@@ -364,12 +364,11 @@ void Watcher::sendStopSignal()
 
     vector<std::uint8_t> buf(1, 0);
     write(StopPipeFileDescriptor[mPipeWriteIdx], buf.data(), buf.size());
-
 }
 
 void Watcher::runAfterShutDown()
 {
-  /*   while (!mEventQueue.empty())
+    /*   while (!mEventQueue.empty())
     {
         mEventQueue.pop();
     }

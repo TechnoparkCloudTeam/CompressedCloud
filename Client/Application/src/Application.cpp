@@ -60,7 +60,7 @@ void Application::registerUser(const std::string &login, const std::string &pass
     }
     else if (status == ServerSyncho::BADREG)
     {
-        std::cout <<"UserAllready exists\n";
+        std::cout << "UserAllready exists\n";
     }
 }
 

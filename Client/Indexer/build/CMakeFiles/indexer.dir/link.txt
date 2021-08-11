@@ -1,1 +1,0 @@
-/usr/bin/c++     CMakeFiles/indexer.dir/main.cpp.o CMakeFiles/indexer.dir/src/Indexer.cpp.o  -o indexer 
